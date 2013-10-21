@@ -9,3 +9,4 @@ References
 - [OPOS](http://en.wikipedia.org/wiki/OPOS)
 - [SQLite](http://www.sqlite.org/)
 - [ADO.NET 2.0 Provider for SQLite](http://sourceforge.net/projects/sqlite-dotnet2/)
+- [DbLinq](http://code.google.com/p/dblinq2007/)

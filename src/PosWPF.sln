@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PosWPF", "PosWPF\PosWPF.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiTea.Pos", "HiTea.Pos\HiTea.Pos.csproj", "{A706A593-DAAB-4383-AB12-FBF15956FB55}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "HiTea.Pos.Sql", "HiTea.Pos.Sql\HiTea.Pos.Sql.sqlproj", "{4A26FCF4-B527-4BB4-9F6D-B147516DD74F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,12 @@ Global
 		{A706A593-DAAB-4383-AB12-FBF15956FB55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A706A593-DAAB-4383-AB12-FBF15956FB55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A706A593-DAAB-4383-AB12-FBF15956FB55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A26FCF4-B527-4BB4-9F6D-B147516DD74F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A26FCF4-B527-4BB4-9F6D-B147516DD74F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A26FCF4-B527-4BB4-9F6D-B147516DD74F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4A26FCF4-B527-4BB4-9F6D-B147516DD74F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A26FCF4-B527-4BB4-9F6D-B147516DD74F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A26FCF4-B527-4BB4-9F6D-B147516DD74F}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
