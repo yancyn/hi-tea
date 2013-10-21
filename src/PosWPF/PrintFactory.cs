@@ -12,7 +12,7 @@ using System.Runtime.InteropServices;
 
 namespace PosWPF
 {
-public class PrintFactory
+    public class PrintFactory
     {
         public const short FILE_ATTRIBUTE_NORMAL = 0x80;
         public const short INVALID_HANDLE_VALUE = -1;
