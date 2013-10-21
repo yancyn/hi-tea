@@ -8,6 +8,8 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.Linq;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Text;
@@ -18,6 +20,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Forms;
+using HiTea.Pos;
 
 namespace PosWPF
 {
@@ -96,6 +99,27 @@ namespace PosWPF
             Offset = Offset + 20;
             String underLine = "------------------------------------------";
             graphics.DrawString(underLine, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + Offset);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
+            Main db = new Main(connectionString);
+
+            //db.Category
+
+            //var category = from c in db.Category select c;
+
+            HiTea.Pos.Menu menu = new HiTea.Pos.Menu();
+            menu.Code = "A03";
+            menu.Name = "Coconut Pie";
+            menu.Price = 33.3F;
+            //db.GetTable(Category).Where
+            
+            //db.GetTable(Category).WHere
+            //menu.Category = db.GetTable(Category).Where
+            db.Menu.InsertOnSubmit(menu);
+            db.SubmitChanges();
         }
     }
 }
