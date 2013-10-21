@@ -1,6 +1,17 @@
 ﻿-- This is SQLite build script
 PRAGMA foreign_keys = ON;
 
+--drop table ordercharges;
+--drop table orderitems;
+--drop table orders;
+--drop table ordertypes;
+--drop table charges;
+--drop table menus;
+--drop table statuses;
+--drop table categories;
+--drop table users;
+--drop table roles;
+
 create table if not exists roles(
 	role varchar(15) primary key
 );
@@ -64,20 +75,13 @@ create table if not exists orderitems(
 	foreign key(menu) references menus(id),
 	foreign key(status) references statuses(status)
 );
-create table if not exists ordercharges(
-	id integer primary key autoincrement,
-	charge varchar(30) not null,
-	parent integer not null,
-	foreign key(charge) references charges(charge),
-	foreign key(parent) references orders(id)
-);
 
 
 -- insert default value
 insert into roles(role) values('admin');
 insert into roles(role) values('cashier');
 insert into roles(role) values('staff');
-insert into roles(role) values('customer');
+insert into roles(role) values('guest');
 
 insert into categories(category) values('set');
 insert into categories(category) values('food');
