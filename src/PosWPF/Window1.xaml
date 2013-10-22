@@ -33,7 +33,7 @@
 
         <DockPanel Grid.Column="0" LastChildFill="True">
             <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
-                <Button Content="Print" Click="button1_Click" Margin="10" />
+                <Button Content="Print" Height="40" Width="40" Click="button1_Click" Style="{StaticResource CircleButtonStyle}" />
                 <Button Content="Image" Click="button2_Click" Margin="10" />
                 <Button Content="Add" Click="Button_Click" Margin="10"/>
             </StackPanel>
