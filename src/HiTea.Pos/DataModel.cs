@@ -300,7 +300,7 @@ public partial class Main
 
         private string _name;
 
-        private System.Nullable<float> _value;
+        private float _value;
 
         #region Extensibility Method Declarations
         partial void OnCreated();
@@ -367,9 +367,9 @@ public partial class Main
             }
         }
 
-        [Column(Storage = "_value", Name = "Value", DbType = "real", AutoSync = AutoSync.Never)]
+        [Column(Storage = "_value", Name = "Value", DbType = "real", AutoSync = AutoSync.Never, CanBeNull=false)]
         [DebuggerNonUserCode()]
-        public System.Nullable<float> Value
+        public float Value
         {
             get
             {

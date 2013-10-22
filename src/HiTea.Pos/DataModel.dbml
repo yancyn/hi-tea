@@ -10,7 +10,7 @@
     <Type Name="Charge">
       <Column Name="Id" Member="ID" Storage="_id" Type="System.Int32" DbType="integer" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Name" Storage="_name" Type="System.String" DbType="varchar(30)" CanBeNull="true" />
-      <Column Name="Value" Storage="_value" Type="System.Single" DbType="real" CanBeNull="true" />
+      <Column Name="Value" Storage="_value" Type="System.Single" DbType="real" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="main.Menu" Member="Menu">
