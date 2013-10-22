@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:p="clr-namespace:HiTea.Pos;assembly=HiTea.Pos"
     Title="PosWPF"
+    Style="{StaticResource BorderlessWindowStyle}"
     WindowStartupLocation="CenterScreen"
     WindowState="Maximized">
     <Window.Resources>
@@ -33,13 +34,16 @@
 
         <DockPanel Grid.Column="0" LastChildFill="True">
             <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
-                <Button Content="Print" Height="40" Width="40" Click="button1_Click" Style="{StaticResource CircleButtonStyle}" />
-                <Button Content="Image" Click="button2_Click" Margin="10" />
-                <Button Content="Add" Click="Button_Click" Margin="10"/>
+                <Button Content="DO" Height="40" Width="40" Style="{StaticResource CircleButtonStyle}" />
+                <Button Content="Label" Height="40" Width="40" Style="{StaticResource CircleButtonStyle}" />
+                <Button Content="Receipt" Height="40" Width="40" Style="{StaticResource CircleButtonStyle}" />
             </StackPanel>
             <Viewbox />
         </DockPanel>
         <DockPanel Grid.Column="1" LastChildFill="True" DataContext="{Binding}">
+            <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="Setting" Height="40" Width="40" Style="{StaticResource CircleButtonStyle}" />
+            </StackPanel>
             <ScrollViewer>
                 <ItemsControl x:Name="categories" ItemsSource="{Binding Categories}">
                     <ItemsControl.ItemsPanel>

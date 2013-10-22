@@ -4,22 +4,33 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Style x:Key="BorderlessWindowStyle" TargetType="{x:Type Window}">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="WindowStyle" Value="None" />
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="Path.Fill" Value="#FF159CC4" />
+    </Style>
     <Style x:Key="CircleButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="Margin" Value="10" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Grid Width="Auto">
-                        <Ellipse x:Name="circle" Fill="White" Stroke="Gray" StrokeThickness="2"/>
+                        <Ellipse x:Name="circle" Fill="WhiteSmoke" Stroke="Gray" StrokeThickness="2"/>
                         <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Fill" TargetName="circle" Value="#4ea6ec" />
+                            <Setter Property="Fill" TargetName="circle" Value="#007acc" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="White" />
+            </Trigger>
+        </Style.Triggers>
     </Style>
 </ResourceDictionary>
