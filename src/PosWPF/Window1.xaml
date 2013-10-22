@@ -37,9 +37,9 @@
 
         <DockPanel Grid.Column="0" LastChildFill="True">
             <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
-                <Button Content="DO" Height="40" Width="40" Style="{StaticResource CircleButtonStyle}" />
-                <Button Content="Label" Height="40" Width="40" Style="{StaticResource CircleButtonStyle}" />
-                <Button Content="Receipt" Height="40" Width="40" Style="{StaticResource CircleButtonStyle}" />
+                <Button Content="DO" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" />
+                <Button Content="Label" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" />
+                <Button Content="Receipt" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" />
             </StackPanel>
             <Viewbox />
         </DockPanel>
@@ -48,7 +48,7 @@
         
         <DockPanel Grid.Column="2" LastChildFill="True" DataContext="{Binding}">
             <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Content="Setting" Height="40" Width="40" Style="{StaticResource CircleButtonStyle}" />
+                <Button Background="{StaticResource SettingIcon}" Style="{StaticResource CircleButtonStyle}" />
             </StackPanel>
             <ScrollViewer>
                 <ItemsControl x:Name="categories" ItemsSource="{Binding Categories}">
