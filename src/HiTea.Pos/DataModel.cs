@@ -5,7 +5,7 @@
 // | |_| | |_) | |  | |  __/ || (_| | |
 // |____/|_.__/|_|  |_|\___|\__\__,_|_|
 //
-// Auto-generated from main on 2013-10-22 01:07:46Z.
+// Auto-generated from main on 2013-10-22 10:15:38Z.
 // Please visit http://code.google.com/p/dblinq2007/ for more information.
 //
 using System;
@@ -19,9 +19,6 @@ using System.Data;
 #endif  // MONO_STRICT
 	using System.Data.Linq.Mapping;
 using System.Diagnostics;
-//using System.Data.Linq;
-//using System.Data.SQLite;
-
 
 namespace HiTea.Pos
 {
@@ -455,7 +452,7 @@ public partial class Main
 
         partial void OnPriceChanged();
 
-        partial void OnPriceChanging(System.Nullable<float> value);
+        partial void OnPriceChanging(float value);
         #endregion
 
 

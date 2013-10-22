@@ -9,7 +9,6 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Data.Linq;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Text;
@@ -20,6 +19,12 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Forms;
+
+using System.Data.Linq;
+using System.Data.SQLite;
+using System.Linq;
+using DbLinq.Data;
+using DbLinq.Data.Linq;
 using HiTea.Pos;
 
 namespace PosWPF
@@ -105,19 +110,14 @@ namespace PosWPF
         {
             string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
             Main db = new Main(connectionString);
-
-            //db.Category
-
             //var category = from c in db.Category select c;
 
             HiTea.Pos.Menu menu = new HiTea.Pos.Menu();
-            menu.Code = "A03";
-            menu.Name = "Coconut Pie";
+            menu.Code = "D06";
+            menu.Name = "Donut";
             menu.Price = 33.3F;
-            //db.GetTable(Category).Where
-            
-            //db.GetTable(Category).WHere
-            //menu.Category = db.GetTable(Category).Where
+            Category category = db.Category.Where(c => c.Name == "Food").FirstOrDefault();
+            if (category != null) menu.CategoryID = category.ID;
             db.Menu.InsertOnSubmit(menu);
             db.SubmitChanges();
         }
