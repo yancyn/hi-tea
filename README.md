@@ -2,6 +2,12 @@ hi-tea
 ======
 A POS for café.
 
+Generate dbml from DbLinq
+===================
+
+	DbMetal /provider:Sqlite /conn "Data Source=File.db3" /dbml:File.dbml
+	DbMetal /code:File.cs File.dbml
+
 
 References
 =======

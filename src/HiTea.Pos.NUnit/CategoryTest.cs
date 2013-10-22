@@ -17,7 +17,11 @@ namespace HiTea.Pos.NUnit
     [TestFixture]
     public class CategoryTest
     {
-        private string connectionString = "DbLinqProvider=Sqlite;DbLinqConnectionType=System.Data.SQLite.SQLiteConnection, System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139;Data Source=pos.db;";
+        private string connectionString = "DbLinqProvider=Sqlite;DbLinqConnectionType=System.Data.SQLite.SQLiteConnection, System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139;Data Source=pos.db3;";
+        /// <summary>
+        /// Get food category test.
+        /// System.Data.SQLite.dll must same version of local machine x86 or x64.
+        /// </summary>
         [Test]
         public void GetFoodCategoryTest()
         {
@@ -26,7 +30,7 @@ namespace HiTea.Pos.NUnit
 
             Main db = new Main(connectionString);
             Category actual = db.Category.Where(c => c.Name == "Food").FirstOrDefault();
-            if(actual != null) System.Diagnostics.Debug.WriteLine(actual);
+            if(actual != null) System.Diagnostics.Debug.WriteLine(actual.Name);
             Assert.IsTrue(expected.Name == actual.Name);
         }
     }
