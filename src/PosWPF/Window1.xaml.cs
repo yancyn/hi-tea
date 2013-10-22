@@ -116,9 +116,9 @@ namespace PosWPF
             menu.Code = "D06";
             menu.Name = "Donut";
             menu.Price = 33.3F;
-            Category category = db.Category.Where(c => c.Name == "Food").FirstOrDefault();
+            Category category = db.Categories.Where(c => c.Name == "Food").FirstOrDefault();
             if (category != null) menu.CategoryID = category.ID;
-            db.Menu.InsertOnSubmit(menu);
+            db.Menus.InsertOnSubmit(menu);
             db.SubmitChanges();
         }
     }

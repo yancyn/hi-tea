@@ -29,7 +29,7 @@ namespace HiTea.Pos.NUnit
             expected.Name = "Food";
 
             Main db = new Main(connectionString);
-            Category actual = db.Category.Where(c => c.Name == "Food").FirstOrDefault();
+            Category actual = db.Categories.Where(c => c.Name == "Food").FirstOrDefault();
             if(actual != null) System.Diagnostics.Debug.WriteLine(actual.Name);
             Assert.IsTrue(expected.Name == actual.Name);
         }

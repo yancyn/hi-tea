@@ -48,7 +48,7 @@ namespace HiTea.Pos
             this.OnCreated();
         }
 
-        public Table<Category> Category
+        public Table<Category> Categories
         {
             get
             {
@@ -56,7 +56,7 @@ namespace HiTea.Pos
             }
         }
 
-        public Table<Charge> Charge
+        public Table<Charge> Charges
         {
             get
             {
@@ -64,7 +64,7 @@ namespace HiTea.Pos
             }
         }
 
-        public Table<Menu> Menu
+        public Table<Menu> Menus
         {
             get
             {
@@ -72,7 +72,7 @@ namespace HiTea.Pos
             }
         }
 
-        public Table<Order> Order
+        public Table<Order> Orders
         {
             get
             {
@@ -80,7 +80,7 @@ namespace HiTea.Pos
             }
         }
 
-        public Table<OrderItem> OrderItem
+        public Table<OrderItem> OrderItems
         {
             get
             {
@@ -88,7 +88,7 @@ namespace HiTea.Pos
             }
         }
 
-        public Table<OrderType> OrderType
+        public Table<OrderType> OrderTypes
         {
             get
             {
@@ -96,7 +96,7 @@ namespace HiTea.Pos
             }
         }
 
-        public Table<Role> Role
+        public Table<Role> Roles
         {
             get
             {
@@ -104,7 +104,7 @@ namespace HiTea.Pos
             }
         }
 
-        public Table<Status> Status
+        public Table<Status> Statuses
         {
             get
             {
@@ -112,7 +112,7 @@ namespace HiTea.Pos
             }
         }
 
-        public Table<User> User
+        public Table<User> Users
         {
             get
             {
