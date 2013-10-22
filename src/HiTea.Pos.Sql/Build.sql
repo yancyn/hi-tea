@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS Menu(
 CREATE TABLE IF NOT EXISTS Charge(
 	Id integer NOT NULL primary key autoincrement,
 	Name varchar(30),
-	Value real
+	Value real NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS OrderType(
@@ -92,7 +92,7 @@ insert into Role(Name) values('Cashier');
 insert into Role(Name) values('Staff');
 insert into Role(Name) values('Guest');
 
-insert into Category(Name) values('Set');
+insert into Category(Name) values('Set Meal');
 insert into Category(Name) values('Food');
 insert into Category(Name) values('Beverage');
 insert into Category(Name) values('Dessert');
