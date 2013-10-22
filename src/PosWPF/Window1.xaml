@@ -3,32 +3,52 @@
 	x:Class="PosWPF.Window1"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	Title="PosWPF"
-	Height="600"
-	Width="800">
-	<Grid>
-		<Button
-			Content="Print"
-			Name="button1"
-			Click="button1_Click"
-			Grid.Column="0"
-			Grid.Row="0"
-			HorizontalAlignment="Left"
-			VerticalAlignment="Top"
-			Margin="45.5,17,0,0"
-			Width="75"
-			Height="23" />
-		<Button
-			Grid.Column="0"
-			Grid.Row="0"
-			HorizontalAlignment="Left"
-			VerticalAlignment="Top"
-			Margin="45.5,49,0,0"
-			Width="75"
-			Height="23"
-			Content="Image"
-			Name="button2"
-			Click="button2_Click" />
-        <Button Content="Add" HorizontalAlignment="Left" Margin="45.5,77,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+    xmlns:p="clr-namespace:HiTea.Pos;assembly=HiTea.Pos"
+    Title="PosWPF"
+    WindowStartupLocation="CenterScreen"
+    WindowState="Maximized">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type p:Menu}">
+            <Button Content="{Binding Code}" Margin="10" />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type p:Category}">
+            <GroupBox Header="{Binding Name}">
+                <DockPanel LastChildFill="True" DataContext="{Binding}">
+                    <ItemsControl x:Name="menus" ItemsSource="{Binding MenuCollection}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </DockPanel>
+            </GroupBox>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <DockPanel Grid.Column="0" LastChildFill="True">
+            <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+                <Button Content="Print" Click="button1_Click" Margin="10" />
+                <Button Content="Image" Click="button2_Click" Margin="10" />
+                <Button Content="Add" Click="Button_Click" Margin="10"/>
+            </StackPanel>
+            <Viewbox />
+        </DockPanel>
+        <DockPanel Grid.Column="1" LastChildFill="True" DataContext="{Binding}">
+            <ScrollViewer>
+                <ItemsControl x:Name="categories" ItemsSource="{Binding Categories}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel Orientation="Vertical" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </ScrollViewer>
+        </DockPanel>
     </Grid>
 </Window>

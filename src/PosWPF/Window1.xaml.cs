@@ -37,6 +37,10 @@ namespace PosWPF
 		public Window1()
 		{
 			InitializeComponent();
+
+            PosManager posManager = new PosManager();
+            this.DataContext = posManager;
+            //categories.ItemsSource = posManager.Categories;
 		}
 		
 		void button1_Click(object sender, RoutedEventArgs e)
@@ -110,16 +114,16 @@ namespace PosWPF
         {
             string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
             Main db = new Main(connectionString);
-            //var category = from c in db.Category select c;
 
             HiTea.Pos.Menu menu = new HiTea.Pos.Menu();
-            menu.Code = "D06";
-            menu.Name = "Donut";
-            menu.Price = 33.3F;
+            menu.Code = "D" + new Random().Next(50);
+            menu.Name = "Donut" + new Random().Next(50);
+            menu.Price = new Random().Next(100) / 13F;
             Category category = db.Categories.Where(c => c.Name == "Food").FirstOrDefault();
             if (category != null) menu.CategoryID = category.ID;
             db.Menus.InsertOnSubmit(menu);
             db.SubmitChanges();
+            System.Diagnostics.Debug.Write("Added a menu successfully.");
         }
     }
 }

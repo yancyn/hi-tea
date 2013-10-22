@@ -173,7 +173,7 @@ public partial class Main
 
         private string _name;
 
-        private EntitySet<Menu> _menu;
+        private EntitySet<Menu> _menus;
 
         #region Extensibility Method Declarations
         partial void OnCreated();
@@ -190,7 +190,7 @@ public partial class Main
 
         public Category()
         {
-            _menu = new EntitySet<Menu>(new Action<Menu>(this.Menu_Attach), new Action<Menu>(this.Menu_Detach));
+            _menus = new EntitySet<Menu>(new Action<Menu>(this.Menu_Attach), new Action<Menu>(this.Menu_Detach));
             this.OnCreated();
         }
 
@@ -240,15 +240,15 @@ public partial class Main
         #region Children
         [Association(Storage = "_menu", OtherKey = "CategoryID", ThisKey = "ID", Name = "fk_Menu_0")]
         [DebuggerNonUserCode()]
-        public EntitySet<Menu> Menu
+        public EntitySet<Menu> Menus
         {
             get
             {
-                return this._menu;
+                return this._menus;
             }
             set
             {
-                this._menu = value;
+                this._menus = value;
             }
         }
         #endregion
@@ -603,12 +603,12 @@ public partial class Main
                     {
                         Category previousCategory = this._category.Entity;
                         this._category.Entity = null;
-                        previousCategory.Menu.Remove(this);
+                        previousCategory.Menus.Remove(this);
                     }
                     this._category.Entity = value;
                     if ((value != null))
                     {
-                        value.Menu.Add(this);
+                        value.Menus.Add(this);
                         _categoryID = value.ID;
                     }
                     else
