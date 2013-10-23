@@ -13,7 +13,7 @@
         <w:DateTimeConverter x:Key="DateTimeConverter" />
         <w:MenuDisplayNameConverter x:Key="MenuNameConverter" />
         <DataTemplate DataType="{x:Type p:Menu}">
-            <Button Content="{Binding .,Converter={StaticResource MenuNameConverter}}" Margin="10" />
+            <Button Content="{Binding .,Converter={StaticResource MenuNameConverter}}" Style="{StaticResource MenuButtonStyle}" />
         </DataTemplate>
         <DataTemplate DataType="{x:Type p:Category}">
             <GroupBox Header="{Binding Name}">
