@@ -22,6 +22,8 @@ namespace PosWPF
         public Playground()
         {
             InitializeComponent();
+
+            //button1.Background
         }
     }
 }

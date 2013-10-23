@@ -12,8 +12,10 @@
     <Window.Resources>
         <w:DateTimeConverter x:Key="DateTimeConverter" />
         <w:MenuDisplayNameConverter x:Key="MenuNameConverter" />
+        <w:MenuBackgroundConverter x:Key="MenuBackgroundConverter" />
         <DataTemplate DataType="{x:Type p:Menu}">
-            <Button Content="{Binding .,Converter={StaticResource MenuNameConverter}}" Style="{StaticResource MenuButtonStyle}" />
+            <Button Content="{Binding .,Converter={StaticResource MenuNameConverter}}" Style="{StaticResource MenuButtonStyle}"
+                    Background="{Binding Path=Header, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type GroupBox}},Converter={StaticResource MenuBackgroundConverter}}" />
         </DataTemplate>
         <DataTemplate DataType="{x:Type p:Category}">
             <GroupBox Header="{Binding Name}">
