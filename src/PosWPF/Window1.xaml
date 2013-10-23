@@ -10,9 +10,10 @@
     WindowStartupLocation="CenterScreen"
     WindowState="Maximized">
     <Window.Resources>
-        <w:MenuDisplayNameConverter x:Key="DisplayName" />
+        <w:DateTimeConverter x:Key="DateTimeConverter" />
+        <w:MenuDisplayNameConverter x:Key="MenuNameConverter" />
         <DataTemplate DataType="{x:Type p:Menu}">
-            <Button Content="{Binding .,Converter={StaticResource DisplayName}}" Margin="10" />
+            <Button Content="{Binding .,Converter={StaticResource MenuNameConverter}}" Margin="10" />
         </DataTemplate>
         <DataTemplate DataType="{x:Type p:Category}">
             <GroupBox Header="{Binding Name}">
@@ -35,7 +36,14 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <DockPanel Grid.Column="0" LastChildFill="True">
+        <DockPanel x:Name="Playground" Grid.Column="0" LastChildFill="True">
+            <DockPanel DockPanel.Dock="Top">
+                <TextBlock DockPanel.Dock="Right" Text="{Binding CurrentTime.Now,Converter={StaticResource DateTimeConverter}}" />
+                <WrapPanel>
+                    <Image Height="30" Width="30" Source="{StaticResource UserIcon}" />
+                    <TextBlock Text="{Binding Cashier.Username}" Margin="10,0,0,0" />
+                </WrapPanel>
+            </DockPanel>
             <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
                 <Button Content="DO" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" />
                 <Button Content="Label" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" />
@@ -46,12 +54,12 @@
 
         <Separator Grid.Column="1" Style="{DynamicResource VerticalSeparatorStyle}" />
         
-        <DockPanel Grid.Column="2" LastChildFill="True" DataContext="{Binding}">
+        <DockPanel Grid.Column="2" LastChildFill="True">
             <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Background="{StaticResource SettingIcon}" Style="{StaticResource CircleButtonStyle}" />
             </StackPanel>
             <ScrollViewer>
-                <ItemsControl x:Name="categories" ItemsSource="{Binding Categories}">
+                <ItemsControl ItemsSource="{Binding Categories}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <VirtualizingStackPanel Orientation="Vertical" />

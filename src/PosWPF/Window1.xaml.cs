@@ -34,14 +34,27 @@ namespace PosWPF
 	/// </summary>
 	public partial class Window1 : Window
 	{
+        private PosManager posManager = new PosManager();
+        private Timer timer = new Timer();
 		public Window1()
 		{
 			InitializeComponent();
 
-            PosManager posManager = new PosManager();
+            HiTea.Pos.User cashier = new HiTea.Pos.User();
+            cashier.Username = "yancyn";
+            posManager.Cashier = cashier;
+
             this.DataContext = posManager;
-            //categories.ItemsSource = posManager.Categories;
+            //Playground.DataContext = posManager;
+            timer.Interval = 1000 * 60;
+            timer.Tick += timer_Tick;
+            timer.Start();
 		}
+
+        void timer_Tick(object sender, EventArgs e)
+        {
+            posManager.CurrentTime.Now = DateTime.Now;
+        }
 		
 		void button1_Click(object sender, RoutedEventArgs e)
 		{
