@@ -40,16 +40,23 @@ namespace PosWPF
 		{
 			InitializeComponent();
 
-            HiTea.Pos.User cashier = new HiTea.Pos.User();
-            cashier.Username = "yancyn";
-            posManager.Cashier = cashier;
-
+            //HiTea.Pos.User cashier = new HiTea.Pos.User();
+            //cashier.Username = "yancyn";
+            //posManager.Cashier = cashier;
             this.DataContext = posManager;
-            //Playground.DataContext = posManager;
+
             timer.Interval = 1000 * 60;
             timer.Tick += timer_Tick;
             timer.Start();
 		}
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Login loginScreen = new Login();
+            loginScreen.Owner = this;
+            loginScreen.DataContext = this.DataContext;
+            loginScreen.ShowDialog();
+        }
 
         void timer_Tick(object sender, EventArgs e)
         {

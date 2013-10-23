@@ -8,7 +8,7 @@
     Title="PosWPF"
     Style="{StaticResource BorderlessWindowStyle}"
     WindowStartupLocation="CenterScreen"
-    WindowState="Maximized">
+    WindowState="Maximized" Loaded="Window_Loaded">
     <Window.Resources>
         <w:DateTimeConverter x:Key="DateTimeConverter" />
         <w:MenuDisplayNameConverter x:Key="MenuNameConverter" />

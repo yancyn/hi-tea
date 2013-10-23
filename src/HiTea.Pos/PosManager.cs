@@ -19,8 +19,8 @@ namespace HiTea.Pos
 
         public PosManager()
         {
-            this.Cashier = null;
             this.CurrentTime = new UpdatingTime();
+            this.Cashier = new User();
             this.Basket = new ObservableCollection<Order>();
 
             string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
