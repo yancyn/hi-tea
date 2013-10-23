@@ -61,6 +61,7 @@
     </Compile>
     <Compile Include="PosManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdatingTime.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataModel.dbml">
