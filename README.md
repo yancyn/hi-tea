@@ -17,3 +17,4 @@ References
 - [ADO.NET 2.0 Provider for SQLite](http://sourceforge.net/projects/sqlite-dotnet2/)
 - [DbLinq](http://code.google.com/p/dblinq2007/)
 - [Metro Style](http://mahapps.com/MahApps.Metro/) [source](https://github.com/MahApps/MahApps.Metro) require .NET 4.0 and above
+- [Borderless Window](https://wpfborderless.codeplex.com/)
