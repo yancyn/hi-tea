@@ -35,7 +35,7 @@ namespace PosWPF
 	public partial class Window1 : Window
 	{
         private PosManager posManager = new PosManager();
-        private Timer timer = new Timer();
+        private Timer currentTimeTimer = new Timer();
 		public Window1()
 		{
 			InitializeComponent();
@@ -45,14 +45,14 @@ namespace PosWPF
             //posManager.Cashier = cashier;
             this.DataContext = posManager;
 
-            timer.Interval = 1000 * 60;
-            timer.Tick += timer_Tick;
-            timer.Start();
+            currentTimeTimer.Interval = 1000 * 60;
+            currentTimeTimer.Tick += timer_Tick;
+            currentTimeTimer.Start();
 		}
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Login loginScreen = new Login();
+            LoginWindow loginScreen = new LoginWindow();
             loginScreen.Owner = this;
             loginScreen.DataContext = this.DataContext;
             loginScreen.ShowDialog();

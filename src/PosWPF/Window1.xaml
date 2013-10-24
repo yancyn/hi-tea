@@ -24,7 +24,7 @@
                 <TextBlock DockPanel.Dock="Right" Text="{Binding CurrentTime.Now,Converter={StaticResource DateTimeConverter}}" />
                 <WrapPanel>
                     <Image Height="30" Width="30" Source="{StaticResource UserIcon}" />
-                    <TextBlock Text="{Binding Cashier.Username}" Margin="10,0,0,0" />
+                    <TextBlock Text="{Binding CurrentUser.Username}" Margin="10,0,0,0" />
                 </WrapPanel>
             </DockPanel>
             <StackPanel DockPanel.Dock="Bottom">

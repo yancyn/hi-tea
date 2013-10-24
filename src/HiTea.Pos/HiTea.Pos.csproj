@@ -55,6 +55,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminManager.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="DataModel.cs">
       <DependentUpon>DataModel.dbml</DependentUpon>
