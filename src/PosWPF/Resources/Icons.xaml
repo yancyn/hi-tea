@@ -38,4 +38,24 @@
         </DrawingBrush.Drawing>
     </DrawingBrush>
 
+    <DrawingBrush x:Key="PlusIcon" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="#58595b" Geometry="m 70.098,37.979 -32.118,0 0,32.118 -5.861,0 0,-32.118 -32.119,0 0,-5.861 32.119,0 0,-32.118 5.861,0 0,32.118 32.118,0 0,5.861 z" />
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="SearchIcon" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="#58595b" Geometry="m 35.909249,10.17325 c -7.11,-7.104 -18.632,-7.104 -25.736,0 -7.1089988,7.109 -7.1029988,18.622 0,25.735 7.104,7.103 18.622,7.103 25.736,0 7.104,-7.113 7.104,-18.631 0,-25.735 m 18.533004,53.583996 -12.168004,-12.164 c -1.068,-1.07 -0.967,-3.007 0.045,-4.949996 l -5.305,-5.307 c -9.033,6.914 -22.002,6.261 -30.2679998,-2.003 -8.994999,-8.999 -8.994999,-23.587 0,-32.587 8.9999998,-8.995 23.5879998,-8.995 32.5879998,0 8.264,8.268 8.917,21.237 2.001,30.269 l 5.303,5.307 c 1.947004,-1.012 3.882004,-1.115 4.953004,-0.047 l 12.168,12.165996 c 1.535,1.537 0.691,4.874 -1.883,7.441 -2.568,2.571 -5.899,3.415 -7.434,1.875" />
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
 </ResourceDictionary>
