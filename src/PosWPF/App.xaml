@@ -5,6 +5,7 @@
 	<Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <!-- Must follow sequence each has dependency -->
                 <ResourceDictionary Source="Resources/Generic.xaml" />
                 <ResourceDictionary Source="Resources/Icons.xaml" />
                 <ResourceDictionary Source="Resources/DataTemplates.xaml" />

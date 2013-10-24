@@ -27,12 +27,19 @@
                     <TextBlock Text="{Binding Cashier.Username}" Margin="10,0,0,0" />
                 </WrapPanel>
             </DockPanel>
-            <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
-                <Button Content="DO" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" />
-                <Button Content="Label" ToolTip="Print Label" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" />
-                <Button ToolTip="Print Receipt" Background="{StaticResource PrinterIcon}" Style="{StaticResource CircleButtonStyle}" />
+            <StackPanel DockPanel.Dock="Bottom">
+                <DockPanel LastChildFill="True">
+                    <Separator Height="10" DockPanel.Dock="Top" BorderThickness="10" BorderBrush="Gray" />
+                    <ScrollViewer VerticalScrollBarVisibility="Disabled"  HorizontalScrollBarVisibility="Auto">
+                        <StackPanel x:Name="TakeOutPanel" Orientation="Horizontal">
+                            <Button Content="DO" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" />
+                            <Button Content="Label" ToolTip="Print Label" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" />
+                            <Button ToolTip="Print Receipt" Background="{StaticResource PrinterIcon}" Style="{StaticResource CircleButtonStyle}" />
+                        </StackPanel>
+                    </ScrollViewer>
+                </DockPanel>
             </StackPanel>
-            <Viewbox />
+            <Grid x:Name="DineInGrid" />
         </DockPanel>
 
         <Separator Grid.Column="1" Style="{DynamicResource VerticalSeparatorStyle}" />
@@ -41,7 +48,7 @@
             <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button ToolTip="Setting" Background="{StaticResource SettingIcon}" Style="{StaticResource CircleButtonStyle}" />
             </StackPanel>
-            <ScrollViewer>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                 <ItemsControl ItemsSource="{Binding Categories}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
