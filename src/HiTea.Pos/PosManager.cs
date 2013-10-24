@@ -28,22 +28,15 @@ namespace HiTea.Pos
         /// </summary>
         public Order SelectedOrder { get; set; }
 
-        /// <summary>
-        /// Collection of orders dine in.
-        /// </summary>
-        public ObservableCollection<Order> TableBasket { get; set; }
-        /// <summary>
-        /// Collection of orders not dine in.
-        /// </summary>
-        public ObservableCollection<Order> CarryBasket { get; set; }
+        public ObservableCollection<Order> Basket { get; set; }
+        //public ObservableCollection<Order> CarryBasket { get; set; }
 
         
         public PosManager()
         {
             this.CurrentTime = new UpdatingTime();
             this.CurrentUser = new User();
-            this.TableBasket = new ObservableCollection<Order>();
-            this.CarryBasket = new ObservableCollection<Order>();
+            this.Basket = new ObservableCollection<Order>();
 
             string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
             db = new Main(connectionString);

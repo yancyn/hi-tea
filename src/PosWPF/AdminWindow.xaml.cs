@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HiTea.Pos;
 
 namespace PosWPF
 {
@@ -22,6 +23,8 @@ namespace PosWPF
         public AdminWindow()
         {
             InitializeComponent();
+
+            this.DataContext = new AdminManager();
         }
     }
 }

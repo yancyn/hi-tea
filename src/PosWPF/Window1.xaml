@@ -46,7 +46,7 @@
         
         <DockPanel Grid.Column="2" LastChildFill="True">
             <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button ToolTip="Setting" Background="{StaticResource SettingIcon}" Style="{StaticResource CircleButtonStyle}" />
+                <Button ToolTip="Setting" Background="{StaticResource SettingIcon}" Style="{StaticResource CircleButtonStyle}" Click="Button_Click_1" />
             </StackPanel>
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                 <ItemsControl ItemsSource="{Binding Categories}">

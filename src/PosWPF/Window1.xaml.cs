@@ -145,5 +145,12 @@ namespace PosWPF
             db.SubmitChanges();
             System.Diagnostics.Debug.Write("Added a menu successfully.");
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            AdminWindow window = new AdminWindow();
+            window.Owner = this;
+            window.ShowDialog();
+        }
     }
 }
