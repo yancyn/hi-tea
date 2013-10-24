@@ -6,13 +6,12 @@
     xmlns:p="clr-namespace:HiTea.Pos;assembly=HiTea.Pos"
     xmlns:w="clr-namespace:PosWPF"
     mc:Ignorable="d">
-
-    <w:MenuDisplayNameConverter x:Key="MenuNameConverter" />
-    <w:MenuBackgroundConverter x:Key="MenuBackgroundConverter" />
+    
     <DataTemplate DataType="{x:Type p:Menu}">
         <Button Content="{Binding .,Converter={StaticResource MenuNameConverter}}" Style="{StaticResource MenuButtonStyle}"
                 Background="{Binding Path=Header, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type GroupBox}},Converter={StaticResource MenuBackgroundConverter}}" />
     </DataTemplate>
+    
     <DataTemplate DataType="{x:Type p:Category}">
         <GroupBox Header="{Binding Name}">
             <DockPanel LastChildFill="True" DataContext="{Binding}">
@@ -25,6 +24,11 @@
                 </ItemsControl>
             </DockPanel>
         </GroupBox>
+    </DataTemplate>
+
+    <DataTemplate x:Key="AdminTabItemTemplate">
+        <TabItem Header="{Binding Name}" Style="{StaticResource AdminTabItemStyle}" Background="{Binding .,Converter={StaticResource MenuBackgroundConverter}}">
+        </TabItem>
     </DataTemplate>
 
 </ResourceDictionary>

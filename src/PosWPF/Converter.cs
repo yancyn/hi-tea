@@ -63,21 +63,22 @@ namespace PosWPF
     /// </summary>
     public class MenuBackgroundConverter : IValueConverter
     {
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        private SolidColorBrush GetColorCode(string categoryName)
         {
-            if (value.ToString().ToLower() == "set meal")
+            categoryName = categoryName.ToLower();
+            if (categoryName == "set meal")
             {
                 return new SolidColorBrush(Color.FromRgb(0, 212, 99));
             }
-            else if (value.ToString().ToLower() == "food")
+            else if (categoryName == "food")
             {
                 return new SolidColorBrush(Color.FromRgb(255, 190, 0));
             }
-            else if (value.ToString().ToLower() == "beverage" || value.ToString().ToLower() == "drink")
+            else if (categoryName == "beverage" || categoryName == "drink")
             {
                 return new SolidColorBrush(Color.FromRgb(0, 122, 204));
             }
-            else if (value.ToString().ToLower() == "dessert")
+            else if (categoryName == "dessert")
             {
                 return new SolidColorBrush(Color.FromRgb(105, 111, 224));
             }
@@ -86,6 +87,18 @@ namespace PosWPF
                 // TODO: Handle undefine color code
                 return new SolidColorBrush(Color.FromRgb(255, 151, 115));
             }
+        }
+
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            string categoryName = value.ToString().ToLower();
+            if (value is Category)
+            {
+                Category category = (Category)value;
+                categoryName = category.Name.ToLower();
+            }
+
+            return GetColorCode(categoryName);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
