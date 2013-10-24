@@ -8,19 +8,10 @@
     Height="600" Width="600"
     Style="{StaticResource BorderlessModalStyle}"
     WindowStartupLocation="CenterScreen">
-    <TabControl x:Name="AdminTab" Margin="10" TabStripPlacement="Left" Style="{StaticResource AdminTabControlStyle}"
-                ItemsSource="{Binding Options}" ItemTemplate="{StaticResource AdminTabItemTemplate}">
-            
-        <!--<TabItem Background="#00d463" Style="{StaticResource TabItemButtonStyle}" Header="Set Meal">
-        </TabItem>
-        <TabItem Background="#ffd463" Style="{StaticResource TabItemButtonStyle}" Header="Food">
-        </TabItem>
-        <TabItem Background="#007acc" Style="{StaticResource TabItemButtonStyle}" Header="Beverage">
-        </TabItem>
-        <TabItem Background="#696fe0" Style="{StaticResource TabItemButtonStyle}" Header="Dessert">
-        </TabItem>
-        <TabItem Background="Yellow" Style="{StaticResource TabItemButtonStyle}" Header="Charge"></TabItem>
-        <TabItem Background="Pink" Style="{StaticResource TabItemButtonStyle}" Header="User">
-        </TabItem>-->
+    <TabControl x:Name="AdminTab" Margin="10" TabStripPlacement="Left"
+                Style="{StaticResource AdminTabControlStyle}"
+                ItemTemplate="{StaticResource AdminTabItemTemplate}"
+                ItemsSource="{Binding Options}"
+                ContentTemplateSelector="{StaticResource AdminTemplateSelector}">
     </TabControl>
 </Window>

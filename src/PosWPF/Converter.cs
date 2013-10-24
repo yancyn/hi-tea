@@ -82,7 +82,7 @@ namespace PosWPF
             {
                 return new SolidColorBrush(Color.FromRgb(105, 111, 224));
             }
-            else if (categoryName == "charge")
+            else if (categoryName == "charges")
             {
                 return new SolidColorBrush(Color.FromRgb(255, 255, 0));
             }
@@ -104,16 +104,16 @@ namespace PosWPF
             if (obj is AdminViewModel)
             {
                 AdminViewModel vm = (AdminViewModel)obj;
-                obj = vm.Name;
+                obj = vm.Name.ToLower();
             }
-            //System.Diagnostics.Debug.WriteLine(obj);
+            System.Diagnostics.Debug.WriteLine(obj);
 
             if (obj is Category)
             {
                 Category category = (Category)value;
                 categoryName = category.Name.ToLower();
             }
-            if (obj is Charge) categoryName = "charge";
+            if (obj is Charge) categoryName = "charges";
             if (obj is User) categoryName = "user";
 
             return GetColorCode(categoryName);

@@ -18,18 +18,42 @@ namespace HiTea.Pos.NUnit
     public class MenuTest
     {
         private string connectionString = "DbLinqProvider=Sqlite;DbLinqConnectionType=System.Data.SQLite.SQLiteConnection, System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139;Data Source=pos.db3;";
+        private string[] foods = new string[]{"Egg", "Hotdog", "Soup", "Cake", "Rice", "Soya", "Tomato", "Beer"};
+        private string[] codes = new string[] { "A", "B", "C", "D" };
+
+
 
         [Test]
-        public void AddTest()
+        public void AddSetMealTest()
+        {
+            Add("Set Meal");
+        }
+        [Test]
+        public void AddFoodTest()
+        {
+            Add("Food");
+        }
+        [Test]
+        public void AddBeverageTest()
+        {
+            Add("Beverage");
+        }
+        [Test]
+        public void AddDessertTest()
+        {
+            Add("Dessert");
+        }
+
+        private void Add(string cat)
         {
             Main db = new Main(connectionString);
             int expected = db.Menus.Count() + 1;
 
             HiTea.Pos.Menu menu = new HiTea.Pos.Menu();
-            menu.Code = "T"+new Random().Next(20);
-            menu.Name = "Egg"+new Random().Next(20);
+            menu.Code = "T" + new Random().Next(20);
+            menu.Name = foods[new Random().Next(foods.Length)] + new Random().Next(20);
             menu.Price = new Random().Next(100) / 13F;
-            Category category = db.Categories.Where(c => c.Name == "Food").FirstOrDefault();
+            Category category = db.Categories.Where(c => c.Name == cat).FirstOrDefault();
             if (category != null) menu.CategoryID = category.ID;
             db.Menus.InsertOnSubmit(menu);
             db.SubmitChanges();

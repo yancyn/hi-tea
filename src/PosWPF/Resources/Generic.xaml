@@ -8,6 +8,7 @@
 
     <w:MenuDisplayNameConverter x:Key="MenuNameConverter" />
     <w:MenuBackgroundConverter x:Key="MenuBackgroundConverter" />
+    <w:AdminTemplateSelector x:Key="AdminTemplateSelector" />
 
     <Style x:Key="BorderlessWindowStyle" TargetType="{x:Type Window}">
         <!--<Setter Property="Background" Value="White"/>-->
@@ -136,6 +137,9 @@
         
     </Style>
 
+    <Border x:Key="RoundedBorder" BorderBrush="Black" BorderThickness="1" CornerRadius="12">
+    </Border>
+
     <Style x:Key="BorderlessButton" TargetType="{x:Type Button}">
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="BorderBrush" Value="Transparent" />
@@ -162,12 +166,6 @@
                         </Grid.ColumnDefinitions>
                         <TabPanel Grid.Column="0" Panel.ZIndex="1" Margin="0,0,4,-1" IsItemsHost="True" Background="Transparent" />
                         <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1" CornerRadius="12">
-                            <Border.Background>
-                                <LinearGradientBrush>
-                                    <GradientStop Color="LightBlue" Offset="0" />
-                                    <GradientStop Color="White" Offset="1" />
-                                </LinearGradientBrush>
-                            </Border.Background>
                             <ContentPresenter ContentSource="SelectedContent" />
                         </Border>
                     </Grid>
