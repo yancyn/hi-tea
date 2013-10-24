@@ -83,6 +83,7 @@ namespace PosWPF
             }
             else
             {
+                // TODO: Handle undefine color code
                 return new SolidColorBrush(Color.FromRgb(255, 151, 115));
             }
         }

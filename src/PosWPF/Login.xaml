@@ -5,10 +5,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     mc:Ignorable="d"
-    Style="{StaticResource BorderlessWindowStyle}"
+    Style="{StaticResource BorderlessModalStyle}"
     WindowStartupLocation="CenterScreen"
     x:Name="LoginScreen"
-    Height="300" Width="400">
+    Height="300" Width="450">
     <Grid Margin="20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>

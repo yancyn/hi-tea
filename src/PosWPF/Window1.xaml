@@ -48,8 +48,8 @@
             </DockPanel>
             <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
                 <Button Content="DO" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" />
-                <Button Content="Label" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" />
-                <Button Content="Receipt" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" />
+                <Button Content="Label" ToolTip="Print Label" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" />
+                <Button ToolTip="Print Receipt" Background="{StaticResource PrinterIcon}" Style="{StaticResource CircleButtonStyle}" />
             </StackPanel>
             <Viewbox />
         </DockPanel>
@@ -58,7 +58,7 @@
         
         <DockPanel Grid.Column="2" LastChildFill="True">
             <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Background="{StaticResource SettingIcon}" Style="{StaticResource CircleButtonStyle}" />
+                <Button ToolTip="Setting" Background="{StaticResource SettingIcon}" Style="{StaticResource CircleButtonStyle}" />
             </StackPanel>
             <ScrollViewer>
                 <ItemsControl ItemsSource="{Binding Categories}">
