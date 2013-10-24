@@ -82,6 +82,14 @@ namespace PosWPF
             {
                 return new SolidColorBrush(Color.FromRgb(105, 111, 224));
             }
+            else if (categoryName == "charge")
+            {
+                return new SolidColorBrush(Color.FromRgb(255, 255, 0));
+            }
+            else if (categoryName == "user")
+            {
+                return new SolidColorBrush(Color.FromRgb(255, 151, 115));
+            }
             else
             {
                 // TODO: Handle undefine color code
@@ -92,11 +100,21 @@ namespace PosWPF
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             string categoryName = value.ToString().ToLower();
-            if (value is Category)
+            object obj = value;
+            if (obj is AdminViewModel)
+            {
+                AdminViewModel vm = (AdminViewModel)obj;
+                obj = vm.Name;
+            }
+            //System.Diagnostics.Debug.WriteLine(obj);
+
+            if (obj is Category)
             {
                 Category category = (Category)value;
                 categoryName = category.Name.ToLower();
             }
+            if (obj is Charge) categoryName = "charge";
+            if (obj is User) categoryName = "user";
 
             return GetColorCode(categoryName);
         }

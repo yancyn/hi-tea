@@ -18,11 +18,14 @@ namespace HiTea.Pos
         public ObservableCollection<Menu> Menus { get; set; }
         public ObservableCollection<Charge> Charges { get; set; }
 
+        public ObservableCollection<AdminViewModel> Options { get; set; }
+
         public AdminManager()
         {
             string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
             db = new Main(connectionString);
 
+            this.Options = new ObservableCollection<AdminViewModel>();
             this.Users = new ObservableCollection<User>();
             this.Charges = new ObservableCollection<Charge>();
             this.Categories = new ObservableCollection<Category>();
@@ -37,6 +40,12 @@ namespace HiTea.Pos
                 this.Charges.Add(charge);
             foreach (var category in db.Categories)
                 this.Categories.Add(category);
+
+            foreach (var category in this.Categories)
+                this.Options.Add(new AdminViewModel(category.Name,category));
+            this.Options.Add(new AdminViewModel("Charges", this.Charges));
+            this.Options.Add(new AdminViewModel("User", this.Users));
+
         }
     }
 }

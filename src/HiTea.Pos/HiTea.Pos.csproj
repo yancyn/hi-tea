@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="AdminManager.cs" />
     <Compile Include="Category.cs" />
+    <Compile Include="AdminViewModel.cs" />
     <Compile Include="DataModel.cs">
       <DependentUpon>DataModel.dbml</DependentUpon>
     </Compile>

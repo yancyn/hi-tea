@@ -25,9 +25,21 @@
             </DockPanel>
         </GroupBox>
     </DataTemplate>
+    
+    <ControlTemplate x:Key="CategoryTemplate">
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="ChargeTemplate">
+
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="UserTemplate">
+
+    </ControlTemplate>
 
     <DataTemplate x:Key="AdminTabItemTemplate">
-        <TabItem Header="{Binding Name}" Style="{StaticResource AdminTabItemStyle}" Background="{Binding .,Converter={StaticResource MenuBackgroundConverter}}">
+        <TabItem Header="{Binding Name}" Style="{StaticResource AdminTabItemStyle}">
+            <Grid Background="OrangeRed" />
         </TabItem>
     </DataTemplate>
 
