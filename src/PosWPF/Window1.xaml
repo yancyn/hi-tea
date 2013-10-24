@@ -11,25 +11,6 @@
     WindowState="Maximized" Loaded="Window_Loaded">
     <Window.Resources>
         <w:DateTimeConverter x:Key="DateTimeConverter" />
-        <w:MenuDisplayNameConverter x:Key="MenuNameConverter" />
-        <w:MenuBackgroundConverter x:Key="MenuBackgroundConverter" />
-        <DataTemplate DataType="{x:Type p:Menu}">
-            <Button Content="{Binding .,Converter={StaticResource MenuNameConverter}}" Style="{StaticResource MenuButtonStyle}"
-                    Background="{Binding Path=Header, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type GroupBox}},Converter={StaticResource MenuBackgroundConverter}}" />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type p:Category}">
-            <GroupBox Header="{Binding Name}">
-                <DockPanel LastChildFill="True" DataContext="{Binding}">
-                    <ItemsControl x:Name="menus" ItemsSource="{Binding MenuCollection}">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel/>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                    </ItemsControl>
-                </DockPanel>
-            </GroupBox>
-        </DataTemplate>
     </Window.Resources>
     <Grid Margin="10">
         <Grid.ColumnDefinitions>

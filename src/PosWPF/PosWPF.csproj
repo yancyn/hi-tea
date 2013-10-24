@@ -100,11 +100,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="ControlTemplates\Icons.xaml">
+    <Page Include="Resources\DataTemplates.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ControlTemplates\Generic.xaml">
+    <Page Include="Resources\Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Generic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
