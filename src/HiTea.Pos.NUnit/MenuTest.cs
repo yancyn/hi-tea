@@ -17,11 +17,16 @@ namespace HiTea.Pos.NUnit
     [TestFixture]
     public class MenuTest
     {
+        private Main db;
         private string connectionString = "DbLinqProvider=Sqlite;DbLinqConnectionType=System.Data.SQLite.SQLiteConnection, System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139;Data Source=pos.db3;";
         private string[] foods = new string[]{"Egg", "Hotdog", "Soup", "Cake", "Rice", "Soya", "Tomato", "Beer"};
         private string[] codes = new string[] { "A", "B", "C", "D" };
 
-
+        [SetUp]
+        public void Initialize()
+        {
+            db = new Main(connectionString);
+        }
 
         [Test]
         public void AddSetMealTest()
@@ -46,7 +51,6 @@ namespace HiTea.Pos.NUnit
 
         private void Add(string cat)
         {
-            Main db = new Main(connectionString);
             int expected = db.Menus.Count() + 1;
 
             HiTea.Pos.Menu menu = new HiTea.Pos.Menu();
