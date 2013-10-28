@@ -1,6 +1,8 @@
 ﻿-- This is SQLite build script
 PRAGMA foreign_keys = ON;
 
+--drop table OrderSubMenu;
+--drop table SubMenu;
 --drop table OrderItem;
 --drop table 'Order';
 --drop table OrderType;
@@ -12,15 +14,15 @@ PRAGMA foreign_keys = ON;
 --drop table Role;
 
 CREATE TABLE IF NOT EXISTS Role(
-	Id integer NOT NULL primary key autoincrement,
-	Name varchar(15)
+	Id integer NOT NULL PRIMARY KEY autoincrement,
+	Name varchar(15) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS User(
-	Id integer NOT NULL primary key autoincrement,
-	Username varchar(30),
+	Id integer NOT NULL PRIMARY KEY autoincrement,
+	Username varchar(30) NOT NULL,
 	Password text,
-	RoleId integer,
+	RoleId integer NOT NULL,
 	Displayname text,
 	Street1 text,
 	Street2 text,
@@ -29,76 +31,96 @@ CREATE TABLE IF NOT EXISTS User(
 	State text,
 	Country text,
 	Point integer,
-	foreign key(RoleId) references Role(Id)
+	FOREIGN KEY(RoleId) REFERENCES Role(Id)
 );
 
 CREATE TABLE IF NOT EXISTS Category(
-	Id integer NOT NULL primary key autoincrement,
+	Id integer NOT NULL PRIMARY KEY autoincrement,
 	Name varchar(30) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Status(
-	Id integer NOT NULL primary key autoincrement,
+	Id integer NOT NULL PRIMARY KEY autoincrement,
 	Name varchar(30) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Menu(
-	Id	integer NOT NULL primary key autoincrement,
+	Id	integer NOT NULL PRIMARY KEY autoincrement,
 	CategoryId integer,
 	Code text NOT NULL,
 	Name text,
+	Description text,
 	Price real NOT NULL,
-	foreign key(CategoryId) references Category(Id)
+	FOREIGN KEY(CategoryId) REFERENCES Category(Id)
+);
+
+CREATE TABLE IF NOT EXISTS SubMenu(
+	Id	integer NOT NULL PRIMARY KEY autoincrement,
+	ParentId INTEGER NOT NULL,
+	Name text,
+	Price real NOT NULL,
+	FOREIGN KEY(ParentId) REFERENCES Menu(Id)
 );
 
 -- stored charge percentage
 CREATE TABLE IF NOT EXISTS Charge(
-	Id integer NOT NULL primary key autoincrement,
-	Name varchar(30),
+	Id integer NOT NULL PRIMARY KEY autoincrement,
+	Name varchar(30) NOT NULL,
 	Value real NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS OrderType(
-	Id integer NOT NULL primary key autoincrement,
+	Id integer NOT NULL PRIMARY KEY autoincrement,
 	Name varchar(30) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS 'Order' (
-	Id integer NOT NULL primary key autoincrement,
+	Id integer NOT NULL PRIMARY KEY autoincrement,
 	CreatedById integer NOT NULL,
 	Created datetime NOT NULL,
 	DODate datetime,
 	ReceiptDate datetime,
+	QueueNo text,
 	TableNo text,
 	MemberId integer,
 	Total real NOT NULL,
-	foreign key(CreatedById) references User(Id)
+	FOREIGN KEY(CreatedById) REFERENCES User(Id)
 );
 
 CREATE TABLE IF NOT EXISTS OrderItem(
-	Id integer NOT NULL primary key autoincrement,
+	Id integer NOT NULL PRIMARY KEY autoincrement,
 	ParentId integer NOT NULL,
+	OrderTypeId integer NOT NULL,
 	MenuId integer NOT NULL,
 	StatusId integer NOT NULL,
-	foreign key(ParentId) references 'Order'(Id),
-	foreign key(MenuId) references Menu(Id),
-	foreign key(StatusId) references Status(Id)
+	FOREIGN KEY(ParentId) REFERENCES 'Order'(Id),
+	FOREIGN KEY(OrderTypeId) REFERENCES OrderType(Id),
+	FOREIGN KEY(MenuId) REFERENCES Menu(Id),
+	FOREIGN KEY(StatusId) REFERENCES Status(Id)
+);
+
+CREATE TABLE IF NOT EXISTS OrderSubItem(
+	Id integer NOT NULL PRIMARY KEY autoincrement,
+	ParentId integer NOT NULL,
+	SubMenuId integer NOT NULL,
+	FOREIGN KEY(ParentId) REFERENCES OrderItem(Id),
+	FOREIGN KEY(SubMenuId) REFERENCES SubMenu(Id)
 );
 
 
 -- insert default value
-insert into Role(Name) values('Admin');
-insert into Role(Name) values('Cashier');
-insert into Role(Name) values('Staff');
-insert into Role(Name) values('Guest');
+INSERT INTO Role(Name) VALUES('Admin');
+INSERT INTO Role(Name) VALUES('Cashier');
+INSERT INTO Role(Name) VALUES('Staff');
+INSERT INTO Role(Name) VALUES('Guest');
 
-insert into Category(Name) values('Set Meal');
-insert into Category(Name) values('Food');
-insert into Category(Name) values('Beverage');
-insert into Category(Name) values('Dessert');
+INSERT INTO Category(Name) VALUES('Set Meal');
+INSERT INTO Category(Name) VALUES('Food');
+INSERT INTO Category(Name) VALUES('Beverage');
+INSERT INTO Category(Name) VALUES('Dessert');
 
-insert into OrderType(Name) values('Dine in');
-insert into OrderType(Name) values('Take out');
+INSERT INTO OrderType(Name) VALUES('Dine in');
+INSERT INTO OrderType(Name) VALUES('Take out');
 
-insert into Status(Name) values('Confirm');
-insert into Status(Name) values('Complete');
+INSERT INTO Status(Name) VALUES('Confirm');
+INSERT INTO Status(Name) VALUES('Complete');

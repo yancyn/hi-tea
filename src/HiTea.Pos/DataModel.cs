@@ -5,7 +5,7 @@
 // | |_| | |_) | |  | |  __/ || (_| | |
 // |____/|_.__/|_|  |_|\___|\__\__,_|_|
 //
-// Auto-generated from main on 2013-10-22 10:15:38Z.
+// Auto-generated from main on 2013-10-28 22:37:46Z.
 // Please visit http://code.google.com/p/dblinq2007/ for more information.
 //
 using System;
@@ -88,6 +88,14 @@ namespace HiTea.Pos
             }
         }
 
+        public Table<OrderSubItem> OrderSubItems
+        {
+            get
+            {
+                return this.GetTable<OrderSubItem>();
+            }
+        }
+
         public Table<OrderType> OrderTypes
         {
             get
@@ -109,6 +117,14 @@ namespace HiTea.Pos
             get
             {
                 return this.GetTable<Status>();
+            }
+        }
+
+        public Table<SubMenu> SubMenus
+        {
+            get
+            {
+                return this.GetTable<SubMenu>();
             }
         }
 
@@ -173,7 +189,7 @@ public partial class Main
 
         private string _name;
 
-        private EntitySet<Menu> _menus;
+        private EntitySet<Menu> _menu;
 
         #region Extensibility Method Declarations
         partial void OnCreated();
@@ -190,7 +206,7 @@ public partial class Main
 
         public Category()
         {
-            _menus = new EntitySet<Menu>(new Action<Menu>(this.Menu_Attach), new Action<Menu>(this.Menu_Detach));
+            _menu = new EntitySet<Menu>(new Action<Menu>(this.Menu_Attach), new Action<Menu>(this.Menu_Detach));
             this.OnCreated();
         }
 
@@ -244,11 +260,11 @@ public partial class Main
         {
             get
             {
-                return this._menus;
+                return this._menu;
             }
             set
             {
-                this._menus = value;
+                this._menu = value;
             }
         }
         #endregion
@@ -315,7 +331,7 @@ public partial class Main
 
         partial void OnValueChanged();
 
-        partial void OnValueChanging(System.Nullable<float> value);
+        partial void OnValueChanging(float value);
         #endregion
 
 
@@ -345,7 +361,7 @@ public partial class Main
             }
         }
 
-        [Column(Storage = "_name", Name = "Name", DbType = "varchar(30)", AutoSync = AutoSync.Never)]
+        [Column(Storage = "_name", Name = "Name", DbType = "varchar(30)", AutoSync = AutoSync.Never, CanBeNull = false)]
         [DebuggerNonUserCode()]
         public string Name
         {
@@ -367,7 +383,7 @@ public partial class Main
             }
         }
 
-        [Column(Storage = "_value", Name = "Value", DbType = "real", AutoSync = AutoSync.Never, CanBeNull=false)]
+        [Column(Storage = "_value", Name = "Value", DbType = "real", AutoSync = AutoSync.Never, CanBeNull = false)]
         [DebuggerNonUserCode()]
         public float Value
         {
@@ -421,6 +437,8 @@ public partial class Main
 
         private string _code;
 
+        private string _description;
+
         private int _id;
 
         private string _name;
@@ -428,6 +446,8 @@ public partial class Main
         private float _price;
 
         private EntitySet<OrderItem> _orderItem;
+
+        private EntitySet<SubMenu> _subMenu;
 
         private EntityRef<Category> _category = new EntityRef<Category>();
 
@@ -441,6 +461,10 @@ public partial class Main
         partial void OnCodeChanged();
 
         partial void OnCodeChanging(string value);
+
+        partial void OnDescriptionChanged();
+
+        partial void OnDescriptionChanging(string value);
 
         partial void OnIDChanged();
 
@@ -459,6 +483,7 @@ public partial class Main
         public Menu()
         {
             _orderItem = new EntitySet<OrderItem>(new Action<OrderItem>(this.OrderItem_Attach), new Action<OrderItem>(this.OrderItem_Detach));
+            _subMenu = new EntitySet<SubMenu>(new Action<SubMenu>(this.SubMenu_Attach), new Action<SubMenu>(this.SubMenu_Detach));
             this.OnCreated();
         }
 
@@ -501,6 +526,28 @@ public partial class Main
                     this._code = value;
                     this.SendPropertyChanged("Code");
                     this.OnCodeChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_description", Name = "Description", DbType = "text", AutoSync = AutoSync.Never)]
+        [DebuggerNonUserCode()]
+        public string Description
+        {
+            get
+            {
+                return this._description;
+            }
+            set
+            {
+                if (((_description == value)
+                            == false))
+                {
+                    this.OnDescriptionChanging(value);
+                    this.SendPropertyChanging();
+                    this._description = value;
+                    this.SendPropertyChanged("Description");
+                    this.OnDescriptionChanged();
                 }
             }
         }
@@ -572,7 +619,7 @@ public partial class Main
         #region Children
         [Association(Storage = "_orderItem", OtherKey = "MenuID", ThisKey = "ID", Name = "fk_OrderItem_1")]
         [DebuggerNonUserCode()]
-        public EntitySet<OrderItem> OrderItem
+        public EntitySet<OrderItem> OrderItems
         {
             get
             {
@@ -581,6 +628,20 @@ public partial class Main
             set
             {
                 this._orderItem = value;
+            }
+        }
+
+        [Association(Storage = "_subMenu", OtherKey = "ParentID", ThisKey = "ID", Name = "fk_SubMenu_0")]
+        [DebuggerNonUserCode()]
+        public EntitySet<SubMenu> SubMenu
+        {
+            get
+            {
+                return this._subMenu;
+            }
+            set
+            {
+                this._subMenu = value;
             }
         }
         #endregion
@@ -654,6 +715,18 @@ public partial class Main
             this.SendPropertyChanging();
             entity.Menu = null;
         }
+
+        private void SubMenu_Attach(SubMenu entity)
+        {
+            this.SendPropertyChanging();
+            entity.Menu = this;
+        }
+
+        private void SubMenu_Detach(SubMenu entity)
+        {
+            this.SendPropertyChanging();
+            entity.Menu = null;
+        }
         #endregion
     }
 
@@ -672,6 +745,8 @@ public partial class Main
         private int _id;
 
         private System.Nullable<int> _memberID;
+
+        private string _queueNo;
 
         private System.Nullable<System.DateTime> _receiptDate;
 
@@ -705,6 +780,10 @@ public partial class Main
         partial void OnMemberIDChanged();
 
         partial void OnMemberIDChanging(System.Nullable<int> value);
+
+        partial void OnQueueNoChanged();
+
+        partial void OnQueueNoChanging(string value);
 
         partial void OnReceiptDateChanged();
 
@@ -831,6 +910,28 @@ public partial class Main
             }
         }
 
+        [Column(Storage = "_queueNo", Name = "QueueNo", DbType = "text", AutoSync = AutoSync.Never)]
+        [DebuggerNonUserCode()]
+        public string QueueNo
+        {
+            get
+            {
+                return this._queueNo;
+            }
+            set
+            {
+                if (((_queueNo == value)
+                            == false))
+                {
+                    this.OnQueueNoChanging(value);
+                    this.SendPropertyChanging();
+                    this._queueNo = value;
+                    this.SendPropertyChanged("QueueNo");
+                    this.OnQueueNoChanged();
+                }
+            }
+        }
+
         [Column(Storage = "_receiptDate", Name = "ReceiptDate", DbType = "datetime", AutoSync = AutoSync.Never)]
         [DebuggerNonUserCode()]
         public System.Nullable<System.DateTime> ReceiptDate
@@ -896,9 +997,9 @@ public partial class Main
         }
 
         #region Children
-        [Association(Storage = "_orderItem", OtherKey = "ParentID", ThisKey = "ID", Name = "fk_OrderItem_2")]
+        [Association(Storage = "_orderItem", OtherKey = "ParentID", ThisKey = "ID", Name = "fk_OrderItem_3")]
         [DebuggerNonUserCode()]
-        public EntitySet<OrderItem> OrderItem
+        public EntitySet<OrderItem> OrderItems
         {
             get
             {
@@ -929,12 +1030,12 @@ public partial class Main
                     {
                         User previousUser = this._user.Entity;
                         this._user.Entity = null;
-                        previousUser.Order.Remove(this);
+                        previousUser.Orders.Remove(this);
                     }
                     this._user.Entity = value;
                     if ((value != null))
                     {
-                        value.Order.Add(this);
+                        value.Orders.Add(this);
                         _createdByID = value.ID;
                     }
                     else
@@ -993,13 +1094,19 @@ public partial class Main
 
         private int _menuID;
 
+        private int _orderTypeID;
+
         private int _parentID;
 
         private int _statusID;
 
+        private EntitySet<OrderSubItem> _orderSubItem;
+
         private EntityRef<Status> _status = new EntityRef<Status>();
 
         private EntityRef<Menu> _menu = new EntityRef<Menu>();
+
+        private EntityRef<OrderType> _orderType = new EntityRef<OrderType>();
 
         private EntityRef<Order> _order = new EntityRef<Order>();
 
@@ -1014,6 +1121,10 @@ public partial class Main
 
         partial void OnMenuIDChanging(int value);
 
+        partial void OnOrderTypeIDChanged();
+
+        partial void OnOrderTypeIDChanging(int value);
+
         partial void OnParentIDChanged();
 
         partial void OnParentIDChanging(int value);
@@ -1026,6 +1137,7 @@ public partial class Main
 
         public OrderItem()
         {
+            _orderSubItem = new EntitySet<OrderSubItem>(new Action<OrderSubItem>(this.OrderSubItem_Attach), new Action<OrderSubItem>(this.OrderSubItem_Detach));
             this.OnCreated();
         }
 
@@ -1067,6 +1179,27 @@ public partial class Main
                     this._menuID = value;
                     this.SendPropertyChanged("MenuID");
                     this.OnMenuIDChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_orderTypeID", Name = "OrderTypeId", DbType = "integer", AutoSync = AutoSync.Never, CanBeNull = false)]
+        [DebuggerNonUserCode()]
+        public int OrderTypeID
+        {
+            get
+            {
+                return this._orderTypeID;
+            }
+            set
+            {
+                if ((_orderTypeID != value))
+                {
+                    this.OnOrderTypeIDChanging(value);
+                    this.SendPropertyChanging();
+                    this._orderTypeID = value;
+                    this.SendPropertyChanged("OrderTypeID");
+                    this.OnOrderTypeIDChanged();
                 }
             }
         }
@@ -1113,6 +1246,22 @@ public partial class Main
             }
         }
 
+        #region Children
+        [Association(Storage = "_orderSubItem", OtherKey = "ParentID", ThisKey = "ID", Name = "fk_OrderSubItem_1")]
+        [DebuggerNonUserCode()]
+        public EntitySet<OrderSubItem> OrderSubItems
+        {
+            get
+            {
+                return this._orderSubItem;
+            }
+            set
+            {
+                this._orderSubItem = value;
+            }
+        }
+        #endregion
+
         #region Parents
         [Association(Storage = "_status", OtherKey = "ID", ThisKey = "StatusID", Name = "fk_OrderItem_0", IsForeignKey = true)]
         [DebuggerNonUserCode()]
@@ -1131,12 +1280,12 @@ public partial class Main
                     {
                         Status previousStatus = this._status.Entity;
                         this._status.Entity = null;
-                        previousStatus.OrderItem.Remove(this);
+                        previousStatus.OrderItems.Remove(this);
                     }
                     this._status.Entity = value;
                     if ((value != null))
                     {
-                        value.OrderItem.Add(this);
+                        value.OrderItems.Add(this);
                         _statusID = value.ID;
                     }
                     else
@@ -1164,12 +1313,12 @@ public partial class Main
                     {
                         Menu previousMenu = this._menu.Entity;
                         this._menu.Entity = null;
-                        previousMenu.OrderItem.Remove(this);
+                        previousMenu.OrderItems.Remove(this);
                     }
                     this._menu.Entity = value;
                     if ((value != null))
                     {
-                        value.OrderItem.Add(this);
+                        value.OrderItems.Add(this);
                         _menuID = value.ID;
                     }
                     else
@@ -1180,7 +1329,40 @@ public partial class Main
             }
         }
 
-        [Association(Storage = "_order", OtherKey = "ID", ThisKey = "ParentID", Name = "fk_OrderItem_2", IsForeignKey = true)]
+        [Association(Storage = "_orderType", OtherKey = "ID", ThisKey = "OrderTypeID", Name = "fk_OrderItem_2", IsForeignKey = true)]
+        [DebuggerNonUserCode()]
+        public OrderType OrderType
+        {
+            get
+            {
+                return this._orderType.Entity;
+            }
+            set
+            {
+                if (((this._orderType.Entity == value)
+                            == false))
+                {
+                    if ((this._orderType.Entity != null))
+                    {
+                        OrderType previousOrderType = this._orderType.Entity;
+                        this._orderType.Entity = null;
+                        previousOrderType.OrderItems.Remove(this);
+                    }
+                    this._orderType.Entity = value;
+                    if ((value != null))
+                    {
+                        value.OrderItems.Add(this);
+                        _orderTypeID = value.ID;
+                    }
+                    else
+                    {
+                        _orderTypeID = default(int);
+                    }
+                }
+            }
+        }
+
+        [Association(Storage = "_order", OtherKey = "ID", ThisKey = "ParentID", Name = "fk_OrderItem_3", IsForeignKey = true)]
         [DebuggerNonUserCode()]
         public Order Order
         {
@@ -1197,12 +1379,218 @@ public partial class Main
                     {
                         Order previousOrder = this._order.Entity;
                         this._order.Entity = null;
-                        previousOrder.OrderItem.Remove(this);
+                        previousOrder.OrderItems.Remove(this);
                     }
                     this._order.Entity = value;
                     if ((value != null))
                     {
-                        value.OrderItem.Add(this);
+                        value.OrderItems.Add(this);
+                        _parentID = value.ID;
+                    }
+                    else
+                    {
+                        _parentID = default(int);
+                    }
+                }
+            }
+        }
+        #endregion
+
+        public event System.ComponentModel.PropertyChangingEventHandler PropertyChanging;
+
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void SendPropertyChanging()
+        {
+            System.ComponentModel.PropertyChangingEventHandler h = this.PropertyChanging;
+            if ((h != null))
+            {
+                h(this, emptyChangingEventArgs);
+            }
+        }
+
+        protected virtual void SendPropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler h = this.PropertyChanged;
+            if ((h != null))
+            {
+                h(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        #region Attachment handlers
+        private void OrderSubItem_Attach(OrderSubItem entity)
+        {
+            this.SendPropertyChanging();
+            entity.OrderItem = this;
+        }
+
+        private void OrderSubItem_Detach(OrderSubItem entity)
+        {
+            this.SendPropertyChanging();
+            entity.OrderItem = null;
+        }
+        #endregion
+    }
+
+    [Table(Name = "main.OrderSubItem")]
+    public partial class OrderSubItem : System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+    {
+
+        private static System.ComponentModel.PropertyChangingEventArgs emptyChangingEventArgs = new System.ComponentModel.PropertyChangingEventArgs("");
+
+        private int _id;
+
+        private int _parentID;
+
+        private int _subMenuID;
+
+        private EntityRef<SubMenu> _subMenu = new EntityRef<SubMenu>();
+
+        private EntityRef<OrderItem> _orderItem = new EntityRef<OrderItem>();
+
+        #region Extensibility Method Declarations
+        partial void OnCreated();
+
+        partial void OnIDChanged();
+
+        partial void OnIDChanging(int value);
+
+        partial void OnParentIDChanged();
+
+        partial void OnParentIDChanging(int value);
+
+        partial void OnSubMenuIDChanged();
+
+        partial void OnSubMenuIDChanging(int value);
+        #endregion
+
+
+        public OrderSubItem()
+        {
+            this.OnCreated();
+        }
+
+        [Column(Storage = "_id", Name = "Id", DbType = "integer", IsPrimaryKey = true, IsDbGenerated = true, AutoSync = AutoSync.Never, CanBeNull = false)]
+        [DebuggerNonUserCode()]
+        public int ID
+        {
+            get
+            {
+                return this._id;
+            }
+            set
+            {
+                if ((_id != value))
+                {
+                    this.OnIDChanging(value);
+                    this.SendPropertyChanging();
+                    this._id = value;
+                    this.SendPropertyChanged("ID");
+                    this.OnIDChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_parentID", Name = "ParentId", DbType = "integer", AutoSync = AutoSync.Never, CanBeNull = false)]
+        [DebuggerNonUserCode()]
+        public int ParentID
+        {
+            get
+            {
+                return this._parentID;
+            }
+            set
+            {
+                if ((_parentID != value))
+                {
+                    this.OnParentIDChanging(value);
+                    this.SendPropertyChanging();
+                    this._parentID = value;
+                    this.SendPropertyChanged("ParentID");
+                    this.OnParentIDChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_subMenuID", Name = "SubMenuId", DbType = "integer", AutoSync = AutoSync.Never, CanBeNull = false)]
+        [DebuggerNonUserCode()]
+        public int SubMenuID
+        {
+            get
+            {
+                return this._subMenuID;
+            }
+            set
+            {
+                if ((_subMenuID != value))
+                {
+                    this.OnSubMenuIDChanging(value);
+                    this.SendPropertyChanging();
+                    this._subMenuID = value;
+                    this.SendPropertyChanged("SubMenuID");
+                    this.OnSubMenuIDChanged();
+                }
+            }
+        }
+
+        #region Parents
+        [Association(Storage = "_subMenu", OtherKey = "ID", ThisKey = "SubMenuID", Name = "fk_OrderSubItem_0", IsForeignKey = true)]
+        [DebuggerNonUserCode()]
+        public SubMenu SubMenu
+        {
+            get
+            {
+                return this._subMenu.Entity;
+            }
+            set
+            {
+                if (((this._subMenu.Entity == value)
+                            == false))
+                {
+                    if ((this._subMenu.Entity != null))
+                    {
+                        SubMenu previousSubMenu = this._subMenu.Entity;
+                        this._subMenu.Entity = null;
+                        previousSubMenu.OrderSubItems.Remove(this);
+                    }
+                    this._subMenu.Entity = value;
+                    if ((value != null))
+                    {
+                        value.OrderSubItems.Add(this);
+                        _subMenuID = value.ID;
+                    }
+                    else
+                    {
+                        _subMenuID = default(int);
+                    }
+                }
+            }
+        }
+
+        [Association(Storage = "_orderItem", OtherKey = "ID", ThisKey = "ParentID", Name = "fk_OrderSubItem_1", IsForeignKey = true)]
+        [DebuggerNonUserCode()]
+        public OrderItem OrderItem
+        {
+            get
+            {
+                return this._orderItem.Entity;
+            }
+            set
+            {
+                if (((this._orderItem.Entity == value)
+                            == false))
+                {
+                    if ((this._orderItem.Entity != null))
+                    {
+                        OrderItem previousOrderItem = this._orderItem.Entity;
+                        this._orderItem.Entity = null;
+                        previousOrderItem.OrderSubItems.Remove(this);
+                    }
+                    this._orderItem.Entity = value;
+                    if ((value != null))
+                    {
+                        value.OrderSubItems.Add(this);
                         _parentID = value.ID;
                     }
                     else
@@ -1247,6 +1635,8 @@ public partial class Main
 
         private string _name;
 
+        private EntitySet<OrderItem> _orderItem;
+
         #region Extensibility Method Declarations
         partial void OnCreated();
 
@@ -1262,6 +1652,7 @@ public partial class Main
 
         public OrderType()
         {
+            _orderItem = new EntitySet<OrderItem>(new Action<OrderItem>(this.OrderItem_Attach), new Action<OrderItem>(this.OrderItem_Detach));
             this.OnCreated();
         }
 
@@ -1308,6 +1699,22 @@ public partial class Main
             }
         }
 
+        #region Children
+        [Association(Storage = "_orderItem", OtherKey = "OrderTypeID", ThisKey = "ID", Name = "fk_OrderItem_2")]
+        [DebuggerNonUserCode()]
+        public EntitySet<OrderItem> OrderItems
+        {
+            get
+            {
+                return this._orderItem;
+            }
+            set
+            {
+                this._orderItem = value;
+            }
+        }
+        #endregion
+
         public event System.ComponentModel.PropertyChangingEventHandler PropertyChanging;
 
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -1329,6 +1736,20 @@ public partial class Main
                 h(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
+
+        #region Attachment handlers
+        private void OrderItem_Attach(OrderItem entity)
+        {
+            this.SendPropertyChanging();
+            entity.OrderType = this;
+        }
+
+        private void OrderItem_Detach(OrderItem entity)
+        {
+            this.SendPropertyChanging();
+            entity.OrderType = null;
+        }
+        #endregion
     }
 
     [Table(Name = "main.Role")]
@@ -1383,7 +1804,7 @@ public partial class Main
             }
         }
 
-        [Column(Storage = "_name", Name = "Name", DbType = "varchar(15)", AutoSync = AutoSync.Never)]
+        [Column(Storage = "_name", Name = "Name", DbType = "varchar(15)", AutoSync = AutoSync.Never, CanBeNull = false)]
         [DebuggerNonUserCode()]
         public string Name
         {
@@ -1408,7 +1829,7 @@ public partial class Main
         #region Children
         [Association(Storage = "_user", OtherKey = "RoleID", ThisKey = "ID", Name = "fk_User_0")]
         [DebuggerNonUserCode()]
-        public EntitySet<User> User
+        public EntitySet<User> Users
         {
             get
             {
@@ -1535,7 +1956,7 @@ public partial class Main
         #region Children
         [Association(Storage = "_orderItem", OtherKey = "StatusID", ThisKey = "ID", Name = "fk_OrderItem_0")]
         [DebuggerNonUserCode()]
-        public EntitySet<OrderItem> OrderItem
+        public EntitySet<OrderItem> OrderItems
         {
             get
             {
@@ -1585,6 +2006,224 @@ public partial class Main
         #endregion
     }
 
+    [Table(Name = "main.SubMenu")]
+    public partial class SubMenu : System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+    {
+
+        private static System.ComponentModel.PropertyChangingEventArgs emptyChangingEventArgs = new System.ComponentModel.PropertyChangingEventArgs("");
+
+        private int _id;
+
+        private string _name;
+
+        private int _parentID;
+
+        private float _price;
+
+        private EntitySet<OrderSubItem> _orderSubItem;
+
+        private EntityRef<Menu> _menu = new EntityRef<Menu>();
+
+        #region Extensibility Method Declarations
+        partial void OnCreated();
+
+        partial void OnIDChanged();
+
+        partial void OnIDChanging(int value);
+
+        partial void OnNameChanged();
+
+        partial void OnNameChanging(string value);
+
+        partial void OnParentIDChanged();
+
+        partial void OnParentIDChanging(int value);
+
+        partial void OnPriceChanged();
+
+        partial void OnPriceChanging(float value);
+        #endregion
+
+
+        public SubMenu()
+        {
+            _orderSubItem = new EntitySet<OrderSubItem>(new Action<OrderSubItem>(this.OrderSubItem_Attach), new Action<OrderSubItem>(this.OrderSubItem_Detach));
+            this.OnCreated();
+        }
+
+        [Column(Storage = "_id", Name = "Id", DbType = "integer", IsPrimaryKey = true, IsDbGenerated = true, AutoSync = AutoSync.Never, CanBeNull = false)]
+        [DebuggerNonUserCode()]
+        public int ID
+        {
+            get
+            {
+                return this._id;
+            }
+            set
+            {
+                if ((_id != value))
+                {
+                    this.OnIDChanging(value);
+                    this.SendPropertyChanging();
+                    this._id = value;
+                    this.SendPropertyChanged("ID");
+                    this.OnIDChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_name", Name = "Name", DbType = "text", AutoSync = AutoSync.Never)]
+        [DebuggerNonUserCode()]
+        public string Name
+        {
+            get
+            {
+                return this._name;
+            }
+            set
+            {
+                if (((_name == value)
+                            == false))
+                {
+                    this.OnNameChanging(value);
+                    this.SendPropertyChanging();
+                    this._name = value;
+                    this.SendPropertyChanged("Name");
+                    this.OnNameChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_parentID", Name = "ParentId", DbType = "INTEGER", AutoSync = AutoSync.Never, CanBeNull = false)]
+        [DebuggerNonUserCode()]
+        public int ParentID
+        {
+            get
+            {
+                return this._parentID;
+            }
+            set
+            {
+                if ((_parentID != value))
+                {
+                    this.OnParentIDChanging(value);
+                    this.SendPropertyChanging();
+                    this._parentID = value;
+                    this.SendPropertyChanged("ParentID");
+                    this.OnParentIDChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_price", Name = "Price", DbType = "real", AutoSync = AutoSync.Never, CanBeNull = false)]
+        [DebuggerNonUserCode()]
+        public float Price
+        {
+            get
+            {
+                return this._price;
+            }
+            set
+            {
+                if ((_price != value))
+                {
+                    this.OnPriceChanging(value);
+                    this.SendPropertyChanging();
+                    this._price = value;
+                    this.SendPropertyChanged("Price");
+                    this.OnPriceChanged();
+                }
+            }
+        }
+
+        #region Children
+        [Association(Storage = "_orderSubItem", OtherKey = "SubMenuID", ThisKey = "ID", Name = "fk_OrderSubItem_0")]
+        [DebuggerNonUserCode()]
+        public EntitySet<OrderSubItem> OrderSubItems
+        {
+            get
+            {
+                return this._orderSubItem;
+            }
+            set
+            {
+                this._orderSubItem = value;
+            }
+        }
+        #endregion
+
+        #region Parents
+        [Association(Storage = "_menu", OtherKey = "ID", ThisKey = "ParentID", Name = "fk_SubMenu_0", IsForeignKey = true)]
+        [DebuggerNonUserCode()]
+        public Menu Menu
+        {
+            get
+            {
+                return this._menu.Entity;
+            }
+            set
+            {
+                if (((this._menu.Entity == value)
+                            == false))
+                {
+                    if ((this._menu.Entity != null))
+                    {
+                        Menu previousMenu = this._menu.Entity;
+                        this._menu.Entity = null;
+                        previousMenu.SubMenu.Remove(this);
+                    }
+                    this._menu.Entity = value;
+                    if ((value != null))
+                    {
+                        value.SubMenu.Add(this);
+                        _parentID = value.ID;
+                    }
+                    else
+                    {
+                        _parentID = default(int);
+                    }
+                }
+            }
+        }
+        #endregion
+
+        public event System.ComponentModel.PropertyChangingEventHandler PropertyChanging;
+
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void SendPropertyChanging()
+        {
+            System.ComponentModel.PropertyChangingEventHandler h = this.PropertyChanging;
+            if ((h != null))
+            {
+                h(this, emptyChangingEventArgs);
+            }
+        }
+
+        protected virtual void SendPropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler h = this.PropertyChanged;
+            if ((h != null))
+            {
+                h(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        #region Attachment handlers
+        private void OrderSubItem_Attach(OrderSubItem entity)
+        {
+            this.SendPropertyChanging();
+            entity.SubMenu = this;
+        }
+
+        private void OrderSubItem_Detach(OrderSubItem entity)
+        {
+            this.SendPropertyChanging();
+            entity.SubMenu = null;
+        }
+        #endregion
+    }
+
     [Table(Name = "main.User")]
     public partial class User : System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
     {
@@ -1605,7 +2244,7 @@ public partial class Main
 
         private string _postcode;
 
-        private System.Nullable<int> _roleID;
+        private int _roleID;
 
         private string _state;
 
@@ -1652,7 +2291,7 @@ public partial class Main
 
         partial void OnRoleIDChanged();
 
-        partial void OnRoleIDChanging(System.Nullable<int> value);
+        partial void OnRoleIDChanging(int value);
 
         partial void OnStateChanged();
 
@@ -1830,9 +2469,9 @@ public partial class Main
             }
         }
 
-        [Column(Storage = "_roleID", Name = "RoleId", DbType = "integer", AutoSync = AutoSync.Never)]
+        [Column(Storage = "_roleID", Name = "RoleId", DbType = "integer", AutoSync = AutoSync.Never, CanBeNull = false)]
         [DebuggerNonUserCode()]
-        public System.Nullable<int> RoleID
+        public int RoleID
         {
             get
             {
@@ -1917,7 +2556,7 @@ public partial class Main
             }
         }
 
-        [Column(Storage = "_username", Name = "Username", DbType = "varchar(30)", AutoSync = AutoSync.Never)]
+        [Column(Storage = "_username", Name = "Username", DbType = "varchar(30)", AutoSync = AutoSync.Never, CanBeNull = false)]
         [DebuggerNonUserCode()]
         public string Username
         {
@@ -1942,7 +2581,7 @@ public partial class Main
         #region Children
         [Association(Storage = "_order", OtherKey = "CreatedByID", ThisKey = "ID", Name = "fk_Order_0")]
         [DebuggerNonUserCode()]
-        public EntitySet<Order> Order
+        public EntitySet<Order> Orders
         {
             get
             {
@@ -1973,17 +2612,17 @@ public partial class Main
                     {
                         Role previousRole = this._role.Entity;
                         this._role.Entity = null;
-                        previousRole.User.Remove(this);
+                        previousRole.Users.Remove(this);
                     }
                     this._role.Entity = value;
                     if ((value != null))
                     {
-                        value.User.Add(this);
+                        value.Users.Add(this);
                         _roleID = value.ID;
                     }
                     else
                     {
-                        _roleID = null;
+                        _roleID = default(int);
                     }
                 }
             }
