@@ -1,0 +1,1279 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   width="1595"
+   height="899"
+   sodipodi:docname="order.svg">
+  <metadata
+     id="metadata8">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs6">
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4210"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-4"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4210-0"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-8"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4210-2"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1600"
+     inkscape:window-height="796"
+     id="namedview4"
+     showgrid="false"
+     inkscape:zoom="0.94993608"
+     inkscape:cx="158.55057"
+     inkscape:cy="155.10381"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <image
+     y="326.98083"
+     x="0"
+     id="image4109"
+     xlink:href="file:///C:/Users/yeang-shing.then/Desktop/design.png"
+     height="572.01917"
+     width="1014.8727"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003" />
+  <g
+     id="g3990"
+     transform="translate(49.643041,14)"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003">
+    <text
+       sodipodi:linespacing="125%"
+       id="text3859"
+       y="869.49774"
+       x="265.69272"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+       xml:space="preserve"><tspan
+         y="869.49774"
+         x="265.69272"
+         id="tspan3861"
+         sodipodi:role="line">24</tspan></text>
+    <path
+       sodipodi:type="arc"
+       style="color:#000000;fill:none;stroke:#58595b;stroke-width:2.9473393;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="path3936"
+       sodipodi:cx="298.90085"
+       sodipodi:cy="581.62067"
+       sodipodi:rx="30.945885"
+       sodipodi:ry="30.945885"
+       d="m 329.84673,581.62067 c 0,17.09094 -13.85494,30.94588 -30.94588,30.94588 -17.09094,0 -30.94589,-13.85494 -30.94589,-30.94588 0,-17.09094 13.85495,-30.94589 30.94589,-30.94589 17.09094,0 30.94588,13.85495 30.94588,30.94589 z"
+       transform="matrix(0.67857815,0,0,0.67857815,75.363181,467.16446)" />
+  </g>
+  <g
+     id="g3995"
+     transform="translate(-15.202686,14)"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003">
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+       x="265.69272"
+       y="869.49774"
+       id="text3997"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3999"
+         x="265.69272"
+         y="869.49774">23</tspan></text>
+    <path
+       transform="matrix(0.67857815,0,0,0.67857815,75.363181,467.16446)"
+       d="m 329.84673,581.62067 c 0,17.09094 -13.85494,30.94588 -30.94588,30.94588 -17.09094,0 -30.94589,-13.85494 -30.94589,-30.94588 0,-17.09094 13.85495,-30.94589 30.94589,-30.94589 17.09094,0 30.94588,13.85495 30.94588,30.94589 z"
+       sodipodi:ry="30.945885"
+       sodipodi:rx="30.945885"
+       sodipodi:cy="581.62067"
+       sodipodi:cx="298.90085"
+       id="path4001"
+       style="color:#000000;fill:none;stroke:#58595b;stroke-width:2.9473393;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       sodipodi:type="arc" />
+  </g>
+  <path
+     transform="matrix(0.67857815,0,0,0.67857815,1.6083016,481.16446)"
+     d="m 329.84673,581.62067 a 30.945885,30.945885 0 1 1 -61.89177,0 30.945885,30.945885 0 1 1 61.89177,0 z"
+     sodipodi:ry="30.945885"
+     sodipodi:rx="30.945885"
+     sodipodi:cy="581.62067"
+     sodipodi:cx="298.90085"
+     id="path4009"
+     style="color:#000000;fill:#ff0000;stroke:#58595b;stroke-width:2.9473393;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     sodipodi:type="arc"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003" />
+  <text
+     xml:space="preserve"
+     style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+     x="191.93784"
+     y="883.49774"
+     id="text4005"
+     sodipodi:linespacing="125%"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003"><tspan
+       sodipodi:role="line"
+       id="tspan4007"
+       x="191.93784"
+       y="883.49774">22</tspan></text>
+  <g
+     transform="translate(-193.52844,14)"
+     id="g4019"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003">
+    <text
+       sodipodi:linespacing="125%"
+       id="text4021"
+       y="869.49774"
+       x="265.69272"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+       xml:space="preserve"><tspan
+         y="869.49774"
+         x="265.69272"
+         id="tspan4023"
+         sodipodi:role="line">20</tspan></text>
+    <path
+       sodipodi:type="arc"
+       style="color:#000000;fill:none;stroke:#58595b;stroke-width:2.9473393;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="path4025"
+       sodipodi:cx="298.90085"
+       sodipodi:cy="581.62067"
+       sodipodi:rx="30.945885"
+       sodipodi:ry="30.945885"
+       d="m 329.84673,581.62067 c 0,17.09094 -13.85494,30.94588 -30.94588,30.94588 -17.09094,0 -30.94589,-13.85494 -30.94589,-30.94588 0,-17.09094 13.85495,-30.94589 30.94589,-30.94589 17.09094,0 30.94588,13.85495 30.94588,30.94589 z"
+       transform="matrix(0.67857815,0,0,0.67857815,75.363181,467.16446)" />
+  </g>
+  <path
+     sodipodi:type="arc"
+     style="color:#000000;fill:#008000;stroke:#cccccc;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     id="path3842"
+     sodipodi:cx="298.90085"
+     sodipodi:cy="581.62067"
+     sodipodi:rx="30.945885"
+     sodipodi:ry="30.945885"
+     d="m 329.84673,581.62067 a 30.945885,30.945885 0 1 1 -61.89177,0 30.945885,30.945885 0 1 1 61.89177,0 z"
+     transform="translate(93.49176,-143.7401)"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003" />
+  <path
+     transform="matrix(1.355643,0,0,1.355643,-12.35216,-350.56543)"
+     d="m 329.84673,581.62067 a 30.945885,30.945885 0 0 1 -7.52598,20.2276"
+     sodipodi:ry="30.945885"
+     sodipodi:rx="30.945885"
+     sodipodi:cy="581.62067"
+     sodipodi:cx="298.90085"
+     id="path3846"
+     style="color:#000000;fill:none;stroke:#cccccc;stroke-width:2.21297193;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     sodipodi:type="arc"
+     sodipodi:start="0"
+     sodipodi:end="0.71238978"
+     sodipodi:open="true"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003" />
+  <path
+     sodipodi:open="true"
+     sodipodi:end="0.71238978"
+     sodipodi:start="0"
+     sodipodi:type="arc"
+     style="color:#000000;fill:none;stroke:#cccccc;stroke-width:2.21297193;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     id="path3848"
+     sodipodi:cx="298.90085"
+     sodipodi:cy="581.62067"
+     sodipodi:rx="30.945885"
+     sodipodi:ry="30.945885"
+     d="m 329.84673,581.62067 a 30.945885,30.945885 0 0 1 -7.52598,20.2276"
+     transform="matrix(-0.42677567,-1.2867131,1.2867131,-0.42677567,-228.61549,1070.5878)"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003" />
+  <path
+     transform="matrix(-1.2867131,0.42677567,-0.42677567,-1.2867131,1024.7557,1058.8963)"
+     d="m 329.84673,581.62067 a 30.945885,30.945885 0 0 1 -7.52598,20.2276"
+     sodipodi:ry="30.945885"
+     sodipodi:rx="30.945885"
+     sodipodi:cy="581.62067"
+     sodipodi:cx="298.90085"
+     id="path3850"
+     style="color:#000000;fill:none;stroke:#cccccc;stroke-width:2.21297193;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     sodipodi:type="arc"
+     sodipodi:start="0"
+     sodipodi:end="0.71238978"
+     sodipodi:open="true"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003" />
+  <path
+     sodipodi:open="true"
+     sodipodi:end="0.71238978"
+     sodipodi:start="0"
+     sodipodi:type="arc"
+     style="color:#000000;fill:none;stroke:#cccccc;stroke-width:2.21297193;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     id="path3852"
+     sodipodi:cx="298.90085"
+     sodipodi:cy="581.62067"
+     sodipodi:rx="30.945885"
+     sodipodi:ry="30.945885"
+     d="m 329.84673,581.62067 a 30.945885,30.945885 0 0 1 -7.52598,20.2276"
+     transform="matrix(0.20016747,1.3407837,-1.3407837,0.20016747,1111.204,-79.188527)"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003" />
+  <text
+     xml:space="preserve"
+     style="font-size:60px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#b3b3b3;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+     x="379.49026"
+     y="453.15012"
+     id="text3868"
+     sodipodi:linespacing="125%"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003"><tspan
+       sodipodi:role="line"
+       id="tspan3870"
+       x="379.49026"
+       y="453.15012"
+       style="font-size:48px">1</tspan></text>
+  <g
+     id="g4330"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003">
+    <path
+       sodipodi:type="arc"
+       style="color:#000000;fill:none;stroke:#cccccc;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="path3887"
+       sodipodi:cx="298.90085"
+       sodipodi:cy="581.62067"
+       sodipodi:rx="30.945885"
+       sodipodi:ry="30.945885"
+       d="m 329.84673,581.62067 a 30.945885,30.945885 0 1 1 -61.89177,0 30.945885,30.945885 0 1 1 61.89177,0 z"
+       transform="translate(-25.41321,-62.668533)" />
+    <path
+       transform="matrix(1.355643,0,0,1.355643,-131.25713,-269.49387)"
+       d="m 329.84673,581.62067 a 30.945885,30.945885 0 0 1 -7.52598,20.2276"
+       sodipodi:ry="30.945885"
+       sodipodi:rx="30.945885"
+       sodipodi:cy="581.62067"
+       sodipodi:cx="298.90085"
+       id="path3891"
+       style="color:#000000;fill:none;stroke:#cccccc;stroke-width:2.21297193;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       sodipodi:type="arc"
+       sodipodi:start="0"
+       sodipodi:end="0.71238978"
+       sodipodi:open="true" />
+    <path
+       sodipodi:open="true"
+       sodipodi:end="0.71238978"
+       sodipodi:start="0"
+       sodipodi:type="arc"
+       style="color:#000000;fill:none;stroke:#cccccc;stroke-width:2.21297193;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="path3893"
+       sodipodi:cx="298.90085"
+       sodipodi:cy="581.62067"
+       sodipodi:rx="30.945885"
+       sodipodi:ry="30.945885"
+       d="m 329.84673,581.62067 a 30.945885,30.945885 0 0 1 -7.52598,20.2276"
+       transform="matrix(-0.42677567,-1.2867131,1.2867131,-0.42677567,-347.52046,1151.6594)" />
+    <path
+       transform="matrix(-1.2867131,0.42677567,-0.42677567,-1.2867131,905.85076,1139.9679)"
+       d="m 329.84673,581.62067 a 30.945885,30.945885 0 0 1 -7.52598,20.2276"
+       sodipodi:ry="30.945885"
+       sodipodi:rx="30.945885"
+       sodipodi:cy="581.62067"
+       sodipodi:cx="298.90085"
+       id="path3895"
+       style="color:#000000;fill:none;stroke:#cccccc;stroke-width:2.21297193;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       sodipodi:type="arc"
+       sodipodi:start="0"
+       sodipodi:end="0.71238978"
+       sodipodi:open="true" />
+    <path
+       sodipodi:open="true"
+       sodipodi:end="0.71238978"
+       sodipodi:start="0"
+       sodipodi:type="arc"
+       style="color:#000000;fill:none;stroke:#cccccc;stroke-width:2.21297193;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="path3897"
+       sodipodi:cx="298.90085"
+       sodipodi:cy="581.62067"
+       sodipodi:rx="30.945885"
+       sodipodi:ry="30.945885"
+       d="m 329.84673,581.62067 a 30.945885,30.945885 0 0 1 -7.52598,20.2276"
+       transform="matrix(0.20016747,1.3407837,-1.3407837,0.20016747,992.299,1.883037)" />
+    <text
+       xml:space="preserve"
+       style="font-size:60px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#b3b3b3;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+       x="260.5853"
+       y="534.22168"
+       id="text3899"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3901"
+         x="260.5853"
+         y="534.22168"
+         style="font-size:48px">2</tspan></text>
+  </g>
+  <path
+     transform="matrix(1.355643,0,0,1.355643,-8.97418,-188.4223)"
+     d="m 329.84673,581.62067 a 30.945885,30.945885 0 0 1 -7.52598,20.2276"
+     sodipodi:ry="30.945885"
+     sodipodi:rx="30.945885"
+     sodipodi:cy="581.62067"
+     sodipodi:cx="298.90085"
+     id="path3911"
+     style="color:#000000;fill:none;stroke:#cccccc;stroke-width:2.21297193;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     sodipodi:type="arc"
+     sodipodi:start="0"
+     sodipodi:end="0.71238978"
+     sodipodi:open="true"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003" />
+  <path
+     sodipodi:open="true"
+     sodipodi:end="0.71238978"
+     sodipodi:start="0"
+     sodipodi:type="arc"
+     style="color:#000000;fill:none;stroke:#cccccc;stroke-width:2.21297193;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     id="path3913"
+     sodipodi:cx="298.90085"
+     sodipodi:cy="581.62067"
+     sodipodi:rx="30.945885"
+     sodipodi:ry="30.945885"
+     d="m 329.84673,581.62067 a 30.945885,30.945885 0 0 1 -7.52598,20.2276"
+     transform="matrix(-0.42677567,-1.2867131,1.2867131,-0.42677567,-225.23751,1232.731)"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003" />
+  <path
+     transform="matrix(-1.2867131,0.42677567,-0.42677567,-1.2867131,1028.1337,1221.0395)"
+     d="m 329.84673,581.62067 a 30.945885,30.945885 0 0 1 -7.52598,20.2276"
+     sodipodi:ry="30.945885"
+     sodipodi:rx="30.945885"
+     sodipodi:cy="581.62067"
+     sodipodi:cx="298.90085"
+     id="path3915"
+     style="color:#000000;fill:none;stroke:#cccccc;stroke-width:2.21297193;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     sodipodi:type="arc"
+     sodipodi:start="0"
+     sodipodi:end="0.71238978"
+     sodipodi:open="true"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003" />
+  <path
+     sodipodi:open="true"
+     sodipodi:end="0.71238978"
+     sodipodi:start="0"
+     sodipodi:type="arc"
+     style="color:#000000;fill:none;stroke:#cccccc;stroke-width:2.21297193;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     id="path3917"
+     sodipodi:cx="298.90085"
+     sodipodi:cy="581.62067"
+     sodipodi:rx="30.945885"
+     sodipodi:ry="30.945885"
+     d="m 329.84673,581.62067 a 30.945885,30.945885 0 0 1 -7.52598,20.2276"
+     transform="matrix(0.20016747,1.3407837,-1.3407837,0.20016747,1114.582,82.954607)"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003" />
+  <text
+     sodipodi:linespacing="125%"
+     id="text4909"
+     y="434.52731"
+     x="42.362137"
+     style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+     xml:space="preserve"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003"><tspan
+       y="434.52731"
+       x="42.362137"
+       id="tspan4911"
+       sodipodi:role="line"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;font-family:Microsoft JhengHei;-inkscape-font-specification:Microsoft JhengHei">Dine in</tspan></text>
+  <path
+     style="fill:#ff0000;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-end:url(#Arrow1Lend)"
+     d="m 99.06283,438.01746 52.50774,36.91591"
+     id="path4021"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003"
+     sodipodi:nodetypes="cc" />
+  <text
+     sodipodi:linespacing="125%"
+     id="text4909-9"
+     y="879.30634"
+     x="427.58072"
+     style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+     xml:space="preserve"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003"><tspan
+       y="879.30634"
+       x="427.58072"
+       id="tspan4911-4"
+       sodipodi:role="line"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;font-family:Microsoft JhengHei;-inkscape-font-specification:Microsoft JhengHei">Take away</tspan></text>
+  <path
+     style="fill:#ff0000;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-end:url(#Arrow1Lend)"
+     d="m 420.20802,877.72818 -52.50774,0"
+     id="path4021-8"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003"
+     sodipodi:nodetypes="cc" />
+  <g
+     id="g4751"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003">
+    <path
+       transform="translate(96.86974,18.403037)"
+       d="m 329.84673,581.62067 a 30.945885,30.945885 0 1 1 -61.89177,0 30.945885,30.945885 0 1 1 61.89177,0 z"
+       sodipodi:ry="30.945885"
+       sodipodi:rx="30.945885"
+       sodipodi:cy="581.62067"
+       sodipodi:cx="298.90085"
+       id="path3907"
+       style="color:#000000;fill:#008000;stroke:#cccccc;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       sodipodi:type="arc" />
+    <path
+       sodipodi:end="0.75964476"
+       sodipodi:start="0"
+       sodipodi:type="arc"
+       style="color:#000000;fill:#ff0000;stroke:#cccccc;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="path4328"
+       sodipodi:cx="298.90085"
+       sodipodi:cy="581.62067"
+       sodipodi:rx="30.945885"
+       sodipodi:ry="30.945885"
+       d="m 329.84673,581.62067 a 30.945885,30.945885 0 0 1 -8.50762,21.31131 l -22.43826,-21.31131 z"
+       transform="matrix(-0.01554075,-0.99987924,0.99987924,-0.01554075,-181.37148,908.32895)" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3919"
+       y="615.29327"
+       x="382.86823"
+       style="font-size:60px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#b3b3b3;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+       xml:space="preserve"><tspan
+         style="font-size:48px"
+         y="615.29327"
+         x="382.86823"
+         id="tspan3921"
+         sodipodi:role="line">3</tspan></text>
+  </g>
+  <path
+     sodipodi:type="arc"
+     style="color:#000000;fill:#ff0000;stroke:#cccccc;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     id="path4341"
+     sodipodi:cx="298.90085"
+     sodipodi:cy="581.62067"
+     sodipodi:rx="30.945885"
+     sodipodi:ry="30.945885"
+     d="m 329.84673,581.62067 a 30.945885,30.945885 0 1 1 -61.89177,0 30.945885,30.945885 0 1 1 61.89177,0 z"
+     transform="translate(-0.448496,118.02845)"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003" />
+  <path
+     transform="matrix(1.355643,0,0,1.355643,-106.29242,-88.79689)"
+     d="m 329.84673,581.62067 a 30.945885,30.945885 0 0 1 -7.52598,20.2276"
+     sodipodi:ry="30.945885"
+     sodipodi:rx="30.945885"
+     sodipodi:cy="581.62067"
+     sodipodi:cx="298.90085"
+     id="path4343"
+     style="color:#000000;fill:none;stroke:#cccccc;stroke-width:2.21297193;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     sodipodi:type="arc"
+     sodipodi:start="0"
+     sodipodi:end="0.71238978"
+     sodipodi:open="true"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003" />
+  <path
+     sodipodi:open="true"
+     sodipodi:end="0.71238978"
+     sodipodi:start="0"
+     sodipodi:type="arc"
+     style="color:#000000;fill:none;stroke:#cccccc;stroke-width:2.21297193;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     id="path4345"
+     sodipodi:cx="298.90085"
+     sodipodi:cy="581.62067"
+     sodipodi:rx="30.945885"
+     sodipodi:ry="30.945885"
+     d="m 329.84673,581.62067 a 30.945885,30.945885 0 0 1 -7.52598,20.2276"
+     transform="matrix(-0.42677567,-1.2867131,1.2867131,-0.42677567,-322.55575,1332.3564)"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003" />
+  <path
+     transform="matrix(-1.2867131,0.42677567,-0.42677567,-1.2867131,930.81547,1320.6649)"
+     d="m 329.84673,581.62067 a 30.945885,30.945885 0 0 1 -7.52598,20.2276"
+     sodipodi:ry="30.945885"
+     sodipodi:rx="30.945885"
+     sodipodi:cy="581.62067"
+     sodipodi:cx="298.90085"
+     id="path4347"
+     style="color:#000000;fill:none;stroke:#cccccc;stroke-width:2.21297193;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     sodipodi:type="arc"
+     sodipodi:start="0"
+     sodipodi:end="0.71238978"
+     sodipodi:open="true"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003" />
+  <path
+     sodipodi:open="true"
+     sodipodi:end="0.71238978"
+     sodipodi:start="0"
+     sodipodi:type="arc"
+     style="color:#000000;fill:none;stroke:#cccccc;stroke-width:2.21297193;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     id="path4349"
+     sodipodi:cx="298.90085"
+     sodipodi:cy="581.62067"
+     sodipodi:rx="30.945885"
+     sodipodi:ry="30.945885"
+     d="m 329.84673,581.62067 a 30.945885,30.945885 0 0 1 -7.52598,20.2276"
+     transform="matrix(0.20016747,1.3407837,-1.3407837,0.20016747,1017.2637,182.58002)"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003" />
+  <text
+     xml:space="preserve"
+     style="font-size:60px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#b3b3b3;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+     x="285.55002"
+     y="714.91864"
+     id="text4351"
+     sodipodi:linespacing="125%"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003"><tspan
+       sodipodi:role="line"
+       id="tspan4353"
+       x="285.55002"
+       y="714.91864"
+       style="font-size:48px">4</tspan></text>
+  <g
+     id="g4681"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003">
+    <path
+       transform="matrix(0.67857815,0,0,0.67857815,-62.118029,481.16446)"
+       d="m 329.84673,581.62067 a 30.945885,30.945885 0 1 1 -61.89177,0 30.945885,30.945885 0 1 1 61.89177,0 z"
+       sodipodi:ry="30.945885"
+       sodipodi:rx="30.945885"
+       sodipodi:cy="581.62067"
+       sodipodi:cx="298.90085"
+       id="path4017"
+       style="color:#000000;fill:#ff0000;stroke:#58595b;stroke-width:2.9473393;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       sodipodi:type="arc" />
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+       x="127.56879"
+       y="883.76434"
+       id="text4013"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4015"
+         x="127.56879"
+         y="883.76434">21</tspan></text>
+  </g>
+  <rect
+     style="color:#000000;fill:#ffffff;stroke:#cccccc;stroke-width:1.21170819;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     id="rect3801-4"
+     width="238.12456"
+     height="162.14688"
+     x="-325.50229"
+     y="499.91702"
+     ry="16.641718"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003" />
+  <rect
+     ry="0"
+     y="519.57037"
+     x="-325.94568"
+     height="11.679687"
+     width="237.62682"
+     id="rect3975"
+     style="opacity:0.55173083;color:#000000;fill:#b3b3b3;stroke:#cccccc;stroke-width:0.32486656;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003" />
+  <text
+     xml:space="preserve"
+     style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+     x="-314.91153"
+     y="540.65814"
+     id="text3963"
+     sodipodi:linespacing="125%"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003"><tspan
+       sodipodi:role="line"
+       id="tspan3965"
+       x="-314.91153"
+       y="540.65814">1. A01 Set Lunch                     1     RM19.90</tspan></text>
+  <text
+     sodipodi:linespacing="125%"
+     id="text3967"
+     y="529.11725"
+     x="-314.31384"
+     style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+     xml:space="preserve"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003"><tspan
+       y="529.11725"
+       x="-314.31384"
+       id="tspan3969"
+       sodipodi:role="line">Item                        In   Out   Unit         Price</tspan></text>
+  <text
+     sodipodi:linespacing="125%"
+     id="text3977"
+     y="554.46564"
+     x="-314.91153"
+     style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+     xml:space="preserve"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003"><tspan
+       y="554.46564"
+       x="-314.91153"
+       sodipodi:role="line"
+       id="tspan4865">2. B01 Soya                              1      RM 5.90</tspan><tspan
+       y="569.46564"
+       x="-314.91153"
+       sodipodi:role="line"
+       id="tspan4863">                                           Amount RM25.80</tspan><tspan
+       y="584.46564"
+       x="-314.91153"
+       sodipodi:role="line"
+       id="tspan4869">                                           Tax 10%  RM 0.26</tspan><tspan
+       y="599.46564"
+       x="-314.91153"
+       sodipodi:role="line"
+       id="tspan4873">-------------------------------------------------------</tspan><tspan
+       y="614.46564"
+       x="-314.91153"
+       sodipodi:role="line"
+       id="tspan4871">                                                Total RM26.10</tspan></text>
+  <rect
+     style="opacity:0.55173083;color:#000000;fill:none;stroke:#000000;stroke-width:0.89569747;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     id="rect4668"
+     width="8.967761"
+     height="9.3126745"
+     x="-226.72102"
+     y="533.36615"
+     ry="0"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003" />
+  <rect
+     ry="0"
+     y="546.20465"
+     x="-226.72102"
+     height="9.3126745"
+     width="8.967761"
+     id="rect4670"
+     style="opacity:0.55173083;color:#000000;fill:none;stroke:#000000;stroke-width:0.89569747;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003" />
+  <rect
+     ry="0"
+     y="533.36615"
+     x="-203.89706"
+     height="9.3126745"
+     width="8.967761"
+     id="rect4672"
+     style="opacity:0.55173083;color:#000000;fill:none;stroke:#000000;stroke-width:0.89569747;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003" />
+  <rect
+     style="opacity:0.55173083;color:#000000;fill:none;stroke:#000000;stroke-width:0.89569747;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     id="rect4674"
+     width="8.967761"
+     height="9.3126745"
+     x="-203.89706"
+     y="546.20465"
+     ry="0"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003" />
+  <text
+     xml:space="preserve"
+     style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+     x="-224.94644"
+     y="541.9975"
+     id="text4676"
+     sodipodi:linespacing="125%"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003"><tspan
+       sodipodi:role="line"
+       id="tspan4678"
+       x="-224.94644"
+       y="541.9975">X</tspan></text>
+  <text
+     sodipodi:linespacing="125%"
+     id="text4680"
+     y="554.12274"
+     x="-202.59798"
+     style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+     xml:space="preserve"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003"><tspan
+       y="554.12274"
+       x="-202.59798"
+       id="tspan4682"
+       sodipodi:role="line">X</tspan></text>
+  <image
+     y="531.66016"
+     x="-107.75374"
+     id="image4185"
+     xlink:href="file:///E:/pictures/famfamfam_silk_icons_v013/icons/cross.png"
+     height="12.501934"
+     width="12.501934" />
+  <image
+     width="12.501934"
+     height="12.501934"
+     xlink:href="file:///E:/pictures/famfamfam_silk_icons_v013/icons/cross.png"
+     id="image4362"
+     x="-107.75374"
+     y="544.65295" />
+  <image
+     width="35.574764"
+     height="34.784214"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAsCAIAAAB+JKZoAAAAA3NCSVQICAjb4U/gAAAGT0lEQVRY
+hc2YXUxTZxjHH48tOZYDaw4tLaXSphmHtrF+YFNbUXrRQKKNN8Ptah8mqJsu0bhdbrtcHC7qNolx
+uzGG3ZiMRYMXoiEGFOiHAvawtiIBTj/A2HrSQSG1LcddHD0eS2lPUTL/F03O+/E8v74fz/u874YX
+L17AeyDk/wZ4KVFJrdPp9MTExNzc3PwrAQCGYZWVlZWVlQqFgiAIiUSyBo4NQuYllUqNjY09evQo
+FAoxDFO4sVqtrq+vN5vNJQEV4WAYZmRkpL+/P5lMAgCCIFqttqGhAcMwdhgAIJlMJpPJ+fn56enp
+ycnJbDYLACiKNjU1Wa1WkUjQkBfiiEQi169fj8fjAKBUKm02G0EQKIoWMJdOp6emptxu98zMDABI
+pdJ9+/YRBLFGjmw2OzQ0NDw8nEqljEbjli1bDAZDUVt8BQIBkiQDgQCKojabbffu3YUHJg8HwzD9
+/f0DAwMA0NzcbLfbEWSN28rj8fT29jIMs3379gMHDhSwk8uYzWZv377t8XhqampsNpvJZFobASuL
+xbJp0yaXyzU2NiYWi1tbW1cbldxSv9/v8XjKysr279+vVqvZwr+6/x4YuJtIJDKZjECCPXuavj5+
+DABMJlNNTc2VK1e8Xi+GYc3NzcU5IpFIT08PADidTg4CAPr6+s6fO1t4hfKVSqVOffMtTdM4jgOA
+TCZra2vr6uq6c+dOdXW1Xq9f2eX1hNE0ffPmzWw229LSsnXrVn4jsbhMOAQAoCgqFpctLy9zJVqt
+1uFwAMDg4CBN04U4fD5fNBo1GAy7du0S7lK4rFarwWCIRCIkSa7KEY1GSZJEEMRkMm3cuHE9OFjj
+CIKQJBmNRvNzhMNhmqarq6tLjRMlyWAwEATx7Nmz8fHx/BzBYBAA9u7du34QrNhAMDc3l4cjGo2G
+w2EcxzUaTd7OiUTiXXHU1dXhOB4Oh3OmRgQAkUiEYRiNRlNeXs5VpFKpS7//MTU1HYvFAID9Fa7l
+5eUTJ0/hOF6rUh0/fkwq/YAtxzBMo9HQNB2JRGpra9/gYNMIpVLJN3Tx4iXv/fvc54mTp0riYEXT
+NE3THR1nTp/+kSskCGJ0dDQUCvE3pghe/Vc25nAaGR1dg2NWDQ0Nn3x8cGlp8ey5XwBghqL4tWxo
+zwnNIgBgcwsMw/gV/ChUqpRKhdFoWM0C64h1+gbHwsLCSo630dDQcCwWi8XiBThYp29wvHNlMhm/
+P1BSFwQAKioqYMVArZ9YR6xTTiJYZcJy9MP335XkrKvrz5zlmcORswwQAKiqqoIVwSrnlJHLZcIh
+6us/lJSvmqyzGX+OfREASKVSAJidneVX4DjOj139A3e7u/8WyPHbr+cL1LJniFar5RciAKBWqxEE
+oShqcXGRzyHQa1FxwRQAkskkRVEIgvDzLGDHo7a2dvPmzRRFURRlNBrZiqNH2n/q+JkbknKJRC6X
+C3TMH/NyieTI4cPcZygUomlao9Hwgzpw+1an01EU5fV6OQ6VSnWm4/TCwkIsFr/Q2Wk0GhaXlgq7
+P9j2Ef/z888+3dG4o7Kign+xe/z4Mbxakfk5fD5fKBQKBAJcCoKiKIqicrlcLC6bmaGKro8cDo1G
+o1Qo+CWBQMDn81VVVTU2Nub0fZl/qNVqk8nEMAxJkm8T0fniLwsAYI0zDGMymXImBfjxtKmpaWRk
+JBAIPHjwwGKx5LRTKhV2e/6UfzWJxWL+5+TkJHu927lz58rGrzlEIpHT6bx69Wpvb69MJtPpdFwV
+juPk+D9ffXlUIMHDh75wOMLPZp4+fdrd3Q0ADocj70GWe6+8d+9eX1+fRCJpb2/ntm4i8e+Fzk7h
+R4ZSoTh06Itt215ePpLJ5OXLl2maNpvNTqczb5dcjmw2e+vWLa/Xq1KprFbrW94rAYAkSZfLNTs7
+a7FYWlpahN4rRSJRa2vr8+fPfT7ftWvXMpnMyrUtXBMTEzdu3Ein0zqdzuFwFLjyv8fvDpyCwWBP
+T8/S0hIA6PV6m81WV1dXlODJkydut9vn8zEMg6Kow+Ewm81FexV5l0qlUoODgy6Xi31tkkgker2+
+wLuU3+9ns24EQRobG+12u8A0T9A7XSKRcLvdwWBQyEUGwzCCIGw2m0xWQqogiINTPB4PBoOF3y1V
+KpVwg2vkWD+9L+/J/wEwquiuBeXU0QAAAABJRU5ErkJggg==
+"
+     id="image4391"
+     x="-276.43646"
+     y="621.86414" />
+  <path
+     sodipodi:type="arc"
+     style="color:#000000;fill:none;stroke:#58595b;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     id="path4412"
+     sodipodi:cx="-255.35814"
+     sodipodi:cy="634.70605"
+     sodipodi:rx="15.465837"
+     sodipodi:ry="15.465837"
+     d="m -239.8923,634.70605 a 15.465837,15.465837 0 1 1 -30.93168,0 15.465837,15.465837 0 1 1 30.93168,0 z"
+     transform="translate(-44.374661,4.527448)" />
+  <path
+     id="path4434"
+     style="fill:none;stroke:#58595b;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     d="m -297.99159,632.77558 2.62541,-5.82012 m -11.63626,5.78697 14.17444,0 -2.96469,16.95229 -8.24505,0 z"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccccc" />
+  <path
+     sodipodi:nodetypes="cc"
+     inkscape:export-ydpi="89.620003"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:connector-curvature="0"
+     id="path4530"
+     d="m 375.01973,450.98979 -41.94881,63.81525"
+     style="fill:#ff0000;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-end:url(#Arrow1Lend)" />
+  <text
+     inkscape:export-ydpi="89.620003"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     xml:space="preserve"
+     style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+     x="364.31186"
+     y="510.00272"
+     id="text4532"
+     sodipodi:linespacing="125%"><tspan
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;font-family:Microsoft JhengHei;-inkscape-font-specification:Microsoft JhengHei"
+       sodipodi:role="line"
+       x="364.31186"
+       y="510.00272"
+       id="tspan4536">1. 按1结账</tspan></text>
+  <g
+     id="g4540"
+     transform="translate(-246.8217,14)"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003">
+    <text
+       xml:space="preserve"
+       style="font-size:60.66100693px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+       x="262.97958"
+       y="878.0014"
+       id="text4542"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4544"
+         x="262.97958"
+         y="878.0014">+</tspan></text>
+    <path
+       transform="matrix(0.67857815,0,0,0.67857815,75.363181,467.16446)"
+       d="m 329.84673,581.62067 c 0,17.09094 -13.85494,30.94588 -30.94588,30.94588 -17.09094,0 -30.94589,-13.85494 -30.94589,-30.94588 0,-17.09094 13.85495,-30.94589 30.94589,-30.94589 17.09094,0 30.94588,13.85495 30.94588,30.94589 z"
+       sodipodi:ry="30.945885"
+       sodipodi:rx="30.945885"
+       sodipodi:cy="581.62067"
+       sodipodi:cx="298.90085"
+       id="path4546"
+       style="color:#000000;fill:none;stroke:#58595b;stroke-width:2.9473393;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       sodipodi:type="arc" />
+  </g>
+  <path
+     style="fill:#ff0000;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-end:url(#Arrow1Lend)"
+     d="M 41.737388,826.34612 92.274367,773.5924"
+     id="path4021-4"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003"
+     sodipodi:nodetypes="cc" />
+  <text
+     inkscape:export-ydpi="89.620003"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     xml:space="preserve"
+     style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+     x="103.66872"
+     y="779.50903"
+     id="text4532-5"
+     sodipodi:linespacing="125%"><tspan
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;font-family:Microsoft JhengHei;-inkscape-font-specification:Microsoft JhengHei"
+       sodipodi:role="line"
+       x="103.66872"
+       y="779.50903"
+       id="tspan4536-5">2. 按+ for take away</tspan><tspan
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;font-family:Microsoft JhengHei;-inkscape-font-specification:Microsoft JhengHei"
+       sodipodi:role="line"
+       x="103.66872"
+       y="794.50903"
+       id="tspan4593">新的号码就会跟着排在后面</tspan></text>
+  <text
+     inkscape:export-ydpi="89.620003"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     xml:space="preserve"
+     style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+     x="-367.16907"
+     y="678.05524"
+     id="text4532-5-1"
+     sodipodi:linespacing="125%"><tspan
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;font-family:Microsoft JhengHei;-inkscape-font-specification:Microsoft JhengHei"
+       sodipodi:role="line"
+       x="-367.16907"
+       y="678.05524"
+       id="tspan4634">print label(水)</tspan></text>
+  <text
+     sodipodi:linespacing="125%"
+     id="text4638"
+     y="677.78314"
+     x="-280.23123"
+     style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+     xml:space="preserve"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003"><tspan
+       id="tspan4640"
+       y="677.78314"
+       x="-280.23123"
+       sodipodi:role="line"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;font-family:Microsoft JhengHei;-inkscape-font-specification:Microsoft JhengHei">receipt</tspan></text>
+  <text
+     inkscape:export-ydpi="89.620003"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     xml:space="preserve"
+     style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+     x="8.3029222"
+     y="927.698"
+     id="text4532-5-15"
+     sodipodi:linespacing="125%"><tspan
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;font-family:Microsoft JhengHei;-inkscape-font-specification:Microsoft JhengHei"
+       sodipodi:role="line"
+       x="8.3029222"
+       y="927.698"
+       id="tspan4677">按桌子号码或+都会出现order的form在中间</tspan></text>
+  <flowRoot
+     xml:space="preserve"
+     id="flowRoot4666"
+     style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Calibri;font-style:normal;font-weight:normal;font-size:12px;line-height:125%;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:Calibri;font-stretch:normal;font-variant:normal"><flowRegion
+       id="flowRegion4668"><rect
+         id="rect4671"
+         width="624.42859"
+         height="642.14288"
+         x="-72.333336"
+         y="803.04761" /></flowRegion><flowPara
+       id="flowPara4673"></flowPara></flowRoot>  <g
+     id="g4686"
+     transform="translate(-114.34325,87.279762)"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003">
+    <path
+       sodipodi:type="arc"
+       style="color:#000000;fill:#ff0000;stroke:#58595b;stroke-width:2.9473393;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="path4688"
+       sodipodi:cx="298.90085"
+       sodipodi:cy="581.62067"
+       sodipodi:rx="30.945885"
+       sodipodi:ry="30.945885"
+       d="m 329.84673,581.62067 c 0,17.09094 -13.85494,30.94588 -30.94588,30.94588 -17.09094,0 -30.94589,-13.85494 -30.94589,-30.94588 0,-17.09094 13.85495,-30.94589 30.94589,-30.94589 17.09094,0 30.94588,13.85495 30.94588,30.94589 z"
+       transform="matrix(0.67857815,0,0,0.67857815,-62.118029,481.16446)" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4690"
+       y="883.76434"
+       x="127.56879"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+       xml:space="preserve"><tspan
+         y="883.76434"
+         x="127.56879"
+         id="tspan4692"
+         sodipodi:role="line">21</tspan></text>
+  </g>
+  <text
+     sodipodi:linespacing="125%"
+     id="text4694"
+     y="961.52734"
+     x="62.429905"
+     style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+     xml:space="preserve"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003"><tspan
+       id="tspan4696"
+       y="961.52734"
+       x="62.429905"
+       sodipodi:role="line"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;font-family:Microsoft JhengHei;-inkscape-font-specification:Microsoft JhengHei">食物才下order还没送到</tspan></text>
+  <g
+     id="g4746"
+     transform="matrix(0.70953501,0,0,0.70953501,4.2834346,340.66745)"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003">
+    <path
+       transform="translate(-267.77783,447.96068)"
+       d="m 329.84673,581.62067 c 0,17.09094 -13.85494,30.94588 -30.94588,30.94588 -17.09094,0 -30.94589,-13.85494 -30.94589,-30.94588 0,-17.09094 13.85495,-30.94589 30.94589,-30.94589 17.09094,0 30.94588,13.85495 30.94588,30.94589 z"
+       sodipodi:ry="30.945885"
+       sodipodi:rx="30.945885"
+       sodipodi:cy="581.62067"
+       sodipodi:cx="298.90085"
+       id="path3842-6"
+       style="color:#000000;fill:#008000;stroke:#cccccc;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       sodipodi:type="arc" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3868-1"
+       y="1044.8508"
+       x="18.22068"
+       style="font-size:60px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#b3b3b3;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+       xml:space="preserve"><tspan
+         style="font-size:48px"
+         y="1044.8508"
+         x="18.22068"
+         id="tspan3870-4"
+         sodipodi:role="line">1</tspan></text>
+  </g>
+  <g
+     transform="matrix(0.68801909,0,0,0.68801909,-245.93141,602.88355)"
+     id="g4751-2"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003">
+    <path
+       transform="translate(96.86974,18.403037)"
+       d="m 329.84673,581.62067 c 0,17.09094 -13.85494,30.94588 -30.94588,30.94588 -17.09094,0 -30.94589,-13.85494 -30.94589,-30.94588 0,-17.09094 13.85495,-30.94589 30.94589,-30.94589 17.09094,0 30.94588,13.85495 30.94588,30.94589 z"
+       sodipodi:ry="30.945885"
+       sodipodi:rx="30.945885"
+       sodipodi:cy="581.62067"
+       sodipodi:cx="298.90085"
+       id="path3907-1"
+       style="color:#000000;fill:#008000;stroke:#cccccc;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       sodipodi:type="arc" />
+    <path
+       sodipodi:end="0.75964476"
+       sodipodi:start="0"
+       sodipodi:type="arc"
+       style="color:#000000;fill:#ff0000;stroke:#cccccc;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="path4328-6"
+       sodipodi:cx="298.90085"
+       sodipodi:cy="581.62067"
+       sodipodi:rx="30.945885"
+       sodipodi:ry="30.945885"
+       d="m 329.84673,581.62067 c 0,7.93154 -3.04545,15.5603 -8.50762,21.31131 l -22.43826,-21.31131 z"
+       transform="matrix(-0.01554075,-0.99987924,0.99987924,-0.01554075,-181.37148,908.32895)" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3919-8"
+       y="615.29327"
+       x="382.86823"
+       style="font-size:60px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#b3b3b3;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+       xml:space="preserve"><tspan
+         style="font-size:48px"
+         y="615.29327"
+         x="382.86823"
+         id="tspan3921-5"
+         sodipodi:role="line">3</tspan></text>
+  </g>
+  <text
+     inkscape:export-ydpi="89.620003"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     xml:space="preserve"
+     style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+     x="62.429905"
+     y="1015.6544"
+     id="text4787"
+     sodipodi:linespacing="125%"><tspan
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;font-family:Microsoft JhengHei;-inkscape-font-specification:Microsoft JhengHei"
+       sodipodi:role="line"
+       x="62.429905"
+       y="1015.6544"
+       id="tspan4789">一些食物已经没送到</tspan></text>
+  <text
+     sodipodi:linespacing="125%"
+     id="text4791"
+     y="1070.458"
+     x="62.429905"
+     style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+     xml:space="preserve"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003"><tspan
+       id="tspan4793"
+       y="1070.458"
+       x="62.429905"
+       sodipodi:role="line"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;font-family:Microsoft JhengHei;-inkscape-font-specification:Microsoft JhengHei">食物完全送到,等着结账</tspan></text>
+  <g
+     transform="translate(-253.83362,263.14063)"
+     id="g4019-7"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003">
+    <text
+       sodipodi:linespacing="125%"
+       id="text4021-6"
+       y="869.49774"
+       x="265.69272"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+       xml:space="preserve"><tspan
+         y="869.49774"
+         x="265.69272"
+         id="tspan4023-1"
+         sodipodi:role="line">20</tspan></text>
+    <path
+       sodipodi:type="arc"
+       style="color:#000000;fill:none;stroke:#58595b;stroke-width:2.9473393;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="path4025-8"
+       sodipodi:cx="298.90085"
+       sodipodi:cy="581.62067"
+       sodipodi:rx="30.945885"
+       sodipodi:ry="30.945885"
+       d="m 329.84673,581.62067 c 0,17.09094 -13.85494,30.94588 -30.94588,30.94588 -17.09094,0 -30.94589,-13.85494 -30.94589,-30.94588 0,-17.09094 13.85495,-30.94589 30.94589,-30.94589 17.09094,0 30.94588,13.85495 30.94588,30.94589 z"
+       transform="matrix(0.67857815,0,0,0.67857815,75.363181,467.16446)" />
+  </g>
+  <text
+     inkscape:export-ydpi="89.620003"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     xml:space="preserve"
+     style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+     x="62.429905"
+     y="1125.2616"
+     id="text4822"
+     sodipodi:linespacing="125%"><tspan
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;font-family:Microsoft JhengHei;-inkscape-font-specification:Microsoft JhengHei"
+       sodipodi:role="line"
+       x="62.429905"
+       y="1125.2616"
+       id="tspan4824">客人已离开,准备座位</tspan></text>
+  <path
+     transform="translate(-44.374661,4.527448)"
+     d="m -239.8923,634.70605 a 15.465837,15.465837 0 1 1 -30.93168,0 15.465837,15.465837 0 1 1 30.93168,0 z"
+     sodipodi:ry="15.465837"
+     sodipodi:rx="15.465837"
+     sodipodi:cy="634.70605"
+     sodipodi:cx="-255.35814"
+     id="path4851"
+     style="color:#000000;fill:none;stroke:#58595b;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     sodipodi:type="arc" />
+  <path
+     sodipodi:type="arc"
+     style="color:#000000;fill:none;stroke:#58595b;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     id="path4853"
+     sodipodi:cx="-255.35814"
+     sodipodi:cy="634.70605"
+     sodipodi:rx="15.465837"
+     sodipodi:ry="15.465837"
+     d="m -239.8923,634.70605 a 15.465837,15.465837 0 1 1 -30.93168,0 15.465837,15.465837 0 1 1 30.93168,0 z"
+     transform="translate(34.615747,4.527448)" />
+  <text
+     xml:space="preserve"
+     style="font-size:26.42570685999999800px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#808080;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+     x="-227.32182"
+     y="647.13794"
+     id="text4855"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4857"
+       x="-227.32182"
+       y="647.13794">$</tspan></text>
+  <text
+     inkscape:export-ydpi="89.620003"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     xml:space="preserve"
+     style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+     x="-227.57095"
+     y="677.78314"
+     id="text4859"
+     sodipodi:linespacing="125%"><tspan
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;font-family:Microsoft JhengHei;-inkscape-font-specification:Microsoft JhengHei"
+       sodipodi:role="line"
+       x="-227.57095"
+       y="677.78314"
+       id="tspan4861">paid</tspan></text>
+  <path
+     transform="translate(128.00426,4.527448)"
+     d="m -239.8923,634.70605 a 15.465837,15.465837 0 1 1 -30.93168,0 15.465837,15.465837 0 1 1 30.93168,0 z"
+     sodipodi:ry="15.465837"
+     sodipodi:rx="15.465837"
+     sodipodi:cy="634.70605"
+     sodipodi:cx="-255.35814"
+     id="path4875"
+     style="color:#000000;fill:none;stroke:#58595b;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     sodipodi:type="arc" />
+  <image
+     y="628.02539"
+     x="-139.02269"
+     id="image4885"
+     xlink:href="file:///E:/pictures/famfamfam_silk_icons_v013/icons/tick.png"
+     height="22.040052"
+     width="22.040052" />
+  <text
+     sodipodi:linespacing="125%"
+     id="text4899"
+     y="677.78314"
+     x="-143.98723"
+     style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+     xml:space="preserve"
+     inkscape:export-filename="C:\Users\yeang-shing.then\Desktop\text4915.png"
+     inkscape:export-xdpi="89.620003"
+     inkscape:export-ydpi="89.620003"><tspan
+       id="tspan4901"
+       y="677.78314"
+       x="-143.98723"
+       sodipodi:role="line"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;font-family:Microsoft JhengHei;-inkscape-font-specification:Microsoft JhengHei">confirm</tspan></text>
+</svg>

@@ -99,7 +99,8 @@
         <Setter Property="CornerRadius" Value="4"/>
     </Style>
 
-    <Style x:Key="TextBoxStyle" TargetType="{x:Type TextBox}">
+    <Style x:Key="RoundedTextBoxStyle" TargetType="{x:Type TextBox}">
+        <Setter Property="Margin" Value="5" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
@@ -141,6 +142,9 @@
     </Border>
 
     <Style x:Key="BorderlessButton" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="30" />
+        <Setter Property="Width" Value="30" />
+        <Setter Property="Margin" Value="5" />
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="Background" Value="Transparent" />

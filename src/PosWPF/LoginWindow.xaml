@@ -16,8 +16,8 @@
         </Grid.ColumnDefinitions>
         <Image Grid.Column="0" Source="{StaticResource UserIcon}" />
         <StackPanel Grid.Column="1" VerticalAlignment="Center">
-            <TextBox Text="{Binding Path=CurrentUser.Username,Mode=TwoWay,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxStyle}" Width="150" Margin="10" />
-            <TextBox Text="{Binding Path=CurrentUser.Password,Mode=TwoWay,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxStyle}" Width="150" Margin="10"/>
+            <TextBox Text="{Binding Path=CurrentUser.Username,Mode=TwoWay,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource RoundedTextBoxStyle}" Width="150" />
+            <TextBox Text="{Binding Path=CurrentUser.Password,Mode=TwoWay,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource RoundedTextBoxStyle}" Width="150" />
             <Button Width="60" Content="Login" HorizontalAlignment="Right" Margin="10" Click="Button_Click" />
         </StackPanel>
     </Grid>
