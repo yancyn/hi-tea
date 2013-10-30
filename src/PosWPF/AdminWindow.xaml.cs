@@ -20,11 +20,17 @@ namespace PosWPF
     /// </summary>
     public partial class AdminWindow : Window
     {
+        private AdminManager adminManager = new AdminManager();
+
         public AdminWindow()
         {
             InitializeComponent();
+            this.DataContext = adminManager;
+        }
 
-            this.DataContext = new AdminManager();
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            adminManager.Commit();
         }
     }
 }

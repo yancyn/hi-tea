@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Configuration;
 using System.Linq;
 using System.Text;
+using System.Windows.Input;
 
 namespace HiTea.Pos
 {
@@ -17,8 +18,10 @@ namespace HiTea.Pos
         public ObservableCollection<Category> Categories { get; set; }
         public ObservableCollection<Menu> Menus { get; set; }
         public ObservableCollection<Charge> Charges { get; set; }
-
         public ObservableCollection<AdminViewModel> Options { get; set; }
+
+        private CommitCommand commitCommand;
+        public CommitCommand CommitCommand { get { return this.commitCommand; } }
 
         public AdminManager()
         {
@@ -45,7 +48,30 @@ namespace HiTea.Pos
                 this.Options.Add(new AdminViewModel(category.Name,category));
             this.Options.Add(new AdminViewModel("Charges", this.Charges));
             this.Options.Add(new AdminViewModel("User", this.Users));
+        }
+        public void Commit()
+        {
+            db.SubmitChanges();
+        }
+    }
 
+    public class CommitCommand : ICommand
+    {
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public event EventHandler CanExecuteChanged;
+
+        public void Execute(object parameter)
+        {
+            manager.Commit();
+        }
+        private AdminManager manager;
+        public CommitCommand(AdminManager manager)
+        {
+            this.manager = manager;
         }
     }
 }

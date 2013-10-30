@@ -7,7 +7,8 @@
     mc:Ignorable="d"
     Height="600" Width="600"
     Style="{StaticResource BorderlessModalStyle}"
-    WindowStartupLocation="CenterScreen">
+    WindowStartupLocation="CenterScreen"
+    Closed="Window_Closed">
     <TabControl x:Name="AdminTab"
                 Margin="10"
                 TabStripPlacement="Left"
