@@ -13,7 +13,6 @@ namespace PosWPF
     /// </summary>
     public class MenuDisplayNameConverter : IValueConverter
     {
-
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             if(value is HiTea.Pos.Menu)
@@ -119,6 +118,56 @@ namespace PosWPF
             return GetColorCode(categoryName);
         }
 
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    /// <summary>
+    /// Check the box if dine in.
+    /// </summary>
+    public class DineInConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (value is int)
+            {
+                return ((int)value) == 1 ? true : false;
+            }
+            else if (value is Int32)
+            {
+                return (System.Convert.ToInt32(value) == 1) ? true : false;
+            }
+            
+
+            throw new ArgumentException("Not supported type of " + value.GetType());
+        }
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    /// <summary>
+    /// Check the box if take away.
+    /// </summary>
+    public class TakeOutConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (value is int)
+            {
+                return ((int)value) == 1 ? false : true;
+            }
+            else if (value is Int32)
+            {
+                return (System.Convert.ToInt32(value) == 1) ? false : false;
+            }
+
+
+            throw new ArgumentException("Not supported type of " + value.GetType());
+        }
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             throw new NotImplementedException();

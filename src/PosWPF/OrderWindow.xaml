@@ -1,11 +1,41 @@
 ﻿<Window x:Class="PosWPF.OrderWindow"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="600">
-    <Grid>
-            
-    </Grid>
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" 
+    Height="400" Width="500">
+    <DockPanel LastChildFill="True">
+        <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button ToolTip="Print Label" Background="{StaticResource CupIcon}" Style="{StaticResource CircleButtonStyle}" />
+            <Button ToolTip="Print Receipt" Background="{StaticResource PrinterIcon}" Style="{StaticResource CircleButtonStyle}" />
+            <Button ToolTip="Pay" Style="{StaticResource PayButton}" />
+            <Button ToolTip="Confirm" Background="{StaticResource TickIcon}" Style="{StaticResource CircleButtonStyle}" />
+        </StackPanel>
+        <ListView ItemsSource="{Binding Items,UpdateSourceTrigger=PropertyChanged}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="30" Header="No." />
+                    <GridViewColumn Width="210" Header="Item" DisplayMemberBinding="{Binding Menu,Converter={StaticResource MenuNameConverter}}" />
+                    <GridViewColumn Width="30" Header="In">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding OrderTypeID,Converter={StaticResource DineInConverter}}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="30" Header="Out">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding OrderTypeID,Converter={StaticResource TakeOutConverter}}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="30" Header="Qty" />
+                    <GridViewColumn Width="60" Header="Price" DisplayMemberBinding="{Binding Menu.Price}" />
+                    <GridViewColumn Width="30" Header="" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </DockPanel>
 </Window>
