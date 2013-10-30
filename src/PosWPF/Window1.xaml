@@ -30,11 +30,27 @@
             <StackPanel DockPanel.Dock="Bottom">
                 <DockPanel LastChildFill="True">
                     <Separator Height="10" DockPanel.Dock="Top" BorderThickness="10" BorderBrush="Gray" />
-                    <ScrollViewer VerticalScrollBarVisibility="Disabled"  HorizontalScrollBarVisibility="Auto">
-                        <StackPanel x:Name="TakeOutPanel" Orientation="Horizontal">
-                            <Button Content="+" FontSize="24" FontWeight="ExtraBold" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" />
-                        </StackPanel>
-                    </ScrollViewer>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0"  Content="+" FontSize="24" FontWeight="ExtraBold" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" Command="{Binding TakeAwayCommand}" />
+                        <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Disabled"  HorizontalScrollBarVisibility="Auto">
+                            <ItemsControl ItemsSource="{Binding CarryBasket}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Button Content="{Binding QueueNo}" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" />
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Horizontal" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </ScrollViewer>
+                    </Grid>
                 </DockPanel>
             </StackPanel>
             <Grid x:Name="DineInGrid" />
