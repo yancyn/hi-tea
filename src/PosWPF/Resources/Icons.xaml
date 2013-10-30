@@ -96,4 +96,34 @@
         <Setter Property="Background" Value="WhiteSmoke" />
     </Style>
 
+    <DrawingBrush x:Key="DetailIcon" Stretch="None">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="{StaticResource DefaultColor}" Geometry="m 0,16.030606 18,0 L 18,18 0,18 z m 0,-4.0076 18,0 0,1.969394 -18,0 z m 0,-4.0076799 18,0 0,1.969394 -18,0 z m 0,-4.0077411 18,0 0,1.9693937 -18,0 z M 0,0 l 18,0 0,1.9693937 -18,0 z" />
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="GroupIcon" Stretch="None">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="{StaticResource DefaultColor}" Geometry="m 0,13.756996 19.12467,0 0,4.522742 -19.12467,0 z M 0,0 l 19.12467,0 0,4.5227418 -19.12467,0 z m 0,6.8784977 19.12467,0 0,4.5227423 -19.12467,0 z" />
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="AllIcon" Stretch="None">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="{StaticResource DefaultColor}" Geometry="m 10.005611,10.279738 8,0 0,8 -8,0 z m -10.005611,0 8,0 0,8 -8,0 z M 10.005611,0 l 8,0 0,8.0000006 -8,0 z M 0,0 l 8,0 0,8.0000006 -8,0 z" />
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
 </ResourceDictionary>

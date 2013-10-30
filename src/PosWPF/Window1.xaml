@@ -44,6 +44,9 @@
         
         <DockPanel Grid.Column="2" LastChildFill="True">
             <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button ToolTip="All" Background="{StaticResource AllIcon}" Style="{StaticResource BorderlessButton}" />
+                <Button ToolTip="Group" Background="{StaticResource GroupIcon}" Style="{StaticResource BorderlessButton}" />
+                <Button ToolTip="Detail" Background="{StaticResource DetailIcon}" Style="{StaticResource BorderlessButton}" />
                 <Button ToolTip="Setting" Background="{StaticResource SettingIcon}" Style="{StaticResource CircleButtonStyle}" Click="Button_Click_1" />
             </StackPanel>
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
