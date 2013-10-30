@@ -1,0 +1,15 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:w="clr-namespace:PosWPF">
+
+    <w:MenuDisplayNameConverter x:Key="MenuNameConverter" />
+    <w:DineInConverter x:Key="DineInConverter" />
+    <w:TakeOutConverter x:Key="TakeOutConverter" />
+    <w:MenuBackgroundConverter x:Key="MenuBackgroundConverter" />
+    <w:AdminTemplateSelector x:Key="AdminTemplateSelector" />
+    <w:IndexConverter x:Key="IndexConverter" />
+
+    <SolidColorBrush x:Key="DefaultColor" Color="#58595b" />
+
+</ResourceDictionary>
