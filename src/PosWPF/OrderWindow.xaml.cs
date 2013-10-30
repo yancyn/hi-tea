@@ -26,30 +26,35 @@ namespace PosWPF
         {
             InitializeComponent();
 
-            string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
-            Main db = new Main(connectionString);
+            //string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
+            //Main db = new Main(connectionString);
 
-            Order order = new Order();
+            //Order order = new Order();
 
-            OrderItem item = new OrderItem();
-            item.MenuID = 1;
-            item.Menu = db.Menus.Where(m => m.ID == 1).First();
-            item.OrderTypeID = 1;
-            item.OrderType = db.OrderTypes.Where(o => o.ID == 1).First();
-            item.StatusID = 1;
-            item.Status = db.Statuses.Where(s => s.ID == 1).First();
-            order.Items.Add(item);
+            //OrderItem item = new OrderItem();
+            //item.MenuID = 1;
+            //item.Menu = db.Menus.Where(m => m.ID == 1).First();
+            //item.OrderTypeID = 1;
+            //item.OrderType = db.OrderTypes.Where(o => o.ID == 1).First();
+            //item.StatusID = 1;
+            //item.Status = db.Statuses.Where(s => s.ID == 1).First();
+            //order.Items.Add(item);
 
-            item = new OrderItem();
-            item.MenuID = 2;
-            item.Menu = db.Menus.Where(m => m.ID == 2).First();
-            item.OrderTypeID = 2;
-            item.OrderType = db.OrderTypes.Where(o => o.ID == 2).First();
-            item.StatusID = 2;
-            item.Status = db.Statuses.Where(s => s.ID == 2).First();
-            order.Items.Add(item);
+            //item = new OrderItem();
+            //item.MenuID = 2;
+            //item.Menu = db.Menus.Where(m => m.ID == 2).First();
+            //item.OrderTypeID = 2;
+            //item.OrderType = db.OrderTypes.Where(o => o.ID == 2).First();
+            //item.StatusID = 2;
+            //item.Status = db.Statuses.Where(s => s.ID == 2).First();
+            //order.Items.Add(item);
 
-            this.DataContext = order;
+            //this.DataContext = order;
+        }
+
+        private void ConfirmButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

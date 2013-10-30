@@ -9,6 +9,8 @@
     
     <DataTemplate DataType="{x:Type p:Menu}">
         <Button Content="{Binding .,Converter={StaticResource MenuNameConverter}}" Style="{StaticResource MenuButtonStyle}"
+                Command="{Binding DataContext.OrderMenuCommand, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Window}}}"
+                CommandParameter="{Binding .}"
                 Background="{Binding Path=Header, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type GroupBox}},Converter={StaticResource MenuBackgroundConverter}}" />
     </DataTemplate>
     

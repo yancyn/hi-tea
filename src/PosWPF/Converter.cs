@@ -106,7 +106,7 @@ namespace PosWPF
                 AdminViewModel vm = (AdminViewModel)obj;
                 obj = vm.Name.ToLower();
             }
-            System.Diagnostics.Debug.WriteLine(obj);
+            //System.Diagnostics.Debug.WriteLine(obj);
 
             if (obj is Category)
             {

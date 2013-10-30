@@ -70,8 +70,7 @@ namespace PosWPF
 			receipt += "珍珠奶茶\t";
 			System.Diagnostics.Debug.WriteLine(receipt);
 			PrintFactory.SendTextToLPT1(receipt);
-		}
-		
+		}		
 		void button2_Click(object sender, RoutedEventArgs e)
 		{
 			//PrintDocument pd = new PrintDocument();
@@ -129,7 +128,6 @@ namespace PosWPF
             String underLine = "------------------------------------------";
             graphics.DrawString(underLine, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + Offset);
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
@@ -146,11 +144,25 @@ namespace PosWPF
             System.Diagnostics.Debug.Write("Added a menu successfully.");
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+
+
+        private void AdminButton_Click(object sender, RoutedEventArgs e)
         {
             AdminWindow window = new AdminWindow();
             window.Owner = this;
             window.ShowDialog();
+        }
+
+        private void TakeAway_Click(object sender, RoutedEventArgs e)
+        {
+            posManager.TakeAway();
+            posManager.SelectedOrder = posManager.CarryBasket[posManager.CarryBasket.Count - 1];
+
+            OrderWindow window = new OrderWindow();
+            window.Owner = this;
+            window.Topmost = true;
+            window.DataContext = posManager.SelectedOrder;
+            window.Show();
         }
     }
 }

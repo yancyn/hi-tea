@@ -35,7 +35,7 @@
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0"  Content="+" FontSize="24" FontWeight="ExtraBold" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" Command="{Binding TakeAwayCommand}" />
+                        <Button Grid.Column="0"  Content="+" FontSize="24" FontWeight="ExtraBold" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" Click="TakeAway_Click" />
                         <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Disabled"  HorizontalScrollBarVisibility="Auto">
                             <ItemsControl ItemsSource="{Binding CarryBasket}">
                                 <ItemsControl.ItemTemplate>
@@ -63,7 +63,7 @@
                 <Button ToolTip="All" Background="{StaticResource AllIcon}" Style="{StaticResource BorderlessButton}" />
                 <Button ToolTip="Group" Background="{StaticResource GroupIcon}" Style="{StaticResource BorderlessButton}" />
                 <Button ToolTip="Detail" Background="{StaticResource DetailIcon}" Style="{StaticResource BorderlessButton}" />
-                <Button ToolTip="Setting" Background="{StaticResource SettingIcon}" Style="{StaticResource CircleButtonStyle}" Click="Button_Click_1" />
+                <Button ToolTip="Setting" Background="{StaticResource SettingIcon}" Style="{StaticResource CircleButtonStyle}" Click="AdminButton_Click" />
             </StackPanel>
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                 <ItemsControl ItemsSource="{Binding Categories}">

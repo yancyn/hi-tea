@@ -71,6 +71,7 @@ namespace HiTea.Pos
 
             this.loginCommand = new LoginCommand(this);
             this.takeAwayCommand = new TakeAwayCommand(this);
+            this.orderMenuCommand = new OrderMenuCommand(this);
         }
 
         private bool isLoginSuccess = false;
@@ -129,6 +130,8 @@ namespace HiTea.Pos
             AddOrder(string.Empty);
         }
 
+        private OrderMenuCommand orderMenuCommand;
+        public OrderMenuCommand OrderMenuCommand { get { return this.orderMenuCommand; } }
         /// <summary>
         /// Add a menu into selected order.
         /// </summary>
@@ -137,8 +140,14 @@ namespace HiTea.Pos
         {
             OrderItem item = new OrderItem();
             item.Menu = menu;
+            item.MenuID = menu.ID;
             item.ParentID = this.SelectedOrder.ID;
             item.StatusID = 1;
+            if (this.SelectedOrder.Items.Count == 0)
+                item.OrderTypeID = (String.IsNullOrEmpty(this.SelectedOrder.TableNo)) ? 2 : 1;
+            else
+                item.OrderTypeID = this.SelectedOrder.Items.Last().OrderTypeID;
+
             this.SelectedOrder.Items.Add(item);
         }
     }
@@ -179,6 +188,26 @@ namespace HiTea.Pos
         }
         private PosManager manager;
         public TakeAwayCommand(PosManager manager)
+        {
+            this.manager = manager;
+        }
+    }
+
+    public class OrderMenuCommand : ICommand
+    {
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public event EventHandler CanExecuteChanged;
+
+        public void Execute(object parameter)
+        {
+            manager.OrderMenu((Menu)parameter);
+        }
+        private PosManager manager;
+        public OrderMenuCommand(PosManager manager)
         {
             this.manager = manager;
         }
