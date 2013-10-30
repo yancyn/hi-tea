@@ -18,14 +18,14 @@
             <TextBox Style="{StaticResource RoundedTextBoxStyle}" />
         </DockPanel>
 
-        <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical">
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" DataContext="{Binding ElementName=listView}">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Username" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
-                <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" />
+                <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Username}" IsReadOnly="True" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Password" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
-                <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" />
+                <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Password}" />
             </StackPanel>
         </StackPanel>
 
@@ -34,7 +34,7 @@
                 <TextBlock Text="Username" Width="200" FontWeight="Bold" />
                 <TextBlock Text="Password" Width="200" FontWeight="Bold"/>
             </StackPanel>
-            <ListView Margin="10" ItemsSource="{Binding Value}" Background="Transparent">
+            <ListView x:Name="listView" Margin="10" ItemsSource="{Binding Value,UpdateSourceTrigger=PropertyChanged}" Background="Transparent">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
