@@ -126,7 +126,7 @@ namespace PosWPF
     }
 
     /// <summary>
-    /// Check the box if dine in.
+    /// Check the box if dine in. OrderTypeID = 1.
     /// </summary>
     public class DineInConverter : IValueConverter
     {
@@ -146,12 +146,16 @@ namespace PosWPF
         }
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
+            if (targetType == typeof(Int32))
+            {
+                return ((bool)value == true) ? 1 : 2;
+            }
             throw new NotImplementedException();
         }
     }
 
     /// <summary>
-    /// Check the box if take away.
+    /// Check the box if take away. OrderTypeID = 2.
     /// </summary>
     public class TakeOutConverter : IValueConverter
     {
@@ -171,6 +175,10 @@ namespace PosWPF
         }
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
+            if (targetType == typeof(Int32))
+            {
+                return ((bool)value == true) ? 2 : 1;
+            }
             throw new NotImplementedException();
         }
     }
