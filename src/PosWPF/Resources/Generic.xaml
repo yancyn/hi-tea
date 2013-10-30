@@ -11,6 +11,7 @@
     <w:TakeOutConverter x:Key="TakeOutConverter" />
     <w:MenuBackgroundConverter x:Key="MenuBackgroundConverter" />
     <w:AdminTemplateSelector x:Key="AdminTemplateSelector" />
+    <w:IndexConverter x:Key="IndexConverter" />
 
     <Style x:Key="BorderlessWindowStyle" TargetType="{x:Type Window}">
         <Setter Property="WindowStyle" Value="None" />

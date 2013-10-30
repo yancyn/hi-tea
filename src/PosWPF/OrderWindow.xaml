@@ -12,30 +12,56 @@
             <Button ToolTip="Pay" Style="{StaticResource PayButton}" />
             <Button ToolTip="Confirm" Background="{StaticResource TickIcon}" Style="{StaticResource CircleButtonStyle}" />
         </StackPanel>
-        <ListView ItemsSource="{Binding Items,UpdateSourceTrigger=PropertyChanged}">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Width="30" Header="No." />
-                    <GridViewColumn Width="210" Header="Item" DisplayMemberBinding="{Binding Menu,Converter={StaticResource MenuNameConverter}}" />
-                    <GridViewColumn Width="30" Header="In">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <CheckBox IsChecked="{Binding OrderTypeID,Converter={StaticResource DineInConverter}}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="30" Header="Out">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <CheckBox IsChecked="{Binding OrderTypeID,Converter={StaticResource TakeOutConverter}}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="30" Header="Qty" />
-                    <GridViewColumn Width="60" Header="Price" DisplayMemberBinding="{Binding Menu.Price}" />
-                    <GridViewColumn Width="30" Header="" />
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <DockPanel LastChildFill="True">
+            <Grid DockPanel.Dock="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="60" />
+                    <ColumnDefinition Width="30" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="" Width="30" Style="{StaticResource HeaderLabelStyle}" />
+                <TextBlock Grid.Column="1" Text="Item" Style="{StaticResource HeaderLabelStyle}" />
+                <TextBlock Grid.Column="2" Text="In" Width="30" HorizontalAlignment="Center" Style="{StaticResource HeaderLabelStyle}" />
+                <TextBlock Grid.Column="3" Text="Out" Width="30" HorizontalAlignment="Center" Style="{StaticResource HeaderLabelStyle}" />
+                <TextBlock Grid.Column="4" Text="Qty" Width="30" HorizontalAlignment="Right" Style="{StaticResource HeaderLabelStyle}" />
+                <TextBlock Grid.Column="5" Text="Price" Width="60" HorizontalAlignment="Right" Style="{StaticResource HeaderLabelStyle}" />
+                <TextBlock Grid.Column="6" Text="" Width="30" Style="{StaticResource HeaderLabelStyle}" />
+            </Grid>
+            <ItemsControl ItemsSource="{Binding Items,UpdateSourceTrigger=PropertyChanged}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="30" />
+                                <ColumnDefinition Width="30" />
+                                <ColumnDefinition Width="30" />
+                                <ColumnDefinition Width="60" />
+                                <ColumnDefinition Width="30" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0">
+                                <TextBlock.Text>
+                                    <MultiBinding Converter="{StaticResource IndexConverter}">
+                                        <Binding />
+                                        <Binding RelativeSource="{RelativeSource FindAncestor,AncestorType={x:Type ItemsControl}}" Path="ItemsSource"/>
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                            <TextBlock Grid.Column="1" Text="{Binding Menu,Converter={StaticResource MenuNameConverter}}" HorizontalAlignment="Right" />
+                            <CheckBox Grid.Column="2" IsChecked="{Binding OrderTypeID,Converter={StaticResource DineInConverter}}"/>
+                            <CheckBox Grid.Column="3" IsChecked="{Binding OrderTypeID,Converter={StaticResource TakeOutConverter}}"/>
+                            <TextBlock Grid.Column="4" Text="1" HorizontalAlignment="Right" />
+                            <TextBlock Grid.Column="5" Text="{Binding Menu.Price}" HorizontalAlignment="Right" />
+                            <TextBlock Grid.Column="6" Text="" Width="30" />
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </DockPanel>
     </DockPanel>
 </Window>

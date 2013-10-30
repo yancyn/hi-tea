@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Windows.Data;
@@ -172,5 +173,35 @@ namespace PosWPF
         {
             throw new NotImplementedException();
         }
+    }
+
+    /// <summary>
+    /// Get index of collection.
+    /// </summary>
+    /// <see>http://blogs.microsoft.co.il/blogs/davids/archive/2010/04/17/how-to-bind-to-the-index-of-a-collection-in-wpf.aspx</see>
+    public class IndexConverter : IMultiValueConverter
+    {
+        #region IMultiValueConverter Members
+        public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (values.Length > 1)
+            {
+                if (values[0] is OrderItem && values[1] is ObservableCollection<OrderItem>)
+                {
+                    OrderItem item = values[0] as OrderItem;
+                    ObservableCollection<OrderItem> collection = values[1] as ObservableCollection<OrderItem>;
+                    return (collection.IndexOf(item) + 1).ToString() + ".";
+                }
+            }
+
+            //throw new NotImplementedException();
+            return "0.";
+        }
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, System.Globalization.CultureInfo culture)
+        {
+            //throw new NotImplementedException();
+            return null;
+        }
+        #endregion
     }
 }
