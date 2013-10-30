@@ -48,6 +48,8 @@ namespace HiTea.Pos
                 this.Options.Add(new AdminViewModel(category.Name,category));
             this.Options.Add(new AdminViewModel("Charges", this.Charges));
             this.Options.Add(new AdminViewModel("User", this.Users));
+
+            this.commitCommand = new CommitCommand(this);
         }
         public void Commit()
         {

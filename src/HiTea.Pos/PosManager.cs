@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Configuration;
 using System.Linq;
 using System.Text;
+using System.Windows.Input;
 
 namespace HiTea.Pos
 {
@@ -31,6 +32,8 @@ namespace HiTea.Pos
         public ObservableCollection<Order> Basket { get; set; }
         //public ObservableCollection<Order> CarryBasket { get; set; }
 
+        private LoginCommand loginCommand;
+        public LoginCommand LoginCommand {get {return this.loginCommand;}}
         
         public PosManager()
         {
@@ -49,6 +52,38 @@ namespace HiTea.Pos
                     category.MenuCollection.Add(menu);
                 this.Categories.Add(category);
             }
+
+            this.loginCommand = new LoginCommand(this);
+        }
+
+        private bool isLoginSuccess = false;
+        public bool IsLoginSuccess { }
+        public bool Login(string username, string password)
+        {
+            User user = db.Users.Where(u => u.Username == username).FirstOrDefault();
+            isLoginSuccess = (user.Password == password) ? true : false;
+            return isLoginSuccess;
+        }
+    }
+
+    public class LoginCommand : ICommand
+    {
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public event EventHandler CanExecuteChanged;
+
+        public void Execute(object parameter)
+        {
+            var values = (object[])parameter;
+            manager.Login(values[0].ToString(), values[1].ToString());
+        }
+        private PosManager manager;
+        public LoginCommand(PosManager manager)
+        {
+            this.manager = manager;
         }
     }
 }
