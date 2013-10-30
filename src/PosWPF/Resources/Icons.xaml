@@ -58,4 +58,42 @@
         </DrawingBrush.Drawing>
     </DrawingBrush>
 
+    <DrawingBrush x:Key="CupIcon" Stretch="None">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="#58595b" Geometry="M 3.48943,25.7756 0,6.29629 l 9.90166,0 L 12.5769,0 l 1.70683,0 -2.5799,6.29629 5.23258,0 -3.71147,19.47931 z m 8.6579,-1.52484 2.00073,-11.19209 -11.6404,0 2.00073,11.19209 z m 2.34555,-12.99016 0.61025,-3.41267 -13.55054,0 0.61025,3.41267 z" />
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="TickIcon" Stretch="None">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="Green" Geometry="M 24,1.4096237 22.590716,0 8.053972,14.667706 1.4099638,8.0641769 -8.8799997e-8,9.4741408 8.064517,17.488654 9.4741407,16.079371 9.4673375,16.072568 24,1.4096237 z" />
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="CrossIcon" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="Red" Geometry="M 67.13625,5.17875 61.9575,0 33.56875,28.38875 5.17875,0 0,5.17875 28.38875,33.56875 0,61.95875 l 5.17875,5.1775 28.39,-28.38875 28.38875,28.38875 5.17875,-5.1775 -28.3875,-28.39 28.3875,-28.39 z" />
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <Style x:Key="PayButton" BasedOn="{StaticResource CircleButtonStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="#58595b" />
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Content" Value="$" />
+        <Setter Property="Background" Value="WhiteSmoke" />
+    </Style>
+
 </ResourceDictionary>
