@@ -1,7 +1,7 @@
 ﻿-- This is SQLite build script
 PRAGMA foreign_keys = ON;
 
---drop table OrderSubMenu;
+--drop table OrderSubItem;
 --drop table SubMenu;
 --drop table OrderItem;
 --drop table 'Order';
@@ -31,6 +31,7 @@ CREATE TABLE IF NOT EXISTS User(
 	State text,
 	Country text,
 	Point integer,
+	Active bit NOT NULL DEFAULT 1,
 	FOREIGN KEY(RoleId) REFERENCES Role(Id)
 );
 
@@ -51,6 +52,7 @@ CREATE TABLE IF NOT EXISTS Menu(
 	Name text,
 	Description text,
 	Price real NOT NULL,
+	Active bit NOT NULL DEFAULT 1,
 	FOREIGN KEY(CategoryId) REFERENCES Category(Id)
 );
 
@@ -59,6 +61,7 @@ CREATE TABLE IF NOT EXISTS SubMenu(
 	ParentId INTEGER NOT NULL,
 	Name text,
 	Price real NOT NULL,
+	Active bit NOT NULL DEFAULT 1,
 	FOREIGN KEY(ParentId) REFERENCES Menu(Id)
 );
 
@@ -66,7 +69,8 @@ CREATE TABLE IF NOT EXISTS SubMenu(
 CREATE TABLE IF NOT EXISTS Charge(
 	Id integer NOT NULL PRIMARY KEY autoincrement,
 	Name varchar(30) NOT NULL,
-	Value real NOT NULL
+	Value real NOT NULL,
+	Active bit NOT NULL DEFAULT 1
 );
 
 CREATE TABLE IF NOT EXISTS OrderType(

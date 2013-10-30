@@ -5,7 +5,7 @@
 // | |_| | |_) | |  | |  __/ || (_| | |
 // |____/|_.__/|_|  |_|\___|\__\__,_|_|
 //
-// Auto-generated from main on 2013-10-28 22:37:46Z.
+// Auto-generated from main on 2013-10-30 15:21:36Z.
 // Please visit http://code.google.com/p/dblinq2007/ for more information.
 //
 using System;
@@ -312,6 +312,8 @@ public partial class Main
 
         private static System.ComponentModel.PropertyChangingEventArgs emptyChangingEventArgs = new System.ComponentModel.PropertyChangingEventArgs("");
 
+        private bool _active;
+
         private int _id;
 
         private string _name;
@@ -320,6 +322,10 @@ public partial class Main
 
         #region Extensibility Method Declarations
         partial void OnCreated();
+
+        partial void OnActiveChanged();
+
+        partial void OnActiveChanging(bool value);
 
         partial void OnIDChanged();
 
@@ -338,6 +344,27 @@ public partial class Main
         public Charge()
         {
             this.OnCreated();
+        }
+
+        [Column(Storage = "_active", Name = "Active", DbType = "bit", AutoSync = AutoSync.Never, CanBeNull = false)]
+        [DebuggerNonUserCode()]
+        public bool Active
+        {
+            get
+            {
+                return this._active;
+            }
+            set
+            {
+                if ((_active != value))
+                {
+                    this.OnActiveChanging(value);
+                    this.SendPropertyChanging();
+                    this._active = value;
+                    this.SendPropertyChanged("Active");
+                    this.OnActiveChanged();
+                }
+            }
         }
 
         [Column(Storage = "_id", Name = "Id", DbType = "integer", IsPrimaryKey = true, IsDbGenerated = true, AutoSync = AutoSync.Never, CanBeNull = false)]
@@ -433,6 +460,8 @@ public partial class Main
 
         private static System.ComponentModel.PropertyChangingEventArgs emptyChangingEventArgs = new System.ComponentModel.PropertyChangingEventArgs("");
 
+        private bool _active;
+
         private System.Nullable<int> _categoryID;
 
         private string _code;
@@ -453,6 +482,10 @@ public partial class Main
 
         #region Extensibility Method Declarations
         partial void OnCreated();
+
+        partial void OnActiveChanged();
+
+        partial void OnActiveChanging(bool value);
 
         partial void OnCategoryIDChanged();
 
@@ -485,6 +518,27 @@ public partial class Main
             _orderItem = new EntitySet<OrderItem>(new Action<OrderItem>(this.OrderItem_Attach), new Action<OrderItem>(this.OrderItem_Detach));
             _subMenu = new EntitySet<SubMenu>(new Action<SubMenu>(this.SubMenu_Attach), new Action<SubMenu>(this.SubMenu_Detach));
             this.OnCreated();
+        }
+
+        [Column(Storage = "_active", Name = "Active", DbType = "bit", AutoSync = AutoSync.Never, CanBeNull = false)]
+        [DebuggerNonUserCode()]
+        public bool Active
+        {
+            get
+            {
+                return this._active;
+            }
+            set
+            {
+                if ((_active != value))
+                {
+                    this.OnActiveChanging(value);
+                    this.SendPropertyChanging();
+                    this._active = value;
+                    this.SendPropertyChanged("Active");
+                    this.OnActiveChanged();
+                }
+            }
         }
 
         [Column(Storage = "_categoryID", Name = "CategoryId", DbType = "integer", AutoSync = AutoSync.Never)]
@@ -2012,6 +2066,8 @@ public partial class Main
 
         private static System.ComponentModel.PropertyChangingEventArgs emptyChangingEventArgs = new System.ComponentModel.PropertyChangingEventArgs("");
 
+        private bool _active;
+
         private int _id;
 
         private string _name;
@@ -2026,6 +2082,10 @@ public partial class Main
 
         #region Extensibility Method Declarations
         partial void OnCreated();
+
+        partial void OnActiveChanged();
+
+        partial void OnActiveChanging(bool value);
 
         partial void OnIDChanged();
 
@@ -2049,6 +2109,27 @@ public partial class Main
         {
             _orderSubItem = new EntitySet<OrderSubItem>(new Action<OrderSubItem>(this.OrderSubItem_Attach), new Action<OrderSubItem>(this.OrderSubItem_Detach));
             this.OnCreated();
+        }
+
+        [Column(Storage = "_active", Name = "Active", DbType = "bit", AutoSync = AutoSync.Never, CanBeNull = false)]
+        [DebuggerNonUserCode()]
+        public bool Active
+        {
+            get
+            {
+                return this._active;
+            }
+            set
+            {
+                if ((_active != value))
+                {
+                    this.OnActiveChanging(value);
+                    this.SendPropertyChanging();
+                    this._active = value;
+                    this.SendPropertyChanged("Active");
+                    this.OnActiveChanged();
+                }
+            }
         }
 
         [Column(Storage = "_id", Name = "Id", DbType = "integer", IsPrimaryKey = true, IsDbGenerated = true, AutoSync = AutoSync.Never, CanBeNull = false)]
@@ -2230,6 +2311,8 @@ public partial class Main
 
         private static System.ComponentModel.PropertyChangingEventArgs emptyChangingEventArgs = new System.ComponentModel.PropertyChangingEventArgs("");
 
+        private bool _active;
+
         private string _city;
 
         private string _country;
@@ -2260,6 +2343,10 @@ public partial class Main
 
         #region Extensibility Method Declarations
         partial void OnCreated();
+
+        partial void OnActiveChanged();
+
+        partial void OnActiveChanging(bool value);
 
         partial void OnCityChanged();
 
@@ -2315,6 +2402,27 @@ public partial class Main
         {
             _order = new EntitySet<Order>(new Action<Order>(this.Order_Attach), new Action<Order>(this.Order_Detach));
             this.OnCreated();
+        }
+
+        [Column(Storage = "_active", Name = "Active", DbType = "bit", AutoSync = AutoSync.Never, CanBeNull = false)]
+        [DebuggerNonUserCode()]
+        public bool Active
+        {
+            get
+            {
+                return this._active;
+            }
+            set
+            {
+                if ((_active != value))
+                {
+                    this.OnActiveChanging(value);
+                    this.SendPropertyChanging();
+                    this._active = value;
+                    this.SendPropertyChanged("Active");
+                    this.OnActiveChanged();
+                }
+            }
         }
 
         [Column(Storage = "_city", Name = "City", DbType = "text", AutoSync = AutoSync.Never)]

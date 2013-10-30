@@ -8,6 +8,7 @@
   </Table>
   <Table Name="main.Charge" Member="Charge">
     <Type Name="Charge">
+      <Column Name="Active" Storage="_active" Type="System.Boolean" DbType="bit" CanBeNull="false" />
       <Column Name="Id" Member="ID" Storage="_id" Type="System.Int32" DbType="integer" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Name" Storage="_name" Type="System.String" DbType="varchar(30)" CanBeNull="false" />
       <Column Name="Value" Storage="_value" Type="System.Single" DbType="real" CanBeNull="false" />
@@ -15,6 +16,7 @@
   </Table>
   <Table Name="main.Menu" Member="Menu">
     <Type Name="Menu">
+      <Column Name="Active" Storage="_active" Type="System.Boolean" DbType="bit" CanBeNull="false" />
       <Column Name="CategoryId" Member="CategoryID" Storage="_categoryID" Type="System.Int32" DbType="integer" CanBeNull="true" />
       <Column Name="Code" Storage="_code" Type="System.String" DbType="text" CanBeNull="false" />
       <Column Name="Description" Storage="_description" Type="System.String" DbType="text" CanBeNull="true" />
@@ -87,6 +89,7 @@
   </Table>
   <Table Name="main.SubMenu" Member="SubMenu">
     <Type Name="SubMenu">
+      <Column Name="Active" Storage="_active" Type="System.Boolean" DbType="bit" CanBeNull="false" />
       <Column Name="Id" Member="ID" Storage="_id" Type="System.Int32" DbType="integer" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Name" Storage="_name" Type="System.String" DbType="text" CanBeNull="true" />
       <Column Name="ParentId" Member="ParentID" Storage="_parentID" Type="System.Int32" DbType="INTEGER" CanBeNull="false" />
@@ -97,6 +100,7 @@
   </Table>
   <Table Name="main.User" Member="User">
     <Type Name="User">
+      <Column Name="Active" Storage="_active" Type="System.Boolean" DbType="bit" CanBeNull="false" />
       <Column Name="City" Storage="_city" Type="System.String" DbType="text" CanBeNull="true" />
       <Column Name="Country" Storage="_country" Type="System.String" DbType="text" CanBeNull="true" />
       <Column Name="Displayname" Storage="_displayname" Type="System.String" DbType="text" CanBeNull="true" />
