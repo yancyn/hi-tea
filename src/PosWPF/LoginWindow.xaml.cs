@@ -23,19 +23,12 @@ namespace PosWPF
         public LoginWindow()
         {
             InitializeComponent();
-
-            // test
-            //PosManager posManager = new PosManager();
-            //HiTea.Pos.User cashier = new HiTea.Pos.User();
-            //cashier.Username = "yancyn";
-            //posManager.Cashier = cashier;
-
-            //this.DataContext = posManager;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            if ((this.DataContext as PosManager).Login(Username.Text, Password.Text))
+                this.Close();
         }
     }
 }
