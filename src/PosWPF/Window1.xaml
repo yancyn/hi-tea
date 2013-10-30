@@ -32,9 +32,7 @@
                     <Separator Height="10" DockPanel.Dock="Top" BorderThickness="10" BorderBrush="Gray" />
                     <ScrollViewer VerticalScrollBarVisibility="Disabled"  HorizontalScrollBarVisibility="Auto">
                         <StackPanel x:Name="TakeOutPanel" Orientation="Horizontal">
-                            <Button Content="DO" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" />
-                            <Button Content="Label" ToolTip="Print Label" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" />
-                            <Button ToolTip="Print Receipt" Background="{StaticResource PrinterIcon}" Style="{StaticResource CircleButtonStyle}" />
+                            <Button Content="+" FontSize="24" FontWeight="ExtraBold" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" />
                         </StackPanel>
                     </ScrollViewer>
                 </DockPanel>
@@ -45,7 +43,7 @@
         <Separator Grid.Column="1" Style="{DynamicResource VerticalSeparatorStyle}" />
         
         <DockPanel Grid.Column="2" LastChildFill="True">
-            <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button ToolTip="Setting" Background="{StaticResource SettingIcon}" Style="{StaticResource CircleButtonStyle}" Click="Button_Click_1" />
             </StackPanel>
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
