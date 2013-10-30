@@ -8,9 +8,10 @@
     Height="600" Width="600"
     Style="{StaticResource BorderlessModalStyle}"
     WindowStartupLocation="CenterScreen">
-    <TabControl x:Name="AdminTab" Margin="10" TabStripPlacement="Left"
-                Style="{StaticResource AdminTabControlStyle}"
-                ItemTemplate="{StaticResource AdminTabItemTemplate}"
+    <TabControl x:Name="AdminTab"
+                Margin="10"
+                TabStripPlacement="Left"
+                ItemTemplate="{StaticResource AdminTemplate}"
                 ItemsSource="{Binding Options}"
                 ContentTemplateSelector="{StaticResource AdminTemplateSelector}">
     </TabControl>

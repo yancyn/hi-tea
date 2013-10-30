@@ -25,6 +25,10 @@
             </DockPanel>
         </GroupBox>
     </DataTemplate>
+    
+    <DataTemplate x:Key="AdminTemplate" DataType="{x:Type TabControl}">
+        <TextBlock Width="100" TextAlignment="Center" Height="20" Text="{Binding Name}" Background="{Binding Name,Converter={StaticResource MenuBackgroundConverter}}" />
+    </DataTemplate>
 
     <DataTemplate x:Key="CategoryTemplate">
     </DataTemplate>

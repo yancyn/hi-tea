@@ -11,7 +11,6 @@
     <w:AdminTemplateSelector x:Key="AdminTemplateSelector" />
 
     <Style x:Key="BorderlessWindowStyle" TargetType="{x:Type Window}">
-        <!--<Setter Property="Background" Value="White"/>-->
         <Setter Property="WindowStyle" Value="None" />
         <Setter Property="ResizeMode" Value="NoResize" />
         <Setter Property="Template">
