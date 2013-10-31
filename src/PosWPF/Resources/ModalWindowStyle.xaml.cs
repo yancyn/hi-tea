@@ -26,7 +26,8 @@ namespace PosWPF
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine("Close modal window");
+            Window window = (sender as FrameworkElement).TemplatedParent as Window;
+            window.Close();
         }
     }
 }
