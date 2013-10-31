@@ -51,6 +51,11 @@ namespace HiTea.Pos
 
         public PosManager()
         {
+            this.loginCommand = new LoginCommand(this);
+            this.takeAwayCommand = new TakeAwayCommand(this);
+            this.orderMenuCommand = new OrderMenuCommand(this);
+            this.confirmOrderCommand = new ConfirmOrderCommand(this);
+
             this.CurrentUser = new User();
             this.CurrentTime = new UpdatingTime();
             this.Basket = new ObservableCollection<Order>();
@@ -71,10 +76,19 @@ namespace HiTea.Pos
                 this.Categories.Add(category);
             }
 
-            this.loginCommand = new LoginCommand(this);
-            this.takeAwayCommand = new TakeAwayCommand(this);
-            this.orderMenuCommand = new OrderMenuCommand(this);
-            this.confirmOrderCommand = new ConfirmOrderCommand(this);
+            // retrieve incomplete order
+            int[] incompleted = db.OrderItems.Where(i => i.StatusID != 2).Select(i => i.ParentID).ToArray();
+            var orders = db.Orders.Where(o => incompleted.Contains(o.ID));
+            foreach (Order order in orders)
+            {
+                foreach (OrderItem item in order.OrderItems)
+                    order.Items.Add(item);
+
+                if (String.IsNullOrEmpty(order.TableNo))
+                    this.CarryBasket.Add(order);
+                else
+                    this.TableBasket.Add(order);
+            }
         }
 
         void TableBasket_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
