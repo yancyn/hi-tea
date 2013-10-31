@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS User(
 	Street2 text,
 	Postcode text,
 	City text,
-	State text,f
+	State text,
 	Country text,
 	Telephone text,
 	Mobile text,
@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS 'Order' (
 	TableNo text,
 	MemberId integer NOT NULL DEFAULT 0,
 	Total real NOT NULL,
-	FOREIGN KEY(CreatedById) REFERENCES User(Id)
+	FOREIGN KEY(MemberId) REFERENCES User(Id)
 );
 
 CREATE TABLE IF NOT EXISTS OrderItem(

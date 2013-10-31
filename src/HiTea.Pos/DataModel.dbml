@@ -41,7 +41,7 @@
       <Column Name="TableNo" Storage="_tableNo" Type="System.String" DbType="text" CanBeNull="true" />
       <Column Name="Total" Storage="_total" Type="System.Single" DbType="real" CanBeNull="false" />
       <Association Name="Order_OrderItem" Member="OrderItem" Storage="_orderItem" ThisKey="ID" OtherKey="ParentID" Type="OrderItem" />
-      <Association Name="User_Order" Member="User" Storage="_user" ThisKey="CreatedByID" OtherKey="ID" Type="User" IsForeignKey="true" />
+      <Association Name="User_Order" Member="User" Storage="_member" ThisKey="MemberID" OtherKey="ID" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="main.OrderItem" Member="OrderItem">

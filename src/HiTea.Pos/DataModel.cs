@@ -838,7 +838,7 @@ public partial class Main
 
         private EntitySet<OrderItem> _orderItem;
 
-        private EntityRef<User> _user = new EntityRef<User>();
+        private EntityRef<User> _member = new EntityRef<User>();
 
         #region Extensibility Method Declarations
         partial void OnCreated();
@@ -1074,26 +1074,26 @@ public partial class Main
         #endregion
 
         #region Parents
-        [Association(Storage = "_user", OtherKey = "ID", ThisKey = "CreatedByID", Name = "fk_Order_0", IsForeignKey = true)]
+        [Association(Storage = "_member", OtherKey = "ID", ThisKey = "MemberID", Name = "fk_Order_0", IsForeignKey = true)]
         [DebuggerNonUserCode()]
-        public User User
+        public User Member
         {
             get
             {
-                return this._user.Entity;
+                return this._member.Entity;
             }
             set
             {
-                if (((this._user.Entity == value)
+                if (((this._member.Entity == value)
                             == false))
                 {
-                    if ((this._user.Entity != null))
+                    if ((this._member.Entity != null))
                     {
-                        User previousUser = this._user.Entity;
-                        this._user.Entity = null;
+                        User previousUser = this._member.Entity;
+                        this._member.Entity = null;
                         previousUser.Orders.Remove(this);
                     }
-                    this._user.Entity = value;
+                    this._member.Entity = value;
                     if ((value != null))
                     {
                         value.Orders.Add(this);
@@ -2330,7 +2330,7 @@ public partial class Main
 
         private string _password;
 
-        private System.Nullable<int> _point;
+        private int _point;
 
         private string _postcode;
 
@@ -2555,7 +2555,7 @@ public partial class Main
 
         [Column(Storage = "_point", Name = "Point", DbType = "integer", AutoSync = AutoSync.Never, CanBeNull = false)]
         [DebuggerNonUserCode()]
-        public System.Nullable<int> Point
+        public int Point
         {
             get
             {
@@ -2826,13 +2826,13 @@ public partial class Main
         private void Order_Attach(Order entity)
         {
             this.SendPropertyChanging();
-            entity.User = this;
+            entity.Member = this;
         }
 
         private void Order_Detach(Order entity)
         {
             this.SendPropertyChanging();
-            entity.User = null;
+            entity.Member = null;
         }
         #endregion
     }
