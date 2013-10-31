@@ -7,6 +7,16 @@
     
     <!-- TODO: Implement pressed icon opposite the color scheme -->
 
+    <DrawingBrush x:Key="BackIcon" Stretch="None">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="{StaticResource DefaultColor}" Geometry="m 11.299684,22.597946 1.956686,-1.957398 -7.9580202,-7.959443 18.7016502,0 0,-2.7660426 -18.7016502,0 L 13.25637,1.9563306 11.299684,2.928e-7 -3.7582e-7,11.298262 11.299684,22.597946 z" />
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
     <DrawingBrush x:Key="SettingIcon" Stretch="None">
         <DrawingBrush.Drawing>
             <DrawingGroup>

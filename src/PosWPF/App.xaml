@@ -9,6 +9,8 @@
                 <ResourceDictionary Source="Resources/Default.xaml" />
                 <ResourceDictionary Source="Resources/Generic.xaml" />
                 <ResourceDictionary Source="Resources/Icons.xaml" />
+                <ResourceDictionary Source="Resources/ModalWindowStyle.xaml" />
+                
                 <ResourceDictionary Source="Resources/DataTemplates.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

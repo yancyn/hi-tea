@@ -16,6 +16,7 @@
     <Style x:Key="BorderlessWindowStyle" TargetType="{x:Type Window}">
         <Setter Property="WindowStyle" Value="None" />
         <Setter Property="ResizeMode" Value="NoResize" />
+        <Setter Property="AllowsTransparency" Value="True"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Window}">
@@ -32,27 +33,10 @@
         </Setter>
     </Style>
 
-    <Style x:Key="BorderlessModalStyle" TargetType="{x:Type Window}">
-        <Setter Property="WindowStyle" Value="None" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Window}">
-                    <Border Background="White" BorderThickness="0" BorderBrush="Transparent" CornerRadius="20">
-                        <Border.Effect>
-                            <DropShadowEffect BlurRadius="50" Direction="-90" RenderingBias="Quality" ShadowDepth="0"/>
-                        </Border.Effect>
-                        <Grid Margin="10">
-                            <ContentPresenter Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" ContentTemplate="{TemplateBinding ContentTemplate}"/>
-                        </Grid>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
     <Style x:Key="BorderlessDialogStyle" TargetType="{x:Type Window}">
         <Setter Property="WindowStyle" Value="None" />
         <Setter Property="ResizeMode" Value="NoResize" />
+        <Setter Property="AllowsTransparency" Value="True"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Window}">
