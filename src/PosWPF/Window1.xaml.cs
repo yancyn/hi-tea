@@ -154,6 +154,10 @@ namespace PosWPF
         {
             Login();
         }
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
         private void AdminButton_Click(object sender, RoutedEventArgs e)
         {
             AdminWindow window = new AdminWindow();

@@ -26,7 +26,7 @@
                     <StackPanel>
                         <Button Height="30" Width="30" Background="{StaticResource UserIcon}" Style="{StaticResource BorderlessButton}" Click="LoginButton_Click" />
                         <TextBlock HorizontalAlignment="Center">
-                            <Hyperlink Click="LoginButton_Click">Exit</Hyperlink>
+                            <Hyperlink Click="ExitButton_Click">Exit</Hyperlink>
                         </TextBlock>
                     </StackPanel>
                     <TextBlock Text="{Binding CurrentUser.Username}" Margin="10,0,0,0" />

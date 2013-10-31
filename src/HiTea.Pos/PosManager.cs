@@ -107,13 +107,11 @@ namespace HiTea.Pos
             System.Diagnostics.Debug.WriteLine("Carry: "+this.CarryBasket.Count);
         }
 
-        private bool isLoginSuccess = false;
-        public bool IsLoginSuccess { get { return this.isLoginSuccess; } }
         public bool Login(string username, string password)
         {
-            User user = db.Users.Where(u => u.Username == username).FirstOrDefault();
-            isLoginSuccess = (user.Password == password) ? true : false;
-            return isLoginSuccess;
+            User user = new User();
+            user.Username = username;
+            return user.Login(password);
         }
 
         /// <summary>
