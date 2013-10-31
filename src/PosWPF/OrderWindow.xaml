@@ -11,7 +11,7 @@
             <Button ToolTip="Print Label" Background="{StaticResource CupIcon}" Style="{StaticResource CircleButtonStyle}" />
             <Button ToolTip="Print Receipt" Background="{StaticResource PrinterIcon}" Style="{StaticResource CircleButtonStyle}" />
             <Button ToolTip="Pay" Style="{StaticResource PayButton}" />
-            <Button ToolTip="Confirm" Background="{StaticResource TickIcon}" Style="{StaticResource CircleButtonStyle}" Click="ConfirmButton_Click" />
+            <Button ToolTip="Confirm" Background="{StaticResource TickIcon}" Style="{StaticResource CircleButtonStyle}" Command="{Binding ConfirmOrderCommand}" Click="ConfirmButton_Click" />
         </StackPanel>
         <DockPanel Margin="0 20 0 0" LastChildFill="True">
             <Grid DockPanel.Dock="Top">

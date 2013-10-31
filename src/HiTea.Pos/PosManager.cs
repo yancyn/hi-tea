@@ -47,8 +47,8 @@ namespace HiTea.Pos
         public ObservableCollection<Order> CarryBasket { get; set; }
 
         private LoginCommand loginCommand;
-        public LoginCommand LoginCommand {get {return this.loginCommand;}}
-        
+        public LoginCommand LoginCommand { get { return this.loginCommand; } }
+
         public PosManager()
         {
             this.CurrentUser = new User();
@@ -74,6 +74,7 @@ namespace HiTea.Pos
             this.loginCommand = new LoginCommand(this);
             this.takeAwayCommand = new TakeAwayCommand(this);
             this.orderMenuCommand = new OrderMenuCommand(this);
+            this.confirmOrderCommand = new ConfirmOrderCommand(this);
         }
 
         void TableBasket_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
@@ -95,7 +96,7 @@ namespace HiTea.Pos
         {
             if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Remove)
             {
-                foreach(Order order in e.OldItems)
+                foreach (Order order in e.OldItems)
                     this.Basket.Remove(order);
             }
             if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
@@ -104,7 +105,7 @@ namespace HiTea.Pos
                     this.Basket.Add(order);
             }
             System.Diagnostics.Debug.WriteLine("Basket: " + this.Basket.Count);
-            System.Diagnostics.Debug.WriteLine("Carry: "+this.CarryBasket.Count);
+            System.Diagnostics.Debug.WriteLine("Carry: " + this.CarryBasket.Count);
         }
 
         public bool Login(string username, string password)
@@ -124,7 +125,7 @@ namespace HiTea.Pos
             if (this.Basket.Count == 0)
             {
                 Order lastOrder = db.Orders.OrderByDescending(o => o.ID).FirstOrDefault();
-                if (lastOrder != null) lastQueueNo = Convert.ToInt32(lastOrder.QueueNo);   
+                if (lastOrder != null) lastQueueNo = Convert.ToInt32(lastOrder.QueueNo);
             }
             else
             {
@@ -182,6 +183,70 @@ namespace HiTea.Pos
             else
                 item.OrderTypeID = this.SelectedOrder.Items.Last().OrderTypeID;
             this.SelectedOrder.Items.Add(item);
+        }
+
+        private ConfirmOrderCommand confirmOrderCommand;
+        public ConfirmOrderCommand ConfirmOrderCommand { get { return this.confirmOrderCommand; } }
+        /// <summary>
+        /// Confirm or update selected order into database.
+        /// </summary>
+        public void ConfirmOrder()
+        {
+            if (this.SelectedOrder == null) return;
+            System.Diagnostics.Debug.WriteLine("Updating order into database...");
+            Order order = db.Orders.Where(o => o.ID == this.SelectedOrder.ID).FirstOrDefault();
+            if (order == null)
+            {
+                // IMPORTANT: Need to submit twice to get new ID. Header first then only children table.
+                order = new Order();
+                order.ID = this.SelectedOrder.ID;
+                order.Created = this.SelectedOrder.Created;
+                order.CreatedByID = this.SelectedOrder.CreatedByID;
+                order.DodAte = this.SelectedOrder.DodAte;
+                order.OrderItems.Clear();
+                order.QueueNo = this.SelectedOrder.QueueNo;
+                order.ReceiptDate = this.SelectedOrder.ReceiptDate;
+                order.TableNo = this.SelectedOrder.TableNo;
+                order.Total = this.SelectedOrder.Total;
+                db.Orders.InsertOnSubmit(order);
+                System.Diagnostics.Debug.WriteLine("New ID: " + order.ID);
+
+                foreach (OrderItem item in this.SelectedOrder.Items)
+                    order.OrderItems.Add(item);
+                db.SubmitChanges();
+            }
+            else
+            {
+                //CloneOrder(order);
+                order.ID = this.SelectedOrder.ID;
+                order.Created = this.SelectedOrder.Created;
+                order.CreatedByID = this.SelectedOrder.CreatedByID;
+                order.DodAte = this.SelectedOrder.DodAte;
+                order.OrderItems.Clear();
+                foreach (OrderItem item in this.SelectedOrder.Items)
+                    order.OrderItems.Add(item);
+                order.QueueNo = this.SelectedOrder.QueueNo;
+                order.ReceiptDate = this.SelectedOrder.ReceiptDate;
+                order.TableNo = this.SelectedOrder.TableNo;
+                order.Total = this.SelectedOrder.Total;
+
+                db.SubmitChanges();
+            }
+        }
+        private void CloneOrder(Order order)
+        {
+            order.ID = this.SelectedOrder.ID;
+            order.Created = this.SelectedOrder.Created;
+            order.CreatedByID = this.SelectedOrder.CreatedByID;
+            order.DodAte = this.SelectedOrder.DodAte;
+            order.OrderItems.Clear();
+            foreach (OrderItem item in this.SelectedOrder.Items)
+                order.OrderItems.Add(item);
+            order.QueueNo = this.SelectedOrder.QueueNo;
+            order.ReceiptDate = this.SelectedOrder.ReceiptDate;
+            order.TableNo = this.SelectedOrder.TableNo;
+            order.Total = this.SelectedOrder.Total;
+            //order.User
         }
     }
 
@@ -243,6 +308,26 @@ namespace HiTea.Pos
         public OrderMenuCommand(PosManager manager)
         {
             this.manager = manager;
+        }
+    }
+
+    public class ConfirmOrderCommand : ICommand
+    {
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public event EventHandler CanExecuteChanged;
+
+        private PosManager manager;
+        public ConfirmOrderCommand(PosManager manager)
+        {
+            this.manager = manager;
+        }
+        public void Execute(object parameter)
+        {
+            manager.ConfirmOrder();
         }
     }
 }
