@@ -55,7 +55,9 @@ namespace HiTea.Pos
             this.CurrentTime = new UpdatingTime();
             this.Basket = new ObservableCollection<Order>();
             this.CarryBasket = new ObservableCollection<Order>();
+            this.CarryBasket.CollectionChanged += CarryBasket_CollectionChanged;
             this.TableBasket = new ObservableCollection<Order>();
+            this.TableBasket.CollectionChanged += TableBasket_CollectionChanged;
 
             string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
             db = new Main(connectionString);
@@ -72,6 +74,37 @@ namespace HiTea.Pos
             this.loginCommand = new LoginCommand(this);
             this.takeAwayCommand = new TakeAwayCommand(this);
             this.orderMenuCommand = new OrderMenuCommand(this);
+        }
+
+        void TableBasket_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Remove)
+            {
+                foreach (Order order in e.OldItems)
+                    this.Basket.Remove(order);
+            }
+            if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+            {
+                foreach (Order order in e.NewItems)
+                    this.Basket.Add(order);
+            }
+            System.Diagnostics.Debug.WriteLine("Basket: " + this.Basket.Count);
+            System.Diagnostics.Debug.WriteLine("Table: " + this.TableBasket.Count);
+        }
+        void CarryBasket_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Remove)
+            {
+                foreach(Order order in e.OldItems)
+                    this.Basket.Remove(order);
+            }
+            if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+            {
+                foreach (Order order in e.NewItems)
+                    this.Basket.Add(order);
+            }
+            System.Diagnostics.Debug.WriteLine("Basket: " + this.Basket.Count);
+            System.Diagnostics.Debug.WriteLine("Carry: "+this.CarryBasket.Count);
         }
 
         private bool isLoginSuccess = false;
@@ -106,9 +139,10 @@ namespace HiTea.Pos
             order.QueueNo = lastQueueNo.ToString();
             order.Created = DateTime.Now;
 
-            this.Basket.Add(order);
             if (order.TableNo.Length == 0)
                 this.CarryBasket.Add(order);
+            else
+                this.TableBasket.Add(order);
         }
         /// <summary>
         /// Add a new dine in order.
