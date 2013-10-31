@@ -24,6 +24,8 @@ namespace HiTea.Pos
             string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
             Main db = new Main(connectionString);
             User user = db.Users.Where(u => u.Username == this.Username).FirstOrDefault();
+            if (user == null) return this.isValid;
+
             isValid = (user.Password == password) ? true : false;
             return this.isValid;
         }
