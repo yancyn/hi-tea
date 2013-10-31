@@ -6,7 +6,6 @@
              mc:Ignorable="d">
     <Style x:Key="BorderlessModalStyle" TargetType="{x:Type Window}">
         <Setter Property="WindowStyle" Value="None" />
-        <!--<Setter Property="AllowsTransparency" Value="True"/>-->
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Window}">
@@ -15,11 +14,10 @@
                             <DropShadowEffect BlurRadius="50" Direction="-90" RenderingBias="Quality" ShadowDepth="0"/>
                         </Border.Effect>
                         <DockPanel LastChildFill="True">
-                            <StackPanel DockPanel.Dock="Top" Background="Transparent" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
-                                <WrapPanel>
-                                    <Button ToolTip="Back" Background="{StaticResource BackIcon}" Style="{StaticResource CircleButtonStyle}" Click="BackButton_Click" />
-                                </WrapPanel>
-                            </StackPanel>
+                            <DockPanel DockPanel.Dock="Top" LastChildFill="True" Background="Transparent" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
+								<Button DockPanel.Dock="Left" ToolTip="Back" Background="{StaticResource BackIcon}" Style="{StaticResource CircleButtonStyle}" Click="BackButton_Click" />
+                        		<TextBlock Margin="10" Text="{Binding DataContext.SelectedOrder.Total, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Window}}}" FontSize="36" FontWeight="ExtraBold" TextAlignment="Right" />
+                            </DockPanel>
                             <Grid Margin="10,-10,10,10">
                                 <ContentPresenter Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" ContentTemplate="{TemplateBinding ContentTemplate}"/>
                             </Grid>
