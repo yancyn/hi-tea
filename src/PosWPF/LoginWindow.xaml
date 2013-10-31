@@ -21,7 +21,7 @@
             <PasswordBox x:Name="Password" PasswordChar="*" Style="{StaticResource RoundedPasswordBoxStyle}" Width="150"
                          w:PasswordHelper.Attach="True" w:PasswordHelper.Password="{Binding Path=CurrentUser.Password,Mode=TwoWay,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" />
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 50 20 0" >
-                <Button ToolTip="Exit" Background="{StaticResource CrossIcon}" Style="{StaticResource CircleButtonStyle}" Click="ExitButton_Click" />
+                <Button ToolTip="Exit" Background="{StaticResource RedCross}" Style="{StaticResource CircleButtonStyle}" Click="ExitButton_Click" />
                 <Button ToolTip="Login" Background="{StaticResource TickIcon}" Style="{StaticResource CircleButtonStyle}" Click="LoginButton_Click" />
             </StackPanel>
         </StackPanel>

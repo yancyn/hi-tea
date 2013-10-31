@@ -198,12 +198,12 @@ namespace PosWPF
                 {
                     OrderItem item = values[0] as OrderItem;
                     ObservableCollection<OrderItem> collection = values[1] as ObservableCollection<OrderItem>;
-                    return (collection.IndexOf(item) + 1).ToString() + ".";
+                    return (collection.IndexOf(item) + 1).ToString() + ". ";
                 }
             }
 
             //throw new NotImplementedException();
-            return "0.";
+            return "0. ";
         }
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, System.Globalization.CultureInfo culture)
         {

@@ -98,11 +98,21 @@
         </DrawingBrush.Drawing>
     </DrawingBrush>
 
-    <DrawingBrush x:Key="CrossIcon" Stretch="None">
+    <DrawingBrush x:Key="RedCross" Stretch="None">
         <DrawingBrush.Drawing>
             <DrawingGroup>
                 <DrawingGroup.Children>
                     <GeometryDrawing Brush="Red" Geometry="M 20,1.542758 18.457242,0 10.000186,8.457056 1.542758,0 0,1.542758 8.457056,10.000186 0,18.457614 1.542758,20 10.000186,11.542944 18.457242,20 20,18.457614 11.543317,10.000186 20,1.542758 z" />
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="GrayCross" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="#aaa" Geometry="M 20,1.542758 18.457242,0 10.000186,8.457056 1.542758,0 0,1.542758 8.457056,10.000186 0,18.457614 1.542758,20 10.000186,11.542944 18.457242,20 20,18.457614 11.543317,10.000186 20,1.542758 z" />
                 </DrawingGroup.Children>
             </DrawingGroup>
         </DrawingBrush.Drawing>
