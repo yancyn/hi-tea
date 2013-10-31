@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HiTea.Pos;
 
 namespace PosWPF
 {
@@ -27,6 +28,13 @@ namespace PosWPF
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             Window window = (sender as FrameworkElement).TemplatedParent as Window;
+            if (window.DataContext is PosManager)
+            {
+                PosManager posManager = (PosManager)window.DataContext;
+                if (posManager.SelectedOrder.Items.Count == 0)
+                    posManager.CarryBasket.Remove(posManager.SelectedOrder);
+            }
+
             window.Close();
         }
     }
