@@ -25,10 +25,15 @@ namespace PosWPF
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             if ((this.DataContext as PosManager).Login(Username.Text, Password.Text))
                 this.Close();
+        }
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

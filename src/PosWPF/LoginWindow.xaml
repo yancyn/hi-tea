@@ -18,7 +18,10 @@
         <StackPanel Grid.Column="1" VerticalAlignment="Center">
             <TextBox x:Name="Username" Text="{Binding Path=CurrentUser.Username,Mode=TwoWay,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource RoundedTextBoxStyle}" Width="150" />
             <TextBox x:Name="Password" Text="{Binding Path=CurrentUser.Password,Mode=TwoWay,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource RoundedTextBoxStyle}" Width="150" />
-            <Button Width="60" Content="Login" HorizontalAlignment="Right" Margin="10" Click="Button_Click" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 50 20 0" >
+                <Button ToolTip="Exit" Background="{StaticResource CrossIcon}" Style="{StaticResource CircleButtonStyle}" Click="ExitButton_Click" />
+                <Button ToolTip="Login" Background="{StaticResource TickIcon}" Style="{StaticResource CircleButtonStyle}" Click="LoginButton_Click" />
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>
