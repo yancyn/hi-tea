@@ -172,6 +172,8 @@ namespace HiTea.Pos
         /// <param name="menu"></param>
         public void OrderMenu(Menu menu)
         {
+            if (this.SelectedOrder == null) return;
+
             OrderItem item = new OrderItem();
             item.Menu = menu;
             item.MenuID = menu.ID;
@@ -181,7 +183,6 @@ namespace HiTea.Pos
                 item.OrderTypeID = (String.IsNullOrEmpty(this.SelectedOrder.TableNo)) ? 2 : 1;
             else
                 item.OrderTypeID = this.SelectedOrder.Items.Last().OrderTypeID;
-
             this.SelectedOrder.Items.Add(item);
         }
     }
