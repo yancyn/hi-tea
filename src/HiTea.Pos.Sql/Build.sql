@@ -51,6 +51,7 @@ CREATE TABLE IF NOT EXISTS Menu(
 	Code text NOT NULL,
 	Name text,
 	Description text,
+	Image text,
 	Price real NOT NULL,
 	Active bit NOT NULL DEFAULT 1,
 	FOREIGN KEY(CategoryId) REFERENCES Category(Id)

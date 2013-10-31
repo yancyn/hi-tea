@@ -21,6 +21,7 @@
       <Column Name="Code" Storage="_code" Type="System.String" DbType="text" CanBeNull="false" />
       <Column Name="Description" Storage="_description" Type="System.String" DbType="text" CanBeNull="true" />
       <Column Name="Id" Member="ID" Storage="_id" Type="System.Int32" DbType="integer" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+	  <Column Name="Image" Storage="_image" Type="System.String" DbType="text" CanBeNull="true" />
       <Column Name="Name" Storage="_name" Type="System.String" DbType="text" CanBeNull="true" />
       <Column Name="Price" Storage="_price" Type="System.Single" DbType="real" CanBeNull="false" />
       <Association Name="Menu_OrderItem" Member="OrderItem" Storage="_orderItem" ThisKey="ID" OtherKey="MenuID" Type="OrderItem" />

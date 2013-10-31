@@ -470,6 +470,8 @@ public partial class Main
 
         private int _id;
 
+        private string _image;
+
         private string _name;
 
         private float _price;
@@ -502,6 +504,10 @@ public partial class Main
         partial void OnIDChanged();
 
         partial void OnIDChanging(int value);
+
+        partial void OnImageChanged();
+
+        partial void OnImageChanging(string value);
 
         partial void OnNameChanged();
 
@@ -623,6 +629,28 @@ public partial class Main
                     this._id = value;
                     this.SendPropertyChanged("ID");
                     this.OnIDChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_image", Name = "Image", DbType = "text", AutoSync = AutoSync.Never)]
+        [DebuggerNonUserCode()]
+        public string Image
+        {
+            get
+            {
+                return this._image;
+            }
+            set
+            {
+                if (((_image == value)
+                            == false))
+                {
+                    this.OnImageChanging(value);
+                    this.SendPropertyChanging();
+                    this._image = value;
+                    this.SendPropertyChanged("Image");
+                    this.OnImageChanged();
                 }
             }
         }
