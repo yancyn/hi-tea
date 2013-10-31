@@ -72,17 +72,17 @@
         <DrawingBrush.Drawing>
             <DrawingGroup>
                 <DrawingGroup.Children>
-                    <GeometryDrawing Brush="Green" Geometry="M 24,1.4096237 22.590716,0 8.053972,14.667706 1.4099638,8.0641769 -8.8799997e-8,9.4741408 8.064517,17.488654 9.4741407,16.079371 9.4673375,16.072568 24,1.4096237 z" />
+                    <GeometryDrawing Brush="Green" Geometry="M 21.60535,0 8.4030277,12.669176 2.6363548,7.1307671 0,9.7917261 8.4715064,18.109466 24,2.321743 z" />
                 </DrawingGroup.Children>
             </DrawingGroup>
         </DrawingBrush.Drawing>
     </DrawingBrush>
 
-    <DrawingBrush x:Key="CrossIcon" Stretch="Uniform">
+    <DrawingBrush x:Key="CrossIcon" Stretch="None">
         <DrawingBrush.Drawing>
             <DrawingGroup>
                 <DrawingGroup.Children>
-                    <GeometryDrawing Brush="Red" Geometry="M 67.13625,5.17875 61.9575,0 33.56875,28.38875 5.17875,0 0,5.17875 28.38875,33.56875 0,61.95875 l 5.17875,5.1775 28.39,-28.38875 28.38875,28.38875 5.17875,-5.1775 -28.3875,-28.39 28.3875,-28.39 z" />
+                    <GeometryDrawing Brush="Red" Geometry="M 20,1.542758 18.457242,0 10.000186,8.457056 1.542758,0 0,1.542758 8.457056,10.000186 0,18.457614 1.542758,20 10.000186,11.542944 18.457242,20 20,18.457614 11.543317,10.000186 20,1.542758 z" />
                 </DrawingGroup.Children>
             </DrawingGroup>
         </DrawingBrush.Drawing>
