@@ -7,13 +7,27 @@
     Style="{StaticResource BorderlessModalStyle}"
     Height="400" Width="500">
     <DockPanel LastChildFill="True">
+        <Grid DockPanel.Dock="Top" Margin="0 5 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <WrapPanel Grid.Column="0">
+                <TextBlock Text="Member: "/>
+                <TextBlock Text="{Binding SelectedOrder.Member.Username}" />
+            </WrapPanel>
+            <WrapPanel Grid.Column="1" HorizontalAlignment="Right">
+                <TextBlock Text="Created: "/>
+                <TextBlock Text="{Binding SelectedOrder.Created}" />
+            </WrapPanel>
+        </Grid>
         <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
             <Button ToolTip="Print Label" Background="{StaticResource CupIcon}" Style="{StaticResource CircleButtonStyle}" />
             <Button ToolTip="Print Receipt" Background="{StaticResource PrinterIcon}" Style="{StaticResource CircleButtonStyle}" Click="ReceiptButton_Click" />
             <Button ToolTip="Pay" Style="{StaticResource PayButton}" />
             <Button ToolTip="Confirm" Background="{StaticResource TickIcon}" Style="{StaticResource CircleButtonStyle}" Command="{Binding ConfirmOrderCommand}" Click="ConfirmButton_Click" />
         </StackPanel>
-        <DockPanel Margin="0 10 0 0" LastChildFill="True">
+        <DockPanel LastChildFill="True">
             <Grid DockPanel.Dock="Top">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="20" />
