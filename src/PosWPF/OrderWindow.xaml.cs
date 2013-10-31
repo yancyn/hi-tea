@@ -77,6 +77,7 @@ namespace PosWPF
             pp.Document = pdoc;
             pdoc.Print();
         }
+        // TODO: Consider to convert to xaml layout for easier maintenance
         private void Receipt_PrintPage(object sender, PrintPageEventArgs e)
         {
             // TODO: Receipt print format
@@ -91,10 +92,10 @@ namespace PosWPF
             graphics.DrawString("Welcome to Hi Tea", font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
 
             offset += 20;
-            graphics.DrawString("Queue No:" + order.QueueNo, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+            graphics.DrawString("Queue No: " + order.QueueNo, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
 
             offset += 20;
-            graphics.DrawString("Date :" + DateTime.Now.ToString("dd/MM/yyyy hh:mm tt"), font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+            graphics.DrawString("Date: " + DateTime.Now.ToString("dd/MM/yyyy hh:mm tt"), font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
 
             String underline = "------------------------------------------";
             offset += 20;
@@ -108,13 +109,8 @@ namespace PosWPF
 
                 string line = i + ". " + item.Menu.Code + " " + item.Menu.Name;
                 string price = item.Menu.Price.ToString("###,##0.00");
-                int spaceLength = underline.Length - line.Length - price.Length;
-                string space = string.Empty;
-                for (int j = 0; j < spaceLength; j++)
-                    space += " ";
-                line = line + space + price;
-
                 graphics.DrawString(line, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+                graphics.DrawString(price, font, new SolidBrush(System.Drawing.Color.Black), startX + 150, startY + offset);
             }
 
             offset += 20;
@@ -123,12 +119,8 @@ namespace PosWPF
             offset += 20;
             string feed = "Total: ";
             string total = order.Total.ToString("###,##0.00");
-            int length = underline.Length - feed.Length - total.Length;
-            string empty = string.Empty;
-            for (int k = 0; k < length; k++)
-                empty += " ";
-            feed = empty + feed + total;
             graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+            graphics.DrawString(total, font, new SolidBrush(System.Drawing.Color.Black), startX + 150, startY + offset);
 
             offset += 20;
             graphics.DrawString(underline, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
