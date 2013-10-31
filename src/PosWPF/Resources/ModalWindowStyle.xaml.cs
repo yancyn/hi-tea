@@ -37,5 +37,11 @@ namespace PosWPF
 
             window.Close();
         }
+
+        private void TitleBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Window window = (sender as FrameworkElement).TemplatedParent as Window;
+            window.DragMove();
+        }
     }
 }

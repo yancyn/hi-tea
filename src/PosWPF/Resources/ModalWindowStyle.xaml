@@ -15,9 +15,11 @@
                             <DropShadowEffect BlurRadius="50" Direction="-90" RenderingBias="Quality" ShadowDepth="0"/>
                         </Border.Effect>
                         <DockPanel LastChildFill="True">
-                            <WrapPanel DockPanel.Dock="Top">
-                                <Button ToolTip="Back" Background="{StaticResource BackIcon}" Style="{StaticResource CircleButtonStyle}" Click="BackButton_Click" />
-                            </WrapPanel>
+                            <StackPanel DockPanel.Dock="Top" Background="Transparent" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
+                                <WrapPanel>
+                                    <Button ToolTip="Back" Background="{StaticResource BackIcon}" Style="{StaticResource CircleButtonStyle}" Click="BackButton_Click" />
+                                </WrapPanel>
+                            </StackPanel>
                             <Grid Margin="10,-10,10,10">
                                 <ContentPresenter Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" ContentTemplate="{TemplateBinding ContentTemplate}"/>
                             </Grid>
