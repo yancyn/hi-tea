@@ -14,6 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using HiTea.Pos;
+using System.Drawing.Printing;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace PosWPF
 {
@@ -58,6 +61,77 @@ namespace PosWPF
             if (posManager.SelectedOrder.Items.Count == 0)
                 posManager.CarryBasket.Remove(posManager.SelectedOrder);
             this.Close();
+        }
+
+        private void ReceiptButton_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.PrintDialog pd = new System.Windows.Forms.PrintDialog();
+            PrintDocument pdoc = new PrintDocument();
+            PrinterSettings ps = new PrinterSettings();
+            PaperSize psize = new PaperSize("Custom", 400, 600); // TODO: Calculate the height based on total order items.
+            pd.Document = pdoc;
+            pd.Document.DefaultPageSettings.PaperSize = psize;
+
+            pdoc.PrintPage += new PrintPageEventHandler(Receipt_PrintPage);
+            PrintPreviewDialog pp = new PrintPreviewDialog();
+            pp.Document = pdoc;
+            pdoc.Print();
+        }
+        private void Receipt_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            // TODO: Receipt print format
+            Order order = (this.DataContext as PosManager).SelectedOrder;
+
+            Graphics graphics = e.Graphics;
+            Font font = new Font("SimSun Regular", 10);// TODO: SimHei Regular
+            float fontHeight = font.GetHeight();
+            int startX = 10;
+            int startY = 10;
+            int offset = 10;
+            graphics.DrawString("Welcome to Hi Tea", font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+
+            offset += 20;
+            graphics.DrawString("Queue No:" + order.QueueNo, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+
+            offset += 20;
+            graphics.DrawString("Date :" + DateTime.Now.ToString("dd/MM/yyyy hh:mm tt"), font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+
+            String underline = "------------------------------------------";
+            offset += 20;
+            graphics.DrawString(underline, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+
+            int i = 0;
+            foreach (OrderItem item in order.Items)
+            {
+                i++;
+                offset += 20;
+
+                string line = i + ". " + item.Menu.Code + " " + item.Menu.Name;
+                string price = item.Menu.Price.ToString("###,##0.00");
+                int spaceLength = underline.Length - line.Length - price.Length;
+                string space = string.Empty;
+                for (int j = 0; j < spaceLength; j++)
+                    space += " ";
+                line = line + space + price;
+
+                graphics.DrawString(line, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+            }
+
+            offset += 20;
+            graphics.DrawString(underline, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+
+            offset += 20;
+            string feed = "Total: ";
+            string total = order.Total.ToString("###,##0.00");
+            int length = underline.Length - feed.Length - total.Length;
+            string empty = string.Empty;
+            for (int k = 0; k < length; k++)
+                empty += " ";
+            feed = empty + feed + total;
+            graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+
+            offset += 20;
+            graphics.DrawString(underline, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
         }
     }
 }
