@@ -41,7 +41,7 @@ namespace PosWPF
             {
 
                 HiTea.Pos.UpdatingTime dateTime = (HiTea.Pos.UpdatingTime)value;
-                return dateTime.Now.ToString("dd/MM/yyyy hh:mm tt");
+                return dateTime.Now.ToString("dd/MM/yyyy hh:mm tt"); // TODO: Global date format
             }
             if (value is DateTime)
             {

@@ -55,7 +55,7 @@ namespace HiTea.Pos.NUnit
             HiTea.Pos.Menu menu = new HiTea.Pos.Menu();
             menu.Code = code + new Random().Next(20);
             menu.Name = foods[new Random().Next(foods.Length)] + new Random().Next(20);
-            menu.Price = new Random().Next(100) / 13F;
+            menu.Price = (float)Math.Round(new Random().Next(100) / 13F, 2);
             Category category = db.Categories.Where(c => c.Name == cat).FirstOrDefault();
             if (category != null) menu.CategoryID = category.ID;
             db.Menus.InsertOnSubmit(menu);

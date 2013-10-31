@@ -462,7 +462,7 @@ public partial class Main
 
         private bool _active;
 
-        private System.Nullable<int> _categoryID;
+        private int _categoryID;
 
         private string _code;
 
@@ -547,9 +547,9 @@ public partial class Main
             }
         }
 
-        [Column(Storage = "_categoryID", Name = "CategoryId", DbType = "integer", AutoSync = AutoSync.Never)]
+        [Column(Storage = "_categoryID", Name = "CategoryId", DbType = "integer", AutoSync = AutoSync.Never, CanBeNull = false)]
         [DebuggerNonUserCode()]
-        public System.Nullable<int> CategoryID
+        public int CategoryID
         {
             get
             {
@@ -756,7 +756,7 @@ public partial class Main
                     }
                     else
                     {
-                        _categoryID = null;
+                        _categoryID = default(int);
                     }
                 }
             }
@@ -826,7 +826,7 @@ public partial class Main
 
         private int _id;
 
-        private System.Nullable<int> _memberID;
+        private int _memberID;
 
         private string _queueNo;
 
@@ -971,9 +971,9 @@ public partial class Main
             }
         }
 
-        [Column(Storage = "_memberID", Name = "MemberId", DbType = "integer", AutoSync = AutoSync.Never)]
+        [Column(Storage = "_memberID", Name = "MemberId", DbType = "integer", AutoSync = AutoSync.Never, CanBeNull = false)]
         [DebuggerNonUserCode()]
-        public System.Nullable<int> MemberID
+        public int MemberID
         {
             get
             {
@@ -1053,27 +1053,6 @@ public partial class Main
                     this._tableNo = value;
                     this.SendPropertyChanged("TableNo");
                     this.OnTableNoChanged();
-                }
-            }
-        }
-
-        [Column(Storage = "_total", Name = "Total", DbType = "real", AutoSync = AutoSync.Never, CanBeNull = false)]
-        [DebuggerNonUserCode()]
-        public float Total
-        {
-            get
-            {
-                return this._total;
-            }
-            set
-            {
-                if ((_total != value))
-                {
-                    this.OnTotalChanging(value);
-                    this.SendPropertyChanging();
-                    this._total = value;
-                    this.SendPropertyChanged("Total");
-                    this.OnTotalChanged();
                 }
             }
         }
@@ -2365,6 +2344,10 @@ public partial class Main
 
         private string _username;
 
+        private string _telephone;
+
+        private string _mobile;
+
         private EntitySet<Order> _order;
 
         private EntityRef<Role> _role = new EntityRef<Role>();
@@ -2423,6 +2406,14 @@ public partial class Main
         partial void OnUsernameChanged();
 
         partial void OnUsernameChanging(string value);
+
+        partial void OnTelephoneChanged();
+
+        partial void OnTelephoneChanging(string value);
+
+        partial void OnMobileChanged();
+
+        partial void OnMobileChanging(string value);
         #endregion
 
 
@@ -2562,7 +2553,7 @@ public partial class Main
             }
         }
 
-        [Column(Storage = "_point", Name = "Point", DbType = "integer", AutoSync = AutoSync.Never)]
+        [Column(Storage = "_point", Name = "Point", DbType = "integer", AutoSync = AutoSync.Never, CanBeNull = false)]
         [DebuggerNonUserCode()]
         public System.Nullable<int> Point
         {
@@ -2710,6 +2701,50 @@ public partial class Main
                     this._username = value;
                     this.SendPropertyChanged("Username");
                     this.OnUsernameChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_telephone", Name = "Telephone", DbType = "text", AutoSync = AutoSync.Never)]
+        [DebuggerNonUserCode()]
+        public string Telephone
+        {
+            get
+            {
+                return this._telephone;
+            }
+            set
+            {
+                if (((_telephone == value)
+                            == false))
+                {
+                    this.OnTelephoneChanging(value);
+                    this.SendPropertyChanging();
+                    this._telephone = value;
+                    this.SendPropertyChanged("Telephone");
+                    this.OnTelephoneChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_mobile", Name = "Mobile", DbType = "text", AutoSync = AutoSync.Never)]
+        [DebuggerNonUserCode()]
+        public string Mobile
+        {
+            get
+            {
+                return this._mobile;
+            }
+            set
+            {
+                if (((_mobile == value)
+                            == false))
+                {
+                    this.OnMobileChanging(value);
+                    this.SendPropertyChanging();
+                    this._mobile = value;
+                    this.SendPropertyChanged("Mobile");
+                    this.OnMobileChanged();
                 }
             }
         }

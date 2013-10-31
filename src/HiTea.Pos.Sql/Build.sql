@@ -28,9 +28,11 @@ CREATE TABLE IF NOT EXISTS User(
 	Street2 text,
 	Postcode text,
 	City text,
-	State text,
+	State text,f
 	Country text,
-	Point integer,
+	Telephone text,
+	Mobile text,
+	Point integer NOT NULL,
 	Active bit NOT NULL DEFAULT 1,
 	FOREIGN KEY(RoleId) REFERENCES Role(Id)
 );
@@ -47,7 +49,7 @@ CREATE TABLE IF NOT EXISTS Status(
 
 CREATE TABLE IF NOT EXISTS Menu(
 	Id	integer NOT NULL PRIMARY KEY autoincrement,
-	CategoryId integer,
+	CategoryId integer NOT NULL,
 	Code text NOT NULL,
 	Name text,
 	Description text,
@@ -87,7 +89,7 @@ CREATE TABLE IF NOT EXISTS 'Order' (
 	ReceiptDate datetime,
 	QueueNo text,
 	TableNo text,
-	MemberId integer,
+	MemberId integer NOT NULL DEFAULT 0,
 	Total real NOT NULL,
 	FOREIGN KEY(CreatedById) REFERENCES User(Id)
 );

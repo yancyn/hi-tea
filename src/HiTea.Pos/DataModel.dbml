@@ -17,7 +17,7 @@
   <Table Name="main.Menu" Member="Menu">
     <Type Name="Menu">
       <Column Name="Active" Storage="_active" Type="System.Boolean" DbType="bit" CanBeNull="false" />
-      <Column Name="CategoryId" Member="CategoryID" Storage="_categoryID" Type="System.Int32" DbType="integer" CanBeNull="true" />
+      <Column Name="CategoryId" Member="CategoryID" Storage="_categoryID" Type="System.Int32" DbType="integer" CanBeNull="false" />
       <Column Name="Code" Storage="_code" Type="System.String" DbType="text" CanBeNull="false" />
       <Column Name="Description" Storage="_description" Type="System.String" DbType="text" CanBeNull="true" />
       <Column Name="Id" Member="ID" Storage="_id" Type="System.Int32" DbType="integer" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -35,7 +35,7 @@
       <Column Name="CreatedById" Member="CreatedByID" Storage="_createdByID" Type="System.Int32" DbType="integer" CanBeNull="false" />
       <Column Name="DODate" Member="DodAte" Storage="_dodAte" Type="System.DateTime" DbType="datetime" CanBeNull="true" />
       <Column Name="Id" Member="ID" Storage="_id" Type="System.Int32" DbType="integer" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MemberId" Member="MemberID" Storage="_memberID" Type="System.Int32" DbType="integer" CanBeNull="true" />
+      <Column Name="MemberId" Member="MemberID" Storage="_memberID" Type="System.Int32" DbType="integer" CanBeNull="false" />
       <Column Name="QueueNo" Storage="_queueNo" Type="System.String" DbType="text" CanBeNull="true" />
       <Column Name="ReceiptDate" Storage="_receiptDate" Type="System.DateTime" DbType="datetime" CanBeNull="true" />
       <Column Name="TableNo" Storage="_tableNo" Type="System.String" DbType="text" CanBeNull="true" />
@@ -106,13 +106,15 @@
       <Column Name="Country" Storage="_country" Type="System.String" DbType="text" CanBeNull="true" />
       <Column Name="Displayname" Storage="_displayname" Type="System.String" DbType="text" CanBeNull="true" />
       <Column Name="Id" Member="ID" Storage="_id" Type="System.Int32" DbType="integer" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+	  <Column Name="Mobile" Storage="_mobile" Type="System.String" DbType="text" CanBeNull="true" />
       <Column Name="Password" Storage="_password" Type="System.String" DbType="text" CanBeNull="true" />
-      <Column Name="Point" Storage="_point" Type="System.Int32" DbType="integer" CanBeNull="true" />
+      <Column Name="Point" Storage="_point" Type="System.Int32" DbType="integer" CanBeNull="false" />
       <Column Name="Postcode" Storage="_postcode" Type="System.String" DbType="text" CanBeNull="true" />
       <Column Name="RoleId" Member="RoleID" Storage="_roleID" Type="System.Int32" DbType="integer" CanBeNull="false" />
       <Column Name="State" Storage="_state" Type="System.String" DbType="text" CanBeNull="true" />
       <Column Name="Street1" Storage="_street1" Type="System.String" DbType="text" CanBeNull="true" />
       <Column Name="Street2" Storage="_street2" Type="System.String" DbType="text" CanBeNull="true" />
+	  <Column Name="Telephone" Storage="_telephone" Type="System.String" DbType="text" CanBeNull="true" />
       <Column Name="Username" Storage="_username" Type="System.String" DbType="varchar(30)" CanBeNull="false" />
       <Association Name="User_Order" Member="Order" Storage="_order" ThisKey="ID" OtherKey="CreatedByID" Type="Order" />
       <Association Name="Role_User" Member="Role" Storage="_role" ThisKey="RoleID" OtherKey="ID" Type="Role" IsForeignKey="true" />
