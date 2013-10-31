@@ -168,7 +168,7 @@ namespace PosWPF
             OrderWindow window = new OrderWindow();
             window.Owner = this;
             window.Topmost = true;
-            window.DataContext = posManager.SelectedOrder;
+            window.DataContext = posManager;//.SelectedOrder;
             window.Show();
         }
     }

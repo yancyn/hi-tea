@@ -32,7 +32,7 @@
                 <TextBlock Grid.Column="5" Text="Price" Width="60" HorizontalAlignment="Right" Style="{StaticResource HeaderLabelStyle}" />
                 <TextBlock Grid.Column="6" Text="" Width="30" Style="{StaticResource HeaderLabelStyle}" />
             </Grid>
-            <ItemsControl ItemsSource="{Binding Items,UpdateSourceTrigger=PropertyChanged}">
+            <ItemsControl ItemsSource="{Binding SelectedOrder.Items,UpdateSourceTrigger=PropertyChanged}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Grid>

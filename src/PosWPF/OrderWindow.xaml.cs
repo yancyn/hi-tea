@@ -54,6 +54,9 @@ namespace PosWPF
 
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
+            PosManager posManager = (PosManager)this.DataContext;
+            if (posManager.SelectedOrder.Items.Count == 0)
+                posManager.CarryBasket.Remove(posManager.SelectedOrder);
             this.Close();
         }
     }
