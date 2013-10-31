@@ -23,7 +23,12 @@
             <DockPanel DockPanel.Dock="Top">
                 <TextBlock DockPanel.Dock="Right" Text="{Binding CurrentTime.Now,Converter={StaticResource DateTimeConverter}}" />
                 <WrapPanel>
-                    <Image Height="30" Width="30" Source="{StaticResource UserIcon}" />
+                    <StackPanel>
+                        <Button Height="30" Width="30" Background="{StaticResource UserIcon}" Style="{StaticResource BorderlessButton}" Click="LoginButton_Click" />
+                        <TextBlock HorizontalAlignment="Center">
+                            <Hyperlink Click="LoginButton_Click">Exit</Hyperlink>
+                        </TextBlock>
+                    </StackPanel>
                     <TextBlock Text="{Binding CurrentUser.Username}" Margin="10,0,0,0" />
                 </WrapPanel>
             </DockPanel>

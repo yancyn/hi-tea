@@ -14,7 +14,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Image Grid.Column="0" Source="{StaticResource UserIcon}" />
+        <Image Grid.Column="0" Source="{StaticResource UserImage}" />
         <StackPanel Grid.Column="1" VerticalAlignment="Center">
             <TextBox x:Name="Username" Text="{Binding Path=CurrentUser.Username,Mode=TwoWay,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource RoundedTextBoxStyle}" Width="150" />
             <TextBox x:Name="Password" Text="{Binding Path=CurrentUser.Password,Mode=TwoWay,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource RoundedTextBoxStyle}" Width="150" />

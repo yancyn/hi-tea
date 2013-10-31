@@ -29,16 +29,16 @@ using HiTea.Pos;
 
 namespace PosWPF
 {
-	/// <summary>
-	/// Interaction logic for Window1.xaml
-	/// </summary>
-	public partial class Window1 : Window
-	{
+    /// <summary>
+    /// Interaction logic for Window1.xaml
+    /// </summary>
+    public partial class Window1 : Window
+    {
         private PosManager posManager = new PosManager();
         private Timer currentTimeTimer = new Timer();
-		public Window1()
-		{
-			InitializeComponent();
+        public Window1()
+        {
+            InitializeComponent();
 
             //HiTea.Pos.User cashier = new HiTea.Pos.User();
             //cashier.Username = "yancyn";
@@ -48,47 +48,45 @@ namespace PosWPF
             currentTimeTimer.Interval = 1000 * 60;
             currentTimeTimer.Tick += timer_Tick;
             currentTimeTimer.Start();
-		}
+        }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            LoginWindow loginScreen = new LoginWindow();
-            loginScreen.Owner = this;
-            loginScreen.DataContext = this.DataContext;
-            loginScreen.ShowDialog();
+            Login();
         }
-
         void timer_Tick(object sender, EventArgs e)
         {
             posManager.CurrentTime.Now = DateTime.Now;
         }
-		
-		void button1_Click(object sender, RoutedEventArgs e)
-		{
-			string receipt = "This is a receipt\n";
-			receipt += "\u73CD\n";
-			receipt += "珍珠奶茶\t";
-			System.Diagnostics.Debug.WriteLine(receipt);
-			PrintFactory.SendTextToLPT1(receipt);
-		}		
-		void button2_Click(object sender, RoutedEventArgs e)
-		{
-			//PrintDocument pd = new PrintDocument();
-			//pd.PrintPage += PrintPage;
-			Print();
-		}
-//		private void PrintPage(object sender, PrintPageEventArgs e)
-//		{
-//			System.Drawing.Image img = System.Drawing.Image.FromFile("D:\\logo.png");
-//			System.Drawing.Point loc = new System.Drawing.Point(100, 100);
-//			e.Graphics.DrawImage(img, loc);
-//		}
-		public void Print()
+
+        #region Test
+        void button1_Click(object sender, RoutedEventArgs e)
+        {
+            string receipt = "This is a receipt\n";
+            receipt += "\u73CD\n";
+            receipt += "珍珠奶茶\t";
+            System.Diagnostics.Debug.WriteLine(receipt);
+            PrintFactory.SendTextToLPT1(receipt);
+        }
+        void button2_Click(object sender, RoutedEventArgs e)
+        {
+            //PrintDocument pd = new PrintDocument();
+            //pd.PrintPage += PrintPage;
+            Print();
+        }
+        //		private void PrintPage(object sender, PrintPageEventArgs e)
+        //		{
+        //			System.Drawing.Image img = System.Drawing.Image.FromFile("D:\\logo.png");
+        //			System.Drawing.Point loc = new System.Drawing.Point(100, 100);
+        //			e.Graphics.DrawImage(img, loc);
+        //		}
+        // TODO: Print
+        public void Print()
         {
             System.Windows.Forms.PrintDialog pd = new System.Windows.Forms.PrintDialog();
             PrintDocument pdoc = new PrintDocument();
-            
-            PrinterSettings ps = new PrinterSettings();            
+
+            PrinterSettings ps = new PrinterSettings();
             PaperSize psize = new PaperSize("Custom", 400, 600);
             //ps.DefaultPageSettings.PaperSize = psize;
             pd.Document = pdoc;
@@ -99,7 +97,7 @@ namespace PosWPF
 
             pdoc.PrintPage += new PrintPageEventHandler(pdoc_PrintPage);
             System.Windows.Forms.DialogResult result = pd.ShowDialog();
-            if(result == System.Windows.Forms.DialogResult.OK)
+            if (result == System.Windows.Forms.DialogResult.OK)
             {
                 PrintPreviewDialog pp = new PrintPreviewDialog();
                 pp.Document = pdoc;
@@ -143,16 +141,25 @@ namespace PosWPF
             db.SubmitChanges();
             System.Diagnostics.Debug.Write("Added a menu successfully.");
         }
+        #endregion
 
-
-
+        private void Login()
+        {
+            LoginWindow loginScreen = new LoginWindow();
+            loginScreen.Owner = this;
+            loginScreen.DataContext = this.DataContext;
+            loginScreen.ShowDialog();
+        }
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            Login();
+        }
         private void AdminButton_Click(object sender, RoutedEventArgs e)
         {
             AdminWindow window = new AdminWindow();
             window.Owner = this;
             window.ShowDialog();
         }
-
         private void TakeAway_Click(object sender, RoutedEventArgs e)
         {
             posManager.TakeAway();

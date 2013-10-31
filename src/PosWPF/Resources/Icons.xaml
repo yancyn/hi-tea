@@ -27,7 +27,7 @@
         </DrawingBrush.Drawing>
     </DrawingBrush>
 
-    <DrawingImage x:Key="UserIcon">
+    <DrawingImage x:Key="UserImage">
         <DrawingImage.Drawing>
             <DrawingGroup>
                 <DrawingGroup.Children>
@@ -36,6 +36,16 @@
             </DrawingGroup>
         </DrawingImage.Drawing>
     </DrawingImage>
+
+    <DrawingBrush x:Key="UserIcon">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="{StaticResource DefaultColor}" Geometry="m 49.1675,51.34825 c -4.33625,2.32375 -9.29125,3.65 -14.55125,3.65 -5.255,0 -10.2075,-1.32375 -14.54375,-3.65 C 10.705,53.8095 3.3625,59.642 0,72.18325 l 69.24375,0 C 65.87875,59.6395 58.54,53.807 49.1675,51.34825 m -13.37525,-8.1445 c -7.18625,0 -13.50875,-4.71875 -17.1925,-11.8625 l 34.385,0 C 49.301,38.485 42.98225,43.20375 35.79225,43.20375 M 34.61725,0 C 21.301,0 10.5085,10.7925 10.5085,24.11 c 0,13.32 10.7925,24.11125 24.10875,24.11125 13.32,0 24.1125,-10.79125 24.1125,-24.11125 C 58.72975,10.7925 47.93725,0 34.61725,0" />
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
 
     <!-- source: http://xamalot.com/asset/81137c3e-c591-4801-84cc-bd76092337e1 -->
     <DrawingBrush x:Key="PrinterIcon" Stretch="None">
@@ -147,7 +157,7 @@
         <DrawingBrush.Drawing>
             <DrawingGroup>
                 <DrawingGroup.Children>
-                    <GeometryDrawing Brush="{StaticResource DefaultColor}" Geometry="m 0,16.030606 18,0 L 18,18 0,18 z m 0,-4.0076 18,0 0,1.969394 -18,0 z m 0,-4.0076799 18,0 0,1.969394 -18,0 z m 0,-4.0077411 18,0 0,1.9693937 -18,0 z M 0,0 l 18,0 0,1.9693937 -18,0 z" />
+                    <GeometryDrawing Brush="{StaticResource DefaultColor}" Geometry="M 10,16.03125 10,18 l 8,0 0,-1.96875 -8,0 z m -10,0 L 0,18 l 8,0 0,-1.96875 -8,0 z m 10,-4 0,1.96875 8,0 0,-1.96875 -8,0 z m -10,0 L 0,14 l 8,0 0,-1.96875 -8,0 z M 10,8 l 0,2 8,0 0,-2 -8,0 z M 0,8 0,10 8,10 8,8 0,8 z m 10,-4 0,1.96875 8,0 L 18,4 10,4 z m -10,0 0,1.96875 8,0 L 8,4 0,4 z m 10,-4 0,1.96875 8,0 L 18,0 10,0 z m -10,0 0,1.96875 8,0 L 8,0 0,0 z" />
                 </DrawingGroup.Children>
             </DrawingGroup>
         </DrawingBrush.Drawing>
