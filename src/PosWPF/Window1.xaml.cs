@@ -158,22 +158,31 @@ namespace PosWPF
         {
             this.Close();
         }
+
         private void AdminButton_Click(object sender, RoutedEventArgs e)
         {
             AdminWindow window = new AdminWindow();
             window.Owner = this;
             window.ShowDialog();
         }
-        private void TakeAway_Click(object sender, RoutedEventArgs e)
-        {
-            posManager.TakeAway();
-            posManager.SelectedOrder = posManager.CarryBasket[posManager.CarryBasket.Count - 1];
 
+        private void ShowOrderForm()
+        {
             OrderWindow window = new OrderWindow();
             window.Owner = this;
             window.Topmost = true;
-            window.DataContext = posManager;//.SelectedOrder;
+            window.DataContext = posManager;
             window.Show();
+        }
+        private void TakeAway_Click(object sender, RoutedEventArgs e)
+        {
+            posManager.TakeAway();
+            ShowOrderForm();
+        }
+        private void OpenOrder_Click(object sender, RoutedEventArgs e)
+        {
+            posManager.SelectedOrder = (sender as System.Windows.Controls.Button).DataContext as Order;
+            ShowOrderForm();
         }
     }
 }

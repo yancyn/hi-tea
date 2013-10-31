@@ -45,7 +45,7 @@
                             <ItemsControl ItemsSource="{Binding CarryBasket}">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
-                                        <Button Content="{Binding QueueNo}" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" />
+                                        <Button Content="{Binding QueueNo}" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" Click="OpenOrder_Click" />
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                                 <ItemsControl.ItemsPanel>

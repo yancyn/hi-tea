@@ -142,6 +142,7 @@ namespace HiTea.Pos
                 this.CarryBasket.Add(order);
             else
                 this.TableBasket.Add(order);
+            this.SelectedOrder = order;
         }
         /// <summary>
         /// Add a new dine in order.
@@ -214,6 +215,7 @@ namespace HiTea.Pos
                 foreach (OrderItem item in this.SelectedOrder.Items)
                     order.OrderItems.Add(item);
                 db.SubmitChanges();
+                this.SelectedOrder.ID = order.ID;
             }
             else
             {
