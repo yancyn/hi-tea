@@ -90,11 +90,12 @@
       <SubType>Code</SubType>
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Converter.cs" />
-    <Compile Include="DataTemplateSelectors.cs" />
+    <Compile Include="Resources\Converter.cs" />
+    <Compile Include="Resources\DataTemplateSelectors.cs" />
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Resources\PasswordHelper.cs" />
     <Compile Include="Resources\ModalWindowStyle.xaml.cs">
       <DependentUpon>ModalWindowStyle.xaml</DependentUpon>
     </Compile>

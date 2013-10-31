@@ -27,7 +27,7 @@ namespace PosWPF
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            if ((this.DataContext as PosManager).Login(Username.Text, Password.Text))
+            if ((this.DataContext as PosManager).Login(Username.Text, Password.Password))
                 this.Close();
         }
 
