@@ -93,6 +93,31 @@ namespace HiTea.Pos
                         this.TableBasket.Add(order);
                 }
             }
+
+
+            // TODO: This should be configurable. Hardcode temp
+            if (this.TableBasket.Count() < 5)
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    bool exist = false;
+                    int tableNo = i + 1;
+                    foreach (Order order in TableBasket)
+                    {
+                        if (order.TableNo == tableNo.ToString())
+                        {
+                            exist = true;
+                            break;
+                        }
+                    }
+                    if (!exist)
+                    {
+                        Order order = new Order();
+                        order.TableNo = tableNo.ToString();
+                        this.TableBasket.Add(order);
+                    }
+                }
+            }
         }
         void TableBasket_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {

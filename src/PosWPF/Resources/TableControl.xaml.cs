@@ -54,7 +54,7 @@ namespace PosWPF
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             PosManager pos = this.DataContext as PosManager;
-            if (DisplayIndexes.Length >= pos.TableBasket.Count)
+            if (DisplayIndexes.Length <= pos.TableBasket.Count)
             {
                 for (int i = 0; i < DisplayIndexes.Length; i++)
                 {

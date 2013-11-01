@@ -45,27 +45,6 @@ namespace PosWPF
             currentTimeTimer.Start();
 
             this.DataContext = posManager;
-
-            // TODO: This should be configurable. Hardcode temp
-            Order order = new Order();
-            order.TableNo = "1";
-            posManager.TableBasket.Add(order);
-
-            order = new Order();
-            order.TableNo = "2";
-            posManager.TableBasket.Add(order);
-
-            order = new Order();
-            order.TableNo = "3";
-            posManager.TableBasket.Add(order);
-
-            order = new Order();
-            order.TableNo = "4";
-            posManager.TableBasket.Add(order);
-
-            order = new Order();
-            order.TableNo = "5";
-            posManager.TableBasket.Add(order);
             DineInGrid.DataContext = posManager;
         }
 
