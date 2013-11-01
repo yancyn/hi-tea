@@ -229,6 +229,7 @@ namespace HiTea.Pos
                 db.Orders.InsertOnSubmit(order);
                 System.Diagnostics.Debug.WriteLine("New ID: " + order.ID);
 
+                order.OrderItems.Clear();
                 foreach (OrderItem item in this.SelectedOrder.Items)
                     order.OrderItems.Add(item);
                 db.SubmitChanges();
@@ -245,13 +246,33 @@ namespace HiTea.Pos
             order.Created = this.SelectedOrder.Created;
             order.CreatedByID = this.SelectedOrder.CreatedByID;
             order.DodAte = this.SelectedOrder.DodAte;
-            order.OrderItems.Clear();
-            foreach (OrderItem item in this.SelectedOrder.Items)
-                order.OrderItems.Add(item);
             order.QueueNo = this.SelectedOrder.QueueNo;
             order.ReceiptDate = this.SelectedOrder.ReceiptDate;
             order.TableNo = this.SelectedOrder.TableNo;
             order.Total = this.SelectedOrder.Total;
+
+            List<OrderItem> oldItems = new List<OrderItem>();
+            foreach (OrderItem item in order.OrderItems)
+                oldItems.Add(item);
+
+            order.OrderItems.Clear();
+            foreach (OrderItem item in this.SelectedOrder.Items)
+                order.OrderItems.Add(item);
+
+            // HACK: Manually DeleteOnSubmit since the code above fail in DbLinq
+            foreach (OrderItem old in oldItems)
+            {
+                bool contains = false;
+                foreach (OrderItem item in order.OrderItems)
+                {
+                    if (old.ID == item.ID)
+                    {
+                        contains = true;
+                        break;
+                    }
+                }
+                if (!contains) db.OrderItems.DeleteOnSubmit(old);
+            }
 
             db.SubmitChanges();
         }

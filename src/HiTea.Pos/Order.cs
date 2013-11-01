@@ -7,6 +7,8 @@ using System.Data.Linq.Mapping;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Windows.Input;
+
 using DbLinq.Data.Linq;
 using DbLinq.Vendor;
 
@@ -52,8 +54,10 @@ namespace HiTea.Pos
             }
         }
         public ObservableCollection<OrderItem> Items { get; set; }
+
         partial void OnCreated()
         {
+            this.RemoveItemCommand = new RemoveItemCommand(this);
             this.cash = 0m;
             this.Items = new ObservableCollection<OrderItem>();
             this.Items.CollectionChanged += Items_CollectionChanged;
@@ -91,6 +95,37 @@ namespace HiTea.Pos
                     this.OnTotalChanged();
                 }
             }
+        }
+
+        public RemoveItemCommand RemoveItemCommand { get; set; }
+        /// <summary>
+        /// Remove selected order item. Void the item from order menu.
+        /// </summary>
+        /// <param name="item"></param>
+        public void RemoveItem(OrderItem item)
+        {
+            this.Items.Remove(item);
+        }
+    }
+
+    public class RemoveItemCommand : ICommand
+    {
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public event EventHandler CanExecuteChanged;
+
+        public void Execute(object parameter)
+        {
+            if (parameter is OrderItem)
+                this.order.RemoveItem(parameter as OrderItem);
+        }
+        private Order order;
+        public RemoveItemCommand(Order order)
+        {
+            this.order = order;
         }
     }
 }
