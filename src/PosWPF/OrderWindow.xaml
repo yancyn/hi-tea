@@ -23,13 +23,13 @@
         </Grid>
         <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
             <StackPanel>
-                <WrapPanel HorizontalAlignment="Right">
+                <WrapPanel HorizontalAlignment="Right" Visibility="{Binding SelectedOrder.Cash,Converter={StaticResource VisibilityConverter}}">
                     <TextBlock Text="PAY: " Foreground="Green" Style="{StaticResource DefaultBold}" />
-                    <TextBlock Text="{Binding SelectedOrder.Cash}" Foreground="Green" Style="{StaticResource DefaultBold}" />
+                    <TextBlock Text="{Binding SelectedOrder.Cash,Converter={StaticResource MoneyConverter}}" Foreground="Green" Style="{StaticResource DefaultBold}" />
                 </WrapPanel>
-                <WrapPanel HorizontalAlignment="Right">
+                <WrapPanel HorizontalAlignment="Right" Visibility="{Binding SelectedOrder.Cash,Converter={StaticResource VisibilityConverter}}">
                     <TextBlock Text="RETURN: " Foreground="Red" Style="{StaticResource DefaultBold}" />
-                    <TextBlock Text="{Binding SelectedOrder.Return}" Foreground="Red" Style="{StaticResource DefaultBold}" />
+                    <TextBlock Text="{Binding SelectedOrder.Return,Converter={StaticResource MoneyConverter}}" Foreground="Red" Style="{StaticResource DefaultBold}" />
                 </WrapPanel>
                 <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                     <Button ToolTip="Print Label" Background="{StaticResource CupIcon}" Style="{StaticResource CircleButtonStyle}" />

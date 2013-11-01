@@ -10,6 +10,7 @@
     <w:AdminTemplateSelector x:Key="AdminTemplateSelector" />
     <w:IndexConverter x:Key="IndexConverter" />
     <w:MoneyConverter x:Key="MoneyConverter" />
+    <w:VisibilityConverter x:Key="VisibilityConverter" />
 
     <SolidColorBrush x:Key="DefaultColor" Color="#58595b" />
 

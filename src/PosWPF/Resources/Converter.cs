@@ -6,6 +6,7 @@ using System.Text;
 using System.Windows.Data;
 using System.Windows.Media;
 using HiTea.Pos;
+using System.Windows;
 
 namespace PosWPF
 {
@@ -236,6 +237,46 @@ namespace PosWPF
         {
             //throw new NotImplementedException();
             return null;
+        }
+        #endregion
+    }
+
+    /// <summary>
+    /// If there is zero row count just hidden otherwise visible.
+    /// If WorkItem is null then hidden otherwise visible. Normall refer to WorkItem.Parent
+    /// </summary>
+    public class VisibilityConverter : IValueConverter
+    {
+        #region IValueConverter Members
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (value is int)
+            {
+                return ((int)value) > 0 ? Visibility.Visible : Visibility.Hidden; //todo: check Visibility.Collapsed
+            }
+            else if (value is Int32)
+            {
+                return System.Convert.ToInt32(value) > 0 ? Visibility.Visible : Visibility.Hidden;
+            }
+            else if (value is decimal)
+            {
+                return System.Convert.ToDecimal(value) > 0 ? Visibility.Visible : Visibility.Hidden;
+            }
+            else if (value is float)
+            {
+                float money = (float)value;
+                return (money > 0) ? Visibility.Visible : Visibility.Hidden;
+            }
+            else if (value == null)
+            {
+                return Visibility.Visible;
+            }
+
+            throw new ArgumentException("Not supported type of " + value.GetType());
+        }
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }
