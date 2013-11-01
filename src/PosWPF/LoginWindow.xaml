@@ -8,6 +8,7 @@
     Style="{StaticResource BorderlessDialogStyle}"
     WindowStartupLocation="CenterScreen"
     x:Name="LoginScreen"
+    Activated="LoginScreen_Activated"
     Height="300" Width="450">
     <Grid Margin="20">
         <Grid.ColumnDefinitions>

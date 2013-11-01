@@ -25,6 +25,11 @@ namespace PosWPF
             InitializeComponent();
         }
 
+        private void LoginScreen_Activated(object sender, EventArgs e)
+        {
+            Username.Focus();
+        }
+
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             if ((this.DataContext as PosManager).Login(Username.Text, Password.Password))
