@@ -12,6 +12,11 @@
     <w:MenuBackgroundConverter x:Key="MenuBackgroundConverter" />
     <w:AdminTemplateSelector x:Key="AdminTemplateSelector" />
     <w:IndexConverter x:Key="IndexConverter" />
+    
+    <Style x:Key="DefaultBold" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="36" />
+        <Setter Property="FontWeight" Value="ExtraBold" />
+    </Style>
 
     <Style x:Key="BorderlessWindowStyle" TargetType="{x:Type Window}">
         <Setter Property="WindowStyle" Value="None" />

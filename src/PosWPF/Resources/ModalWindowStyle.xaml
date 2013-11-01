@@ -17,9 +17,9 @@
                             <DockPanel DockPanel.Dock="Top" LastChildFill="True" Background="Transparent" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
 								<Button DockPanel.Dock="Left" ToolTip="Back" Background="{StaticResource BackIcon}" Style="{StaticResource CircleButtonStyle}" Click="BackButton_Click" />
                                 <WrapPanel HorizontalAlignment="Right">
-                                    <TextBlock Text="Total: " Margin="10" FontSize="36" FontWeight="ExtraBold" TextAlignment="Right" />
+                                    <TextBlock Text="TOTAL: " Margin="10" TextAlignment="Right" Style="{StaticResource DefaultBold}" />
                                     <TextBlock Text="{Binding DataContext.SelectedOrder.Total, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource MoneyConverter}, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Window}}}"
-                                               Margin="10" FontSize="36" FontWeight="ExtraBold" TextAlignment="Right" />
+                                               Margin="10" TextAlignment="Right" Style="{StaticResource DefaultBold}" />
                                 </WrapPanel>
                             </DockPanel>
                             <Grid Margin="10,-10,10,10">

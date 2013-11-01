@@ -22,10 +22,22 @@
             </WrapPanel>
         </Grid>
         <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
-            <Button ToolTip="Print Label" Background="{StaticResource CupIcon}" Style="{StaticResource CircleButtonStyle}" />
-            <Button ToolTip="Print Receipt" Background="{StaticResource PrinterIcon}" Style="{StaticResource CircleButtonStyle}" Click="ReceiptButton_Click" />
-            <Button ToolTip="Pay" Style="{StaticResource PayButton}" />
-            <Button ToolTip="Confirm" Background="{StaticResource TickIcon}" Style="{StaticResource CircleButtonStyle}" Command="{Binding ConfirmOrderCommand}" Click="ConfirmButton_Click" />
+            <StackPanel>
+                <WrapPanel HorizontalAlignment="Right">
+                    <TextBlock Text="PAY: " Foreground="Green" Style="{StaticResource DefaultBold}" />
+                    <TextBlock Text="{Binding SelectedOrder.Cash}" Foreground="Green" Style="{StaticResource DefaultBold}" />
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Right">
+                    <TextBlock Text="RETURN: " Foreground="Red" Style="{StaticResource DefaultBold}" />
+                    <TextBlock Text="{Binding SelectedOrder.Return}" Foreground="Red" Style="{StaticResource DefaultBold}" />
+                </WrapPanel>
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                    <Button ToolTip="Print Label" Background="{StaticResource CupIcon}" Style="{StaticResource CircleButtonStyle}" />
+                    <Button ToolTip="Print Receipt" Background="{StaticResource PrinterIcon}" Style="{StaticResource CircleButtonStyle}" Click="ReceiptButton_Click" />
+                    <Button ToolTip="Pay" Style="{StaticResource PayButton}" />
+                    <Button ToolTip="Confirm" Background="{StaticResource TickIcon}" Style="{StaticResource CircleButtonStyle}" Command="{Binding ConfirmOrderCommand}" Click="ConfirmButton_Click" />
+                </StackPanel>
+            </StackPanel>
         </StackPanel>
         <DockPanel LastChildFill="True">
             <Grid DockPanel.Dock="Top">

@@ -14,9 +14,47 @@ namespace HiTea.Pos
 {
     public partial class Order
     {
+        partial void OnCashChanged();
+        partial void OnCashChanging(decimal value);
+        private decimal cash;
+        /// <summary>
+        /// Cash paid by guest for consumption. Zero value will be represent not yet pay or paid by credit card.
+        /// </summary>
+        public decimal Cash
+        {
+            get { return this.cash; }
+            set
+            {
+                if ((cash != value))
+                {
+                    this.OnCashChanging(value);
+                    this.SendPropertyChanging();
+                    this.cash = value;
+                    this.SendPropertyChanged("Cash");
+                    this.SendPropertyChanged("Return");
+                    this.OnCashChanged();
+                }
+            }
+        }
+
+        partial void OnReturnChanged();
+        partial void OnReturnChanging(decimal value);
+        private decimal _return;
+        /// <summary>
+        /// Total need to be return after deduct from total amount.
+        /// </summary>
+        public decimal Return
+        {
+            get
+            {
+                _return = this.cash - (decimal)this._total;
+                return _return;
+            }
+        }
         public ObservableCollection<OrderItem> Items { get; set; }
         partial void OnCreated()
         {
+            this.cash = 0m;
             this.Items = new ObservableCollection<OrderItem>();
             this.Items.CollectionChanged += Items_CollectionChanged;
         }
