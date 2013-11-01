@@ -120,7 +120,7 @@ namespace PosWPF
             string feed = "Total: ";
             string total = order.Total.ToString("###,##0.00");
             graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
-            graphics.DrawString(total, font, new SolidBrush(System.Drawing.Color.Black), startX + 150, startY + offset);
+            graphics.DrawString(total, font, new SolidBrush(System.Drawing.Color.Black), startX + 150 - 10, startY + offset);
 
             offset += 20;
             graphics.DrawString(underline, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
