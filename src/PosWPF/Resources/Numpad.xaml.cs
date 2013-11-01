@@ -38,36 +38,14 @@ namespace PosWPF
         {
             Order order = (Order)this.DataContext;
             int value = Convert.ToInt32((sender as Button).Content);
-            if (order.Cash == 0)
-            {
-                order.Cash = value;
-            }
-            else
-            {
-                // TODO: Buggy
-                decimal old = decimal.Round(order.Cash, 2);
-                string cashString = order.Cash.ToString();
-                switch (cashString.Length)
-                {
-                    case 1:
-                        order.Cash = old * 10 + value;
-                        break;
-                    case 2:
-                        order.Cash = old + value / 10m;
-                        break;
-                    case 4:
-                        order.Cash = old + value / 100m;
-                        break;
-                    default:
-                        order.Cash = old * 10 + value / 100m;
-                        break;
-                }
-
-                //int ratio = Math.Max(1, cashString.Length - 1);
-                //order.Cash = order.Cash * ratio * 10 + value / ratio * 10m;
-            }
-
+            decimal old = decimal.Round(order.Cash, 2);
+            order.Cash = old*10m + value / 100m;
             System.Diagnostics.Debug.WriteLine(order.Cash);
+        }
+        private void HundredButton_Click(object sender, RoutedEventArgs e)
+        {
+            Order order = (Order)this.DataContext;
+            order.Cash = order.Cash * 100m;
         }
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
