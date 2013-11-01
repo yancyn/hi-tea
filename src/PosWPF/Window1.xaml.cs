@@ -40,14 +40,32 @@ namespace PosWPF
         {
             InitializeComponent();
 
-            //HiTea.Pos.User cashier = new HiTea.Pos.User();
-            //cashier.Username = "yancyn";
-            //posManager.Cashier = cashier;
-            this.DataContext = posManager;
-
             currentTimeTimer.Interval = 1000 * 60;
             currentTimeTimer.Tick += timer_Tick;
             currentTimeTimer.Start();
+
+            this.DataContext = posManager;
+
+            Order order = new Order();
+            order.TableNo = "1";
+            posManager.TableBasket.Add(order);
+
+            order = new Order();
+            order.TableNo = "2";
+            posManager.TableBasket.Add(order);
+
+            order = new Order();
+            order.TableNo = "3";
+            posManager.TableBasket.Add(order);
+
+            order = new Order();
+            order.TableNo = "4";
+            posManager.TableBasket.Add(order);
+
+            order = new Order();
+            order.TableNo = "5";
+            posManager.TableBasket.Add(order);
+            DineInGrid.DataContext = posManager;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

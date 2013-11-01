@@ -4,12 +4,19 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:p="clr-namespace:HiTea.Pos;assembly=HiTea.Pos"
     xmlns:w="clr-namespace:PosWPF"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
     Title="PosWPF"
     Style="{StaticResource BorderlessWindowStyle}"
     WindowStartupLocation="CenterScreen"
     WindowState="Maximized" Loaded="Window_Loaded">
     <Window.Resources>
-        <w:DateTimeConverter x:Key="DateTimeConverter" />
+        <x:Array Type="sys:Int32" x:Key="TableIndexes">
+            <sys:Int32>8</sys:Int32>
+            <sys:Int32>38</sys:Int32>
+            <sys:Int32>53</sys:Int32>
+            <sys:Int32>58</sys:Int32>
+            <sys:Int32>78</sys:Int32>
+        </x:Array>
     </Window.Resources>
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
@@ -57,7 +64,7 @@
                     </Grid>
                 </DockPanel>
             </StackPanel>
-            <Grid x:Name="DineInGrid" />
+            <w:TableControl x:Name="DineInGrid" DisplayIndexes="{StaticResource TableIndexes}" />
         </DockPanel>
 
         <Separator Grid.Column="1" Style="{DynamicResource VerticalSeparatorStyle}" />
