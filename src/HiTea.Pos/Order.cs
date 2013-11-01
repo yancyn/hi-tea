@@ -18,6 +18,19 @@ namespace HiTea.Pos
         partial void OnCreated()
         {
             this.Items = new ObservableCollection<OrderItem>();
+            this.Items.CollectionChanged += Items_CollectionChanged;
+        }
+
+        void Items_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            CalculateTotal();
+            this.SendPropertyChanged("Total");
+        }
+        private void CalculateTotal()
+        {
+            this._total = 0;
+            foreach (OrderItem item in this.Items)
+                this._total += item.Menu.Price;
         }
 
         [Column(Storage = "_total", Name = "Total", DbType = "real", AutoSync = AutoSync.Never, CanBeNull = false)]
@@ -26,9 +39,7 @@ namespace HiTea.Pos
         {
             get
             {
-                this._total = 0;
-                foreach (OrderItem item in this.Items)
-                    this._total += item.Menu.Price;
+                CalculateTotal();
                 return this._total;
             }
             set
