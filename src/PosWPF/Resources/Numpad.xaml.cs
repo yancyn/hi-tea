@@ -45,7 +45,7 @@ namespace PosWPF
             int value = Convert.ToInt32((sender as Button).Content);
             decimal old = decimal.Round(order.Cash, 2);
             order.Cash = old*10m + value / 100m;
-            System.Diagnostics.Debug.WriteLine(order.Cash);
+            //System.Diagnostics.Debug.WriteLine(order.Cash);
         }
         private void HundredButton_Click(object sender, RoutedEventArgs e)
         {

@@ -67,5 +67,17 @@ namespace PosWPF
                 }
             }
         }
+
+        private void OpenOrder_Click(object sender, RoutedEventArgs e)
+        {
+            PosManager pos = this.DataContext as PosManager;
+            pos.SelectedOrder = (sender as System.Windows.Controls.Button).DataContext as Order;
+
+            OrderWindow window = new OrderWindow();
+            window.Owner = (sender as FrameworkElement).TemplatedParent as Window; // TODO: Hosted window but null
+            window.Topmost = true;
+            window.DataContext = this.DataContext;
+            window.Show();
+        }
     }
 }

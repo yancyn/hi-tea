@@ -46,6 +46,7 @@ namespace PosWPF
 
             this.DataContext = posManager;
 
+            // TODO: This should be configurable. Hardcode temp
             Order order = new Order();
             order.TableNo = "1";
             posManager.TableBasket.Add(order);
