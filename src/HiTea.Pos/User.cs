@@ -27,6 +27,7 @@ namespace HiTea.Pos
             if (user == null) return this.isValid;
 
             isValid = (user.Password == password) ? true : false;
+            db.Dispose();
             return this.isValid;
         }
 
