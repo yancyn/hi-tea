@@ -16,7 +16,11 @@
                         <DockPanel LastChildFill="True">
                             <DockPanel DockPanel.Dock="Top" LastChildFill="True" Background="Transparent" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
 								<Button DockPanel.Dock="Left" ToolTip="Back" Background="{StaticResource BackIcon}" Style="{StaticResource CircleButtonStyle}" Click="BackButton_Click" />
-                        		<TextBlock Margin="10" Text="{Binding DataContext.SelectedOrder.Total, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Window}}}" FontSize="36" FontWeight="ExtraBold" TextAlignment="Right" />
+                                <WrapPanel HorizontalAlignment="Right">
+                                    <TextBlock Text="Total: " Margin="10" FontSize="36" FontWeight="ExtraBold" TextAlignment="Right" />
+                                    <TextBlock Text="{Binding DataContext.SelectedOrder.Total, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Window}}}"
+                                               Margin="10" FontSize="36" FontWeight="ExtraBold" TextAlignment="Right" />
+                                </WrapPanel>
                             </DockPanel>
                             <Grid Margin="10,-10,10,10">
                                 <ContentPresenter Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" ContentTemplate="{TemplateBinding ContentTemplate}"/>
