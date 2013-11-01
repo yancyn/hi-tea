@@ -17,18 +17,18 @@
 			<RowDefinition Height="*" />
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
-		<Button Grid.Column="0" Grid.Row="0" Content="7" Style="{StaticResource NumpadStyle}" />
-		<Button Grid.Column="1" Grid.Row="0" Content="8" Style="{StaticResource NumpadStyle}" />
-		<Button Grid.Column="2" Grid.Row="0" Content="9" Style="{StaticResource NumpadStyle}" />
-		<Button Grid.Column="0" Grid.Row="1" Content="4" Style="{StaticResource NumpadStyle}" />
-		<Button Grid.Column="1" Grid.Row="1" Content="5" Style="{StaticResource NumpadStyle}" />
-		<Button Grid.Column="2" Grid.Row="1" Content="6" Style="{StaticResource NumpadStyle}" />
-		<Button Grid.Column="0" Grid.Row="2" Content="1" Style="{StaticResource NumpadStyle}" />
-		<Button Grid.Column="1" Grid.Row="2" Content="2" Style="{StaticResource NumpadStyle}" />
-		<Button Grid.Column="2" Grid.Row="2" Content="3" Style="{StaticResource NumpadStyle}" />
-		<Button Grid.Column="0" Grid.Row="3" Content="00" Style="{StaticResource NumpadStyle}" />
-		<Button Grid.Column="1" Grid.Row="3" Content="0" Style="{StaticResource NumpadStyle}" />
-		<Button Grid.Column="2" Grid.Row="3" Content="◄" Style="{StaticResource NumpadStyle}" />
+		<Button Grid.Column="0" Grid.Row="0" Content="7" Style="{StaticResource NumpadStyle}" Click="Button_Click" />
+        <Button Grid.Column="1" Grid.Row="0" Content="8" Style="{StaticResource NumpadStyle}" Click="Button_Click" />
+        <Button Grid.Column="2" Grid.Row="0" Content="9" Style="{StaticResource NumpadStyle}" Click="Button_Click" />
+        <Button Grid.Column="0" Grid.Row="1" Content="4" Style="{StaticResource NumpadStyle}" Click="Button_Click" />
+        <Button Grid.Column="1" Grid.Row="1" Content="5" Style="{StaticResource NumpadStyle}" Click="Button_Click" />
+        <Button Grid.Column="2" Grid.Row="1" Content="6" Style="{StaticResource NumpadStyle}" Click="Button_Click" />
+        <Button Grid.Column="0" Grid.Row="2" Content="1" Style="{StaticResource NumpadStyle}" Click="Button_Click" />
+        <Button Grid.Column="1" Grid.Row="2" Content="2" Style="{StaticResource NumpadStyle}" Click="Button_Click" />
+        <Button Grid.Column="2" Grid.Row="2" Content="3" Style="{StaticResource NumpadStyle}" Click="Button_Click" />
+        <Button Grid.Column="0" Grid.Row="3" Content=".00" Style="{StaticResource NumpadStyle}" Click="Button_Click" />
+        <Button Grid.Column="1" Grid.Row="3" Content="0" Style="{StaticResource NumpadStyle}" Click="Button_Click" />
+		<Button Grid.Column="2" Grid.Row="3" Content="DEL" Style="{StaticResource NumpadStyle}" Click="DeleteButton_Click" />
 	
 		<Button Grid.Row="4" Grid.ColumnSpan="3" Content="OK" Background="#aaa" Style="{StaticResource NumpadStyle}" Click="EnterButton_Click" />
 	</Grid>

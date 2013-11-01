@@ -27,13 +27,13 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <WrapPanel Grid.Row="0"  HorizontalAlignment="Right" Visibility="{Binding SelectedOrder.Cash,Converter={StaticResource VisibilityConverter}}">
+            <WrapPanel Grid.Row="0"  HorizontalAlignment="Right" Visibility="{Binding SelectedOrder.Cash,Converter={StaticResource VisibilityConverter}, UpdateSourceTrigger=PropertyChanged}">
                 <TextBlock Text="PAY: " Foreground="Green" Style="{StaticResource DefaultBold}" />
-                <TextBlock Text="{Binding SelectedOrder.Cash,Converter={StaticResource MoneyConverter}}" Foreground="Green" Style="{StaticResource DefaultBold}" />
+                <TextBlock Text="{Binding SelectedOrder.Cash,Converter={StaticResource MoneyConverter}, UpdateSourceTrigger=PropertyChanged}" Foreground="Green" Style="{StaticResource DefaultBold}" />
             </WrapPanel>
-            <WrapPanel Grid.Row="1"  HorizontalAlignment="Right" Visibility="{Binding SelectedOrder.Cash,Converter={StaticResource VisibilityConverter}}">
+            <WrapPanel Grid.Row="1"  HorizontalAlignment="Right" Visibility="{Binding SelectedOrder.Cash,Converter={StaticResource VisibilityConverter}, UpdateSourceTrigger=PropertyChanged}">
                 <TextBlock Text="RETURN: " Foreground="Red" Style="{StaticResource DefaultBold}" />
-                <TextBlock Text="{Binding SelectedOrder.Return,Converter={StaticResource MoneyConverter}}" Foreground="Red" Style="{StaticResource DefaultBold}" />
+                <TextBlock Text="{Binding SelectedOrder.Return,Converter={StaticResource MoneyConverter}, UpdateSourceTrigger=PropertyChanged}" Foreground="Red" Style="{StaticResource DefaultBold}" />
             </WrapPanel>
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
