@@ -59,6 +59,33 @@ namespace PosWPF
     }
 
     /// <summary>
+    /// Display float or decimal value in 2 digits only.
+    /// </summary>
+    public class MoneyConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (value is float)
+            {
+                float money = (float)value;
+                return money.ToString("###,##0.00");
+            }
+            if (value is decimal)
+            {
+                decimal money = (decimal)value;
+                return money.ToString("###,##0.00");
+            }
+
+            throw new ArgumentException("Not supported type of " + value.GetType());
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    /// <summary>
     /// Based on source color wheel calculation from base color #007acc see http://colorschemedesigner.com/#3v61T--Jgw0w0
     /// </summary>
     public class MenuBackgroundConverter : IValueConverter
