@@ -18,9 +18,9 @@ namespace PosWPF
     /// <summary>
     /// Interaction logic for ModalWindow.xaml
     /// </summary>
-    public partial class ModalWindow : ResourceDictionary
+    public partial class OrderStyle : ResourceDictionary
     {
-        public ModalWindow()
+        public OrderStyle()
         {
             InitializeComponent();
         }

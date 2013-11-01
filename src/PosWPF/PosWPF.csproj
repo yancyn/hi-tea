@@ -90,6 +90,9 @@
       <SubType>Code</SubType>
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Resources\BorderlessModalStyle.xaml.cs">
+      <DependentUpon>BorderlessModalStyle.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Converter.cs" />
     <Compile Include="Resources\DataTemplateSelectors.cs" />
     <Compile Include="LoginWindow.xaml.cs">
@@ -100,8 +103,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Resources\PasswordHelper.cs" />
-    <Compile Include="Resources\ModalWindowStyle.xaml.cs">
-      <DependentUpon>ModalWindowStyle.xaml</DependentUpon>
+    <Compile Include="Resources\OrderStyle.xaml.cs">
+      <DependentUpon>OrderStyle.xaml</DependentUpon>
     </Compile>
     <Compile Include="OrderWindow.xaml.cs">
       <DependentUpon>OrderWindow.xaml</DependentUpon>
@@ -124,7 +127,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\ModalWindowStyle.xaml">
+    <Page Include="Resources\BorderlessModalStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\OrderStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

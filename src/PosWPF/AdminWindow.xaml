@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     mc:Ignorable="d"
     Height="600" Width="600"
-    Style="{StaticResource BorderlessDialogStyle}"
+    Style="{StaticResource BorderlessModalStyle}"
     WindowStartupLocation="CenterScreen"
     Closed="Window_Closed">
     <TabControl x:Name="AdminTab"
