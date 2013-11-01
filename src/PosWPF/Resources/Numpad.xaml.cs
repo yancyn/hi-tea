@@ -27,5 +27,10 @@ namespace PosWPF
 		{
 			InitializeComponent();
 		}
+
+        private void EnterButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
 	}
 }

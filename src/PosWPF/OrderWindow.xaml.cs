@@ -63,6 +63,15 @@ namespace PosWPF
             this.Close();
         }
 
+        private void PayButton_Click(object sender, RoutedEventArgs e)
+        {
+            Numpad numpad = new Numpad();
+            numpad.Owner = this;
+            numpad.Topmost = true;
+            numpad.DataContext = (this.DataContext as PosManager).SelectedOrder;
+            numpad.ShowDialog();
+        }
+
         private void ReceiptButton_Click(object sender, RoutedEventArgs e)
         {
             System.Windows.Forms.PrintDialog pd = new System.Windows.Forms.PrintDialog();
