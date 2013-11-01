@@ -5,13 +5,6 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:w="clr-namespace:PosWPF"
     mc:Ignorable="d">
-
-    <w:MenuDisplayNameConverter x:Key="MenuNameConverter" />
-    <w:DineInConverter x:Key="DineInConverter" />
-    <w:TakeOutConverter x:Key="TakeOutConverter" />
-    <w:MenuBackgroundConverter x:Key="MenuBackgroundConverter" />
-    <w:AdminTemplateSelector x:Key="AdminTemplateSelector" />
-    <w:IndexConverter x:Key="IndexConverter" />
     
     <Style x:Key="DefaultBold" TargetType="{x:Type TextBlock}">
         <Setter Property="FontSize" Value="36" />

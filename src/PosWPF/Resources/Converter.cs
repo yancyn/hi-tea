@@ -156,7 +156,7 @@ namespace PosWPF
     /// <summary>
     /// Check the box if dine in. OrderTypeID = 1.
     /// </summary>
-    public class DineInConverter : IValueConverter
+    public class OneIsTrueConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
@@ -185,28 +185,32 @@ namespace PosWPF
     /// <summary>
     /// Check the box if take away. OrderTypeID = 2.
     /// </summary>
-    public class TakeOutConverter : IValueConverter
+    public class TwoIsTrueConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             if (value is int)
             {
-                return ((int)value) == 1 ? false : true;
+                return ((int)value) == 2 ? true : false;
             }
             else if (value is Int32)
             {
-                return (System.Convert.ToInt32(value) == 1) ? false : false;
+                return (System.Convert.ToInt32(value) == 2) ? true : false;
             }
-
 
             throw new ArgumentException("Not supported type of " + value.GetType());
         }
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            if (targetType == typeof(Int32))
+            if (targetType == typeof(Int16))
             {
                 return ((bool)value == true) ? 2 : 1;
             }
+            else if (targetType == typeof(Int32))
+            {
+                return ((bool)value == true) ? 2 : 1;
+            }
+
             throw new NotImplementedException();
         }
     }
