@@ -1,0 +1,147 @@
+﻿<UserControl x:Class="PosWPF.TableControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"
+             Loaded="UserControl_Loaded"
+             d:DesignHeight="500" d:DesignWidth="500">
+    <Grid x:Name="Grid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0" Grid.Column="0" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="0" Grid.Column="3" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="0" Grid.Column="4" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="0" Grid.Column="5" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="0" Grid.Column="6" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="0" Grid.Column="7" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="0" Grid.Column="8" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="0" Grid.Column="9" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+
+        <Button Grid.Row="1" Grid.Column="0" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="1" Grid.Column="1" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="1" Grid.Column="2" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="1" Grid.Column="3" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="1" Grid.Column="4" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="1" Grid.Column="5" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="1" Grid.Column="6" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="1" Grid.Column="7" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="1" Grid.Column="8" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="1" Grid.Column="9" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+
+        <Button Grid.Row="2" Grid.Column="0" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="2" Grid.Column="1" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="2" Grid.Column="2" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="2" Grid.Column="3" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="2" Grid.Column="4" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="2" Grid.Column="5" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="2" Grid.Column="6" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="2" Grid.Column="7" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="2" Grid.Column="8" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="2" Grid.Column="9" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+
+        <Button Grid.Row="3" Grid.Column="0" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="3" Grid.Column="1" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="3" Grid.Column="2" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="3" Grid.Column="3" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="3" Grid.Column="4" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="3" Grid.Column="5" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="3" Grid.Column="6" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="3" Grid.Column="7" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="3" Grid.Column="8" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="3" Grid.Column="9" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+
+        <Button Grid.Row="4" Grid.Column="0" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="4" Grid.Column="1" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="4" Grid.Column="2" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="4" Grid.Column="3" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="4" Grid.Column="4" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="4" Grid.Column="5" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="4" Grid.Column="6" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="4" Grid.Column="7" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="4" Grid.Column="8" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="4" Grid.Column="9" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+
+        <Button Grid.Row="5" Grid.Column="0" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="5" Grid.Column="1" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="5" Grid.Column="2" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="5" Grid.Column="3" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="5" Grid.Column="4" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="5" Grid.Column="5" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="5" Grid.Column="6" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="5" Grid.Column="7" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="5" Grid.Column="8" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="5" Grid.Column="9" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+
+        <Button Grid.Row="6" Grid.Column="0" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="6" Grid.Column="1" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="6" Grid.Column="2" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="6" Grid.Column="3" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="6" Grid.Column="4" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="6" Grid.Column="5" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="6" Grid.Column="6" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="6" Grid.Column="7" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="6" Grid.Column="8" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="6" Grid.Column="9" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+
+        <Button Grid.Row="7" Grid.Column="0" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="7" Grid.Column="1" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="7" Grid.Column="2" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="7" Grid.Column="3" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="7" Grid.Column="4" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="7" Grid.Column="5" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="7" Grid.Column="6" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="7" Grid.Column="7" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="7" Grid.Column="8" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="7" Grid.Column="9" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+
+        <Button Grid.Row="8" Grid.Column="0" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="8" Grid.Column="1" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="8" Grid.Column="2" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="8" Grid.Column="3" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="8" Grid.Column="4" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="8" Grid.Column="5" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="8" Grid.Column="6" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="8" Grid.Column="7" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="8" Grid.Column="8" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="8" Grid.Column="9" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+
+        <Button Grid.Row="9" Grid.Column="0" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="9" Grid.Column="1" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="9" Grid.Column="2" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="9" Grid.Column="3" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="9" Grid.Column="4" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="9" Grid.Column="5" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="9" Grid.Column="6" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="9" Grid.Column="7" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="9" Grid.Column="8" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+        <Button Grid.Row="9" Grid.Column="9" Style="{StaticResource TableBallStyle}" Content="{Binding No}" Width="{Binding Size}" Height="{Binding Size}" Visibility="{Binding Visible,Converter={StaticResource VisibilityConverter}}" />
+
+    </Grid>
+    
+</UserControl>

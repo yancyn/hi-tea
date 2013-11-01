@@ -78,6 +78,11 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+    
+    <Style x:Key="TableBallStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource CircleButtonStyle}">
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Background" Value="WhiteSmoke" />
+    </Style>
 
     <!-- TODO: Add gradient make it look like a book divider -->
     <Style x:Key="VerticalSeparatorStyle" TargetType="{x:Type Separator}" BasedOn="{StaticResource {x:Type Separator}}">

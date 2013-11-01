@@ -247,16 +247,24 @@ namespace PosWPF
 
     /// <summary>
     /// If there is zero row count just hidden otherwise visible.
-    /// If WorkItem is null then hidden otherwise visible. Normall refer to WorkItem.Parent
+    /// TODO: Check Visibility.Collapsed
     /// </summary>
     public class VisibilityConverter : IValueConverter
     {
         #region IValueConverter Members
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            if (value is int)
+            if (value is bool)
             {
-                return ((int)value) > 0 ? Visibility.Visible : Visibility.Hidden; //todo: check Visibility.Collapsed
+                return (bool)value ? Visibility.Visible : Visibility.Hidden;
+            }
+            else if (value is Boolean)
+            {
+                return (Boolean)value ? Visibility.Visible : Visibility.Hidden;
+            }
+            else if (value is int)
+            {
+                return ((int)value) > 0 ? Visibility.Visible : Visibility.Hidden;
             }
             else if (value is Int32)
             {

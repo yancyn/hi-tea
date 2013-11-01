@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HiTea.Pos;
 
 namespace PosWPF
 {
@@ -23,7 +24,14 @@ namespace PosWPF
         {
             InitializeComponent();
 
-            //button1.Background
+            Dictionary<int, string> displayBalls = new Dictionary<int, string>();
+            displayBalls.Add(13, "A1");
+            displayBalls.Add(36, "A2");
+            displayBalls.Add(50, "A3");
+            displayBalls.Add(80, "A4");
+
+            TableManager manager = new TableManager(displayBalls);
+            MainTable.DataContext = manager;
         }
     }
 }
