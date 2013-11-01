@@ -68,7 +68,7 @@ namespace PosWPF
             Numpad numpad = new Numpad();
             numpad.Owner = this;
             numpad.Topmost = true;
-            numpad.DataContext = (this.DataContext as PosManager).SelectedOrder;
+            numpad.DataContext = this.DataContext;
             numpad.ShowDialog();
         }
 

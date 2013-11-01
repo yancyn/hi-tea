@@ -32,7 +32,20 @@ namespace PosWPF
             {
                 PosManager posManager = (PosManager)window.DataContext;
                 if (posManager.SelectedOrder.Items.Count == 0)
-                    posManager.CarryBasket.Remove(posManager.SelectedOrder);
+                {
+                    if (posManager.CarryBasket.Contains(posManager.SelectedOrder))
+                        posManager.CarryBasket.Remove(posManager.SelectedOrder);
+                    else if (posManager.TableBasket.Contains(posManager.SelectedOrder))
+                        posManager.TableBasket.Remove(posManager.SelectedOrder);
+                }
+
+                if (posManager.SelectedOrder.ReceiptDate.HasValue)
+                {
+                    if (posManager.CarryBasket.Contains(posManager.SelectedOrder))
+                        posManager.CarryBasket.Remove(posManager.SelectedOrder);
+                    else if (posManager.TableBasket.Contains(posManager.SelectedOrder))
+                        posManager.TableBasket.Remove(posManager.SelectedOrder);
+                }
             }
 
             window.Close();

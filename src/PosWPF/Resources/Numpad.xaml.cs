@@ -31,12 +31,17 @@ namespace PosWPF
 
         private void EnterButton_Click(object sender, RoutedEventArgs e)
         {
+            Order order = (this.DataContext as PosManager).SelectedOrder;
+            order.ReceiptDate = DateTime.Now;
+            foreach (OrderItem item in order.Items)
+                item.StatusID = 2;
+            (this.DataContext as PosManager).UpdateOrder(ref order);
             this.Close();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Order order = (Order)this.DataContext;
+            Order order = (this.DataContext as PosManager).SelectedOrder;
             int value = Convert.ToInt32((sender as Button).Content);
             decimal old = decimal.Round(order.Cash, 2);
             order.Cash = old*10m + value / 100m;
@@ -44,12 +49,12 @@ namespace PosWPF
         }
         private void HundredButton_Click(object sender, RoutedEventArgs e)
         {
-            Order order = (Order)this.DataContext;
+            Order order = (this.DataContext as PosManager).SelectedOrder;
             order.Cash = order.Cash * 100m;
         }
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            Order order = (Order)this.DataContext;
+            Order order = (this.DataContext as PosManager).SelectedOrder;
             order.Cash = decimal.Round(order.Cash / 10m, 2);
         }
 	}

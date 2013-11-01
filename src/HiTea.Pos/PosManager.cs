@@ -78,19 +78,22 @@ namespace HiTea.Pos
 
             // retrieve incomplete order
             int[] incompleted = db.OrderItems.Where(i => i.StatusID != 2).Select(i => i.ParentID).ToArray();
-            var orders = db.Orders.Where(o => incompleted.Contains(o.ID));
+            var orders = db.Orders.Where(o => incompleted.Contains(o.ID));// && o.ReceiptDate == null);
             foreach (Order order in orders)
             {
-                foreach (OrderItem item in order.OrderItems)
-                    order.Items.Add(item);
+                // we only care about unpaid
+                if (order.ReceiptDate == null)
+                {
+                    foreach (OrderItem item in order.OrderItems)
+                        order.Items.Add(item);
 
-                if (String.IsNullOrEmpty(order.TableNo))
-                    this.CarryBasket.Add(order);
-                else
-                    this.TableBasket.Add(order);
+                    if (String.IsNullOrEmpty(order.TableNo))
+                        this.CarryBasket.Add(order);
+                    else
+                        this.TableBasket.Add(order);
+                }
             }
         }
-
         void TableBasket_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Remove)
@@ -233,21 +236,24 @@ namespace HiTea.Pos
             }
             else
             {
-                //CloneOrder(order);
-                order.ID = this.SelectedOrder.ID;
-                order.Created = this.SelectedOrder.Created;
-                order.CreatedByID = this.SelectedOrder.CreatedByID;
-                order.DodAte = this.SelectedOrder.DodAte;
-                order.OrderItems.Clear();
-                foreach (OrderItem item in this.SelectedOrder.Items)
-                    order.OrderItems.Add(item);
-                order.QueueNo = this.SelectedOrder.QueueNo;
-                order.ReceiptDate = this.SelectedOrder.ReceiptDate;
-                order.TableNo = this.SelectedOrder.TableNo;
-                order.Total = this.SelectedOrder.Total;
-
-                db.SubmitChanges();
+                UpdateOrder(ref order);
             }
+        }
+        public void UpdateOrder(ref Order order)
+        {
+            order.ID = this.SelectedOrder.ID;
+            order.Created = this.SelectedOrder.Created;
+            order.CreatedByID = this.SelectedOrder.CreatedByID;
+            order.DodAte = this.SelectedOrder.DodAte;
+            order.OrderItems.Clear();
+            foreach (OrderItem item in this.SelectedOrder.Items)
+                order.OrderItems.Add(item);
+            order.QueueNo = this.SelectedOrder.QueueNo;
+            order.ReceiptDate = this.SelectedOrder.ReceiptDate;
+            order.TableNo = this.SelectedOrder.TableNo;
+            order.Total = this.SelectedOrder.Total;
+
+            db.SubmitChanges();
         }
         private void CloneOrder(Order order)
         {
