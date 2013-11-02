@@ -11,11 +11,11 @@
     WindowState="Maximized" Loaded="Window_Loaded">
     <Window.Resources>
         <x:Array Type="sys:Int32" x:Key="TableIndexes">
-            <sys:Int32>8</sys:Int32>
-            <sys:Int32>38</sys:Int32>
-            <sys:Int32>53</sys:Int32>
-            <sys:Int32>58</sys:Int32>
-            <sys:Int32>78</sys:Int32>
+            <sys:Int32>4</sys:Int32>
+            <sys:Int32>34</sys:Int32>
+            <sys:Int32>51</sys:Int32>
+            <sys:Int32>54</sys:Int32>
+            <sys:Int32>64</sys:Int32>
         </x:Array>
     </Window.Resources>
     <Grid Margin="10">

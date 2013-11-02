@@ -7,19 +7,8 @@
              mc:Ignorable="d"
              xmlns:w="clr-namespace:PosWPF"
              Width="500" Height="500">
-    <Window.Resources>
-        <x:Array Type="sys:Int32" x:Key="TableIndexes">
-            <sys:Int32>3</sys:Int32>
-            <sys:Int32>7</sys:Int32>
-            <sys:Int32>8</sys:Int32>
-        </x:Array>
-    </Window.Resources>
-    <DockPanel LastChildFill="True">
-        <w:TableControl x:Name="MainTable" DisplayIndexes="{StaticResource TableIndexes}" />
-        
-        <!--<Grid Width="40" Height="40">
-            <Ellipse Height="40" Width="40" Stroke="Gray" StrokeThickness="2" />
-            <TextBlock Text="2" Margin="5 5 0 0" />
-        </Grid>-->
-    </DockPanel>
+    <Canvas>
+        <TextBlock Text="No: 3" FontSize="12" Canvas.Top="4" Canvas.Left="4" />
+        <TextBlock Text="No: 3" FontSize="12" Canvas.Top="14" Canvas.Left="4" />
+    </Canvas>
 </Window>

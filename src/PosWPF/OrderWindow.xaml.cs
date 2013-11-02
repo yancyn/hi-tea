@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Text;
+using System.Printing;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -17,6 +18,7 @@ using HiTea.Pos;
 using System.Drawing.Printing;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Windows.Markup;
 
 namespace PosWPF
 {
@@ -76,19 +78,17 @@ namespace PosWPF
         {
             System.Windows.Forms.PrintDialog pd = new System.Windows.Forms.PrintDialog();
             PrintDocument pdoc = new PrintDocument();
-            PrinterSettings ps = new PrinterSettings();
-            PaperSize psize = new PaperSize("Custom", 400, 600); // TODO: Calculate the height based on total order items.
             pd.Document = pdoc;
-            pd.Document.DefaultPageSettings.PaperSize = psize;
-
             pdoc.PrintPage += new PrintPageEventHandler(Receipt_PrintPage);
-            PrintPreviewDialog pp = new PrintPreviewDialog();
-            pp.Document = pdoc;
             pdoc.Print();
         }
         // TODO: Consider to convert to xaml layout for easier maintenance
+        // http://www.bradcurtis.com/document-and-report-generation-using-xaml-wpf-data-binding-and-xps/
         private void Receipt_PrintPage(object sender, PrintPageEventArgs e)
         {
+            string underline = "--------------------------------------------------";
+            string tab = "    ";
+
             // TODO: Receipt print format
             Order order = (this.DataContext as PosManager).SelectedOrder;
 
@@ -101,12 +101,15 @@ namespace PosWPF
             graphics.DrawString("Welcome to Hi Tea", font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
 
             offset += 20;
-            graphics.DrawString("Queue No: " + order.QueueNo, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+            string feed = string.Empty;
+            feed += "#" + order.ID;
+            feed += tab + "Table: " + order.TableNo;
+            feed += tab + "Queue: " + order.QueueNo;
+            graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
 
             offset += 20;
             graphics.DrawString("Date: " + DateTime.Now.ToString("dd/MM/yyyy hh:mm tt"), font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
 
-            String underline = "------------------------------------------";
             offset += 20;
             graphics.DrawString(underline, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
 
@@ -119,20 +122,67 @@ namespace PosWPF
                 string line = i + ". " + item.Menu.Code + " " + item.Menu.Name;
                 string price = item.Menu.Price.ToString("###,##0.00");
                 graphics.DrawString(line, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
-                graphics.DrawString(price, font, new SolidBrush(System.Drawing.Color.Black), startX + 150, startY + offset);
+                graphics.DrawString(price, font, new SolidBrush(System.Drawing.Color.Black), startX + 160, startY + offset);
             }
 
             offset += 20;
             graphics.DrawString(underline, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
 
             offset += 20;
-            string feed = "Total: ";
+            feed = "Total: ";
             string total = order.Total.ToString("###,##0.00");
             graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
-            graphics.DrawString(total, font, new SolidBrush(System.Drawing.Color.Black), startX + 150 - 10, startY + offset);
+            graphics.DrawString(total, font, new SolidBrush(System.Drawing.Color.Black), startX + 160 - 10, startY + offset);
 
             offset += 20;
             graphics.DrawString(underline, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+
+            offset += 20;
+            graphics.DrawString("Thank you", font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+
+            offset += 20;
+            graphics.DrawString("", font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset); // HACK: Add a footer margin
+        }
+
+        private void LabelButton_Click(object sender, RoutedEventArgs e)
+        {
+            Order order = (this.DataContext as PosManager).SelectedOrder;
+            foreach (OrderItem item in order.Items)
+            {
+                if (item.Menu.CategoryID == 3)
+                {
+                    System.Windows.Controls.PrintDialog pd = new System.Windows.Controls.PrintDialog();
+                    pd.PrintQueue = new PrintQueue(new PrintServer(), "Bar");
+
+                    // add content to first page
+                    /*Canvas canvas = new Canvas();
+
+                    TextBlock feed = new TextBlock();
+                    feed.FontSize = 12;
+                    feed.Foreground = System.Windows.Media.Brushes.Black;
+                    feed.Text = "No: " + order.QueueNo;
+                    Canvas.SetLeft(feed, 4);
+                    Canvas.SetTop(feed, 4);
+                    canvas.Children.Add(feed);
+
+                    feed = new TextBlock();
+                    feed.FontSize = 12;
+                    feed.Foreground = System.Windows.Media.Brushes.Black;
+                    feed.Text = item.Menu.Name;
+                    Canvas.SetLeft(feed, 4);
+                    Canvas.SetTop(feed, 14);
+                    canvas.Children.Add(feed);
+                    */
+                    // FAILED: pd.PrintVisual(canvas, "Drink Label");
+                    
+                    FlowDocument flowDocument = new FlowDocument();
+                    Paragraph paragraph = new Paragraph(new Run("No: " + order.QueueNo));
+                    flowDocument.Blocks.Add(paragraph);
+                    paragraph = new Paragraph(new Run(item.Menu.Name));
+                    flowDocument.Blocks.Add(paragraph);
+                    pd.PrintDocument(((IDocumentPaginatorSource)flowDocument).DocumentPaginator, "Drink Label");
+                }
+            }
         }
     }
 }
