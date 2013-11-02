@@ -46,12 +46,12 @@
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0"  Content="+" FontSize="24" FontWeight="ExtraBold" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" Click="TakeAway_Click" />
+                        <Button Grid.Column="0" Width="80" Height="80"  Content="+" FontSize="36" FontWeight="ExtraBold" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" Click="TakeAway_Click" />
                         <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Disabled"  HorizontalScrollBarVisibility="Auto">
                             <ItemsControl ItemsSource="{Binding CarryBasket}">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
-                                        <Button Content="{Binding QueueNo}" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" Click="OpenOrder_Click" />
+                                        <Button Width="80" Height="80" FontSize="36" Content="{Binding QueueNo}" FontWeight="ExtraBold" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" Click="OpenOrder_Click" />
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                                 <ItemsControl.ItemsPanel>

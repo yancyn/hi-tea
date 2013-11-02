@@ -54,7 +54,7 @@
     <Style x:Key="CircleButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="Height" Value="40" />
         <Setter Property="Width" Value="40" />
-        <Setter Property="Margin" Value="10" />
+        <Setter Property="Margin" Value="5" />
         <Setter Property="Padding" Value="20" />
         <Setter Property="Template">
             <Setter.Value>
@@ -90,7 +90,7 @@
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
                         <Ellipse x:Name="body" Fill="{TemplateBinding Background}" Stroke="Gray" StrokeThickness="2" />
-                        <TextBlock FontSize="24" Text="{TemplateBinding ToolTip}" Margin="10 10 0 0"/>
+                        <TextBlock Foreground="{StaticResource DefaultColor}" FontSize="24" Text="{TemplateBinding ToolTip}" Margin="10 10 0 0"/>
                         <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Grid>
                     <ControlTemplate.Triggers>
