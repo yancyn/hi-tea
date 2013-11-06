@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Data;
 using System.Windows.Media;
 using HiTea.Pos;
@@ -20,7 +21,20 @@ namespace PosWPF
             if(value is HiTea.Pos.Menu)
             {
                 HiTea.Pos.Menu menu = (HiTea.Pos.Menu)value;
-                return menu.Code + " " + menu.Name;
+                
+                // Break line for different encoding
+                string name = string.Empty;
+                name += menu.Code + " ";
+
+                // extract English character only
+                string eng = string.Empty;
+                Regex regex = new Regex("[a-zA-Z0-9 '()&-]");
+                foreach (Match match in regex.Matches(menu.Name))
+                    eng += match.Value;
+                string other = (eng.Length == 0) ? menu.Name: menu.Name.Replace(eng, string.Empty);
+                name += other.Trim() + "\n" + eng.Trim();
+
+                return name;
             }
             throw new ArgumentException("Not supported type of " + value.GetType());
         }
@@ -94,29 +108,33 @@ namespace PosWPF
         private SolidColorBrush GetColorCode(string categoryName)
         {
             categoryName = categoryName.ToLower();
-            if (categoryName == "set meal")
+            if (categoryName.Contains("set "))
             {
-                return new SolidColorBrush(Color.FromRgb(0, 212, 99));
+                return new SolidColorBrush(Color.FromRgb(0, 124, 204)); //#007ccc
             }
-            else if (categoryName == "food")
+            else if (categoryName.Contains("food"))
             {
-                return new SolidColorBrush(Color.FromRgb(255, 190, 0));
+                return new SolidColorBrush(Color.FromRgb(0, 212, 110)); //#00d46e
             }
-            else if (categoryName == "beverage" || categoryName == "drink")
+            else if (categoryName.Contains("beverage") || categoryName.Contains("drink"))
             {
-                return new SolidColorBrush(Color.FromRgb(0, 122, 204));
+                return new SolidColorBrush(Color.FromRgb(103, 180, 230)); //#67b4e6
             }
-            else if (categoryName == "dessert")
+            else if (categoryName.Contains("dessert"))
             {
-                return new SolidColorBrush(Color.FromRgb(105, 111, 224));
+                return new SolidColorBrush(Color.FromRgb(255, 142, 0)); //#ff8e00
             }
-            else if (categoryName == "charges")
+            else if (categoryName.Contains("小食") || categoryName.Contains("snack"))
+            {
+                return new SolidColorBrush(Color.FromRgb(255, 151, 115)); //#ff9773
+            }
+            else if (categoryName.Contains("charge"))
             {
                 return new SolidColorBrush(Color.FromRgb(255, 255, 0));
             }
             else if (categoryName == "user")
             {
-                return new SolidColorBrush(Color.FromRgb(255, 151, 115));
+                return new SolidColorBrush(Color.FromRgb(255, 65, 0)); //#ff4100
             }
             else
             {
