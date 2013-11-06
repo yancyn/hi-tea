@@ -32,7 +32,343 @@
         <TextBlock Width="100" TextAlignment="Center" Height="20" Text="{Binding Name}" Background="{Binding Name,Converter={StaticResource MenuBackgroundConverter}}" />
     </DataTemplate>
 
-    <DataTemplate x:Key="CategoryTemplate">
+    <DataTemplate x:Key="AdminTabItemTemplate">
+        <TabItem Header="{Binding Name}" Style="{StaticResource AdminTabItemStyle}" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="SetMenuTemplate">
+        <DockPanel LastChildFill="True">
+            <DockPanel.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#007ccc" Offset="0" />
+                    <GradientStop Color="White" Offset="1" />
+                </LinearGradientBrush>
+            </DockPanel.Background>
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True" Margin="10">
+                <Button DockPanel.Dock="Left" Command="{Binding Path=DataContext.AddMenuCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" CommandParameter="{Binding Path=ItemsSource, ElementName=listView}"
+                        Background="{StaticResource PlusIcon}" Style="{StaticResource BorderlessButton}"/>
+                <Button DockPanel.Dock="Right" Background="{StaticResource SearchIcon}" Style="{StaticResource BorderlessButton}"/>
+                <TextBox Style="{StaticResource RoundedTextBoxStyle}" />
+            </DockPanel>
+
+            <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" DataContext="{Binding ElementName=listView}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Category" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="30" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.CategoryID}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Code" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="30" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Code}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Name" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Name}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Description" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Description}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Image" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Image}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Price" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="80" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Price}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Active" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <CheckBox Grid.Column="2" IsChecked="{Binding SelectedItem.Active}"/>
+                </StackPanel>
+            </StackPanel>
+
+            <DockPanel LastChildFill="True" Margin="10">
+                <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                    <TextBlock DockPanel.Dock="Left" Text="Code" Width="40" FontWeight="Bold" />
+                    <TextBlock DockPanel.Dock="Right" Text="Price" Width="60" FontWeight="Bold"/>
+                    <TextBlock Text="Name" FontWeight="Bold" />
+                </DockPanel>
+                <ListView x:Name="listView" ItemsSource="{Binding Value.MenuCollection,UpdateSourceTrigger=PropertyChanged}" Background="Transparent">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Code}" Width="40" />
+                                <TextBlock Text="{Binding Name}" Width="250" />
+                                <TextBlock Text="{Binding Price}" Width="60" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </DockPanel>
+        </DockPanel>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="FoodMenuTemplate">
+        <DockPanel LastChildFill="True">
+            <DockPanel.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#00d46e" Offset="0" />
+                    <GradientStop Color="White" Offset="1" />
+                </LinearGradientBrush>
+            </DockPanel.Background>
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True" Margin="10">
+                <Button DockPanel.Dock="Left" Command="{Binding Path=DataContext.AddMenuCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" CommandParameter="{Binding Path=ItemsSource, ElementName=listView}"
+                        Background="{StaticResource PlusIcon}" Style="{StaticResource BorderlessButton}"/>
+                <Button DockPanel.Dock="Right" Background="{StaticResource SearchIcon}" Style="{StaticResource BorderlessButton}"/>
+                <TextBox Style="{StaticResource RoundedTextBoxStyle}" />
+            </DockPanel>
+
+            <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" DataContext="{Binding ElementName=listView}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Category" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="30" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.CategoryID}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Code" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="30" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Code}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Name" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Name}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Description" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Description}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Image" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Image}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Price" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="80" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Price}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Active" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <CheckBox Grid.Column="2" IsChecked="{Binding SelectedItem.Active}"/>
+                </StackPanel>
+            </StackPanel>
+
+            <DockPanel LastChildFill="True" Margin="10">
+                <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                    <TextBlock DockPanel.Dock="Left" Text="Code" Width="40" FontWeight="Bold" />
+                    <TextBlock DockPanel.Dock="Right" Text="Price" Width="60" FontWeight="Bold"/>
+                    <TextBlock Text="Name" FontWeight="Bold" />
+                </DockPanel>
+                <ListView x:Name="listView" ItemsSource="{Binding Value.MenuCollection,UpdateSourceTrigger=PropertyChanged}" Background="Transparent">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Code}" Width="40" />
+                                <TextBlock Text="{Binding Name}" Width="250" />
+                                <TextBlock Text="{Binding Price}" Width="60" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </DockPanel>
+        </DockPanel>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="DrinkMenuTemplate">
+        <DockPanel LastChildFill="True">
+            <DockPanel.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#67b4e6" Offset="0" />
+                    <GradientStop Color="White" Offset="1" />
+                </LinearGradientBrush>
+            </DockPanel.Background>
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True" Margin="10">
+                <Button DockPanel.Dock="Left" Command="{Binding AddMenuCommand}" CommandParameter="{Binding Path=ItemsSource, ElementName=listView}"
+                    Background="{StaticResource PlusIcon}" Style="{StaticResource BorderlessButton}"/>
+                <Button DockPanel.Dock="Right" Background="{StaticResource SearchIcon}" Style="{StaticResource BorderlessButton}"/>
+                <TextBox Style="{StaticResource RoundedTextBoxStyle}" />
+            </DockPanel>
+
+            <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" DataContext="{Binding ElementName=listView}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Category" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="30" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.CategoryID}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Code" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="30" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Code}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Name" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Name}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Description" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Description}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Image" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Image}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Price" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="80" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Price}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Active" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <CheckBox Grid.Column="2" IsChecked="{Binding SelectedItem.Active}"/>
+                </StackPanel>
+            </StackPanel>
+
+            <DockPanel LastChildFill="True" Margin="10">
+                <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                    <TextBlock DockPanel.Dock="Left" Text="Code" Width="40" FontWeight="Bold" />
+                    <TextBlock DockPanel.Dock="Right" Text="Price" Width="60" FontWeight="Bold"/>
+                    <TextBlock Text="Name" FontWeight="Bold" />
+                </DockPanel>
+                <ListView x:Name="listView" ItemsSource="{Binding Value.MenuCollection,UpdateSourceTrigger=PropertyChanged}" Background="Transparent">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Code}" Width="40" />
+                                <TextBlock Text="{Binding Name}" Width="250" />
+                                <TextBlock Text="{Binding Price}" Width="60" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </DockPanel>
+        </DockPanel>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="DessertMenuTemplate">
+        <DockPanel LastChildFill="True">
+            <DockPanel.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#ff8e00" Offset="0" />
+                    <GradientStop Color="White" Offset="1" />
+                </LinearGradientBrush>
+            </DockPanel.Background>
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True" Margin="10">
+                <Button DockPanel.Dock="Left" Command="{Binding AddMenuCommand}" CommandParameter="{Binding Path=ItemsSource, ElementName=listView}"
+                    Background="{StaticResource PlusIcon}" Style="{StaticResource BorderlessButton}"/>
+                <Button DockPanel.Dock="Right" Background="{StaticResource SearchIcon}" Style="{StaticResource BorderlessButton}"/>
+                <TextBox Style="{StaticResource RoundedTextBoxStyle}" />
+            </DockPanel>
+
+            <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" DataContext="{Binding ElementName=listView}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Category" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="30" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.CategoryID}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Code" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="30" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Code}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Name" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Name}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Description" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Description}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Image" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Image}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Price" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="80" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Price}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Active" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <CheckBox Grid.Column="2" IsChecked="{Binding SelectedItem.Active}"/>
+                </StackPanel>
+            </StackPanel>
+
+            <DockPanel LastChildFill="True" Margin="10">
+                <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                    <TextBlock DockPanel.Dock="Left" Text="Code" Width="40" FontWeight="Bold" />
+                    <TextBlock DockPanel.Dock="Right" Text="Price" Width="60" FontWeight="Bold"/>
+                    <TextBlock Text="Name" FontWeight="Bold" />
+                </DockPanel>
+                <ListView x:Name="listView" ItemsSource="{Binding Value.MenuCollection,UpdateSourceTrigger=PropertyChanged}" Background="Transparent">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Code}" Width="40" />
+                                <TextBlock Text="{Binding Name}" Width="250" />
+                                <TextBlock Text="{Binding Price}" Width="60" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </DockPanel>
+        </DockPanel>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="SnackMenuTemplate">
+        <DockPanel LastChildFill="True">
+            <DockPanel.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#ff9773" Offset="0" />
+                    <GradientStop Color="White" Offset="1" />
+                </LinearGradientBrush>
+            </DockPanel.Background>
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True" Margin="10">
+                <Button DockPanel.Dock="Left" Command="{Binding AddMenuCommand}" CommandParameter="{Binding Path=ItemsSource, ElementName=listView}"
+                    Background="{StaticResource PlusIcon}" Style="{StaticResource BorderlessButton}"/>
+                <Button DockPanel.Dock="Right" Background="{StaticResource SearchIcon}" Style="{StaticResource BorderlessButton}"/>
+                <TextBox Style="{StaticResource RoundedTextBoxStyle}" />
+            </DockPanel>
+
+            <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" DataContext="{Binding ElementName=listView}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Category" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="30" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.CategoryID}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Code" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="30" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Code}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Name" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Name}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Description" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Description}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Image" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Image}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Price" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBox Width="80" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Price}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Active" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <CheckBox Grid.Column="2" IsChecked="{Binding SelectedItem.Active}"/>
+                </StackPanel>
+            </StackPanel>
+
+            <DockPanel LastChildFill="True" Margin="10">
+                <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                    <TextBlock DockPanel.Dock="Left" Text="Code" Width="40" FontWeight="Bold" />
+                    <TextBlock DockPanel.Dock="Right" Text="Price" Width="60" FontWeight="Bold"/>
+                    <TextBlock Text="Name" FontWeight="Bold" />
+                </DockPanel>
+                <ListView x:Name="listView" ItemsSource="{Binding Value.MenuCollection,UpdateSourceTrigger=PropertyChanged}" Background="Transparent">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Code}" Width="40" />
+                                <TextBlock Text="{Binding Name}" Width="250" />
+                                <TextBlock Text="{Binding Price}" Width="60" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </DockPanel>
+        </DockPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="ChargeTemplate">
@@ -43,7 +379,7 @@
         <DockPanel LastChildFill="True">
             <DockPanel.Background>
                 <LinearGradientBrush>
-                    <GradientStop Color="#ff9773" Offset="0" />
+                    <GradientStop Color="#ff4100" Offset="0" />
                     <GradientStop Color="White" Offset="1" />
                 </LinearGradientBrush>
             </DockPanel.Background>
@@ -81,10 +417,6 @@
                 </ListView>
             </DockPanel>
         </DockPanel>
-    </DataTemplate>
-
-    <DataTemplate x:Key="AdminTabItemTemplate">
-        <TabItem Header="{Binding Name}" Style="{StaticResource AdminTabItemStyle}" />
     </DataTemplate>
 
 </ResourceDictionary>

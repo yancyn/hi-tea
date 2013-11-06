@@ -19,10 +19,18 @@ namespace PosWPF
                 AdminViewModel viewModel = item as AdminViewModel;
                 if (viewModel.Name == "User")
                     return element.FindResource("UserTemplate") as DataTemplate;
-                else if (viewModel.Name == "Charge")
+                else if (viewModel.Name.ToLower().Contains("charge"))
                     return element.FindResource("ChargeTemplate") as DataTemplate;
-                else if (viewModel.Name == "Category")
-                    return element.FindResource("CategoryTemplate") as DataTemplate;
+                else if (viewModel.Name.ToLower().Contains("set"))
+                    return element.FindResource("SetMenuTemplate") as DataTemplate;
+                else if (viewModel.Name.ToLower().Contains("food"))
+                    return element.FindResource("FoodMenuTemplate") as DataTemplate;
+                else if (viewModel.Name.ToLower().Contains("drink"))
+                    return element.FindResource("DrinkMenuTemplate") as DataTemplate;
+                else if (viewModel.Name.ToLower().Contains("dessert"))
+                    return element.FindResource("DessertMenuTemplate") as DataTemplate;
+                else if (viewModel.Name.ToLower().Contains("小食") || viewModel.Name.ToLower().Contains("snack"))
+                    return element.FindResource("SnackMenuTemplate") as DataTemplate;
             }
 
             return base.SelectTemplate(item, container);

@@ -11,7 +11,7 @@
     Closed="Window_Closed">
     <TabControl x:Name="AdminTab"
                 Margin="10"
-                TabStripPlacement="Left"
+                TabStripPlacement="Right"
                 ItemTemplate="{StaticResource AdminTemplate}"
                 ItemsSource="{Binding Options}"
                 ContentTemplateSelector="{StaticResource AdminTemplateSelector}">

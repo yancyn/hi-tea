@@ -15,7 +15,7 @@
             <sys:Int32>34</sys:Int32>
             <sys:Int32>51</sys:Int32>
             <sys:Int32>54</sys:Int32>
-            <sys:Int32>64</sys:Int32>
+            <sys:Int32>74</sys:Int32>
         </x:Array>
     </Window.Resources>
     <Grid Margin="10">

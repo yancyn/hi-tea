@@ -49,6 +49,9 @@ namespace HiTea.Pos
         private LoginCommand loginCommand;
         public LoginCommand LoginCommand { get { return this.loginCommand; } }
 
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
         public PosManager()
         {
             this.loginCommand = new LoginCommand(this);
@@ -71,7 +74,7 @@ namespace HiTea.Pos
             this.Categories = new ObservableCollection<Category>();
             foreach (var category in db.Categories)
             {
-                foreach (var menu in category.Menus)
+                foreach (var menu in category.Menus.Where(m => m.Active == true).OrderBy(m => m.Code))
                     category.MenuCollection.Add(menu);
                 this.Categories.Add(category);
             }
