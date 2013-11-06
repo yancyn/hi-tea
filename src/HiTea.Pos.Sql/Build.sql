@@ -121,9 +121,10 @@ INSERT INTO Role(Name) VALUES('Cashier');
 INSERT INTO Role(Name) VALUES('Staff');
 INSERT INTO Role(Name) VALUES('Guest');
 
-INSERT INTO Category(Name) VALUES('Set Meal');
+INSERT INTO Category(Name) VALUES('Set Menu');
 INSERT INTO Category(Name) VALUES('Food');
-INSERT INTO Category(Name) VALUES('Beverage');
+INSERT INTO Category(Name) VALUES('小食');
+INSERT INTO Category(Name) VALUES('Drink');
 INSERT INTO Category(Name) VALUES('Dessert');
 
 INSERT INTO OrderType(Name) VALUES('Dine in');
