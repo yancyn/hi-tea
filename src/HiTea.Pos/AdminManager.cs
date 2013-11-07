@@ -96,7 +96,12 @@ namespace HiTea.Pos
 
         public void Execute(object parameter)
         {
-            if (parameter is ObservableCollection<Menu>)
+            if (parameter is Category)
+            {
+                Category category = (Category)parameter;
+                this.manager.AddMenu(category.ID);
+            }
+            else if (parameter is ObservableCollection<Menu>)
             {
                 ObservableCollection<Menu> collection = (ObservableCollection<Menu>)parameter;
                 Menu menu = collection.First();

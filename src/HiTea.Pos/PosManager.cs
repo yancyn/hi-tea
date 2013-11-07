@@ -154,6 +154,7 @@ namespace HiTea.Pos
         public void RefreshMenu()
         {
             this.Categories.Clear();
+            // TODO: Refresh DbLinq object
             foreach (var category in db.Categories)
             {
                 category.MenuCollection.Clear();
