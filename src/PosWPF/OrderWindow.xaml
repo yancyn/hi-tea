@@ -13,7 +13,9 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <WrapPanel Grid.Column="0">
-                <TextBlock Text="Member: "/>
+                <TextBlock Text="Table: "/>
+                <TextBlock Text="{Binding SelectedOrder.TableNo}" />
+                <TextBlock Text="Member: " Margin="20,0,0,0"/>
                 <TextBlock Text="{Binding SelectedOrder.Member.Username}" />
             </WrapPanel>
             <WrapPanel Grid.Column="1" HorizontalAlignment="Right">
