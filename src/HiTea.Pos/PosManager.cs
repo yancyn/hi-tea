@@ -202,7 +202,8 @@ namespace HiTea.Pos
             }
             else
             {
-                lastQueueNo = Convert.ToInt32(this.Basket.Last().QueueNo);
+                Order lastOrder = this.Basket.OrderByDescending(b => b.QueueNo).First();
+                lastQueueNo = Convert.ToInt32(lastOrder.QueueNo);
             }
             lastQueueNo++;
 
