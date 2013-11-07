@@ -18,7 +18,18 @@ namespace HiTea.Pos
         /// </summary>
         private const int MAX_QUEUE_NO = 100;
         protected Main db;
+
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        protected virtual void SendPropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler h = this.PropertyChanged;
+            if ((h != null))
+            {
+                h(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
         public ObservableCollection<Category> Categories { get; set; }
+        public ObservableCollection<Menu> Menus { get; set; }
 
         /// <summary>
         /// Login user.
@@ -52,7 +63,7 @@ namespace HiTea.Pos
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public PosManager()
+        public PosManager(Main db)
         {
             this.loginCommand = new LoginCommand(this);
             this.takeAwayCommand = new TakeAwayCommand(this);
@@ -67,11 +78,10 @@ namespace HiTea.Pos
             this.TableBasket = new ObservableCollection<Order>();
             this.TableBasket.CollectionChanged += TableBasket_CollectionChanged;
 
-            string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
-            db = new Main(connectionString);
-
             // retrieve categoris and food menu
+            this.db = db;
             this.Categories = new ObservableCollection<Category>();
+            this.Menus = new ObservableCollection<Menu>();
             RefreshMenu();
 
             // retrieve incomplete order
@@ -154,14 +164,21 @@ namespace HiTea.Pos
         public void RefreshMenu()
         {
             this.Categories.Clear();
+            this.Menus.Clear();
             // TODO: Refresh DbLinq object
             foreach (var category in db.Categories)
             {
                 category.MenuCollection.Clear();
                 foreach (var menu in category.Menus.Where(m => m.Active == true).OrderBy(m => m.Code))
+                {
                     category.MenuCollection.Add(menu);
+                    this.Menus.Add(menu);
+                }
                 this.Categories.Add(category);
             }
+
+            this.SendPropertyChanged("Categories");
+            this.SendPropertyChanged("Menus");
         }
 
         public bool Login(string username, string password)

@@ -116,6 +116,10 @@ namespace PosWPF
             {
                 return new SolidColorBrush(Color.FromRgb(0, 212, 110)); //#00d46e
             }
+            else if (categoryName.Contains("小食") || categoryName.Contains("snack"))
+            {
+                return new SolidColorBrush(Color.FromRgb(255, 151, 115)); //#ff9773
+            }
             else if (categoryName.Contains("beverage") || categoryName.Contains("drink"))
             {
                 return new SolidColorBrush(Color.FromRgb(103, 180, 230)); //#67b4e6
@@ -123,10 +127,6 @@ namespace PosWPF
             else if (categoryName.Contains("dessert"))
             {
                 return new SolidColorBrush(Color.FromRgb(255, 142, 0)); //#ff8e00
-            }
-            else if (categoryName.Contains("小食") || categoryName.Contains("snack"))
-            {
-                return new SolidColorBrush(Color.FromRgb(255, 151, 115)); //#ff9773
             }
             else if (categoryName.Contains("charge"))
             {
@@ -142,11 +142,36 @@ namespace PosWPF
                 return new SolidColorBrush(Color.FromRgb(255, 151, 115));
             }
         }
+        private SolidColorBrush GetColorCode(int cat)
+        {
+            switch (cat)
+            {
+                case 1:
+                    return new SolidColorBrush(Color.FromRgb(0, 124, 204)); //#007ccc
+                case 2:
+                    return new SolidColorBrush(Color.FromRgb(0, 212, 110)); //#00d46e
+                case 3:
+                    return new SolidColorBrush(Color.FromRgb(255, 151, 115)); //#ff9773
+                case 4:
+                    return new SolidColorBrush(Color.FromRgb(103, 180, 230)); //#67b4e6
+                case 5:
+                    return new SolidColorBrush(Color.FromRgb(255, 142, 0)); //#ff8e00
+                default:
+                    // TODO: Handle undefine color code
+                    return new SolidColorBrush(Color.FromRgb(255, 151, 115));
+            }
+        }
 
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             string categoryName = value.ToString().ToLower();
             object obj = value;
+            if (obj is Menu)
+            {
+                Menu menu = (Menu)obj;
+                return GetColorCode(menu.CategoryID);
+            }
+
             if (obj is AdminViewModel)
             {
                 AdminViewModel vm = (AdminViewModel)obj;

@@ -71,16 +71,16 @@
         
         <DockPanel Grid.Column="2" LastChildFill="True">
             <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button ToolTip="All" Background="{StaticResource AllIcon}" Style="{StaticResource BorderlessButton}" />
-                <Button ToolTip="Group" Background="{StaticResource GroupIcon}" Style="{StaticResource BorderlessButton}" />
+                <Button ToolTip="All" Click="AllButton_Click" Background="{StaticResource AllIcon}" Style="{StaticResource BorderlessButton}" />
+                <Button ToolTip="Group" Click="GroupButton_Click" Background="{StaticResource GroupIcon}" Style="{StaticResource BorderlessButton}" />
                 <Button ToolTip="Detail" Background="{StaticResource DetailIcon}" Style="{StaticResource BorderlessButton}" />
                 <Button ToolTip="Setting" Background="{StaticResource SettingIcon}" Style="{StaticResource CircleButtonStyle}" Click="AdminButton_Click" />
             </StackPanel>
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-                <ItemsControl ItemsSource="{Binding Categories,UpdateSourceTrigger=PropertyChanged}">
+                <ItemsControl x:Name="MenusControl" ItemsSource="{Binding Menus,UpdateSourceTrigger=PropertyChanged}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
-                            <VirtualizingStackPanel Orientation="Vertical" />
+                            <WrapPanel />
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
                 </ItemsControl>

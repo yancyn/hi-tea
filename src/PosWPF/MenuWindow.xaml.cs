@@ -21,11 +21,11 @@ namespace PosWPF
     public partial class MenuWindow : Window
     {
         AdminManager manager;
-        public MenuWindow()
+        public MenuWindow(Main db)
         {
             InitializeComponent();
 
-            manager = new AdminManager();
+            manager = new AdminManager(db);
             this.DataContext = manager;
         }
 

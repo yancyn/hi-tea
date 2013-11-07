@@ -16,26 +16,24 @@ namespace HiTea.Pos
         protected Main db;
         public ObservableCollection<User> Users { get; set; }
         public ObservableCollection<Category> Categories { get; set; }
-        public ObservableCollection<Menu> Menus { get; set; }
+        //public ObservableCollection<Menu> Menus { get; set; }
         public ObservableCollection<Charge> Charges { get; set; }
         public ObservableCollection<AdminViewModel> Options { get; set; }
 
-        public AdminManager()
+        public AdminManager(Main db)
         {
+            this.db = db;
             this.commitCommand = new CommitCommand(this);
             this.addMenuCommand = new AddMenuCommand(this);
-
-            string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
-            db = new Main(connectionString);
 
             // clone from database
             this.Users = new ObservableCollection<User>();
             foreach (var user in db.Users)
                 this.Users.Add(user);
 
-            this.Menus = new ObservableCollection<Menu>();
-            foreach (var menu in db.Menus)
-                this.Menus.Add(menu);
+            //this.Menus = new ObservableCollection<Menu>();
+            //foreach (var menu in db.Menus)
+            //    this.Menus.Add(menu);
 
             this.Charges = new ObservableCollection<Charge>();
             foreach (var charge in db.Charges)
@@ -45,6 +43,7 @@ namespace HiTea.Pos
             this.Categories = new ObservableCollection<Category>();
             foreach (var category in db.Categories)
             {
+                category.MenuCollection.Clear();
                 foreach (var menu in category.Menus.OrderBy(m => m.Code))
                     category.MenuCollection.Add(menu);
                 this.Categories.Add(category);

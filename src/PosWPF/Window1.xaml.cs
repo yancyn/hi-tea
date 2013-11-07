@@ -26,6 +26,7 @@ using System.Linq;
 using DbLinq.Data;
 using DbLinq.Data.Linq;
 using HiTea.Pos;
+using System.Windows.Markup;
 
 namespace PosWPF
 {
@@ -34,7 +35,8 @@ namespace PosWPF
     /// </summary>
     public partial class Window1 : Window
     {
-        private PosManager posManager = new PosManager();
+        private Main db;
+        private PosManager posManager;
         private Timer currentTimeTimer = new Timer();
         public Window1()
         {
@@ -44,8 +46,14 @@ namespace PosWPF
             currentTimeTimer.Tick += timer_Tick;
             currentTimeTimer.Start();
 
+            string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
+            db = new Main(connectionString);
+            posManager = new PosManager(db);
+
             this.DataContext = posManager;
             DineInGrid.DataContext = posManager;
+            //MenusControl.ItemsPanel = GetItemsPanelTemplate(0);
+            //MenusControl.ItemsSource = posManager.Menus;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -75,7 +83,7 @@ namespace PosWPF
 
         private void AdminButton_Click(object sender, RoutedEventArgs e)
         {
-            AdminWindow window = new AdminWindow();
+            AdminWindow window = new AdminWindow(db);
             window.Owner = this;
             window.ShowDialog();
         }
@@ -97,6 +105,44 @@ namespace PosWPF
         {
             posManager.SelectedOrder = (sender as System.Windows.Controls.Button).DataContext as Order;
             ShowOrderForm();
+        }
+
+        private void AllButton_Click(object sender, RoutedEventArgs e)
+        {
+            //MenusControl.ItemsPanel = GetItemsPanelTemplate(0);
+            //MenusControl.ItemsSource = posManager.Menus;
+        }
+        private void GroupButton_Click(object sender, RoutedEventArgs e)
+        {
+            //MenusControl.ItemsPanel = GetItemsPanelTemplate(1);
+            //MenusControl.ItemsSource = posManager.Menus;
+        }
+        /// <summary>
+        /// TODO: Failed to return ItemsPanelTemplate
+        /// </summary>
+        /// <param name="mode"></param>
+        /// <returns></returns>
+        private ItemsPanelTemplate GetItemsPanelTemplate(int mode)
+        {
+            string xaml = string.Empty;
+            switch (mode)
+            {
+                case 0:
+                    xaml = @"<ItemsPanelTemplate xmlns='http://schemas.microsoft.com/winfx/2006/xaml/presentation' xmlns:x='http://schemas.microsoft.com/winfx/2006/xaml'>
+                            <ItemsPanelTemplate>
+                                <WrapPanel />
+                        </ItemsPanelTemplate>
+                    </ItemsPanelTemplate>";
+                    break;
+                case 1:
+                    xaml = @"<ItemsPanelTemplate xmlns='http://schemas.microsoft.com/winfx/2006/xaml/presentation' xmlns:x='http://schemas.microsoft.com/winfx/2006/xaml'>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel Orientation='Vertical' />
+                        </ItemsPanelTemplate>
+                    </ItemsPanelTemplate>";
+                    break;
+            }
+            return XamlReader.Parse(xaml) as ItemsPanelTemplate;
         }
     }
 }
