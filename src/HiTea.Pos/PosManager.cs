@@ -72,12 +72,7 @@ namespace HiTea.Pos
 
             // retrieve categoris and food menu
             this.Categories = new ObservableCollection<Category>();
-            foreach (var category in db.Categories)
-            {
-                foreach (var menu in category.Menus.Where(m => m.Active == true).OrderBy(m => m.Code))
-                    category.MenuCollection.Add(menu);
-                this.Categories.Add(category);
-            }
+            RefreshMenu();
 
             // retrieve incomplete order
             int[] incompleted = db.OrderItems.Where(i => i.StatusID != 2).Select(i => i.ParentID).ToArray();
@@ -151,6 +146,21 @@ namespace HiTea.Pos
             }
             System.Diagnostics.Debug.WriteLine("Basket: " + this.Basket.Count);
             System.Diagnostics.Debug.WriteLine("Carry: " + this.CarryBasket.Count);
+        }
+
+        /// <summary>
+        /// Refresh category with food menu collection after initialize or newly added.
+        /// </summary>
+        public void RefreshMenu()
+        {
+            this.Categories.Clear();
+            foreach (var category in db.Categories)
+            {
+                category.MenuCollection.Clear();
+                foreach (var menu in category.Menus.Where(m => m.Active == true).OrderBy(m => m.Code))
+                    category.MenuCollection.Add(menu);
+                this.Categories.Add(category);
+            }
         }
 
         public bool Login(string username, string password)

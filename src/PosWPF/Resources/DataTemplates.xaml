@@ -8,7 +8,7 @@
     mc:Ignorable="d">
     
     <DataTemplate DataType="{x:Type p:Menu}">
-        <Button Content="{Binding .,Converter={StaticResource MenuNameConverter}}" Style="{StaticResource MenuButtonStyle}"
+        <Button Content="{Binding .,Converter={StaticResource MenuNameConverter},UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MenuButtonStyle}"
                 Command="{Binding DataContext.OrderMenuCommand, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Window}}}"
                 CommandParameter="{Binding .}"
                 Background="{Binding Path=Header, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type GroupBox}},Converter={StaticResource MenuBackgroundConverter}}" />
@@ -17,7 +17,7 @@
     <DataTemplate DataType="{x:Type p:Category}">
         <GroupBox Header="{Binding Name}">
             <DockPanel LastChildFill="True" DataContext="{Binding}">
-                <ItemsControl x:Name="menus" ItemsSource="{Binding MenuCollection}">
+                <ItemsControl x:Name="menus" ItemsSource="{Binding MenuCollection,UpdateSourceTrigger=PropertyChanged}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapPanel/>
@@ -53,31 +53,31 @@
 
             <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" DataContext="{Binding ElementName=listView}">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Category" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBlock Text="Category" Style="{StaticResource LabelStyle}" />
                     <TextBox Width="30" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.CategoryID}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Code" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBlock Text="Code" Style="{StaticResource LabelStyle}" />
                     <TextBox Width="30" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Code}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Name" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
-                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Name}" />
+                    <TextBlock Text="Name" Style="{StaticResource LabelStyle}" />
+                    <TextBox Width="250" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Name}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Description" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
-                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Description}" />
+                    <TextBlock Text="Description" Style="{StaticResource LabelStyle}" />
+                    <TextBox Width="250" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Description}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Image" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBlock Text="Image" Style="{StaticResource LabelStyle}" />
                     <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Image}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Price" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
-                    <TextBox Width="80" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Price}" />
+                    <TextBlock Text="Price" Style="{StaticResource LabelStyle}" />
+                    <TextBox Width="60" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Price}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Active" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBlock Text="Active" Style="{StaticResource LabelStyle}" />
                     <CheckBox Grid.Column="2" IsChecked="{Binding SelectedItem.Active}"/>
                 </StackPanel>
             </StackPanel>
@@ -85,7 +85,7 @@
             <DockPanel LastChildFill="True" Margin="10">
                 <DockPanel DockPanel.Dock="Top" LastChildFill="True">
                     <TextBlock DockPanel.Dock="Left" Text="Code" Width="40" FontWeight="Bold" />
-                    <TextBlock DockPanel.Dock="Right" Text="Price" Width="60" FontWeight="Bold"/>
+                    <TextBlock DockPanel.Dock="Right" Text="Price" Width="40" FontWeight="Bold"/>
                     <TextBlock Text="Name" FontWeight="Bold" />
                 </DockPanel>
                 <ListView x:Name="listView" ItemsSource="{Binding Value.MenuCollection,UpdateSourceTrigger=PropertyChanged}" Background="Transparent">
@@ -93,8 +93,8 @@
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{Binding Code}" Width="40" />
-                                <TextBlock Text="{Binding Name}" Width="250" />
-                                <TextBlock Text="{Binding Price}" Width="60" />
+                                <TextBlock Text="{Binding Name}" Width="300" />
+                                <TextBlock Text="{Binding Price}" Width="40" />
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
@@ -120,31 +120,31 @@
 
             <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" DataContext="{Binding ElementName=listView}">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Category" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBlock Text="Category" Style="{StaticResource LabelStyle}" />
                     <TextBox Width="30" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.CategoryID}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Code" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBlock Text="Code" Style="{StaticResource LabelStyle}" />
                     <TextBox Width="30" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Code}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Name" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
-                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Name}" />
+                    <TextBlock Text="Name" Style="{StaticResource LabelStyle}" />
+                    <TextBox Width="250" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Name}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Description" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
-                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Description}" />
+                    <TextBlock Text="Description" Style="{StaticResource LabelStyle}" />
+                    <TextBox Width="250" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Description}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Image" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBlock Text="Image" Style="{StaticResource LabelStyle}" />
                     <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Image}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Price" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
-                    <TextBox Width="80" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Price}" />
+                    <TextBlock Text="Price" Style="{StaticResource LabelStyle}" />
+                    <TextBox Width="60" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Price}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Active" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBlock Text="Active" Style="{StaticResource LabelStyle}" />
                     <CheckBox Grid.Column="2" IsChecked="{Binding SelectedItem.Active}"/>
                 </StackPanel>
             </StackPanel>
@@ -152,7 +152,7 @@
             <DockPanel LastChildFill="True" Margin="10">
                 <DockPanel DockPanel.Dock="Top" LastChildFill="True">
                     <TextBlock DockPanel.Dock="Left" Text="Code" Width="40" FontWeight="Bold" />
-                    <TextBlock DockPanel.Dock="Right" Text="Price" Width="60" FontWeight="Bold"/>
+                    <TextBlock DockPanel.Dock="Right" Text="Price" Width="40" FontWeight="Bold"/>
                     <TextBlock Text="Name" FontWeight="Bold" />
                 </DockPanel>
                 <ListView x:Name="listView" ItemsSource="{Binding Value.MenuCollection,UpdateSourceTrigger=PropertyChanged}" Background="Transparent">
@@ -160,8 +160,8 @@
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{Binding Code}" Width="40" />
-                                <TextBlock Text="{Binding Name}" Width="250" />
-                                <TextBlock Text="{Binding Price}" Width="60" />
+                                <TextBlock Text="{Binding Name}" Width="300" />
+                                <TextBlock Text="{Binding Price}" Width="40" />
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
@@ -187,31 +187,31 @@
 
             <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" DataContext="{Binding ElementName=listView}">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Category" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBlock Text="Category" Style="{StaticResource LabelStyle}" />
                     <TextBox Width="30" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.CategoryID}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Code" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBlock Text="Code" Style="{StaticResource LabelStyle}" />
                     <TextBox Width="30" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Code}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Name" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
-                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Name}" />
+                    <TextBlock Text="Name" Style="{StaticResource LabelStyle}" />
+                    <TextBox Width="250" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Name}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Description" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
-                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Description}" />
+                    <TextBlock Text="Description" Style="{StaticResource LabelStyle}" />
+                    <TextBox Width="250" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Description}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Image" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBlock Text="Image" Style="{StaticResource LabelStyle}" />
                     <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Image}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Price" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
-                    <TextBox Width="80" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Price}" />
+                    <TextBlock Text="Price" Style="{StaticResource LabelStyle}" />
+                    <TextBox Width="60" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Price}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Active" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBlock Text="Active" Style="{StaticResource LabelStyle}" />
                     <CheckBox Grid.Column="2" IsChecked="{Binding SelectedItem.Active}"/>
                 </StackPanel>
             </StackPanel>
@@ -219,7 +219,7 @@
             <DockPanel LastChildFill="True" Margin="10">
                 <DockPanel DockPanel.Dock="Top" LastChildFill="True">
                     <TextBlock DockPanel.Dock="Left" Text="Code" Width="40" FontWeight="Bold" />
-                    <TextBlock DockPanel.Dock="Right" Text="Price" Width="60" FontWeight="Bold"/>
+                    <TextBlock DockPanel.Dock="Right" Text="Price" Width="40" FontWeight="Bold"/>
                     <TextBlock Text="Name" FontWeight="Bold" />
                 </DockPanel>
                 <ListView x:Name="listView" ItemsSource="{Binding Value.MenuCollection,UpdateSourceTrigger=PropertyChanged}" Background="Transparent">
@@ -227,8 +227,8 @@
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{Binding Code}" Width="40" />
-                                <TextBlock Text="{Binding Name}" Width="250" />
-                                <TextBlock Text="{Binding Price}" Width="60" />
+                                <TextBlock Text="{Binding Name}" Width="300" />
+                                <TextBlock Text="{Binding Price}" Width="40" />
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
@@ -254,31 +254,31 @@
 
             <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" DataContext="{Binding ElementName=listView}">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Category" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBlock Text="Category" Style="{StaticResource LabelStyle}" />
                     <TextBox Width="30" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.CategoryID}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Code" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBlock Text="Code" Style="{StaticResource LabelStyle}" />
                     <TextBox Width="30" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Code}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Name" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
-                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Name}" />
+                    <TextBlock Text="Name" Style="{StaticResource LabelStyle}" />
+                    <TextBox Width="250" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Name}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Description" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
-                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Description}" />
+                    <TextBlock Text="Description" Style="{StaticResource LabelStyle}" />
+                    <TextBox Width="250" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Description}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Image" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBlock Text="Image" Style="{StaticResource LabelStyle}" />
                     <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Image}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Price" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
-                    <TextBox Width="80" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Price}" />
+                    <TextBlock Text="Price" Style="{StaticResource LabelStyle}" />
+                    <TextBox Width="60" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Price}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Active" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBlock Text="Active" Style="{StaticResource LabelStyle}" />
                     <CheckBox Grid.Column="2" IsChecked="{Binding SelectedItem.Active}"/>
                 </StackPanel>
             </StackPanel>
@@ -286,7 +286,7 @@
             <DockPanel LastChildFill="True" Margin="10">
                 <DockPanel DockPanel.Dock="Top" LastChildFill="True">
                     <TextBlock DockPanel.Dock="Left" Text="Code" Width="40" FontWeight="Bold" />
-                    <TextBlock DockPanel.Dock="Right" Text="Price" Width="60" FontWeight="Bold"/>
+                    <TextBlock DockPanel.Dock="Right" Text="Price" Width="40" FontWeight="Bold"/>
                     <TextBlock Text="Name" FontWeight="Bold" />
                 </DockPanel>
                 <ListView x:Name="listView" ItemsSource="{Binding Value.MenuCollection,UpdateSourceTrigger=PropertyChanged}" Background="Transparent">
@@ -294,8 +294,8 @@
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{Binding Code}" Width="40" />
-                                <TextBlock Text="{Binding Name}" Width="250" />
-                                <TextBlock Text="{Binding Price}" Width="60" />
+                                <TextBlock Text="{Binding Name}" Width="300" />
+                                <TextBlock Text="{Binding Price}" Width="40" />
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
@@ -321,31 +321,31 @@
 
             <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" DataContext="{Binding ElementName=listView}">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Category" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBlock Text="Category" Style="{StaticResource LabelStyle}" />
                     <TextBox Width="30" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.CategoryID}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Code" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBlock Text="Code" Style="{StaticResource LabelStyle}" />
                     <TextBox Width="30" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Code}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Name" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
-                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Name}" />
+                    <TextBlock Text="Name" Style="{StaticResource LabelStyle}" />
+                    <TextBox Width="250" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Name}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Description" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
-                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Description}" />
+                    <TextBlock Text="Description" Style="{StaticResource LabelStyle}" />
+                    <TextBox Width="250" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Description}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Image" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBlock Text="Image" Style="{StaticResource LabelStyle}" />
                     <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Image}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Price" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
-                    <TextBox Width="80" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Price}" />
+                    <TextBlock Text="Price" Style="{StaticResource LabelStyle}" />
+                    <TextBox Width="60" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Price}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Active" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBlock Text="Active" Style="{StaticResource LabelStyle}" />
                     <CheckBox Grid.Column="2" IsChecked="{Binding SelectedItem.Active}"/>
                 </StackPanel>
             </StackPanel>
@@ -353,7 +353,7 @@
             <DockPanel LastChildFill="True" Margin="10">
                 <DockPanel DockPanel.Dock="Top" LastChildFill="True">
                     <TextBlock DockPanel.Dock="Left" Text="Code" Width="40" FontWeight="Bold" />
-                    <TextBlock DockPanel.Dock="Right" Text="Price" Width="60" FontWeight="Bold"/>
+                    <TextBlock DockPanel.Dock="Right" Text="Price" Width="40" FontWeight="Bold"/>
                     <TextBlock Text="Name" FontWeight="Bold" />
                 </DockPanel>
                 <ListView x:Name="listView" ItemsSource="{Binding Value.MenuCollection,UpdateSourceTrigger=PropertyChanged}" Background="Transparent">
@@ -361,8 +361,8 @@
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{Binding Code}" Width="40" />
-                                <TextBlock Text="{Binding Name}" Width="250" />
-                                <TextBlock Text="{Binding Price}" Width="60" />
+                                <TextBlock Text="{Binding Name}" Width="300" />
+                                <TextBlock Text="{Binding Price}" Width="40" />
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>

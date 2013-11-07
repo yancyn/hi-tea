@@ -137,6 +137,12 @@
         <Setter Property="Foreground" Value="White" />
         <Setter Property="Background" Value="#aaa" />
     </Style>
+    
+    <Style x:Key="LabelStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="Width" Value="80" />
+        <Setter Property="TextAlignment" Value="Right" />
+        <Setter Property="Margin" Value="0,0,10,0" />
+    </Style>
 
     <Style x:Key="RoundedTextBoxStyle" TargetType="{x:Type TextBox}">
         <Setter Property="Margin" Value="5" />

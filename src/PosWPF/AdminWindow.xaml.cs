@@ -31,6 +31,7 @@ namespace PosWPF
         private void Window_Closed(object sender, EventArgs e)
         {
             adminManager.Commit();
+            (this.Owner.DataContext as PosManager).RefreshMenu();
         }
     }
 }
