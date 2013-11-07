@@ -129,30 +129,38 @@ namespace HiTea.Pos
         }
         void TableBasket_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
+            if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+            {
+                foreach (Order order in e.NewItems)
+                    this.Basket.Add(order);
+            }
             if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Remove)
             {
                 foreach (Order order in e.OldItems)
                     this.Basket.Remove(order);
             }
-            if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+            if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Replace)
             {
-                foreach (Order order in e.NewItems)
-                    this.Basket.Add(order);
+                this.SendPropertyChanged("TableBasket");
             }
             System.Diagnostics.Debug.WriteLine("Basket: " + this.Basket.Count);
             System.Diagnostics.Debug.WriteLine("Table: " + this.TableBasket.Count);
         }
         void CarryBasket_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
+            if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+            {
+                foreach (Order order in e.NewItems)
+                    this.Basket.Add(order);
+            }
             if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Remove)
             {
                 foreach (Order order in e.OldItems)
                     this.Basket.Remove(order);
             }
-            if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+            if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Replace)
             {
-                foreach (Order order in e.NewItems)
-                    this.Basket.Add(order);
+                this.SendPropertyChanged("CarryBasket");
             }
             System.Diagnostics.Debug.WriteLine("Basket: " + this.Basket.Count);
             System.Diagnostics.Debug.WriteLine("Carry: " + this.CarryBasket.Count);
@@ -201,8 +209,9 @@ namespace HiTea.Pos
                 Order lastOrder = this.Basket.OrderByDescending(b => b.QueueNo).First();
                 lastQueueNo = Convert.ToInt32(lastOrder.QueueNo);
             }
-            lastQueueNo++;
+            lastQueueNo = lastQueueNo % MAX_QUEUE_NO;
 
+            lastQueueNo++;
             return lastQueueNo.ToString();
         }
 
