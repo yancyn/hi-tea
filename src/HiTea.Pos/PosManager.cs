@@ -188,11 +188,7 @@ namespace HiTea.Pos
             return user.Login(password);
         }
 
-        /// <summary>
-        /// Add a new order into system.
-        /// </summary>
-        /// <param name="tableNo"></param>
-        private void AddOrder(string tableNo)
+        public string GetLatestQueueNo()
         {
             int lastQueueNo = 0;
             if (this.Basket.Count == 0)
@@ -207,9 +203,18 @@ namespace HiTea.Pos
             }
             lastQueueNo++;
 
+            return lastQueueNo.ToString();
+        }
+
+        /// <summary>
+        /// Add a new order into system.
+        /// </summary>
+        /// <param name="tableNo"></param>
+        private void AddOrder(string tableNo)
+        {
             Order order = new Order();
             order.TableNo = tableNo;
-            order.QueueNo = lastQueueNo.ToString();
+            order.QueueNo = GetLatestQueueNo();
             order.Created = DateTime.Now;
 
             if (order.TableNo.Length == 0)

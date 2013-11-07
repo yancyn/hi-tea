@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     mc:Ignorable="d"
     Style="{StaticResource OrderStyle}"
+    Closed="Window_Closed"
     Height="450" Width="500">
     <DockPanel LastChildFill="True">
         <Grid DockPanel.Dock="Top" Margin="0 5 0 0">

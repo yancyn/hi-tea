@@ -78,6 +78,7 @@ namespace PosWPF
         }
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
+            // TODO: db.SubmitChanges()?
             this.Close();
         }
 

@@ -30,31 +30,13 @@ namespace PosWPF
         public OrderWindow()
         {
             InitializeComponent();
-
-            //string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
-            //Main db = new Main(connectionString);
-
-            //Order order = new Order();
-
-            //OrderItem item = new OrderItem();
-            //item.MenuID = 1;
-            //item.Menu = db.Menus.Where(m => m.ID == 1).First();
-            //item.OrderTypeID = 1;
-            //item.OrderType = db.OrderTypes.Where(o => o.ID == 1).First();
-            //item.StatusID = 1;
-            //item.Status = db.Statuses.Where(s => s.ID == 1).First();
-            //order.Items.Add(item);
-
-            //item = new OrderItem();
-            //item.MenuID = 2;
-            //item.Menu = db.Menus.Where(m => m.ID == 2).First();
-            //item.OrderTypeID = 2;
-            //item.OrderType = db.OrderTypes.Where(o => o.ID == 2).First();
-            //item.StatusID = 2;
-            //item.Status = db.Statuses.Where(s => s.ID == 2).First();
-            //order.Items.Add(item);
-
-            //this.DataContext = order;
+        }
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            // remove queue no if failed to make any order
+            Order order = (this.DataContext as PosManager).SelectedOrder;
+            if (order.Items.Count == 0)
+                order.QueueNo = string.Empty;
         }
 
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
@@ -63,6 +45,12 @@ namespace PosWPF
             if (posManager.SelectedOrder.Items.Count == 0)
                 posManager.CarryBasket.Remove(posManager.SelectedOrder);
             this.Close();
+        }
+
+        // TODO: Print order list
+        private void OrderListButton_Click(object sender, RoutedEventArgs e)
+        {
+            Order order = (this.DataContext as PosManager).SelectedOrder;
         }
 
         private void PayButton_Click(object sender, RoutedEventArgs e)
@@ -174,7 +162,7 @@ namespace PosWPF
                     canvas.Children.Add(feed);
                     */
                     // FAILED: pd.PrintVisual(canvas, "Drink Label");
-                    
+
                     FlowDocument flowDocument = new FlowDocument();
                     Paragraph paragraph = new Paragraph(new Run("No: " + order.QueueNo));
                     flowDocument.Blocks.Add(paragraph);
