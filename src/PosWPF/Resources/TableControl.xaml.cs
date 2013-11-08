@@ -94,6 +94,8 @@ namespace PosWPF
             posManager.SelectedOrder = viewModel.Order;
             if (String.IsNullOrEmpty(posManager.SelectedOrder.QueueNo))
                 posManager.SelectedOrder.QueueNo = posManager.GetLatestQueueNo();
+            if (posManager.SelectedOrder.Created == DateTime.MinValue)
+                posManager.SelectedOrder.Created = DateTime.Now;
 
             OrderWindow window = new OrderWindow();
             window.Tag = this; // HACK: For execute rebind
