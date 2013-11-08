@@ -11,7 +11,7 @@ namespace HiTea.Pos
     /// <summary>
     /// Pos manager class to manage main pos application.
     /// </summary>
-    public class PosManager
+    public partial class PosManager : System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
         /// Maximum queue no to use. Once exceed the value will reset from 1 again.
@@ -19,6 +19,16 @@ namespace HiTea.Pos
         private const int MAX_QUEUE_NO = 100;
         protected Main db;
 
+        private static System.ComponentModel.PropertyChangingEventArgs emptyChangingEventArgs = new System.ComponentModel.PropertyChangingEventArgs("");
+        public event System.ComponentModel.PropertyChangingEventHandler PropertyChanging;
+        protected virtual void SendPropertyChanging()
+        {
+            System.ComponentModel.PropertyChangingEventHandler h = this.PropertyChanging;
+            if ((h != null))
+            {
+                h(this, emptyChangingEventArgs);
+            }
+        }
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         protected virtual void SendPropertyChanged(string propertyName)
         {
@@ -28,6 +38,7 @@ namespace HiTea.Pos
                 h(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
+
         public ObservableCollection<Category> Categories { get; set; }
         public ObservableCollection<Menu> Menus { get; set; }
 
@@ -39,10 +50,28 @@ namespace HiTea.Pos
         /// Display current time.
         /// </summary>
         public UpdatingTime CurrentTime { get; set; }
+
+        partial void OnSelectedOrderChanged();
+        partial void OnSelectedOrderChanging(Order value);
+        private Order selectedOrder;
         /// <summary>
         /// An order currently selected and working on.
         /// </summary>
-        public Order SelectedOrder { get; set; }
+        public Order SelectedOrder
+        {
+            get { return this.selectedOrder; }
+            set
+            {
+                if (((selectedOrder == value) == false))
+                {
+                    this.OnSelectedOrderChanging(value);
+                    this.SendPropertyChanging();
+                    this.selectedOrder = value;
+                    this.SendPropertyChanged("SelectedOrder");
+                    this.OnSelectedOrderChanged();
+                }
+            }
+        }
 
         /// <summary>
         /// Represent all order on hand.
@@ -66,6 +95,7 @@ namespace HiTea.Pos
         public PosManager(Main db)
         {
             this.loginCommand = new LoginCommand(this);
+            this.dineInCommand = new DineInCommand(this);
             this.takeAwayCommand = new TakeAwayCommand(this);
             this.orderMenuCommand = new OrderMenuCommand(this);
             this.confirmOrderCommand = new ConfirmOrderCommand(this);
@@ -127,6 +157,7 @@ namespace HiTea.Pos
                 }
             }
         }
+
         void TableBasket_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
@@ -196,18 +227,20 @@ namespace HiTea.Pos
             return user.Login(password);
         }
 
+        /// <summary>
+        /// Generate new queue no from database or holding cache.
+        /// </summary>
+        /// <returns></returns>
         public string GetLatestQueueNo()
         {
             int lastQueueNo = 0;
-            if (this.Basket.Count == 0)
+
+            Order lastOrder = db.Orders.OrderByDescending(o => o.ID).FirstOrDefault();
+            if (lastOrder != null) lastQueueNo = Convert.ToInt32(lastOrder.QueueNo);
+            if (this.Basket.Count > 0)
             {
-                Order lastOrder = db.Orders.OrderByDescending(o => o.ID).FirstOrDefault();
-                if (lastOrder != null) lastQueueNo = Convert.ToInt32(lastOrder.QueueNo);
-            }
-            else
-            {
-                Order lastOrder = this.Basket.OrderByDescending(b => b.QueueNo).First();
-                lastQueueNo = Convert.ToInt32(lastOrder.QueueNo);
+                Order lastHold = this.Basket.OrderByDescending(b => b.QueueNo).First();
+                lastQueueNo = Math.Max(lastQueueNo, Convert.ToInt32(lastHold.QueueNo));
             }
             lastQueueNo = lastQueueNo % MAX_QUEUE_NO;
 
@@ -229,9 +262,22 @@ namespace HiTea.Pos
             if (order.TableNo.Length == 0)
                 this.CarryBasket.Add(order);
             else
-                this.TableBasket.Add(order);
-            this.SelectedOrder = order;
+            {
+                for(int i=0;i<this.TableBasket.Count;i++)
+                {
+                    if (this.TableBasket[i].TableNo == tableNo)
+                    {
+                        this.TableBasket[i] = order;
+                        break;
+                    }
+                }
+            }
+
+            this.selectedOrder = order;
         }
+
+        private DineInCommand dineInCommand;
+        public DineInCommand DineInCommand { get { return this.dineInCommand; } }
         /// <summary>
         /// Add a new dine in order.
         /// </summary>
@@ -239,7 +285,7 @@ namespace HiTea.Pos
         public void DineIn(string tableNo)
         {
             AddOrder(tableNo);
-        }
+        }       
 
         private TakeAwayCommand takeAwayCommand;
         public TakeAwayCommand TakeAwayCommand { get { return this.takeAwayCommand; } }
@@ -260,18 +306,18 @@ namespace HiTea.Pos
         /// <param name="menu"></param>
         public void OrderMenu(Menu menu)
         {
-            if (this.SelectedOrder == null) return;
+            if (this.selectedOrder == null) return;
 
             OrderItem item = new OrderItem();
             item.Menu = menu;
             item.MenuID = menu.ID;
-            item.ParentID = this.SelectedOrder.ID;
+            item.ParentID = this.selectedOrder.ID;
             item.StatusID = 1;
-            if (this.SelectedOrder.Items.Count == 0)
-                item.OrderTypeID = (String.IsNullOrEmpty(this.SelectedOrder.TableNo)) ? 2 : 1;
+            if (this.selectedOrder.Items.Count == 0)
+                item.OrderTypeID = (String.IsNullOrEmpty(this.selectedOrder.TableNo)) ? 2 : 1;
             else
-                item.OrderTypeID = this.SelectedOrder.Items.Last().OrderTypeID;
-            this.SelectedOrder.Items.Add(item);
+                item.OrderTypeID = this.selectedOrder.Items.Last().OrderTypeID;
+            this.selectedOrder.Items.Add(item);
         }
 
         private ConfirmOrderCommand confirmOrderCommand;
@@ -281,30 +327,30 @@ namespace HiTea.Pos
         /// </summary>
         public void ConfirmOrder()
         {
-            if (this.SelectedOrder == null) return;
+            if (this.selectedOrder == null) return;
             System.Diagnostics.Debug.WriteLine("Updating order into database...");
-            Order order = db.Orders.Where(o => o.ID == this.SelectedOrder.ID).FirstOrDefault();
+            Order order = db.Orders.Where(o => o.ID == this.selectedOrder.ID).FirstOrDefault();
             if (order == null)
             {
                 // IMPORTANT: Need to submit twice to get new ID. Header first then only children table.
                 order = new Order();
-                order.ID = this.SelectedOrder.ID;
-                order.Created = this.SelectedOrder.Created;
-                order.CreatedByID = this.SelectedOrder.CreatedByID;
-                order.DodAte = this.SelectedOrder.DodAte;
+                order.ID = this.selectedOrder.ID;
+                order.Created = this.selectedOrder.Created;
+                order.CreatedByID = this.selectedOrder.CreatedByID;
+                order.DodAte = this.selectedOrder.DodAte;
                 order.OrderItems.Clear();
-                order.QueueNo = this.SelectedOrder.QueueNo;
-                order.ReceiptDate = this.SelectedOrder.ReceiptDate;
-                order.TableNo = this.SelectedOrder.TableNo;
-                order.Total = this.SelectedOrder.Total;
+                order.QueueNo = this.selectedOrder.QueueNo;
+                order.ReceiptDate = this.selectedOrder.ReceiptDate;
+                order.TableNo = this.selectedOrder.TableNo;
+                order.Total = this.selectedOrder.Total;
                 db.Orders.InsertOnSubmit(order);
                 System.Diagnostics.Debug.WriteLine("New ID: " + order.ID);
 
                 order.OrderItems.Clear();
-                foreach (OrderItem item in this.SelectedOrder.Items)
+                foreach (OrderItem item in this.selectedOrder.Items)
                     order.OrderItems.Add(item);
                 db.SubmitChanges();
-                this.SelectedOrder.ID = order.ID;
+                this.selectedOrder.ID = order.ID;
             }
             else
             {
@@ -313,21 +359,21 @@ namespace HiTea.Pos
         }
         public void UpdateOrder(ref Order order)
         {
-            order.ID = this.SelectedOrder.ID;
-            order.Created = this.SelectedOrder.Created;
-            order.CreatedByID = this.SelectedOrder.CreatedByID;
-            order.DodAte = this.SelectedOrder.DodAte;
-            order.QueueNo = this.SelectedOrder.QueueNo;
-            order.ReceiptDate = this.SelectedOrder.ReceiptDate;
-            order.TableNo = this.SelectedOrder.TableNo;
-            order.Total = this.SelectedOrder.Total;
+            order.ID = this.selectedOrder.ID;
+            order.Created = this.selectedOrder.Created;
+            order.CreatedByID = this.selectedOrder.CreatedByID;
+            order.DodAte = this.selectedOrder.DodAte;
+            order.QueueNo = this.selectedOrder.QueueNo;
+            order.ReceiptDate = this.selectedOrder.ReceiptDate;
+            order.TableNo = this.selectedOrder.TableNo;
+            order.Total = this.selectedOrder.Total;
 
             List<OrderItem> oldItems = new List<OrderItem>();
             foreach (OrderItem item in order.OrderItems)
                 oldItems.Add(item);
 
             order.OrderItems.Clear();
-            foreach (OrderItem item in this.SelectedOrder.Items)
+            foreach (OrderItem item in this.selectedOrder.Items)
                 order.OrderItems.Add(item);
 
             // HACK: Manually DeleteOnSubmit since the code above fail in DbLinq
@@ -349,17 +395,17 @@ namespace HiTea.Pos
         }
         private void CloneOrder(Order order)
         {
-            order.ID = this.SelectedOrder.ID;
-            order.Created = this.SelectedOrder.Created;
-            order.CreatedByID = this.SelectedOrder.CreatedByID;
-            order.DodAte = this.SelectedOrder.DodAte;
+            order.ID = this.selectedOrder.ID;
+            order.Created = this.selectedOrder.Created;
+            order.CreatedByID = this.selectedOrder.CreatedByID;
+            order.DodAte = this.selectedOrder.DodAte;
             order.OrderItems.Clear();
-            foreach (OrderItem item in this.SelectedOrder.Items)
+            foreach (OrderItem item in this.selectedOrder.Items)
                 order.OrderItems.Add(item);
-            order.QueueNo = this.SelectedOrder.QueueNo;
-            order.ReceiptDate = this.SelectedOrder.ReceiptDate;
-            order.TableNo = this.SelectedOrder.TableNo;
-            order.Total = this.SelectedOrder.Total;
+            order.QueueNo = this.selectedOrder.QueueNo;
+            order.ReceiptDate = this.selectedOrder.ReceiptDate;
+            order.TableNo = this.selectedOrder.TableNo;
+            order.Total = this.selectedOrder.Total;
             //order.User
         }
     }
@@ -380,6 +426,26 @@ namespace HiTea.Pos
         }
         private PosManager manager;
         public LoginCommand(PosManager manager)
+        {
+            this.manager = manager;
+        }
+    }
+
+    public class DineInCommand : ICommand
+    {
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public event EventHandler CanExecuteChanged;
+
+        public void Execute(object parameter)
+        {
+            manager.DineIn(parameter.ToString());
+        }
+        private PosManager manager;
+        public DineInCommand(PosManager manager)
         {
             this.manager = manager;
         }

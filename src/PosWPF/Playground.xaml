@@ -3,12 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:sys="clr-namespace:System;assembly=mscorlib"        
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"        
              mc:Ignorable="d"
              xmlns:w="clr-namespace:PosWPF"
-             Width="500" Height="500">
-    <Canvas>
-        <TextBlock Text="No: 3" FontSize="12" Canvas.Top="4" Canvas.Left="4" />
-        <TextBlock Text="No: 3" FontSize="12" Canvas.Top="14" Canvas.Left="4" />
-    </Canvas>
+             Width="600" Height="600">
+    <Window.Resources>
+        <x:Array Type="sys:Int32" x:Key="TableIndexes">
+            <sys:Int32>4</sys:Int32>
+            <sys:Int32>34</sys:Int32>
+            <sys:Int32>51</sys:Int32>
+            <sys:Int32>54</sys:Int32>
+            <sys:Int32>74</sys:Int32>
+        </x:Array>
+    </Window.Resources>
+    <DockPanel LastChildFill="True">
+        <w:TableControl x:Name="DineInGrid" DisplayIndexes="{StaticResource TableIndexes}" DataContext="{Binding UpdateSourceTrigger=PropertyChanged}" />
+    </DockPanel>
 </Window>

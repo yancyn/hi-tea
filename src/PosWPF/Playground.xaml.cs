@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -23,6 +24,11 @@ namespace PosWPF
         public Playground()
         {
             InitializeComponent();
+
+            string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
+            Main db = new Main(connectionString);
+            PosManager posManager = new PosManager(db);
+            DineInGrid.DataContext = posManager;
         }
     }
 }

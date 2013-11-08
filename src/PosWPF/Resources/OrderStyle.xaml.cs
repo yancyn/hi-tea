@@ -28,26 +28,6 @@ namespace PosWPF
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             Window window = (sender as FrameworkElement).TemplatedParent as Window;
-            if (window.DataContext is PosManager)
-            {
-                PosManager posManager = (PosManager)window.DataContext;
-                if (posManager.SelectedOrder.Items.Count == 0)
-                {
-                    if (posManager.CarryBasket.Contains(posManager.SelectedOrder))
-                        posManager.CarryBasket.Remove(posManager.SelectedOrder);
-                    else if (posManager.TableBasket.Contains(posManager.SelectedOrder))
-                        posManager.TableBasket.Remove(posManager.SelectedOrder);
-                }
-
-                if (posManager.SelectedOrder.ReceiptDate.HasValue)
-                {
-                    if (posManager.CarryBasket.Contains(posManager.SelectedOrder))
-                        posManager.CarryBasket.Remove(posManager.SelectedOrder);
-                    else if (posManager.TableBasket.Contains(posManager.SelectedOrder))
-                        posManager.TableBasket.Remove(posManager.SelectedOrder);
-                }
-            }
-
             window.Close();
         }
 

@@ -33,17 +33,71 @@ namespace PosWPF
         }
         private void Window_Closed(object sender, EventArgs e)
         {
+            PosManager posManager = (this.DataContext as PosManager);
+
             // remove queue no if failed to make any order
-            Order order = (this.DataContext as PosManager).SelectedOrder;
-            if (order.Items.Count == 0)
-                order.QueueNo = string.Empty;
+            if (posManager.SelectedOrder.Items.Count == 0)
+            {
+                if (posManager.CarryBasket.Contains(posManager.SelectedOrder))
+                    posManager.CarryBasket.Remove(posManager.SelectedOrder);
+                else
+                {
+                    for (int i = 0; i < posManager.TableBasket.Count; i++)
+                    {
+                        if (posManager.TableBasket[i].TableNo == posManager.SelectedOrder.TableNo)
+                        {
+                            Order newOrder = new Order();
+                            newOrder.TableNo = posManager.SelectedOrder.TableNo;
+                            newOrder.Created = DateTime.Now;
+                            posManager.TableBasket[i] = newOrder;
+                            posManager.SelectedOrder = posManager.TableBasket[i];
+
+                            if (this.Tag is TableControl)
+                                (this.Tag as TableControl).Binding(posManager);
+                            break;
+                        }
+                    }
+                }
+
+                posManager.SelectedOrder.QueueNo = string.Empty;
+            }
+
+            // remove from cache once paid
+            if (posManager.SelectedOrder.ReceiptDate.HasValue)
+            {
+                if (posManager.CarryBasket.Contains(posManager.SelectedOrder))
+                    posManager.CarryBasket.Remove(posManager.SelectedOrder);
+                else
+                {
+                    for (int i = 0; i < posManager.TableBasket.Count; i++)
+                    {
+                        if (posManager.TableBasket[i].TableNo == posManager.SelectedOrder.TableNo)
+                        {
+                            Order newOrder = new Order();
+                            newOrder.TableNo = posManager.SelectedOrder.TableNo;
+                            newOrder.Created = DateTime.Now;
+                            posManager.TableBasket[i] = newOrder;
+                            posManager.SelectedOrder = posManager.TableBasket[i];
+
+                            if (this.Tag is TableControl)
+                                (this.Tag as TableControl).Binding(posManager);
+                            break;
+                        }
+                    }
+                }
+            }
         }
 
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
             PosManager posManager = (PosManager)this.DataContext;
             if (posManager.SelectedOrder.Items.Count == 0)
-                posManager.CarryBasket.Remove(posManager.SelectedOrder);
+            {
+                if (posManager.CarryBasket.Contains(posManager.SelectedOrder))
+                    posManager.CarryBasket.Remove(posManager.SelectedOrder);
+                posManager.SelectedOrder.QueueNo = string.Empty;
+            }
+
             this.Close();
         }
 

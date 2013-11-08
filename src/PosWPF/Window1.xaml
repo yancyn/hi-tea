@@ -64,7 +64,7 @@
                     </Grid>
                 </DockPanel>
             </StackPanel>
-            <w:TableControl x:Name="DineInGrid" DisplayIndexes="{StaticResource TableIndexes}" />
+            <w:TableControl x:Name="DineInGrid" DisplayIndexes="{StaticResource TableIndexes}" DataContext="{Binding UpdateSourceTrigger=PropertyChanged}" />
         </DockPanel>
 
         <Separator Grid.Column="1" Style="{DynamicResource VerticalSeparatorStyle}" />

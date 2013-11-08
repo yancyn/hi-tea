@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -46,36 +47,56 @@ namespace PosWPF
             typeof(string[]),
             typeof(TableControl));
 
+        private ObservableCollection<TableBallViewModel> balls;
+
         public TableControl()
         {
             InitializeComponent();
+
+            this.DataContextChanged += TableControl_DataContextChanged;
         }
 
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// HACK: Always redraw table layout. Not really databinding.
+        /// </summary>
+        /// <param name="posManager"></param>
+        public void Binding(PosManager posManager)
         {
-            PosManager pos = this.DataContext as PosManager;
-            if (DisplayIndexes.Length <= pos.TableBasket.Count)
+            this.balls = new ObservableCollection<TableBallViewModel>();
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                    this.balls.Add(new TableBallViewModel(i, j));
+            }
+            if (DisplayIndexes.Length <= posManager.TableBasket.Count)
             {
                 for (int i = 0; i < DisplayIndexes.Length; i++)
                 {
                     int index = DisplayIndexes[i];
-                    if (Grid.Children[index] is Button)
-                    {
-                        (Grid.Children[index] as Button).Visibility = System.Windows.Visibility.Visible;
-                        (Grid.Children[index] as Button).DataContext = pos.TableBasket[i];
-                    }
+                    this.balls[index].SetOrder(posManager.TableBasket[i]);
                 }
             }
+            BallControl.ItemsSource = null;
+            BallControl.ItemsSource = this.balls;
+        }
+
+        void TableControl_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            PosManager posManager = (sender as FrameworkElement).DataContext as PosManager;
+            Binding(posManager);
         }
 
         private void OpenOrder_Click(object sender, RoutedEventArgs e)
         {
-            PosManager pos = this.DataContext as PosManager;
-            pos.SelectedOrder = (sender as System.Windows.Controls.Button).DataContext as Order;
-            if (String.IsNullOrEmpty(pos.SelectedOrder.QueueNo))
-                pos.SelectedOrder.QueueNo = pos.GetLatestQueueNo();
+            PosManager posManager = this.DataContext as PosManager;
+            //posManager.SelectedOrder = (sender as System.Windows.Controls.Button).DataContext as Order;
+            TableBallViewModel viewModel = (sender as System.Windows.Controls.Button).DataContext as TableBallViewModel;
+            posManager.SelectedOrder = viewModel.Order;
+            if (String.IsNullOrEmpty(posManager.SelectedOrder.QueueNo))
+                posManager.SelectedOrder.QueueNo = posManager.GetLatestQueueNo();
 
             OrderWindow window = new OrderWindow();
+            window.Tag = this; // HACK: For execute rebind
             window.Owner = (sender as FrameworkElement).TemplatedParent as Window; // TODO: Hosted window but null
             window.Topmost = true;
             window.DataContext = this.DataContext;
