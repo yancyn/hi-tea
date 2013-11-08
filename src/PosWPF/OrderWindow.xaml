@@ -100,12 +100,25 @@
                                         </TextBlock.Text>
                                     </TextBlock>
                                     <TextBlock Grid.Column="1" Text="{Binding Menu, Converter={StaticResource MenuNameConverter}}" />
-                                    <CheckBox Grid.Column="2" IsChecked="{Binding OrderTypeID, Converter={StaticResource OneIsTrueConverter}}"/>
-                                    <CheckBox Grid.Column="3" IsChecked="{Binding OrderTypeID, Converter={StaticResource TwoIsTrueConverter}}"/>
+                                    <CheckBox Grid.Column="2" IsChecked="{Binding OrderTypeID, Converter={StaticResource OneIsTrueConverter}}">
+                                        <!-- TODO: Can we move to resource? -->
+                                        <CheckBox.LayoutTransform>
+                                            <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
+                                        </CheckBox.LayoutTransform>
+                                    </CheckBox>
+                                    <CheckBox Grid.Column="3" IsChecked="{Binding OrderTypeID, Converter={StaticResource TwoIsTrueConverter}}">
+                                        <CheckBox.LayoutTransform>
+                                            <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
+                                        </CheckBox.LayoutTransform>
+                                    </CheckBox>
                                     <TextBlock Grid.Column="4" Text="1" HorizontalAlignment="Right" />
                                     <TextBlock Grid.Column="5" Text="{Binding Menu.Price, Converter={StaticResource MoneyConverter}}" HorizontalAlignment="Right" />
-                                    <CheckBox Grid.Column="6" Margin="10 0 0 0" IsChecked="{Binding StatusID,Converter={StaticResource TwoIsTrueConverter}}" Command="{Binding MarkDoneCommand}" CommandParameter="{Binding .}" />
-                                    <Button Grid.Column="7" Height="12" Width="12" ToolTip="Cancel"
+                                    <CheckBox Grid.Column="6" Margin="10 0 0 0" IsChecked="{Binding StatusID,Converter={StaticResource TwoIsTrueConverter}}" Command="{Binding MarkDoneCommand}" CommandParameter="{Binding .}">
+                                        <CheckBox.LayoutTransform>
+                                            <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
+                                        </CheckBox.LayoutTransform>
+                                    </CheckBox>
+                                    <Button Grid.Column="7" Height="24" Width="24" ToolTip="Cancel"
                                             Background="{StaticResource GrayCross}" Style="{StaticResource BorderlessButton}"
                                             Command="{Binding DataContext.SelectedOrder.RemoveItemCommand, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Window}}}"
                                             CommandParameter="{Binding .}"/>
