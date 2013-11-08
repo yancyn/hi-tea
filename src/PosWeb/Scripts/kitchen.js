@@ -34,6 +34,7 @@ function refresh() {
                 var line = "<tr><td>"+(i+1).toString()+".</td><td>"+getTime(item['Created'])+"</td><td>"+menu+"</td><td style='text-align:center'>"+table+"</td><td>"+away+"</td><td><span class='ball'>"+item['QueueNo']+"</span></td><td><input type='button' class='button' onclick='markComplete("+i+")' value='DONE' /></td></tr>";
                 $("#table").append(line);
             }
+            $("#total").html("Total: "+result.rows.length.toString());
         });
     });
 }
