@@ -1,7 +1,7 @@
 ﻿//  Declare SQL Query for SQLite
 var db = openDatabase("pos", "1.0", "Hi Tea Pos", 4 * 1024 * 1024);
 var updateStatement = "UPDATE OrderItem SET StatusId = 2 WHERE Id = ?";
-var selectStatement = "SELECT Menu.Code, Menu.Name, OrderItem.*, 'Order'.* FROM OrderItem JOIN 'Order' ON OrderItem.ParentId = 'Order'.Id JOIN Menu ON OrderItem.MenuId = Menu.Id WHERE OrderItem.StatusId = 1 ORDER BY OrderItem.Id, 'Order'.Id;";
+var selectStatement = "SELECT Menu.Code, Menu.Name, OrderItem.*, 'Order'.* FROM OrderItem JOIN 'Order' ON OrderItem.ParentId = 'Order'.Id JOIN Menu ON OrderItem.MenuId = Menu.Id WHERE OrderItem.StatusId = 1 AND Menu.CategoryId IN(1,2,3) ORDER BY OrderItem.Id, 'Order'.Id;";
 var dataset;
 
 function markComplete(i) {
