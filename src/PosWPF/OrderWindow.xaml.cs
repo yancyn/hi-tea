@@ -173,6 +173,12 @@ namespace PosWPF
             graphics.DrawString(underline, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
 
             offset += 20;
+            feed = "Govn %: ";
+            string tax = order.Charges[0].ToString("###,##0.00");
+            graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+            graphics.DrawString(tax, font, new SolidBrush(System.Drawing.Color.Black), startX + 160 - 10, startY + offset);
+
+            offset += 20;
             feed = "Total: ";
             string total = order.Total.ToString("###,##0.00");
             graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
+using System.Configuration;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Linq.Mapping;
@@ -59,6 +60,13 @@ namespace HiTea.Pos
         {
             this.RemoveItemCommand = new RemoveItemCommand(this);
             this.cash = 0m;
+
+            this.chargesPercentage = new Dictionary<string, float>();
+            string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
+            Main db = new Main(connectionString);
+            foreach (Charge charge in db.Charges)
+                this.chargesPercentage.Add(charge.Name, charge.Value);
+
             this.Items = new ObservableCollection<OrderItem>();
             this.Items.CollectionChanged += Items_CollectionChanged;
         }
@@ -70,11 +78,22 @@ namespace HiTea.Pos
         }
         private void CalculateTotal()
         {
-            this._total = 0;
+            float amount = 0;
             foreach (OrderItem item in this.Items)
-                this._total += item.Menu.Price;
+                amount += item.Menu.Price;
+            this._total = amount;
+
+            this.Charges = new ObservableCollection<float>();
+            foreach (KeyValuePair<string, float> charge in this.chargesPercentage)
+            {
+                float tax = amount * charge.Value;
+                this.Charges.Add(tax);
+                this._total += tax;
+            }
         }
 
+        private Dictionary<string, float> chargesPercentage;
+        public ObservableCollection<float> Charges { get; set; }
         [Column(Storage = "_total", Name = "Total", DbType = "real", AutoSync = AutoSync.Never, CanBeNull = false)]
         [DebuggerNonUserCode()]
         public float Total

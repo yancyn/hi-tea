@@ -132,3 +132,8 @@ INSERT INTO OrderType(Name) VALUES('Take out');
 
 INSERT INTO Status(Name) VALUES('Confirm');
 INSERT INTO Status(Name) VALUES('Complete');
+
+
+--Add User
+--insert into User(Username,Password,RoleId,DisplayName,Point,Active) values('cashier','cashier',2,'cashier',0,1);
+insert into Charge(Name,Value,Active) values('Govn %',0.06,1);
