@@ -120,6 +120,7 @@
     <Compile Include="Resources\TableControl.xaml.cs">
       <DependentUpon>TableControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Resources\TableBallViewModel.cs" />
     <Compile Include="UserWindow.xaml.cs">
       <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>
