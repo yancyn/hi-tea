@@ -62,6 +62,7 @@ namespace HiTea.Pos
             get { return this.selectedOrder; }
             set
             {
+                this.timer.Stop();
                 if (((selectedOrder == value) == false))
                 {
                     //this.OnSelectedOrderChanging(value);
@@ -123,17 +124,13 @@ namespace HiTea.Pos
             var orders = db.Orders.Where(o => o.ReceiptDate.HasValue == false);
             foreach (Order order in orders)
             {
-                // we only care about unpaid
-                if (order.ReceiptDate == null)
-                {
-                    foreach (OrderItem item in order.OrderItems)
-                        order.Items.Add(item);
-
-                    if (String.IsNullOrEmpty(order.TableNo))
-                        this.CarryBasket.Add(order);
-                    else
-                        this.TableBasket.Add(order);
-                }
+                foreach (OrderItem item in order.OrderItems)
+                    order.Items.Add(item);
+                //Order target = CloneOrder(order);
+                if (String.IsNullOrEmpty(order.TableNo))
+                    this.CarryBasket.Add(order);
+                else
+                    this.TableBasket.Add(order);
             }
 
 
@@ -164,31 +161,34 @@ namespace HiTea.Pos
             timer = new System.Windows.Threading.DispatcherTimer();
             timer.Tick += timer_Tick;
             timer.Interval = new TimeSpan(0, 0, 10);
-            timer.Start();
+        }
+        public void StartTimer()
+        {
+            this.timer.Start();
         }
 
         void timer_Tick(object sender, EventArgs e)
         {
-            db.Dispose();
+            // prevent updating a same database at a same time
             string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
-            db = new Main(connectionString);
-            //db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues, db);
+            Main db2 = new Main(connectionString);
             foreach (Order order in this.Basket)
             {
-                for(int i=0;i<order.Items.Count;i++)
+                for (int i = 0; i < order.Items.Count; i++)
                 {
-                    Order latestOrder = db.Orders.Where(o => o.ID == order.ID).First();
+                    Order latestOrder = db2.Orders.Where(o => o.ID == order.ID).First();
                     foreach (OrderItem item in latestOrder.OrderItems)
                     {
                         if (order.Items[i].ID == item.ID)
                         {
-                            //System.Diagnostics.Debug.WriteLine("Updating order status for " + order.Items[i].ID+ ": "+ item.StatusID);
+                            System.Diagnostics.Debug.WriteLine("Updating order status for " + order.Items[i].ID + ": " + item.StatusID);
                             order.Items[i].StatusID = item.StatusID;
                             break;
                         }
                     }
                 }
             }
+            db2.Dispose();
         }
 
         void TableBasket_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
@@ -371,10 +371,10 @@ namespace HiTea.Pos
                 order.Created = this.selectedOrder.Created;
                 order.CreatedByID = this.selectedOrder.CreatedByID;
                 order.DodAte = this.selectedOrder.DodAte;
-                order.OrderItems.Clear();
                 order.QueueNo = this.selectedOrder.QueueNo;
                 order.ReceiptDate = this.selectedOrder.ReceiptDate;
                 order.TableNo = this.selectedOrder.TableNo;
+                order.MemberID = this.selectedOrder.MemberID;
                 order.Total = this.selectedOrder.Total;
                 db.Orders.InsertOnSubmit(order);
                 System.Diagnostics.Debug.WriteLine("New ID: " + order.ID);
@@ -389,6 +389,9 @@ namespace HiTea.Pos
             {
                 UpdateOrder(ref order);
             }
+
+            this.selectedOrder = null;
+            this.timer.Start();
         }
         public void UpdateOrder(ref Order order)
         {
@@ -396,9 +399,10 @@ namespace HiTea.Pos
             order.Created = this.selectedOrder.Created;
             order.CreatedByID = this.selectedOrder.CreatedByID;
             order.DodAte = this.selectedOrder.DodAte;
-            order.QueueNo = this.selectedOrder.QueueNo;
             order.ReceiptDate = this.selectedOrder.ReceiptDate;
+            order.QueueNo = this.selectedOrder.QueueNo;
             order.TableNo = this.selectedOrder.TableNo;
+            order.MemberID = this.selectedOrder.MemberID;
             order.Total = this.selectedOrder.Total;
 
             List<OrderItem> oldItems = new List<OrderItem>();
@@ -426,20 +430,36 @@ namespace HiTea.Pos
 
             db.SubmitChanges();
         }
-        private void CloneOrder(Order order)
+        private Order CloneOrder(Order source)
         {
-            order.ID = this.selectedOrder.ID;
-            order.Created = this.selectedOrder.Created;
-            order.CreatedByID = this.selectedOrder.CreatedByID;
-            order.DodAte = this.selectedOrder.DodAte;
-            order.OrderItems.Clear();
-            foreach (OrderItem item in this.selectedOrder.Items)
-                order.OrderItems.Add(item);
-            order.QueueNo = this.selectedOrder.QueueNo;
-            order.ReceiptDate = this.selectedOrder.ReceiptDate;
-            order.TableNo = this.selectedOrder.TableNo;
-            order.Total = this.selectedOrder.Total;
-            //order.User
+            Order order = new Order();
+            order.ID = source.ID;
+            order.Created = source.Created;
+            order.CreatedByID = source.CreatedByID;
+            order.DodAte = source.DodAte;
+            order.QueueNo = source.QueueNo;
+            order.ReceiptDate = source.ReceiptDate;
+            order.MemberID = source.MemberID;
+            order.TableNo = source.TableNo;
+            order.Total = source.Total;
+
+            order.Items = new ObservableCollection<OrderItem>();
+            foreach (OrderItem item in source.OrderItems)
+                order.Items.Add(CloneOrderItem(item));
+
+            return order;
+        }
+        private OrderItem CloneOrderItem(OrderItem source)
+        {
+            OrderItem item = new OrderItem();
+            item.ID = source.ID;
+            item.ParentID = source.ParentID;
+            item.OrderType = source.OrderType;
+            item.OrderTypeID = source.OrderTypeID;
+            item.MenuID = source.MenuID;
+            item.Menu = source.Menu;
+            item.StatusID = source.StatusID;
+            return item;
         }
     }
 
