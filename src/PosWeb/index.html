@@ -3,14 +3,48 @@
 <head>
     <title>Welcome to Hi Tea Cafe</title>
     <link rel="stylesheet" type="text/css" href="Content/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="Content/themes/default.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="Content/themes/fonts.css" media="all" />
+
     <script type="text/javascript" src="Scripts/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.slidertron-1.3.js"></script>
     <script type="text/javascript" src="Scripts/jquery-ui-1.10.3.min.js"></script>
 </head>
 <body>
-    <h1>Welcome to Hi Tea Cafe</h1>
-    <ul>
-        <li><a href="kitchen.html">Kitchen Staff</a></li>
-        <li><a href="order.html">Make Order</a></li>
-    </ul>
+    <div id="header-wrapper">
+	    <div id="header" class="container">
+		    <div id="logo">
+			    <h1>Welcome to <a href="#">Hi Tea Cafe</a></h1>
+		    </div>
+		    <div id="menu">
+			    <ul>
+				    <li class="current_page_item"><a href="index.html" accesskey="1" title="">Homepage</a></li>
+				    <li><a href="#" accesskey="3" title="">About Us</a></li>
+				    <li><a href="#" accesskey="5" title="">Contact Us</a></li>
+			    </ul>
+		    </div>
+	    </div>
+    </div>
+    <div id="wrapper">
+        <div id="featured-wrapper">
+            <div id="featured" class="container">
+			    <div class="column1"> <a href="kitchen.html"><span class="icon icon-table"></span></a>
+				    <div class="title">
+                        <h2><a style="text-decoration:none" href="kitchen.html">Kitchen Staff</a></h2>
+				    </div>
+				    <p>For Kitchen staff updating order status.</p>
+			    </div>
+			    <div class="column2"> <a href="order.html"><span class="icon icon-glass"></span></a>
+				    <div class="title">
+					    <h2><a style="text-decoration:none" href="order.html">Guest</a></h2>
+				    </div>
+				    <p>For guest ordering menu.</p>
+			    </div>
+            </div>
+		</div>
+    </div>
+    <div id="copyright" class="container">
+	    <p>Copyright (c) 2013 Hi Tea. All rights reserved. | ver 0.9.11.8.</p>
+    </div>
 </body>
 </html>
