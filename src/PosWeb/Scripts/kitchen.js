@@ -37,7 +37,25 @@ function refresh() {
     });
 }
 
+function zeroPrefix(value, digit) {
+    var output = value.toString();
+    for (var i = 0; i < digit - value.length; i++) {
+        output = "0" + output;
+    }
+    return output;
+}
+
+function displayLocalDateTime(date) {
+    var output = "";
+    var date = new Date();
+    output = date.getDate() + "/" + (date.getMonth() + 1).toString() + "/" + (date.getYear() + 1900).toString();
+    output += " " + zeroPrefix(date.getHours(), 2);
+    output += ":" + zeroPrefix(date.getMinutes(), 2);
+    return output;
+}
+
 $(function () {
+    $("#time").html(displayLocalDateTime());
     refresh();
 });
 
