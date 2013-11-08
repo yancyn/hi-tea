@@ -1,24 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Configuration;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Printing;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
 using HiTea.Pos;
-using System.Drawing.Printing;
-using System.Drawing;
-using System.Windows.Forms;
-using System.Windows.Markup;
 
 namespace PosWPF
 {
@@ -27,6 +27,8 @@ namespace PosWPF
     /// </summary>
     public partial class OrderWindow : Window
     {
+        public const string MONEY_FORMAT = "###,###,##0.00";
+
         public OrderWindow()
         {
             InitializeComponent();
@@ -118,6 +120,26 @@ namespace PosWPF
             numpad.ShowDialog();
         }
 
+        /// <summary>
+        /// Rounding method as smallest unit 5 cents.
+        /// </summary>
+        /// <param name="original"></param>
+        /// <returns></returns>
+        private decimal Rounding(decimal original)
+        {
+            decimal result = 0m;
+            decimal rounded = Math.Round(original, 1);
+            decimal half = rounded + 0.05m;
+
+            decimal diff1 = rounded - original;
+            if (diff1 < 0) diff1 = diff1 * -1;
+
+            decimal diff2 = half - original;
+            if (diff2 < 0) diff2 = diff2 * -1;
+
+            result = (diff1 > diff2) ? half : rounded;
+            return result;
+        }
         private void ReceiptButton_Click(object sender, RoutedEventArgs e)
         {
             System.Windows.Forms.PrintDialog pd = new System.Windows.Forms.PrintDialog();
@@ -137,7 +159,8 @@ namespace PosWPF
             Order order = (this.DataContext as PosManager).SelectedOrder;
 
             Graphics graphics = e.Graphics;
-            Font font = new Font("SimSun Regular", 10);// TODO: SimHei Regular
+            Font font = new Font("SimSun Regular", 10);
+            Font bold = new Font("SimHei Bold", 10);
             float fontHeight = font.GetHeight();
             int startX = 10;
             int startY = 10;
@@ -163,10 +186,24 @@ namespace PosWPF
                 i++;
                 offset += 20;
 
-                string line = i + ". " + item.Menu.Code + " " + item.Menu.Name;
-                string price = item.Menu.Price.ToString("###,##0.00");
-                graphics.DrawString(line, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
-                graphics.DrawString(price, font, new SolidBrush(System.Drawing.Color.Black), startX + 160, startY + offset);
+                // Break line for different encoding
+                string code = string.Empty;
+                code += item.Menu.Code + " ";
+
+                // extract English character only
+                string eng = string.Empty;
+                Regex regex = new Regex("[a-zA-Z0-9 '()&-]");
+                foreach (Match match in regex.Matches(item.Menu.Name))
+                    eng += match.Value;
+                string other = (eng.Length == 0) ? item.Menu.Name : item.Menu.Name.Replace(eng, string.Empty);
+                code += other.Trim();
+
+                string price = item.Menu.Price.ToString(MONEY_FORMAT);
+                graphics.DrawString(code.Trim(), font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+                graphics.DrawString(price, font, new SolidBrush(System.Drawing.Color.Black), startX + 200, startY + offset);
+
+                offset += 20;
+                graphics.DrawString(eng.Trim(), font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
             }
 
             offset += 20;
@@ -174,15 +211,21 @@ namespace PosWPF
 
             offset += 20;
             feed = "Govn %: ";
-            string tax = order.Charges[0].ToString("###,##0.00");
-            graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
-            graphics.DrawString(tax, font, new SolidBrush(System.Drawing.Color.Black), startX + 160 - 10, startY + offset);
+            string tax = order.Charges[0].ToString(MONEY_FORMAT);
+            graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX + 50, startY + offset);
+            graphics.DrawString(tax, font, new SolidBrush(System.Drawing.Color.Black), startX + 200 - 10, startY + offset);
 
             offset += 20;
             feed = "Total: ";
-            string total = order.Total.ToString("###,##0.00");
-            graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
-            graphics.DrawString(total, font, new SolidBrush(System.Drawing.Color.Black), startX + 160 - 10, startY + offset);
+            string total = order.Total.ToString(MONEY_FORMAT);
+            graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX + 50, startY + offset);
+            graphics.DrawString(total, font, new SolidBrush(System.Drawing.Color.Black), startX + 200 - 10, startY + offset);
+
+            offset += 20;
+            feed = "Rounding: ";
+            string  rounding = Rounding(Convert.ToDecimal(order.Total)).ToString(MONEY_FORMAT);
+            graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX + 50, startY + offset);
+            graphics.DrawString(rounding, bold, new SolidBrush(System.Drawing.Color.Black), startX + 200 - 10, startY + offset);
 
             offset += 20;
             graphics.DrawString(underline, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);

@@ -22,6 +22,7 @@ namespace PosWPF
             {
                 HiTea.Pos.Menu menu = (HiTea.Pos.Menu)value;
                 
+                // TODO: Extract to static method
                 // Break line for different encoding
                 string name = string.Empty;
                 name += menu.Code + " ";
@@ -89,6 +90,55 @@ namespace PosWPF
             {
                 decimal money = (decimal)value;
                 return money.ToString("###,##0.00");
+            }
+
+            throw new ArgumentException("Not supported type of " + value.GetType());
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    /// <summary>
+    /// Rounding float or decimal value by smallest unit 5 cents.
+    /// </summary>
+    public class MoneyRoundingConverter : IValueConverter
+    {
+        /// <summary>
+        /// Rounding method as smallest unit 5 cents.
+        /// TODO: Move to helper class.
+        /// </summary>
+        /// <param name="original"></param>
+        /// <returns></returns>
+        private decimal Rounding(decimal original)
+        {
+            decimal result = 0m;
+            decimal rounded = Math.Round(original, 1);
+            decimal half = rounded + 0.05m;
+
+            decimal diff1 = rounded - original;
+            if (diff1 < 0) diff1 = diff1 * -1;
+
+            decimal diff2 = half - original;
+            if (diff2 < 0) diff2 = diff2 * -1;
+
+            result = (diff1 > diff2) ? half : rounded;
+            return result;
+        }
+
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (value is float)
+            {
+                float money = (float)value;
+                return Rounding(System.Convert.ToDecimal(money)).ToString("###,###,##0.00");
+            }
+            if (value is decimal)
+            {
+                decimal money = (decimal)value;
+                return Rounding(money).ToString("###,###,##0.00");
             }
 
             throw new ArgumentException("Not supported type of " + value.GetType());

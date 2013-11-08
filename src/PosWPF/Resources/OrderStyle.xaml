@@ -18,7 +18,7 @@
 								<Button DockPanel.Dock="Left" ToolTip="Back" Background="{StaticResource BackIcon}" Style="{StaticResource CircleButtonStyle}" Click="BackButton_Click" />
                                 <WrapPanel DockPanel.Dock="Right" HorizontalAlignment="Right">
                                     <TextBlock Text="TOTAL: " Margin="10" TextAlignment="Right" Style="{StaticResource DefaultBold}" />
-                                    <TextBlock Text="{Binding DataContext.SelectedOrder.Total, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource MoneyConverter}, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Window}}}"
+                                    <TextBlock Text="{Binding DataContext.SelectedOrder.Total, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource MoneyRoundingConverter}, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Window}}}"
                                                Margin="10" TextAlignment="Right" Style="{StaticResource DefaultBold}" />
                                 </WrapPanel>
                                 <WrapPanel>
