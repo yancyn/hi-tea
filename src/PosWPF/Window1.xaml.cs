@@ -48,6 +48,7 @@ namespace PosWPF
 
             string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
             db = new Main(connectionString);
+            db.QueryCacheEnabled = false;
             posManager = new PosManager(db);
 
             this.DataContext = posManager;

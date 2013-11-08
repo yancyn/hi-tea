@@ -64,11 +64,11 @@ namespace HiTea.Pos
             {
                 if (((selectedOrder == value) == false))
                 {
-                    this.OnSelectedOrderChanging(value);
-                    this.SendPropertyChanging();
+                    //this.OnSelectedOrderChanging(value);
+                    //this.SendPropertyChanging();
                     this.selectedOrder = value;
-                    this.SendPropertyChanged("SelectedOrder");
-                    this.OnSelectedOrderChanged();
+                    //this.SendPropertyChanged("SelectedOrder");
+                    //this.OnSelectedOrderChanged();
                 }
             }
         }
@@ -88,6 +88,11 @@ namespace HiTea.Pos
 
         private LoginCommand loginCommand;
         public LoginCommand LoginCommand { get { return this.loginCommand; } }
+
+        /// <summary>
+        /// Timer event for refreshing order status from kitchen.
+        /// </summary>
+        System.Windows.Threading.DispatcherTimer timer;
 
         /// <summary>
         /// Default constructor.
@@ -115,8 +120,7 @@ namespace HiTea.Pos
             RefreshMenu();
 
             // retrieve incomplete order
-            int[] incompleted = db.OrderItems.Where(i => i.StatusID != 2).Select(i => i.ParentID).ToArray();
-            var orders = db.Orders.Where(o => incompleted.Contains(o.ID));// && o.ReceiptDate == null);
+            var orders = db.Orders.Where(o => o.ReceiptDate.HasValue == false);
             foreach (Order order in orders)
             {
                 // we only care about unpaid
@@ -153,6 +157,35 @@ namespace HiTea.Pos
                         Order order = new Order();
                         order.TableNo = tableNo.ToString();
                         this.TableBasket.Add(order);
+                    }
+                }
+            }
+
+            timer = new System.Windows.Threading.DispatcherTimer();
+            timer.Tick += timer_Tick;
+            timer.Interval = new TimeSpan(0, 0, 10);
+            timer.Start();
+        }
+
+        void timer_Tick(object sender, EventArgs e)
+        {
+            db.Dispose();
+            string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
+            db = new Main(connectionString);
+            //db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues, db);
+            foreach (Order order in this.Basket)
+            {
+                for(int i=0;i<order.Items.Count;i++)
+                {
+                    Order latestOrder = db.Orders.Where(o => o.ID == order.ID).First();
+                    foreach (OrderItem item in latestOrder.OrderItems)
+                    {
+                        if (order.Items[i].ID == item.ID)
+                        {
+                            //System.Diagnostics.Debug.WriteLine("Updating order status for " + order.Items[i].ID+ ": "+ item.StatusID);
+                            order.Items[i].StatusID = item.StatusID;
+                            break;
+                        }
                     }
                 }
             }
