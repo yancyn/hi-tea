@@ -18,3 +18,4 @@ References
 - [DbLinq](http://code.google.com/p/dblinq2007/)
 - [Metro Style](http://mahapps.com/MahApps.Metro/) [source](https://github.com/MahApps/MahApps.Metro) require .NET 4.0 and above
 - [Borderless Window](https://wpfborderless.codeplex.com/)
+- [Escalier Theme](http://www.freecsstemplates.org/preview/escalier/)

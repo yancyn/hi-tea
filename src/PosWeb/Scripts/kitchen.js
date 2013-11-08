@@ -29,7 +29,8 @@ function refresh() {
 
                 var menu = item['Code'] + ": " + item['Name'];
                 var table = item['TableNo'];
-                var away = (item['OrderTypeId'] > 1) ? "<input type='checkbox' checked onclick='return false;'></input>": "";
+                var checked = (item['OrderTypeId'] > 1) ? "checked" : "";
+                var away = "<input type='checkbox' "+checked+" onclick='return false;'></input>";
                 var line = "<tr><td>"+(i+1).toString()+".</td><td>"+getTime(item['Created'])+"</td><td>"+menu+"</td><td style='text-align:center'>"+table+"</td><td>"+away+"</td><td><span class='ball'>"+item['QueueNo']+"</span></td><td><input type='button' class='button' onclick='markComplete("+i+")' value='DONE' /></td></tr>";
                 $("#table").append(line);
             }
