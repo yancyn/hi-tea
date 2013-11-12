@@ -27,7 +27,7 @@ function refresh() {
             for (var i = 0, item = null; i < result.rows.length; i++) {
                 item = result.rows.item(i);
 
-                var menu = item['Code'] + ": " + item['Name'];
+                var menu = item['Code'] + " " + item['Name'];
                 var table = item['TableNo'];
                 var checked = (item['OrderTypeId'] > 1) ? "checked" : "";
                 var away = "<input type='checkbox' "+checked+" onclick='return false;'></input>";
@@ -54,6 +54,7 @@ function displayLocalDateTime(date) {
     output = date.getDate() + "/" + (date.getMonth() + 1).toString() + "/" + (date.getYear() + 1900).toString();
     output += " " + zeroPrefix(date.getHours(), 2);
     output += ":" + zeroPrefix(date.getMinutes(), 2);
+    output += (date.getHours() > 11) ? "PM" : "AM";
     return output;
 }
 
