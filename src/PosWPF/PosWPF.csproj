@@ -93,6 +93,7 @@
     <Compile Include="MenuWindow.xaml.cs">
       <DependentUpon>MenuWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Pie.cs" />
     <Compile Include="Resources\BorderlessModalStyle.xaml.cs">
       <DependentUpon>BorderlessModalStyle.xaml</DependentUpon>
     </Compile>

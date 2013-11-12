@@ -52,7 +52,6 @@ namespace PosWPF
         public TableControl()
         {
             InitializeComponent();
-
             this.DataContextChanged += TableControl_DataContextChanged;
         }
 

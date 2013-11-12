@@ -27,8 +27,12 @@ namespace PosWPF
 
             string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
             Main db = new Main(connectionString);
+            db.QueryCacheEnabled = false;
+            //OrderButton.DataContext = db.Orders.Where(o => o.ID == 111).First();
+
             PosManager posManager = new PosManager(db);
-            DineInGrid.DataContext = posManager;
+            OrderButton.DataContext = posManager.TableBasket[9];
+            //this.DataContext = posManager;
         }
     }
 }

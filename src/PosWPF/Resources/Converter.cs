@@ -343,6 +343,81 @@ namespace PosWPF
     }
 
     /// <summary>
+    /// Indicate pie angle.
+    /// </summary>
+    public class AngleConverter: IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (value is ObservableCollection<OrderItem>)
+            {
+                return (double)360/(value as ObservableCollection<OrderItem>).Count;
+            }
+
+            throw new ArgumentException("Not supported type of " + value.GetType());
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    /// <summary>
+    /// Starting rotation degree based on index in a collection.
+    /// </summary>
+    public class RotationConverter : IMultiValueConverter
+    {
+        #region IMultiValueConverter Members
+        public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (values.Length > 1)
+            {
+                if (values[0] is OrderItem && values[1] is ObservableCollection<OrderItem>)
+                {
+                    OrderItem item = values[0] as OrderItem;
+                    ObservableCollection<OrderItem> collection = values[1] as ObservableCollection<OrderItem>;
+                    int index = collection.IndexOf(item);
+                    int total = collection.Count;
+                    return (double)index * 360 / total;
+                }
+            }
+
+            return 0d;
+        }
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, System.Globalization.CultureInfo culture)
+        {
+            //throw new NotImplementedException();
+            return null;
+        }
+        #endregion
+    }
+
+    /// <summary>
+    /// Mark as green if the food is ready to surve otherwise red. Other type than food ignore.
+    /// </summary>
+    public class StatusConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (value is OrderItem)
+            {
+                OrderItem item = (value as OrderItem);
+                if (item.Menu.Category.Name.ToLower() == "drink" || item.Menu.Category.Name.ToLower() == "dessert")
+                    return Brushes.Transparent; // Ignore
+                else
+                    return (item.StatusID == 1) ? Brushes.Red : Brushes.Green;
+            }
+
+            throw new ArgumentException("Not supported type of " + value.GetType());
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    /// <summary>
     /// If there is zero row count just hidden otherwise visible.
     /// TODO: Check Visibility.Collapsed
     /// </summary>

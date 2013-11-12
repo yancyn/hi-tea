@@ -11,6 +11,9 @@
     <w:MenuBackgroundConverter x:Key="MenuBackgroundConverter" />
     <w:AdminTemplateSelector x:Key="AdminTemplateSelector" />
     <w:IndexConverter x:Key="IndexConverter" />
+    <w:AngleConverter x:Key="AngleConverter" />
+    <w:RotationConverter x:Key="RotationConverter" />
+    <w:StatusConverter x:Key="StatusConverter" />
     <w:MoneyConverter x:Key="MoneyConverter" />
     <w:MoneyRoundingConverter x:Key="MoneyRoundingConverter" />
     <w:VisibilityConverter x:Key="VisibilityConverter" />
