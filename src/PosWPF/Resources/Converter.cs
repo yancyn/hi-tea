@@ -4,10 +4,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
 using HiTea.Pos;
-using System.Windows;
 
 namespace PosWPF
 {
@@ -105,17 +105,19 @@ namespace PosWPF
     /// </summary>
     public class MoneyConverter : IValueConverter
     {
+        public const string MONEY_FORMAT = "###,###,##0.00";
+
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             if (value is float)
             {
                 float money = (float)value;
-                return money.ToString("###,##0.00");
+                return money.ToString(MONEY_FORMAT);
             }
             if (value is decimal)
             {
                 decimal money = (decimal)value;
-                return money.ToString("###,##0.00");
+                return money.ToString(MONEY_FORMAT);
             }
 
             throw new ArgumentException("Not supported type of " + value.GetType());
@@ -132,39 +134,17 @@ namespace PosWPF
     /// </summary>
     public class MoneyRoundingConverter : IValueConverter
     {
-        /// <summary>
-        /// Rounding method as smallest unit 5 cents.
-        /// TODO: Move to helper class.
-        /// </summary>
-        /// <param name="original"></param>
-        /// <returns></returns>
-        private decimal Rounding(decimal original)
-        {
-            decimal result = 0m;
-            decimal rounded = Math.Round(original, 1);
-            decimal half = rounded + 0.05m;
-
-            decimal diff1 = rounded - original;
-            if (diff1 < 0) diff1 = diff1 * -1;
-
-            decimal diff2 = half - original;
-            if (diff2 < 0) diff2 = diff2 * -1;
-
-            result = (diff1 > diff2) ? half : rounded;
-            return result;
-        }
-
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             if (value is float)
             {
                 float money = (float)value;
-                return Rounding(System.Convert.ToDecimal(money)).ToString("###,###,##0.00");
+                return Utils.Rounding(System.Convert.ToDecimal(money)).ToString(MoneyConverter.MONEY_FORMAT);
             }
             if (value is decimal)
             {
                 decimal money = (decimal)value;
-                return Rounding(money).ToString("###,###,##0.00");
+                return Utils.Rounding(money).ToString(MoneyConverter.MONEY_FORMAT);
             }
 
             throw new ArgumentException("Not supported type of " + value.GetType());

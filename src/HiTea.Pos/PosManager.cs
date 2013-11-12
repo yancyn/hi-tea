@@ -120,6 +120,14 @@ namespace HiTea.Pos
             this.Menus = new ObservableCollection<Menu>();
             RefreshMenu();
 
+            // bind all blank table first. TODO: 13 should be configurable.
+            for (int i = 12; i >= 0; i--)
+            {
+                Order order = new Order();
+                order.TableNo = (i + 1).ToString();
+                this.TableBasket.Add(order);
+            }
+
             // retrieve incomplete order
             var orders = db.Orders.Where(o => o.ReceiptDate.HasValue == false);
             foreach (Order order in orders)
@@ -130,31 +138,9 @@ namespace HiTea.Pos
                 if (String.IsNullOrEmpty(order.TableNo))
                     this.CarryBasket.Add(order);
                 else
-                    this.TableBasket.Add(order);
-            }
-
-
-            // TODO: This should be configurable. Hardcode temp
-            if (this.TableBasket.Count() < 5)
-            {
-                for (int i = 0; i < 5; i++)
                 {
-                    bool exist = false;
-                    int tableNo = i + 1;
-                    foreach (Order order in TableBasket)
-                    {
-                        if (order.TableNo == tableNo.ToString())
-                        {
-                            exist = true;
-                            break;
-                        }
-                    }
-                    if (!exist)
-                    {
-                        Order order = new Order();
-                        order.TableNo = tableNo.ToString();
-                        this.TableBasket.Add(order);
-                    }
+                    int i = Convert.ToInt32(order.TableNo);
+                    this.TableBasket[13-i] = order;
                 }
             }
 

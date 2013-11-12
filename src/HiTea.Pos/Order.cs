@@ -50,7 +50,7 @@ namespace HiTea.Pos
         {
             get
             {
-                _return = this.cash - (decimal)this._total;
+                _return = this.cash - Utils.Rounding(Convert.ToDecimal(this.Total));
                 return _return;
             }
         }

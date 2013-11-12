@@ -80,7 +80,7 @@
     </Style>
 
     <Style x:Key="TableBallStyle" TargetType="{x:Type Button}">
-        <Setter Property="Margin" Value="0" />
+        <Setter Property="Margin" Value="5" />
         <Setter Property="Background" Value="WhiteSmoke" />
         <Setter Property="Height" Value="60" />
         <Setter Property="Width" Value="60" />

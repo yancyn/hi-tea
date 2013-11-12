@@ -59,7 +59,7 @@
   <ItemGroup>
     <Compile Include="CategoryTest.cs" />
     <Compile Include="ChargeTest.cs" />
-    <Compile Include="OrderTest.cs" />
+    <Compile Include="UtilsTest.cs" />
     <Compile Include="MenuTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -27,8 +27,6 @@ namespace PosWPF
     /// </summary>
     public partial class OrderWindow : Window
     {
-        public const string MONEY_FORMAT = "###,###,##0.00";
-
         public OrderWindow()
         {
             InitializeComponent();
@@ -120,26 +118,6 @@ namespace PosWPF
             numpad.ShowDialog();
         }
 
-        /// <summary>
-        /// Rounding method as smallest unit 5 cents.
-        /// </summary>
-        /// <param name="original"></param>
-        /// <returns></returns>
-        private decimal Rounding(decimal original)
-        {
-            decimal result = 0m;
-            decimal rounded = Math.Round(original, 1);
-            decimal half = rounded + 0.05m;
-
-            decimal diff1 = rounded - original;
-            if (diff1 < 0) diff1 = diff1 * -1;
-
-            decimal diff2 = half - original;
-            if (diff2 < 0) diff2 = diff2 * -1;
-
-            result = (diff1 > diff2) ? half : rounded;
-            return result;
-        }
         private void ReceiptButton_Click(object sender, RoutedEventArgs e)
         {
             System.Windows.Forms.PrintDialog pd = new System.Windows.Forms.PrintDialog();
@@ -166,6 +144,8 @@ namespace PosWPF
             int startY = 10;
             int offset = 10;
             graphics.DrawString("Welcome to Hi Tea", font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+
+            // TODO: Print address
 
             offset += 20;
             string feed = string.Empty;
@@ -198,7 +178,7 @@ namespace PosWPF
                 string other = (eng.Length == 0) ? item.Menu.Name : item.Menu.Name.Replace(eng, string.Empty);
                 code += other.Trim();
 
-                string price = item.Menu.Price.ToString(MONEY_FORMAT);
+                string price = item.Menu.Price.ToString(MoneyConverter.MONEY_FORMAT);
                 graphics.DrawString(code.Trim(), font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
                 graphics.DrawString(price, font, new SolidBrush(System.Drawing.Color.Black), startX + 200, startY + offset);
 
@@ -210,22 +190,31 @@ namespace PosWPF
             graphics.DrawString(underline, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
 
             offset += 20;
-            feed = "Govn %: ";
-            string tax = order.Charges[0].ToString(MONEY_FORMAT);
+            feed = "Govn % ";
             graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX + 50, startY + offset);
-            graphics.DrawString(tax, font, new SolidBrush(System.Drawing.Color.Black), startX + 200 - 10, startY + offset);
+            graphics.DrawString(Math.Round(order.Charges[0], 2).ToString(MoneyConverter.MONEY_FORMAT), font, new SolidBrush(System.Drawing.Color.Black), startX + 200 - 10, startY + offset);
 
             offset += 20;
-            feed = "Total: ";
-            string total = order.Total.ToString(MONEY_FORMAT);
+            feed = "Total ";
+            string total = order.Total.ToString(MoneyConverter.MONEY_FORMAT);
             graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX + 50, startY + offset);
             graphics.DrawString(total, font, new SolidBrush(System.Drawing.Color.Black), startX + 200 - 10, startY + offset);
 
             offset += 20;
-            feed = "Rounding: ";
-            string  rounding = Rounding(Convert.ToDecimal(order.Total)).ToString(MONEY_FORMAT);
+            feed = "Rounding ";
+            string rounding = Utils.Rounding(Convert.ToDecimal(order.Total)).ToString(MoneyConverter.MONEY_FORMAT);
             graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX + 50, startY + offset);
             graphics.DrawString(rounding, bold, new SolidBrush(System.Drawing.Color.Black), startX + 200 - 10, startY + offset);
+
+            offset += 20;
+            feed = "Cash ";
+            graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX + 50, startY + offset);
+            graphics.DrawString(order.Cash.ToString(MoneyConverter.MONEY_FORMAT), font, new SolidBrush(System.Drawing.Color.Black), startX + 200 - 10, startY + offset);
+
+            offset += 20;
+            feed = "Return ";
+            graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX + 50, startY + offset);
+            graphics.DrawString(order.Return.ToString(MoneyConverter.MONEY_FORMAT), bold, new SolidBrush(System.Drawing.Color.Black), startX + 200 - 10, startY + offset);
 
             offset += 20;
             graphics.DrawString(underline, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
