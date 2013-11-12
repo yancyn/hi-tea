@@ -83,6 +83,11 @@ namespace PosWPF
             this.Close();
         }
 
+        private void Category_Checked(object sender, RoutedEventArgs e)
+        {
+            MenusControl.ItemsSource = ((sender as FrameworkElement).DataContext as Category).MenuCollection;
+        }
+
         private void AdminButton_Click(object sender, RoutedEventArgs e)
         {
             AdminWindow window = new AdminWindow(db);

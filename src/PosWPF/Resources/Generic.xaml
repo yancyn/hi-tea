@@ -82,8 +82,8 @@
     <Style x:Key="TableBallStyle" TargetType="{x:Type Button}">
         <Setter Property="Margin" Value="0" />
         <Setter Property="Background" Value="WhiteSmoke" />
-        <Setter Property="Height" Value="80" />
-        <Setter Property="Width" Value="80" />
+        <Setter Property="Height" Value="60" />
+        <Setter Property="Width" Value="60" />
         <Setter Property="Padding" Value="20" />
         <Setter Property="FontSize" Value="36" />
         <Setter Property="FontWeight" Value="ExtraBold" />
@@ -191,8 +191,13 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="CategoryButtonStyle" BasedOn="{StaticResource {x:Type ToggleButton}}" TargetType="{x:Type RadioButton}">
+        <Setter Property="GroupName" Value="CategoryGroup"/>
+    </Style>
+
     <Style x:Key="MenuButtonStyle" TargetType="{x:Type Button}">
-        <Setter Property="Padding" Value="5" />
+        <!--<Setter Property="FontSize" Value="10" />-->
+        <!--<Setter Property="Padding" Value="5" />-->
         <Setter Property="Margin" Value="5" />
         <Setter Property="Foreground" Value="White" />
         <Setter Property="BorderThickness" Value="0" />

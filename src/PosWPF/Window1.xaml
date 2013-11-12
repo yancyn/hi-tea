@@ -17,6 +17,39 @@
             <sys:Int32>54</sys:Int32>
             <sys:Int32>74</sys:Int32>
         </x:Array>
+        <DataTemplate DataType="{x:Type p:Menu}">
+            <Button Content="{Binding .,Converter={StaticResource MenuNameConverter},UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MenuButtonStyle}"
+                Command="{Binding DataContext.OrderMenuCommand, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Window}}}"
+                CommandParameter="{Binding .}"
+                Background="{Binding ., Converter={StaticResource MenuBackgroundConverter}}" />
+        </DataTemplate>
+        <!--
+        <DataTemplate DataType="{x:Type p:Category}">
+            <GroupBox Header="{Binding Name}">
+                <DockPanel LastChildFill="True" DataContext="{Binding}">
+                    <ItemsControl x:Name="menus" ItemsSource="{Binding MenuCollection,UpdateSourceTrigger=PropertyChanged}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </DockPanel>
+            </GroupBox>
+        </DataTemplate>
+        -->
+        <DataTemplate DataType="{x:Type p:Category}">
+            <RadioButton Style="{StaticResource CategoryButtonStyle}" Checked="Category_Checked">
+                <StackPanel>
+                    <TextBlock Text="A"/>
+                    <TextBlock Text="{Binding Name}">
+                        <TextBlock.LayoutTransform>
+                            <RotateTransform CenterX="0" CenterY="0" Angle="90" />
+                        </TextBlock.LayoutTransform>
+                    </TextBlock>
+                </StackPanel>
+            </RadioButton>
+        </DataTemplate>
     </Window.Resources>
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
@@ -26,8 +59,8 @@
         </Grid.ColumnDefinitions>
 
         <DockPanel x:Name="Playground" Grid.Column="0" LastChildFill="True">
-            <DockPanel DockPanel.Dock="Top">
-                <TextBlock DockPanel.Dock="Right" Text="{Binding CurrentTime.Now,Converter={StaticResource DateTimeConverter}}" />
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                <TextBlock DockPanel.Dock="Right" TextAlignment="Right" Text="{Binding CurrentTime.Now,Converter={StaticResource DateTimeConverter}}" />
                 <WrapPanel>
                     <StackPanel>
                         <Button Height="30" Width="30" Background="{StaticResource UserIcon}" Style="{StaticResource BorderlessButton}" Click="LoginButton_Click" />
@@ -46,12 +79,12 @@
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" Width="80" Height="80"  Content="+" FontSize="36" FontWeight="ExtraBold" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" Click="TakeAway_Click" />
+                        <Button Grid.Column="0" Width="60" Height="60"  Content="+" FontSize="36" FontWeight="ExtraBold" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" Click="TakeAway_Click" />
                         <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Disabled"  HorizontalScrollBarVisibility="Auto">
                             <ItemsControl ItemsSource="{Binding CarryBasket}">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
-                                        <Button Width="80" Height="80" FontSize="36" Content="{Binding QueueNo}" FontWeight="ExtraBold" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" Click="OpenOrder_Click" />
+                                        <Button Width="60" Height="60" FontSize="36" Content="{Binding QueueNo}" FontWeight="ExtraBold" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" Click="OpenOrder_Click" />
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                                 <ItemsControl.ItemsPanel>
@@ -76,15 +109,30 @@
                 <Button ToolTip="Detail" Background="{StaticResource DetailIcon}" Style="{StaticResource BorderlessButton}" />
                 <Button ToolTip="Setting" Background="{StaticResource SettingIcon}" Style="{StaticResource CircleButtonStyle}" Click="AdminButton_Click" />
             </StackPanel>
-            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-                <ItemsControl x:Name="MenusControl" ItemsSource="{Binding Menus,UpdateSourceTrigger=PropertyChanged}">
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel />
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                </ItemsControl>
-            </ScrollViewer>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="30" />
+                </Grid.ColumnDefinitions>
+                <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                    <ItemsControl x:Name="MenusControl" DataContext="{Binding Menus,UpdateSourceTrigger=PropertyChanged}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </ScrollViewer>
+                <StackPanel Grid.Column="1" Orientation="Vertical">
+                    <ItemsControl ItemsSource="{Binding Categories}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </StackPanel>
+            </Grid>
         </DockPanel>
     </Grid>
 </Window>

@@ -6,7 +6,7 @@
     mc:Ignorable="d"
     Style="{StaticResource OrderStyle}"
     Closed="Window_Closed"
-    Height="450" Width="500">
+    Height="600" Width="500">
     <DockPanel LastChildFill="True">
         <Grid DockPanel.Dock="Top" Margin="0 5 0 0">
             <Grid.ColumnDefinitions>

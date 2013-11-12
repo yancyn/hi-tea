@@ -6,28 +6,7 @@
     xmlns:p="clr-namespace:HiTea.Pos;assembly=HiTea.Pos"
     xmlns:w="clr-namespace:PosWPF"
     mc:Ignorable="d">
-    
-    <DataTemplate DataType="{x:Type p:Menu}">
-        <Button Content="{Binding .,Converter={StaticResource MenuNameConverter},UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MenuButtonStyle}"
-                Command="{Binding DataContext.OrderMenuCommand, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Window}}}"
-                CommandParameter="{Binding .}"
-                Background="{Binding ., Converter={StaticResource MenuBackgroundConverter}}" />
-    </DataTemplate>
 
-    <DataTemplate DataType="{x:Type p:Category}">
-        <GroupBox Header="{Binding Name}">
-            <DockPanel LastChildFill="True" DataContext="{Binding}">
-                <ItemsControl x:Name="menus" ItemsSource="{Binding MenuCollection,UpdateSourceTrigger=PropertyChanged}">
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel/>
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                </ItemsControl>
-            </DockPanel>
-        </GroupBox>
-    </DataTemplate>
-    
     <DataTemplate x:Key="AdminTemplate" DataType="{x:Type TabControl}">
         <TextBlock Width="100" TextAlignment="Center" Height="20" Text="{Binding Name}" Background="{Binding Name,Converter={StaticResource MenuBackgroundConverter}}" />
     </DataTemplate>

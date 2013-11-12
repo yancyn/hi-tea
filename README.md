@@ -1,12 +1,23 @@
-hi-tea
+﻿hi-tea
 ======
 A POS for café.
 
 Generate dbml from DbLinq
-===================
+=========================
 
 	DbMetal /provider:Sqlite /conn "Data Source=File.db3" /dbml:File.dbml
 	DbMetal /code:File.cs File.dbml
+
+Setup IIS Express
+=================
+Default page is index.html
+
+	iisexpress /path:d:\HiTea\ /port:9090
+
+Hardwares
+=========
+1. Set default printer to use 'Cashier'.
+2. Label printer as 'Bar'.
 
 
 References
