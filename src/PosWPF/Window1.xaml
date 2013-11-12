@@ -42,7 +42,7 @@
             <RadioButton Style="{StaticResource CategoryButtonStyle}" Background="{Binding Name,Converter={StaticResource MenuBackgroundConverter}}"
                          Checked="Category_Checked">
                 <StackPanel>
-                    <TextBlock Text="{Binding Path=.,Converter={StaticResource CategoryPrefixConverter}}" />
+                    <!--<TextBlock Text="{Binding Path=.,Converter={StaticResource CategoryPrefixConverter}}" />-->
                     <TextBlock Text="{Binding Name}">
                         <TextBlock.LayoutTransform>
                             <RotateTransform CenterX="0" CenterY="0" Angle="90" />
