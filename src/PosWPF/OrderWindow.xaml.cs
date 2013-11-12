@@ -143,9 +143,14 @@ namespace PosWPF
             int startX = 10;
             int startY = 10;
             int offset = 10;
-            graphics.DrawString("Welcome to Hi Tea", font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+            graphics.DrawString("Welcome to " + Settings.Default.CompanyName, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
 
-            // TODO: Print address
+            // Print address
+            offset += 20;
+            graphics.DrawString("Tel: " + Settings.Default.Telephone, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+
+            offset += 20;
+            graphics.DrawString(Settings.Default.Address, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
 
             offset += 20;
             string feed = string.Empty;
@@ -155,7 +160,7 @@ namespace PosWPF
             graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
 
             offset += 20;
-            graphics.DrawString("Date: " + DateTime.Now.ToString("dd/MM/yyyy hh:mm tt"), font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+            graphics.DrawString("Date: " + DateTime.Now.ToString(Settings.Default.DateTimeFormat), font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
 
             offset += 20;
             graphics.DrawString(underline, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
@@ -178,7 +183,7 @@ namespace PosWPF
                 string other = (eng.Length == 0) ? item.Menu.Name : item.Menu.Name.Replace(eng, string.Empty);
                 code += other.Trim();
 
-                string price = item.Menu.Price.ToString(MoneyConverter.MONEY_FORMAT);
+                string price = item.Menu.Price.ToString(Settings.Default.MoneyFormat);
                 graphics.DrawString(code.Trim(), font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
                 graphics.DrawString(price, font, new SolidBrush(System.Drawing.Color.Black), startX + 200, startY + offset);
 
@@ -192,32 +197,35 @@ namespace PosWPF
             offset += 20;
             feed = "Govn % ";
             graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX + 50, startY + offset);
-            graphics.DrawString(Math.Round(order.Charges[0], 2).ToString(MoneyConverter.MONEY_FORMAT), font, new SolidBrush(System.Drawing.Color.Black), startX + 200 - 10, startY + offset);
+            graphics.DrawString(Math.Round(order.Charges[0], 2).ToString(Settings.Default.MoneyFormat), font, new SolidBrush(System.Drawing.Color.Black), startX + 200 - 10, startY + offset);
 
             offset += 20;
             feed = "Total ";
-            string total = order.Total.ToString(MoneyConverter.MONEY_FORMAT);
+            string total = order.Total.ToString(Settings.Default.MoneyFormat);
             graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX + 50, startY + offset);
             graphics.DrawString(total, font, new SolidBrush(System.Drawing.Color.Black), startX + 200 - 10, startY + offset);
 
             offset += 20;
             feed = "Rounding ";
-            string rounding = Utils.Rounding(Convert.ToDecimal(order.Total)).ToString(MoneyConverter.MONEY_FORMAT);
+            string rounding = Utils.Rounding(Convert.ToDecimal(order.Total)).ToString(Settings.Default.MoneyFormat);
             graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX + 50, startY + offset);
             graphics.DrawString(rounding, bold, new SolidBrush(System.Drawing.Color.Black), startX + 200 - 10, startY + offset);
 
             offset += 20;
             feed = "Cash ";
             graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX + 50, startY + offset);
-            graphics.DrawString(order.Cash.ToString(MoneyConverter.MONEY_FORMAT), font, new SolidBrush(System.Drawing.Color.Black), startX + 200 - 10, startY + offset);
+            graphics.DrawString(order.Cash.ToString(Settings.Default.MoneyFormat), font, new SolidBrush(System.Drawing.Color.Black), startX + 200 - 10, startY + offset);
 
             offset += 20;
             feed = "Return ";
             graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX + 50, startY + offset);
-            graphics.DrawString(order.Return.ToString(MoneyConverter.MONEY_FORMAT), bold, new SolidBrush(System.Drawing.Color.Black), startX + 200 - 10, startY + offset);
+            graphics.DrawString(order.Return.ToString(Settings.Default.MoneyFormat), bold, new SolidBrush(System.Drawing.Color.Black), startX + 200 - 10, startY + offset);
 
             offset += 20;
             graphics.DrawString(underline, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+
+            offset += 20;
+            graphics.DrawString("Facebook: " + Settings.Default.Facebook, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
 
             offset += 20;
             graphics.DrawString("Thank you", font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);

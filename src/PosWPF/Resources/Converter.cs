@@ -83,13 +83,13 @@ namespace PosWPF
             {
 
                 HiTea.Pos.UpdatingTime dateTime = (HiTea.Pos.UpdatingTime)value;
-                return dateTime.Now.ToString("dd/MM/yyyy hh:mm tt"); // TODO: Global date format
+                return dateTime.Now.ToString(Settings.Default.DateTimeFormat);
             }
             if (value is DateTime)
             {
 
                 DateTime dateTime = (DateTime)value;
-                return dateTime.ToString("dd/MM/yyyy hh:mm tt");
+                return dateTime.ToString(Settings.Default.DateTimeFormat);
             }
             throw new ArgumentException("Not supported type of " + value.GetType());
         }
@@ -105,19 +105,17 @@ namespace PosWPF
     /// </summary>
     public class MoneyConverter : IValueConverter
     {
-        public const string MONEY_FORMAT = "###,###,##0.00";
-
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             if (value is float)
             {
                 float money = (float)value;
-                return money.ToString(MONEY_FORMAT);
+                return money.ToString(Settings.Default.MoneyFormat);
             }
             if (value is decimal)
             {
                 decimal money = (decimal)value;
-                return money.ToString(MONEY_FORMAT);
+                return money.ToString(Settings.Default.MoneyFormat);
             }
 
             throw new ArgumentException("Not supported type of " + value.GetType());
@@ -139,12 +137,12 @@ namespace PosWPF
             if (value is float)
             {
                 float money = (float)value;
-                return Utils.Rounding(System.Convert.ToDecimal(money)).ToString(MoneyConverter.MONEY_FORMAT);
+                return Utils.Rounding(System.Convert.ToDecimal(money)).ToString(Settings.Default.MoneyFormat);
             }
             if (value is decimal)
             {
                 decimal money = (decimal)value;
-                return Utils.Rounding(money).ToString(MoneyConverter.MONEY_FORMAT);
+                return Utils.Rounding(money).ToString(Settings.Default.MoneyFormat);
             }
 
             throw new ArgumentException("Not supported type of " + value.GetType());

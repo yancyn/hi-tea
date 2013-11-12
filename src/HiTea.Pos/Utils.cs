@@ -27,8 +27,8 @@ namespace HiTea.Pos
 
             result = (diff1 > diff2) ? half : rounded;
 
-            System.Diagnostics.Debug.WriteLine(original + " => " + rounded);
-            System.Diagnostics.Debug.WriteLine(diff1 + " <> " + diff2);
+            //System.Diagnostics.Debug.WriteLine(original + " => " + rounded);
+            //System.Diagnostics.Debug.WriteLine(diff1 + " <> " + diff2);
             return result;
         }
     }
