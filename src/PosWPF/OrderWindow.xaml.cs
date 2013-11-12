@@ -242,7 +242,7 @@ namespace PosWPF
             Order order = (this.DataContext as PosManager).SelectedOrder;
             foreach (OrderItem item in order.Items)
             {
-                if (item.Menu.CategoryID == 3)
+                if (item.Menu.Category.Name.ToLower() == "drink")
                 {
                     System.Windows.Controls.PrintDialog pd = new System.Windows.Controls.PrintDialog();
                     pd.PrintQueue = new PrintQueue(new PrintServer(), "Bar");
@@ -268,10 +268,13 @@ namespace PosWPF
                     */
                     // FAILED: pd.PrintVisual(canvas, "Drink Label");
 
+                    string line = "No: " + order.QueueNo;
+                    if (!String.IsNullOrEmpty(order.TableNo)) line += "    " + "Table: " + order.TableNo;
+                    line += "\n" + item.Menu.Name; // TODO: Truncate long text
+
                     FlowDocument flowDocument = new FlowDocument();
-                    Paragraph paragraph = new Paragraph(new Run("No: " + order.QueueNo));
-                    flowDocument.Blocks.Add(paragraph);
-                    paragraph = new Paragraph(new Run(item.Menu.Name));
+                    flowDocument.FontSize = 10;
+                    Paragraph paragraph = new Paragraph(new Run(line));
                     flowDocument.Blocks.Add(paragraph);
                     pd.PrintDocument(((IDocumentPaginatorSource)flowDocument).DocumentPaginator, "Drink Label");
                 }
