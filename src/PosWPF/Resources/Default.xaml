@@ -7,6 +7,7 @@
     <w:MenuDisplayNameConverter x:Key="MenuNameConverter" />
     <w:OneIsTrueConverter x:Key="OneIsTrueConverter" />
     <w:TwoIsTrueConverter x:Key="TwoIsTrueConverter" />
+    <w:CategoryConverter x:Key="CategoryPrefixConverter" />
     <w:MenuBackgroundConverter x:Key="MenuBackgroundConverter" />
     <w:AdminTemplateSelector x:Key="AdminTemplateSelector" />
     <w:IndexConverter x:Key="IndexConverter" />

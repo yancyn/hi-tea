@@ -39,9 +39,10 @@
         </DataTemplate>
         -->
         <DataTemplate DataType="{x:Type p:Category}">
-            <RadioButton Style="{StaticResource CategoryButtonStyle}" Checked="Category_Checked">
+            <RadioButton Style="{StaticResource CategoryButtonStyle}" Background="{Binding Name,Converter={StaticResource MenuBackgroundConverter}}"
+                         Checked="Category_Checked">
                 <StackPanel>
-                    <TextBlock Text="A"/>
+                    <TextBlock Text="{Binding Path=.,Converter={StaticResource CategoryPrefixConverter}}" />
                     <TextBlock Text="{Binding Name}">
                         <TextBlock.LayoutTransform>
                             <RotateTransform CenterX="0" CenterY="0" Angle="90" />
@@ -115,13 +116,15 @@
                     <ColumnDefinition Width="30" />
                 </Grid.ColumnDefinitions>
                 <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-                    <ItemsControl x:Name="MenusControl" DataContext="{Binding Menus,UpdateSourceTrigger=PropertyChanged}">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel />
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                    </ItemsControl>
+                    <Border BorderThickness="1" BorderBrush="{StaticResource DefaultColor}" CornerRadius="10">
+                        <ItemsControl x:Name="MenusControl" DataContext="{Binding Menus,UpdateSourceTrigger=PropertyChanged}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                    </Border>
                 </ScrollViewer>
                 <StackPanel Grid.Column="1" Orientation="Vertical">
                     <ItemsControl ItemsSource="{Binding Categories}">

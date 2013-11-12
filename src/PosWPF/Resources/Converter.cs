@@ -12,6 +12,32 @@ using System.Windows;
 namespace PosWPF
 {
     /// <summary>
+    /// Based on source color wheel calculation from base color #007acc see http://colorschemedesigner.com/#3v61T--Jgw0w0
+    /// </summary>
+    public class CategoryConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            string[] names = new string[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+            if (value is Category)
+            {
+                Category category = value as Category;
+                if (category.Menus.Count == 0)
+                    return names[category.ID - 1];
+                else
+                    return category.Menus[0].Code.Substring(0, 1);
+            }
+
+            throw new ArgumentException("Not supported type of " + value.GetType());
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    /// <summary>
     /// Display menu name.
     /// </summary>
     public class MenuDisplayNameConverter : IValueConverter
