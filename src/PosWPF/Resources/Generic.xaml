@@ -11,6 +11,12 @@
         <Setter Property="FontWeight" Value="ExtraBold" />
     </Style>
 
+    <Style x:Key="EntryFieldStyle" TargetType="Grid" >
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="20,0" />
+    </Style>
+
     <Style x:Key="BorderlessWindowStyle" TargetType="{x:Type Window}">
         <Setter Property="WindowStyle" Value="None" />
         <Setter Property="ResizeMode" Value="NoResize" />

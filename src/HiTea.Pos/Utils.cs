@@ -9,7 +9,6 @@ namespace HiTea.Pos
     {
         /// <summary>
         /// Rounding method as smallest unit 5 cents.
-        /// TODO: Move to helper class.
         /// </summary>
         /// <param name="original"></param>
         /// <returns></returns>

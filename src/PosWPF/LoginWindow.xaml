@@ -17,9 +17,15 @@
         </Grid.ColumnDefinitions>
         <Image Grid.Column="0" Source="{StaticResource UserImage}" />
         <StackPanel Grid.Column="1" VerticalAlignment="Center">
-            <TextBox x:Name="Username" Text="{Binding Path=CurrentUser.Username,Mode=TwoWay,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource RoundedTextBoxStyle}" Width="150" />
-            <PasswordBox x:Name="Password" PasswordChar="*" Style="{StaticResource RoundedPasswordBoxStyle}" Width="150"
-                         w:PasswordHelper.Attach="True" w:PasswordHelper.Password="{Binding Path=CurrentUser.Password,Mode=TwoWay,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" />
+            <Grid Background="{StaticResource WatermarkBackgroundBrush}" Style="{StaticResource EntryFieldStyle}">
+                <TextBlock Margin="15,5" Text="Enter Username" Foreground="{StaticResource WatermarkForegroundBrush}" Visibility="{Binding ElementName=Username, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                <TextBox x:Name="Username" Text="{Binding Path=CurrentUser.Username,Mode=TwoWay,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource RoundedTextBoxStyle}" Width="150" />
+            </Grid>
+            <Grid Background="{StaticResource WatermarkBackgroundBrush}" Style="{StaticResource EntryFieldStyle}">
+                <TextBlock Margin="15,5" Text="Enter password" Foreground="{StaticResource WatermarkForegroundBrush}" Visibility="{Binding ElementName=Password, Path=Password.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                <PasswordBox x:Name="Password" PasswordChar="*" Style="{StaticResource RoundedPasswordBoxStyle}" Width="150"
+                         w:PasswordHelper.Attach="True" w:PasswordHelper.Password="{Binding Path=CurrentUser.Password,Mode=TwoWay,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" KeyUp="Password_KeyUp" />
+            </Grid>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 50 20 0" >
                 <Button ToolTip="Exit" Background="{StaticResource RedCross}" Style="{StaticResource CircleButtonStyle}" Click="ExitButton_Click" />
                 <Button ToolTip="Login" Background="{StaticResource TickIcon}" Style="{StaticResource CircleButtonStyle}" Click="LoginButton_Click" />

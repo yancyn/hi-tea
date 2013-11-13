@@ -36,6 +36,15 @@ namespace PosWPF
                 this.Close();
         }
 
+        private void Password_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                if ((this.DataContext as PosManager).Login(Username.Text, Password.Password))
+                    this.Close();
+            }
+        }
+
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
