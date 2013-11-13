@@ -29,7 +29,6 @@ function refresh() {
 
                 var menu = item['Code'] + " " + item['Name'];
                 var table = item['TableNo'];
-                var checked = (item['OrderTypeId'] > 1) ? "checked" : "";
                 var away = (item['OrderTypeId'] > 1) ? "<span class='icon icon-check'></span>" : "<span class='icon icon-check-empty'></span>";
                 var line = "<tr><td>"+(i+1).toString()+".</td><td>"+getTime(item['Created'])+"</td><td>"+menu+"</td><td style='text-align:center'>"+table+"</td><td>"+away+"</td><td><span class='ball'>"+item['QueueNo']+"</span></td><td><input type='button' class='button' onclick='markComplete("+i+")' value='DONE' /></td></tr>";
                 $("#table").append(line);
