@@ -14,26 +14,23 @@ namespace HiTea.Pos
     public class AdminManager
     {
         protected Main db;
+        public ObservableCollection<AdminViewModel> Options { get; set; }
         public ObservableCollection<User> Users { get; set; }
         public ObservableCollection<Category> Categories { get; set; }
-        //public ObservableCollection<Menu> Menus { get; set; }
         public ObservableCollection<Charge> Charges { get; set; }
-        public ObservableCollection<AdminViewModel> Options { get; set; }
 
         public AdminManager(Main db)
         {
             this.db = db;
             this.commitCommand = new CommitCommand(this);
             this.addMenuCommand = new AddMenuCommand(this);
+            this.addUserCommand = new AddUserCommand(this);
+            this.addChargesCommand = new AddChargesCommand(this);
 
             // clone from database
             this.Users = new ObservableCollection<User>();
             foreach (var user in db.Users)
                 this.Users.Add(user);
-
-            //this.Menus = new ObservableCollection<Menu>();
-            //foreach (var menu in db.Menus)
-            //    this.Menus.Add(menu);
 
             this.Charges = new ObservableCollection<Charge>();
             foreach (var charge in db.Charges)
@@ -67,6 +64,25 @@ namespace HiTea.Pos
             category.MenuCollection.Add(menu);
         }
 
+        private AddUserCommand addUserCommand;
+        public AddUserCommand AddUserCommand { get { return this.addUserCommand; } }
+        public void AddUser()
+        {
+            User user = new User();
+            user.Active = true;
+            this.Users.Add(user);
+        }
+
+        private AddChargesCommand addChargesCommand;
+        public AddChargesCommand AddChargesCommand { get { return this.addChargesCommand; } }
+        public void AddCharges()
+        {
+            Charge charge = new Charge();
+            charge.Value = 0f;
+            charge.Active = true;
+            this.Charges.Add(charge);
+        }
+
         private CommitCommand commitCommand;
         public CommitCommand CommitCommand { get { return this.commitCommand; } }
         public void Commit()
@@ -80,7 +96,19 @@ namespace HiTea.Pos
                 }
             }
 
+            foreach (User user in this.Users)
+            {
+                if (user.ID == 0)
+                    db.Users.InsertOnSubmit(user);
+            }
+            foreach (Charge charge in this.Charges)
+            {
+                if(charge.ID == 0)
+                    db.Charges.InsertOnSubmit(charge);
+            }
+
             db.SubmitChanges();
+            System.Diagnostics.Debug.WriteLine("Updating admin database...");
         }
     }
 
@@ -109,6 +137,46 @@ namespace HiTea.Pos
         }
         private AdminManager manager;
         public AddMenuCommand(AdminManager manager)
+        {
+            this.manager = manager;
+        }
+    }
+
+    public class AddUserCommand : ICommand
+    {
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public event EventHandler CanExecuteChanged;
+        public void Execute(object parameter)
+        {
+            this.manager.AddUser();
+        }
+
+        private AdminManager manager;
+        public AddUserCommand(AdminManager manager)
+        {
+            this.manager = manager;
+        }
+    }
+
+    public class AddChargesCommand : ICommand
+    {
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public event EventHandler CanExecuteChanged;
+        public void Execute(object parameter)
+        {
+            this.manager.AddCharges();
+        }
+
+        private AdminManager manager;
+        public AddChargesCommand(AdminManager manager)
         {
             this.manager = manager;
         }

@@ -363,7 +363,8 @@
                 </LinearGradientBrush>
             </DockPanel.Background>
             <DockPanel DockPanel.Dock="Top" LastChildFill="True" Margin="10">
-                <Button DockPanel.Dock="Left" Background="{StaticResource PlusIcon}" Style="{StaticResource BorderlessButton}"/>
+                <Button DockPanel.Dock="Left" Background="{StaticResource PlusIcon}" Style="{StaticResource BorderlessButton}"
+                        Command="{Binding Path=DataContext.AddUserCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" CommandParameter="{Binding Path=DataContext, ElementName=panel}"/>
                 <Button DockPanel.Dock="Right" Background="{StaticResource SearchIcon}" Style="{StaticResource BorderlessButton}"/>
                 <TextBox Style="{StaticResource RoundedTextBoxStyle}" />
             </DockPanel>
@@ -371,7 +372,7 @@
             <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" DataContext="{Binding ElementName=listView}">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Username" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
-                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Username}" IsReadOnly="True" />
+                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Username}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Password" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
@@ -379,7 +380,7 @@
                 </StackPanel>
             </StackPanel>
 
-            <DockPanel LastChildFill="True" Margin="10">
+            <DockPanel x:Name="panel" LastChildFill="True" Margin="10">
                 <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
                     <TextBlock Text="Username" Width="200" FontWeight="Bold" />
                     <TextBlock Text="Password" Width="200" FontWeight="Bold"/>
