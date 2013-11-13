@@ -30,7 +30,7 @@ namespace PosWPF
             db.QueryCacheEnabled = false;
             //OrderButton.DataContext = db.Orders.Where(o => o.ID == 111).First();
 
-            PosManager posManager = new PosManager(db);
+            PosManager posManager = new PosManager(db,13);
             OrderButton.DataContext = posManager.TableBasket[9];
             //this.DataContext = posManager;
         }

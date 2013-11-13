@@ -79,13 +79,16 @@ namespace HiTea.Pos
         /// </summary>
         public ObservableCollection<Order> Basket { get; set; }
         /// <summary>
-        /// Subject of basket which are dine in.
-        /// </summary>
-        public ObservableCollection<Order> TableBasket { get; set; }
-        /// <summary>
         /// Subset of Basket which are take away order.
         /// </summary>
         public ObservableCollection<Order> CarryBasket { get; set; }
+
+        private int tableSize;
+        public int TableSize { get { return this.tableSize; } }
+        /// <summary>
+        /// Subject of basket which are dine in.
+        /// </summary>
+        public ObservableCollection<Order> TableBasket { get; set; }
 
         private LoginCommand loginCommand;
         public LoginCommand LoginCommand { get { return this.loginCommand; } }
@@ -98,8 +101,9 @@ namespace HiTea.Pos
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public PosManager(Main db)
+        public PosManager(Main db, int tableSize)
         {
+            this.tableSize = tableSize;
             this.loginCommand = new LoginCommand(this);
             this.dineInCommand = new DineInCommand(this);
             this.takeAwayCommand = new TakeAwayCommand(this);
@@ -120,8 +124,8 @@ namespace HiTea.Pos
             this.Menus = new ObservableCollection<Menu>();
             RefreshMenu();
 
-            // bind all blank table first. TODO: 13 should be configurable.
-            for (int i = 12; i >= 0; i--)
+            // bind all blank table first
+            for (int i = TableSize-1; i >= 0; i--)
             {
                 Order order = new Order();
                 order.TableNo = (i + 1).ToString();
@@ -140,7 +144,7 @@ namespace HiTea.Pos
                 else
                 {
                     int i = Convert.ToInt32(order.TableNo);
-                    this.TableBasket[13-i] = order;
+                    this.TableBasket[TableSize-i] = order;
                 }
             }
 

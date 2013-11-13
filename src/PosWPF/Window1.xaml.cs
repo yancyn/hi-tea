@@ -49,13 +49,13 @@ namespace PosWPF
             string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
             db = new Main(connectionString);
             db.QueryCacheEnabled = false;
-            posManager = new PosManager(db);
-
-            this.DataContext = posManager;
 
             List<Int32> indexes = new List<int>();
             foreach (string i in Settings.Default.TableIndexes)
                 indexes.Add(Convert.ToInt32(i));
+            posManager = new PosManager(db,indexes.Count);
+
+            this.DataContext = posManager;
             DineInGrid.DisplayIndexes = indexes.ToArray();
             DineInGrid.DataContext = posManager;
 
