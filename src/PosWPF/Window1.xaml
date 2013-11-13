@@ -10,22 +10,6 @@
     WindowStartupLocation="CenterScreen"
     WindowState="Maximized" Loaded="Window_Loaded">
     <Window.Resources>
-        <x:Array Type="sys:Int32" x:Key="TableIndexes">
-            <sys:Int32>1</sys:Int32>
-            <sys:Int32>3</sys:Int32>
-            <sys:Int32>5</sys:Int32>
-            <sys:Int32>12</sys:Int32>
-            <sys:Int32>14</sys:Int32>
-            <sys:Int32>21</sys:Int32>
-            <sys:Int32>23</sys:Int32>
-            <sys:Int32>25</sys:Int32>
-            
-            <sys:Int32>41</sys:Int32>
-            <sys:Int32>51</sys:Int32>
-            <sys:Int32>61</sys:Int32>
-            <sys:Int32>71</sys:Int32>
-            <sys:Int32>74</sys:Int32>
-        </x:Array>
         <DataTemplate DataType="{x:Type p:Menu}">
             <Button Content="{Binding .,Converter={StaticResource MenuNameConverter},UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MenuButtonStyle}"
                 Command="{Binding DataContext.OrderMenuCommand, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Window}}}"
@@ -107,7 +91,7 @@
                     </Grid>
                 </DockPanel>
             </StackPanel>
-            <w:TableControl x:Name="DineInGrid" DisplayIndexes="{StaticResource TableIndexes}" DataContext="{Binding UpdateSourceTrigger=PropertyChanged}" />
+            <w:TableControl x:Name="DineInGrid" DataContext="{Binding UpdateSourceTrigger=PropertyChanged}" />
         </DockPanel>
 
         <Separator Grid.Column="1" Style="{DynamicResource VerticalSeparatorStyle}" />

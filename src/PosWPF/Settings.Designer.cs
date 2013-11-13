@@ -85,5 +85,29 @@ namespace PosWPF {
                 return ((string)(this["Facebook"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>1</string>
+  <string>3</string>
+  <string>5</string>
+  <string>12</string>
+  <string>14</string>
+  <string>21</string>
+  <string>23</string>
+  <string>25</string>
+  <string>41</string>
+  <string>51</string>
+  <string>61</string>
+  <string>71</string>
+  <string>74</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection TableIndexes {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["TableIndexes"]));
+            }
+        }
     }
 }

@@ -52,7 +52,13 @@ namespace PosWPF
             posManager = new PosManager(db);
 
             this.DataContext = posManager;
+
+            List<Int32> indexes = new List<int>();
+            foreach (string i in Settings.Default.TableIndexes)
+                indexes.Add(Convert.ToInt32(i));
+            DineInGrid.DisplayIndexes = indexes.ToArray();
             DineInGrid.DataContext = posManager;
+
             //MenusControl.ItemsPanel = GetItemsPanelTemplate(0);
             //MenusControl.ItemsSource = posManager.Menus;
         }
