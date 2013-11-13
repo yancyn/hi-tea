@@ -19,7 +19,7 @@ function refresh() {
     // start loading database
     $("#table").html('');
 
-    var line = "<tr><th>No.</th><th>Time</th><th style='text-align:left'>Item</th><th>Table</th><th>Out</th><th>Queue</th><th><input type='button' class='button' onclick='refresh();' value='REFRESH' /></th></tr>";
+    var line = "<tr><th>No.</th><th>Time</th><th style='text-align:left'>Item</th><th>Table</th><th>Out</th><th>Queue</th><th><span class='icon icon-refresh' onclick='refresh();' style='margin:0 0 0 10px;cursor:pointer;'></span></th></tr>";
     $("#table").append(line);
     db.transaction(function (tx) {
         tx.executeSql(selectStatement, {}, function (tx, result) {
@@ -30,7 +30,7 @@ function refresh() {
                 var menu = item['Code'] + " " + item['Name'];
                 var table = item['TableNo'];
                 var checked = (item['OrderTypeId'] > 1) ? "checked" : "";
-                var away = "<input type='checkbox' "+checked+" onclick='return false;'></input>";
+                var away = (item['OrderTypeId'] > 1) ? "<span class='icon icon-check'></span>" : "<span class='icon icon-check-empty'></span>";
                 var line = "<tr><td>"+(i+1).toString()+".</td><td>"+getTime(item['Created'])+"</td><td>"+menu+"</td><td style='text-align:center'>"+table+"</td><td>"+away+"</td><td><span class='ball'>"+item['QueueNo']+"</span></td><td><input type='button' class='button' onclick='markComplete("+i+")' value='DONE' /></td></tr>";
                 $("#table").append(line);
             }
