@@ -15,18 +15,47 @@ function getTime(date) {
     return "[" + date.substring(11, 16) + "]";
 }
 
+/**
+ * Called When Page is ready.
+ */
+ function initDatabase() {
+ 	console.log("initDatabase");
+
+    try {
+		// Check browser is supported SQLite or not.
+        if (!window.openDatabase) {
+            alert('Databases are not supported in this browser.');
+        } else {
+        	// If supported then call Function for create table in SQLite
+        	refresh();
+        }
+    }
+    catch (e) {    
+    	// Version number mismatch. 
+        if (e == 2) {
+            console.log("Invalid database version.");
+        } else {
+            console.log("Unknown error " + e + ".");
+        }
+
+        return;
+    }
+}
+
 function refresh() {
     // start loading database
     $("#table").html('');
 
     var line = "<tr><th>No.</th><th>Time</th><th style='text-align:left'>Item</th><th>Table</th><th>Out</th><th>Queue</th><th><span class='icon icon-refresh' onclick='refresh();' style='margin:0 0 0 10px;cursor:pointer;'></span></th></tr>";
     $("#table").append(line);
+    
+    console.log("start execute select query");
     db.transaction(function (tx) {
         tx.executeSql(selectStatement, {}, function (tx, result) {
             dataset = result.rows;
             for (var i = 0, item = null; i < result.rows.length; i++) {
                 item = result.rows.item(i);
-
+                console.log(item['Name']);
                 var menu = item['Code'] + " " + item['Name'];
                 var table = item['TableNo'];
                 var away = (item['OrderTypeId'] > 1) ? "<span class='icon icon-check'></span>" : "<span class='icon icon-check-empty'></span>";
@@ -34,6 +63,8 @@ function refresh() {
                 $("#table").append(line);
             }
             $("#total").html("Total: "+result.rows.length.toString());
+        }, function(tx, error) {
+        	alert(error.message);
         });
     });
 }
@@ -53,13 +84,13 @@ function displayLocalDateTime(date) {
     output = date.getDate() + "/" + (date.getMonth() + 1).toString() + "/" + (date.getYear() + 1900).toString();
     output += " " + zeroPrefix(date.getHours(), 2);
     output += ":" + zeroPrefix(date.getMinutes(), 2);
-    output += (date.getHours() > 11) ? "PM" : "AM";
+	//output += (date.getHours() > 11) ? "PM" : "AM";
     return output;
 }
 
 $(function () {
     $("#time").html(displayLocalDateTime());
-    refresh();
+    initDatabase();
 });
 
 /**
