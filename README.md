@@ -1,4 +1,4 @@
-﻿hi-tea
+hi-tea
 ======
 A POS for café.
 
@@ -10,6 +10,19 @@ Generate dbml from DbLinq
 
 Setup IIS Express
 =================
+To allow everyone can accecc your local IP.
+
+    > netsh http add urlacl url=http://192.168.1.11:1234/ user=everyone
+    
+Method 1 (Preferable)
+-----------------------
+Through applicationhost.config
+
+    "C:\Program Files\IIS Express\iisexpress.exe" /config:d:\HiTea\applicationhost.config /site:HiTea
+
+
+Method 2
+----------
 Default page is index.html
 
 	iisexpress /path:d:\HiTea\ /port:9090
