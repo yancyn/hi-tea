@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("HiTea.Pos")]
+[assembly: AssemblyTitle("PosMvc.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Hi Tea")]
-[assembly: AssemblyProduct("HiTea.Pos")]
-[assembly: AssemblyCopyright("Copyright © Hi Tea 2013")]
+[assembly: AssemblyCompany("Plexus Corp")]
+[assembly: AssemblyProduct("PosMvc.Tests")]
+[assembly: AssemblyCopyright("Copyright © Plexus Corp 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("1ee90539-68dc-429c-9630-b50fa444374b")]
+[assembly: Guid("857b1d2e-b2f5-4659-adff-582e00fd666d")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -29,8 +29,7 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-// You can specify all the values or you can default the Build and Revision Numbers 
+// You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
-// [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.9.11.13")]
-[assembly: AssemblyFileVersion("0.9.11.13")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]

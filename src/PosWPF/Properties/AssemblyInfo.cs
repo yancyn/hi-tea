@@ -12,9 +12,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("PosWPF")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Hi-Tea")]
+[assembly: AssemblyCompany("Hi Tea")]
 [assembly: AssemblyProduct("PosWPF")]
-[assembly: AssemblyCopyright("Copyright © Hi-Tea 2013")]
+[assembly: AssemblyCopyright("Copyright © Hi Tea 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

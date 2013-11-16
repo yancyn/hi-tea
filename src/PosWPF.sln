@@ -16,6 +16,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiTea.Pos.NUnit", "HiTea.Po
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PosWeb", "PosWeb\PosWeb.csproj", "{4F1CD821-2A7C-407E-9A3F-99E597CE0A50}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PosMvc", "PosMvc\PosMvc.csproj", "{452E9CB6-1E6A-42DA-A249-179F83DE7008}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PosMvc.Tests", "PosMvc.Tests\PosMvc.Tests.csproj", "{2E766355-6B49-4E9A-84A3-BA73865D3C2C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +42,14 @@ Global
 		{4F1CD821-2A7C-407E-9A3F-99E597CE0A50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4F1CD821-2A7C-407E-9A3F-99E597CE0A50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F1CD821-2A7C-407E-9A3F-99E597CE0A50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{452E9CB6-1E6A-42DA-A249-179F83DE7008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{452E9CB6-1E6A-42DA-A249-179F83DE7008}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{452E9CB6-1E6A-42DA-A249-179F83DE7008}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{452E9CB6-1E6A-42DA-A249-179F83DE7008}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E766355-6B49-4E9A-84A3-BA73865D3C2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E766355-6B49-4E9A-84A3-BA73865D3C2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E766355-6B49-4E9A-84A3-BA73865D3C2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E766355-6B49-4E9A-84A3-BA73865D3C2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
