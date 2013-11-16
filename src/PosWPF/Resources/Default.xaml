@@ -1,0 +1,27 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:w="clr-namespace:PosWPF">
+
+    <w:DateTimeConverter x:Key="DateTimeConverter" />
+    <w:MenuDisplayNameConverter x:Key="MenuNameConverter" />
+    <w:OneIsTrueConverter x:Key="OneIsTrueConverter" />
+    <w:TwoIsTrueConverter x:Key="TwoIsTrueConverter" />
+    <w:CategoryConverter x:Key="CategoryPrefixConverter" />
+    <w:MenuBackgroundConverter x:Key="MenuBackgroundConverter" />
+    <w:AdminTemplateSelector x:Key="AdminTemplateSelector" />
+    <w:IndexConverter x:Key="IndexConverter" />
+    <w:AngleConverter x:Key="AngleConverter" />
+    <w:RotationConverter x:Key="RotationConverter" />
+    <w:StatusConverter x:Key="StatusConverter" />
+    <w:MoneyConverter x:Key="MoneyConverter" />
+    <w:MoneyRoundingConverter x:Key="MoneyRoundingConverter" />
+    <w:VisibilityConverter x:Key="VisibilityConverter" />
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+
+    <SolidColorBrush x:Key="DefaultColor" Color="#58595b" />
+    <SolidColorBrush x:Key="WatermarkBackgroundBrush" Color="White" />
+    <SolidColorBrush x:Key="WatermarkForegroundBrush" Color="LightSteelBlue" />
+    <SolidColorBrush x:Key="WatermarkBorderBrush" Color="Indigo" />
+
+</ResourceDictionary>

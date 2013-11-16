@@ -1,0 +1,35 @@
+<Window x:Class="PosWPF.LoginWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:w="clr-namespace:PosWPF"
+    mc:Ignorable="d"
+    Style="{StaticResource BorderlessDialogStyle}"
+    WindowStartupLocation="CenterScreen"
+    x:Name="LoginScreen"
+    Activated="LoginScreen_Activated"
+    Height="300" Width="450">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="0" Source="{StaticResource UserImage}" />
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <Grid Background="{StaticResource WatermarkBackgroundBrush}" Style="{StaticResource EntryFieldStyle}">
+                <TextBlock Margin="15,5" Text="Enter Username" Foreground="{StaticResource WatermarkForegroundBrush}" Visibility="{Binding ElementName=Username, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                <TextBox x:Name="Username" Text="{Binding Path=CurrentUser.Username,Mode=TwoWay,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource RoundedTextBoxStyle}" Width="150" />
+            </Grid>
+            <Grid Background="{StaticResource WatermarkBackgroundBrush}" Style="{StaticResource EntryFieldStyle}">
+                <TextBlock Margin="15,5" Text="Enter password" Foreground="{StaticResource WatermarkForegroundBrush}" Visibility="{Binding ElementName=Password, Path=Password.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                <PasswordBox x:Name="Password" PasswordChar="*" Style="{StaticResource RoundedPasswordBoxStyle}" Width="150"
+                         w:PasswordHelper.Attach="True" w:PasswordHelper.Password="{Binding Path=CurrentUser.Password,Mode=TwoWay,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" KeyUp="Password_KeyUp" />
+            </Grid>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 50 20 0" >
+                <Button ToolTip="Exit" Background="{StaticResource RedCross}" Style="{StaticResource CircleButtonStyle}" Click="ExitButton_Click" />
+                <Button ToolTip="Login" Background="{StaticResource TickIcon}" Style="{StaticResource CircleButtonStyle}" Click="LoginButton_Click" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
