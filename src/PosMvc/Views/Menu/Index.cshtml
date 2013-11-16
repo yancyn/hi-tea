@@ -3,3 +3,21 @@
 }
 
 <h2>Index</h2>
+
+@{
+    var grid = new WebGrid(source: Model, rowsPerPage: 15);
+}
+
+<div id="grid">
+    @grid.GetHtml(
+        tableStyle: "grid",
+        headerStyle: "head",
+        alternatingRowStyle: "alt",
+        columns: grid.Columns(
+            grid.Column("Code","Code"),
+            grid.Column("Name","Name"),
+            grid.Column("Price","Price", style: "money",  format: @<text>@String.Format("{0:C}", @item.Price)</text>),
+            grid.Column("Active","Active")
+        )
+    )
+</div>
