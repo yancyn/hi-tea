@@ -1,0 +1,54 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PosWPF" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MoneyFormat" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">###,###,##0.00</Value>
+    </Setting>
+    <Setting Name="DateTimeFormat" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">dd/MM/yyyy hh:mm tt</Value>
+    </Setting>
+    <Setting Name="CompanyName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Address" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Telephone" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Website" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Facebook" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="TableIndexes" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;1&lt;/string&gt;
+  &lt;string&gt;3&lt;/string&gt;
+  &lt;string&gt;5&lt;/string&gt;
+  &lt;string&gt;12&lt;/string&gt;
+  &lt;string&gt;14&lt;/string&gt;
+  &lt;string&gt;21&lt;/string&gt;
+  &lt;string&gt;23&lt;/string&gt;
+  &lt;string&gt;25&lt;/string&gt;
+  &lt;string&gt;41&lt;/string&gt;
+  &lt;string&gt;51&lt;/string&gt;
+  &lt;string&gt;61&lt;/string&gt;
+  &lt;string&gt;71&lt;/string&gt;
+  &lt;string&gt;74&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="ReceiptPrinter" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Cashier</Value>
+    </Setting>
+    <Setting Name="LabelPrinter" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Bar</Value>
+    </Setting>
+    <Setting Name="OrderPrinter" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Kitchen</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
