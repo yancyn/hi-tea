@@ -3,7 +3,8 @@
 <meta http-equiv="refresh" content="10;">
 <script>
     function markDone(id) {
-        console.log(id);
+        //console.log(id);
+        $('#'+id).remove();
         $.ajax({
             type: "POST",
             url: "/../OrderItem/Edit/"+id,
@@ -12,7 +13,7 @@
                 "StatusID": 2
             },
             success: function(msg) {
-                window.location = "/OrderItem/PendingDrink";
+                //window.location = "/OrderItem/PendingDrink";
             },
             fail: function (jqXHR, textStatus) {
                 alert(textStatus);
@@ -41,7 +42,7 @@
 
 @foreach (var item in Model) {
     counter++;
-    <tr>
+    <tr id="@item.ID">
         <td>
             @counter.
         </td>
