@@ -207,6 +207,7 @@ namespace PosWPF
                     graphics.DrawString(Math.Round(order.Charges[c], 2).ToString(Settings.Default.MoneyFormat), font, new SolidBrush(System.Drawing.Color.Black), startX + 200 - 10, startY + offset);
                 }
             }
+            db.Dispose();
 
             offset += 20;
             feed = "Total ";
