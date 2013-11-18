@@ -83,7 +83,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml" />
+    <Page Include="App.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminWindow.xaml.cs">
