@@ -1,0 +1,73 @@
+﻿@model IEnumerable<HiTea.Pos.OrderItem>
+
+<meta http-equiv="refresh" content="10;">
+<script>
+    function markDone(id) {
+        console.log(id);
+        $.ajax({
+            type: "POST",
+            url: "/../OrderItem/Edit/"+id,
+            data:{
+                "ID": id,
+                "StatusID": 2
+            },
+            success: function(msg) {
+                window.location = "/OrderItem/Pending";
+            },
+            fail: function (jqXHR, textStatus) {
+                alert(textStatus);
+            },
+        });
+    }
+</script>
+
+@{
+    ViewBag.Title = "Pending Order";
+    int counter = 0;
+}
+
+<h2>Pending</h2>
+@Html.Label(@System.DateTime.Now.ToString() + " " + "TOTAL " + @Model.Count())
+<table>
+    <tr>
+        <th>No.</th>
+        <th>Created</th>
+        <th>Item</th>
+        <th>Table</th>
+        <th>Out</th>
+        <th>Queue</th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    counter++;
+    <tr>
+        <td>
+            @counter.
+        </td>
+        <td>
+            [@item.Order.Created.ToString("HH:mm")]
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Menu.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Order.TableNo)
+        </td>
+        <td>
+            @{
+                string isCheck = (item.OrderTypeID == 1) ? "":"checked";
+                <input type="checkbox" @isCheck onclick="return false;" />
+            }
+        </td>
+        <td>
+            <span class="ball">
+                @Html.DisplayFor(modelItem => item.Order.QueueNo)
+            </span>
+        </td>
+        <td>
+            <input type="button" value="DONE" onclick="markDone(@item.ID)" />
+        </td>
+    </tr>
+}
+</table>

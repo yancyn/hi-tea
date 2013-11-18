@@ -10,13 +10,13 @@ namespace PosMvc.Controllers
 {
     public class MenuController : Controller
     {
+        private Main db = new Main(ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString);
+
         //
         // GET: /Menu/
 
         public ActionResult Index()
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
-            Main db = new Main(connectionString);
             var menus = db.Menus;
             return View(menus.ToList());
         }

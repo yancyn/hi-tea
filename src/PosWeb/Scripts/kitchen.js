@@ -55,7 +55,7 @@ function refresh() {
             dataset = result.rows;
             for (var i = 0, item = null; i < result.rows.length; i++) {
                 item = result.rows.item(i);
-                console.log(item['Name']);
+                console.log(item['Id']+": " + item['Name']);
                 var menu = item['Code'] + " " + item['Name'];
                 var table = item['TableNo'];
                 var away = (item['OrderTypeId'] > 1) ? "<span class='icon icon-check'></span>" : "<span class='icon icon-check-empty'></span>";
