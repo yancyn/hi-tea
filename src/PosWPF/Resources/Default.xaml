@@ -17,6 +17,7 @@
     <w:MoneyConverter x:Key="MoneyConverter" />
     <w:MoneyRoundingConverter x:Key="MoneyRoundingConverter" />
     <w:VisibilityConverter x:Key="VisibilityConverter" />
+    
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
 
     <SolidColorBrush x:Key="DefaultColor" Color="#58595b" />

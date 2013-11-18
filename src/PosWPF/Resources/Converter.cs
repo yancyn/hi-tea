@@ -308,7 +308,7 @@ namespace PosWPF
                 return ((bool)value == true) ? 2 : 1;
             }
 
-            throw new NotImplementedException();
+            throw new ArgumentException("Not supported type of " + value.GetType());
         }
     }
 

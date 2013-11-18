@@ -43,7 +43,7 @@ namespace PosWPF {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Hi Tea")]
         public string CompanyName {
             get {
                 return ((string)(this["CompanyName"]));

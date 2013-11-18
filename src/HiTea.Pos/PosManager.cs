@@ -249,6 +249,15 @@ namespace HiTea.Pos
             user.Username = username;
             return user.Login(password);
         }
+        public void SetUser(string username)
+        {
+            User user = db.Users.Where(u => u.Username == username).FirstOrDefault();
+            if (user != null)
+            {
+                this.SelectedOrder.MemberID = user.ID;
+                this.SelectedOrder.Member = user;
+            }
+        }
 
         /// <summary>
         /// Generate new queue no from database or holding cache.

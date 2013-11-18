@@ -194,10 +194,19 @@ namespace PosWPF
             offset += 20;
             graphics.DrawString(underline, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
 
-            offset += 20;
-            feed = "Govn % ";
-            graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX + 50, startY + offset);
-            graphics.DrawString(Math.Round(order.Charges[0], 2).ToString(Settings.Default.MoneyFormat), font, new SolidBrush(System.Drawing.Color.Black), startX + 200 - 10, startY + offset);
+            string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
+            Main db = new Main(connectionString);
+            var charges = db.Charges.Where(c => c.Active == true).OrderBy(c => c.Value);
+            for(int c=0;c<charges.Count();c++)
+            {
+                if (order.Charges[c] != 0)
+                {
+                    offset += 20;
+                    feed = charges.ToList()[c].Name;
+                    graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX + 50, startY + offset);
+                    graphics.DrawString(Math.Round(order.Charges[c], 2).ToString(Settings.Default.MoneyFormat), font, new SolidBrush(System.Drawing.Color.Black), startX + 200 - 10, startY + offset);
+                }
+            }
 
             offset += 20;
             feed = "Total ";
@@ -256,6 +265,12 @@ namespace PosWPF
                     pd.PrintDocument(((IDocumentPaginatorSource)flowDocument).DocumentPaginator, "Drink Label");
                 }
             }
+        }
+
+        private void MemberName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string username = (sender as System.Windows.Controls.TextBox).Text;
+            (this.DataContext as PosManager).SetUser(username);
         }
 
         #region Failed

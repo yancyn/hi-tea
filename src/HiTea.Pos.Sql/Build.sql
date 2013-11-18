@@ -136,4 +136,5 @@ INSERT INTO Status(Name) VALUES('Complete');
 
 --Add User
 --insert into User(Username,Password,RoleId,DisplayName,Point,Active) values('cashier','cashier',2,'cashier',0,1);
-insert into Charge(Name,Value,Active) values('Govn %',0.06,1);
+insert into Charge(Name,Value,Active) values('Govn Tax 6%',0.06,1);
+insert into Charge(Name,Value,Active) values('Member Discount',-0.1,1);

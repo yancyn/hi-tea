@@ -64,7 +64,7 @@ namespace HiTea.Pos
             this.chargesPercentage = new Dictionary<string, float>();
             string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
             Main db = new Main(connectionString);
-            foreach (Charge charge in db.Charges)
+            foreach (Charge charge in db.Charges.Where(c => c.Active == true))
                 this.chargesPercentage.Add(charge.Name, charge.Value);
 
             this.Items = new ObservableCollection<OrderItem>();
@@ -84,9 +84,16 @@ namespace HiTea.Pos
             this._total = amount;
 
             this.Charges = new ObservableCollection<float>();
-            foreach (KeyValuePair<string, float> charge in this.chargesPercentage)
+            foreach (KeyValuePair<string, float> charge in this.chargesPercentage.OrderBy(c => c.Value))
             {
-                float tax = amount * charge.Value;
+                float tax = 0f;
+                if (charge.Value < 0)
+                {
+                    if (this.MemberID > 0)
+                        tax = this._total * charge.Value;
+                }
+                else
+                    tax = this._total * charge.Value;
                 this.Charges.Add(tax);
                 this._total += tax;
             }
