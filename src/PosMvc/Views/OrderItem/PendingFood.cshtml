@@ -12,7 +12,7 @@
                 "StatusID": 2
             },
             success: function(msg) {
-                window.location = "/OrderItem/Pending";
+                window.location = "/OrderItem/PendingFood";
             },
             fail: function (jqXHR, textStatus) {
                 alert(textStatus);
@@ -22,11 +22,11 @@
 </script>
 
 @{
-    ViewBag.Title = "Pending Order";
+    ViewBag.Title = "Pending Food";
     int counter = 0;
 }
 
-<h2>Pending</h2>
+<h2>Pending Food</h2>
 @Html.Label(@System.DateTime.Now.ToString() + " " + "TOTAL " + @Model.Count())
 <table>
     <tr>

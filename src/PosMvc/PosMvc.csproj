@@ -263,6 +263,8 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\default.css" />
+    <Content Include="Content\themes\fonts.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
@@ -329,7 +331,8 @@
     <Content Include="Views\OrderItem\Index.cshtml" />
     <Content Include="Views\Menu\Index.cshtml" />
     <Content Include="Views\OrderItem\Edit.cshtml" />
-    <Content Include="Views\OrderItem\Pending.cshtml" />
+    <Content Include="Views\OrderItem\PendingFood.cshtml" />
+    <Content Include="Views\OrderItem\PendingDrink.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -22,10 +22,10 @@ namespace PosMvc.Controllers
         }
 
         /// <summary>
-        /// TODO: List out only pending order item.
+        /// List out only pending food order item.
         /// </summary>
         /// <returns></returns>
-        public ActionResult Pending()
+        public ActionResult PendingFood()
         {
             //SELECT Menu.Code, Menu.Name, OrderItem.*, 'Order'.*
             //FROM OrderItem
@@ -35,6 +35,16 @@ namespace PosMvc.Controllers
             //ORDER BY OrderItem.Id, 'Order'.Id;
 
             int[] categories = new int[]{1,2,3};
+            var pending = db.OrderItems.Where(i => i.StatusID == 1 && categories.Contains(i.Menu.CategoryID) && i.ParentID > 0);
+            return View(pending.ToList());
+        }
+        /// <summary>
+        /// List out only pending drink order item.
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult PendingDrink()
+        {
+            int[] categories = new int[] { 4, 5 };
             var pending = db.OrderItems.Where(i => i.StatusID == 1 && categories.Contains(i.Menu.CategoryID) && i.ParentID > 0);
             return View(pending.ToList());
         }
