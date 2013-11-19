@@ -2,8 +2,23 @@ hi-tea
 ======
 A POS for café.
 
+How to Run
+========
+1. Download latest copy from deploy folder - https://github.com/yancyn/hi-tea/tree/master/deploy.
+2. Download database - pos.db3 at deploy folder.
+3. Unzip the zip file and save as your local folder.
+4. Modify connection string in PosWPF.exe.config to your pos.db3 location. ie. E:\yourfolder\pos.db3.
+5. Start PosWPF.exe.
+
+Connection String
+-------------------
+    <connectionStrings>
+        <add name="PosConnectionString" connectionString="DbLinqProvider=Sqlite;DbLinqConnectionType=System.Data.SQLite.SQLiteConnection, System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139;Data Source=E:\projects\hi-tea\src\PosMvc\App_Data\pos.db3;" providerName="SQLite"/>
+    </connectionStrings>
+
+
 Generate dbml from DbLinq
-=========================
+======================
 
 	DbMetal /provider:Sqlite /conn "Data Source=File.db3" /dbml:File.dbml
 	DbMetal /code:File.cs File.dbml
