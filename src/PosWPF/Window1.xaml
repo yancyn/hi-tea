@@ -103,6 +103,10 @@
                 <Button ToolTip="Detail" Background="{StaticResource DetailIcon}" Style="{StaticResource BorderlessButton}" />
                 <Button ToolTip="Setting" Background="{StaticResource SettingIcon}" Style="{StaticResource CircleButtonStyle}" Click="AdminButton_Click" />
             </StackPanel>
+            <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right">
+                <TextBlock Text="PosWPF ver" />
+                <TextBlock x:Name="versionLabel" />
+            </WrapPanel>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />

@@ -41,6 +41,7 @@ namespace PosWPF
         public Window1()
         {
             InitializeComponent();
+            this.versionLabel.Text = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
             currentTimeTimer.Interval = 1000 * 60;
             currentTimeTimer.Tick += timer_Tick;
