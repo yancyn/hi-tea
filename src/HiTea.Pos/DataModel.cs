@@ -971,27 +971,6 @@ public partial class Main
             }
         }
 
-        [Column(Storage = "_memberID", Name = "MemberId", DbType = "integer", AutoSync = AutoSync.Never, CanBeNull = false)]
-        [DebuggerNonUserCode()]
-        public int MemberID
-        {
-            get
-            {
-                return this._memberID;
-            }
-            set
-            {
-                if ((_memberID != value))
-                {
-                    this.OnMemberIDChanging(value);
-                    this.SendPropertyChanging();
-                    this._memberID = value;
-                    this.SendPropertyChanged("MemberID");
-                    this.OnMemberIDChanged();
-                }
-            }
-        }
-
         [Column(Storage = "_queueNo", Name = "QueueNo", DbType = "text", AutoSync = AutoSync.Never)]
         [DebuggerNonUserCode()]
         public string QueueNo
