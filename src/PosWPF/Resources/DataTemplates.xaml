@@ -351,7 +351,54 @@
     </DataTemplate>
 
     <DataTemplate x:Key="ChargeTemplate">
+        <DockPanel LastChildFill="True">
+            <DockPanel.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#ffff00" Offset="0" />
+                    <GradientStop Color="White" Offset="1" />
+                </LinearGradientBrush>
+            </DockPanel.Background>
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True" Margin="10">
+                <Button DockPanel.Dock="Left" Background="{StaticResource PlusIcon}" Style="{StaticResource BorderlessButton}"
+                        Command="{Binding Path=DataContext.AddChargesCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" CommandParameter="{Binding Path=DataContext, ElementName=panel}"/>
+                <Button DockPanel.Dock="Right" Background="{StaticResource SearchIcon}" Style="{StaticResource BorderlessButton}"/>
+                <TextBox Style="{StaticResource RoundedTextBoxStyle}" />
+            </DockPanel>
 
+            <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" DataContext="{Binding ElementName=listView}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Name" Style="{StaticResource LabelStyle}" />
+                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Name}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Value %" Style="{StaticResource LabelStyle}" />
+                    <TextBox Width="100" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Value}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Active" Style="{StaticResource LabelStyle}" />
+                    <CheckBox IsChecked="{Binding SelectedItem.Active}"/>
+                </StackPanel>
+            </StackPanel>
+
+            <DockPanel x:Name="panel" LastChildFill="True" Margin="10">
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                    <TextBlock Text="Name" Width="200" FontWeight="Bold" />
+                    <TextBlock Text="Value" Width="100" FontWeight="Bold"/>
+                    <TextBlock Text="Active" Width="200" FontWeight="Bold"/>
+                </StackPanel>
+                <ListView x:Name="listView" Margin="10" ItemsSource="{Binding Value,UpdateSourceTrigger=PropertyChanged}" Background="Transparent">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Name}" Width="200" />
+                                <TextBlock Text="{Binding Value}" Width="100" />
+                                <CheckBox IsChecked="{Binding Active}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </DockPanel>
+        </DockPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="UserTemplate">
@@ -371,11 +418,11 @@
 
             <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" DataContext="{Binding ElementName=listView}">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Username" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBlock Text="Username" Style="{StaticResource LabelStyle}" />
                     <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Username}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Password" Width="80" TextAlignment="Right" Margin="0,0,10,0" />
+                    <TextBlock Text="Password" Style="{StaticResource LabelStyle}" />
                     <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Password}" />
                 </StackPanel>
             </StackPanel>

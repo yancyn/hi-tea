@@ -184,7 +184,7 @@ namespace PosWPF
             }
             else if (categoryName.Contains("charge"))
             {
-                return new SolidColorBrush(Color.FromRgb(255, 255, 0));
+                return new SolidColorBrush(Color.FromRgb(255, 255, 0)); //#ffff00
             }
             else if (categoryName == "user")
             {

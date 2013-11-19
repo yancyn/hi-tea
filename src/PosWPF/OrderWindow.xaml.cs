@@ -195,19 +195,19 @@ namespace PosWPF
             graphics.DrawString(underline, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
 
             string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
-            Main db = new Main(connectionString);
-            var charges = db.Charges.Where(c => c.Active == true).OrderBy(c => c.Value);
-            for(int c=0;c<charges.Count();c++)
+            Main db2 = new Main(connectionString);
+            List<Charge> charges = db2.Charges.Where(c => c.Active == true).OrderBy(c => c.Value).ToList();
+            for(int c=0;c<charges.Count;c++)
             {
                 if (order.Charges[c] != 0)
                 {
                     offset += 20;
-                    feed = charges.ToList()[c].Name;
+                    feed = charges[c].Name;
                     graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX + 50, startY + offset);
                     graphics.DrawString(Math.Round(order.Charges[c], 2).ToString(Settings.Default.MoneyFormat), font, new SolidBrush(System.Drawing.Color.Black), startX + 200 - 10, startY + offset);
                 }
             }
-            db.Dispose();
+            db2.Dispose();
 
             offset += 20;
             feed = "Total ";
