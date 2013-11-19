@@ -234,9 +234,10 @@ namespace PosWPF
             offset += 20;
             graphics.DrawString(underline, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
 
-            // TODO: Replace with facebook icon
+            // Replace with facebook icon
             offset += 20;
-            graphics.DrawString("Facebook: " + Settings.Default.Facebook, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+            graphics.DrawImage(System.Drawing.Image.FromFile("facebook.png"), startX, startY + offset);
+            graphics.DrawString(Settings.Default.Facebook, font, new SolidBrush(System.Drawing.Color.Black), startX + 20, startY + offset);
 
             offset += 20;
             graphics.DrawString("Thank you", font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
