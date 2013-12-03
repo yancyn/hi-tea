@@ -49,7 +49,7 @@
                 </StackPanel>
                 <StackPanel Grid.Column="1"  HorizontalAlignment="Right" Orientation="Horizontal">
                     <Button ToolTip="Pay" Style="{StaticResource PayButton}" Click="PayButton_Click" />
-                    <Button ToolTip="Print Order" Background="{StaticResource OrderListIcon}" Style="{StaticResource CircleButtonStyle}" Click="ReceiptButton_Click" />
+                    <Button ToolTip="Print Order" Background="{StaticResource OrderListIcon}" Style="{StaticResource CircleButtonStyle}" Click="OrderListButton_Click" />
                     <Button ToolTip="Confirm" Background="{StaticResource TickIcon}" Style="{StaticResource CircleButtonStyle}" Command="{Binding ConfirmOrderCommand}" Click="ConfirmButton_Click" />
                 </StackPanel>
             </Grid>

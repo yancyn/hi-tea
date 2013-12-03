@@ -1,6 +1,6 @@
 hi-tea
 ======
-A POS for café.
+A WPF POS application for café which is based on SQLite as database and aims for touchscreen device.
 
 How to Run
 ========
@@ -46,6 +46,7 @@ Hardwares
 =========
 1. Set default printer to use 'Cashier'.
 2. Label printer as 'Bar'.
+3. Tablet size landscape 448x1067px, portrait 915x640px.
 
 
 References
@@ -58,3 +59,4 @@ References
 - [Metro Style](http://mahapps.com/MahApps.Metro/) [source](https://github.com/MahApps/MahApps.Metro) require .NET 4.0 and above
 - [Borderless Window](https://wpfborderless.codeplex.com/)
 - [Escalier Theme](http://www.freecsstemplates.org/preview/escalier/)
+- [WPF MessageBox](https://msgbox.codeplex.com/)

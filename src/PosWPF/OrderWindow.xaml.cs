@@ -103,10 +103,49 @@ namespace PosWPF
             this.Close();
         }
 
-        // TODO: Print order list
+        /// <summary>
+        /// Print order list.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OrderListButton_Click(object sender, RoutedEventArgs e)
         {
+            // 1. Generate a text file ie. order.txt
+            // 2. Execute a cmd
+            // 3. Type receipt.txt > LPT1
+            // 4. Done.
             Order order = (this.DataContext as PosManager).SelectedOrder;
+
+            //using(System.IO.StreamWriter file = new System.IO.StreamWriter("order.txt", 
+            //System.IO.StreamWriter writer = new System.IO.TextWriter(
+            //System.IO.FileStream file = System.IO.File.Open("order.txt", System.IO.FileMode.Op
+            string content = string.Empty;
+            string line = "------------------------";
+            content += line + "\n";
+            content += "TIME: " + DateTime.Now.ToString(Settings.Default.DateTimeFormat) + "\n";
+            content += line + "\n";
+            content += "ORDER#" + order.QueueNo;
+            if (order.TableNo.Length > 0) content += " " + "TABLE#" + order.TableNo;
+            content += "\n";
+
+            content += line + "\n";
+            foreach (OrderItem item in order.Items)
+            {
+                // HACK: we don't care about order made before
+                // HACK: Fail to send unicode to LPT1
+                if (item.ID == 0)
+                    content += item.Menu.Code + " " + ExtractEnglishName(item.Menu.Name) + "\n";
+            }
+            content += line + "\n";
+            content += "\n\n\n\n\n\n\n\n";
+
+            // always overriding if not exist create new
+            System.IO.File.WriteAllText("order.txt", content);
+
+            string baseDirectory = System.IO.Path.GetDirectoryName(System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
+            //System.Diagnostics.Process.Start("cmd", "Type \""+baseDirectory+System.IO.Path.DirectorySeparatorChar+"receipt.txt\" LPT1");
+            //System.Diagnostics.Process.Start("cmd", "D: & Type receipt.txt > LPT1");
+            System.Diagnostics.Process.Start("cmd", "/C copy \""+baseDirectory+System.IO.Path.DirectorySeparatorChar+"order.txt\" lpt1");
         }
 
         private void PayButton_Click(object sender, RoutedEventArgs e)
@@ -126,6 +165,7 @@ namespace PosWPF
             pdoc.PrintPage += new PrintPageEventHandler(Receipt_PrintPage);
             pdoc.Print();
         }
+
         // TODO: Consider to convert to xaml layout for easier maintenance
         // http://www.bradcurtis.com/document-and-report-generation-using-xaml-wpf-data-binding-and-xps/
         private void Receipt_PrintPage(object sender, PrintPageEventArgs e)
@@ -176,10 +216,7 @@ namespace PosWPF
                 code += item.Menu.Code + " ";
 
                 // extract English character only
-                string eng = string.Empty;
-                Regex regex = new Regex("[a-zA-Z0-9 '()&-]");
-                foreach (Match match in regex.Matches(item.Menu.Name))
-                    eng += match.Value;
+                string eng = ExtractEnglishName(item.Menu.Name);
                 string other = (eng.Length == 0) ? item.Menu.Name : item.Menu.Name.Replace(eng, string.Empty);
                 code += other.Trim();
 
@@ -243,7 +280,7 @@ namespace PosWPF
             graphics.DrawString("Thank you", font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
 
             offset += 20;
-            graphics.DrawString("", font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset); // HACK: Add a footer margin
+            graphics.DrawString(" ", font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset); // HACK: Add a footer margin
         }
 
         private void LabelButton_Click(object sender, RoutedEventArgs e)
@@ -273,6 +310,20 @@ namespace PosWPF
         {
             string username = (sender as System.Windows.Controls.TextBox).Text;
             (this.DataContext as PosManager).SetUser(username);
+        }
+
+        /// <summary>
+        /// Extract English name only from given text.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        private string ExtractEnglishName(string name)
+        {
+            string eng = string.Empty;
+            Regex regex = new Regex("[a-zA-Z0-9 '()&-]");
+            foreach (Match match in regex.Matches(name))
+                eng += match.Value;
+            return eng;
         }
 
         #region Failed
