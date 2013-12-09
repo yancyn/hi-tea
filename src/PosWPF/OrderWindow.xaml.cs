@@ -205,10 +205,11 @@ namespace PosWPF
             offset += 20;
             graphics.DrawString(underline, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
 
-            int i = 0;
+            //int i = 0;
+            // TODO: Chop longer name which overlap the amount
             foreach (OrderItem item in order.Items)
             {
-                i++;
+                //i++;
                 offset += 20;
 
                 // Break line for different encoding
@@ -226,6 +227,25 @@ namespace PosWPF
 
                 offset += 20;
                 graphics.DrawString(eng.Trim(), font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+
+                // print additonal add on for drink & dessert
+                foreach (OrderSubItem sub in item.OrderSubItems) //.SubItems)
+                {
+                    offset += 20;
+
+                    // Break line for different encoding
+                    code = string.Empty;
+                    code += sub.Menu.Code + " ";
+
+                    // extract English character only
+                    eng = ExtractEnglishName(sub.Menu.Name);
+                    other = (eng.Length == 0) ? sub.Menu.Name : sub.Menu.Name.Replace(eng, string.Empty);
+                    code += other.Trim();
+
+                    price = sub.Menu.Price.ToString(Settings.Default.MoneyFormat);
+                    graphics.DrawString(eng.Trim(), font, new SolidBrush(System.Drawing.Color.Black), startX+20, startY + offset);
+                    graphics.DrawString(price, font, new SolidBrush(System.Drawing.Color.Black), startX + 200, startY + offset);
+                }
             }
 
             offset += 20;

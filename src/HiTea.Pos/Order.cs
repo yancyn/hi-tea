@@ -80,7 +80,11 @@ namespace HiTea.Pos
         {
             float amount = 0;
             foreach (OrderItem item in this.Items)
+            {
+                foreach (OrderSubItem sub in item.OrderSubItems)
+                    amount += sub.Menu.Price;
                 amount += item.Menu.Price;
+            }
             this._total = amount;
 
             this.Charges = new ObservableCollection<float>();

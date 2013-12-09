@@ -112,7 +112,7 @@
                                         </CheckBox.LayoutTransform>
                                     </CheckBox>
                                     <TextBlock Grid.Column="4" Text="1" HorizontalAlignment="Right" />
-                                    <TextBlock Grid.Column="5" Text="{Binding Menu.Price, Converter={StaticResource MoneyConverter}}" HorizontalAlignment="Right" />
+                                    <TextBlock Grid.Column="5" Text="{Binding Amount, Converter={StaticResource MoneyConverter}}" HorizontalAlignment="Right" />
                                     <CheckBox Grid.Column="6" Margin="10 0 0 0" IsChecked="{Binding StatusID,Converter={StaticResource TwoIsTrueConverter}}" Command="{Binding MarkDoneCommand}" CommandParameter="{Binding .}">
                                         <CheckBox.LayoutTransform>
                                             <ScaleTransform ScaleX="1.5" ScaleY="1.5" />

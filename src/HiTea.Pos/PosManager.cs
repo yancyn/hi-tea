@@ -340,16 +340,31 @@ namespace HiTea.Pos
         {
             if (this.selectedOrder == null) return;
 
-            OrderItem item = new OrderItem();
-            item.Menu = menu;
-            item.MenuID = menu.ID;
-            item.ParentID = this.selectedOrder.ID;
-            item.StatusID = 1;
-            if (this.selectedOrder.Items.Count == 0)
-                item.OrderTypeID = (String.IsNullOrEmpty(this.selectedOrder.TableNo)) ? 2 : 1;
+            if (menu.CategoryID == 6)
+            {
+                OrderItem item = this.selectedOrder.Items[this.selectedOrder.Items.Count - 1];
+
+                OrderSubItem sub = new OrderSubItem();
+                sub.ParentID = item.ID;
+                sub.MenuID = menu.ID;
+                sub.Menu = menu;
+                item.OrderSubItems.Add(sub);
+                item.SubItems.Add(sub);
+            }
             else
-                item.OrderTypeID = this.selectedOrder.Items.Last().OrderTypeID;
-            this.selectedOrder.Items.Add(item);
+            {
+                OrderItem item = new OrderItem();
+                item.Menu = menu;
+                item.MenuID = menu.ID;
+                item.ParentID = this.selectedOrder.ID;
+                item.StatusID = 1;
+
+                if (this.selectedOrder.Items.Count == 0)
+                    item.OrderTypeID = (String.IsNullOrEmpty(this.selectedOrder.TableNo)) ? 2 : 1;
+                else
+                    item.OrderTypeID = this.selectedOrder.Items.Last().OrderTypeID;
+                this.selectedOrder.Items.Add(item);
+            }
         }
 
         private ConfirmOrderCommand confirmOrderCommand;

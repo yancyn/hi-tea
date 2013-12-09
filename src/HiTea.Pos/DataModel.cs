@@ -1281,7 +1281,7 @@ public partial class Main
         #region Children
         [Association(Storage = "_orderSubItem", OtherKey = "ParentID", ThisKey = "ID", Name = "fk_OrderSubItem_1")]
         [DebuggerNonUserCode()]
-        public EntitySet<OrderSubItem> OrderSubItem
+        public EntitySet<OrderSubItem> OrderSubItems
         {
             get
             {
@@ -1617,12 +1617,12 @@ public partial class Main
                     {
                         OrderItem previousOrderItem = this._orderItem.Entity;
                         this._orderItem.Entity = null;
-                        previousOrderItem.OrderSubItem.Remove(this);
+                        previousOrderItem.OrderSubItems.Remove(this);
                     }
                     this._orderItem.Entity = value;
                     if ((value != null))
                     {
-                        value.OrderSubItem.Add(this);
+                        value.OrderSubItems.Add(this);
                         _parentID = value.ID;
                     }
                     else
