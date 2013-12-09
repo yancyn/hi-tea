@@ -42,6 +42,10 @@ Default page is index.html
 
 	iisexpress /path:d:\HiTea\ /port:9090
 
+Backup SQLite
+==========
+    sqlite3 pos.db3 .dump > pos.bak
+
 Hardwares
 =========
 1. Set default printer to use 'Cashier'.

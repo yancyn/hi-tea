@@ -122,6 +122,8 @@ namespace HiTea.Pos
                 }
             }
         }
+
+        public User Member { get; set; }
         [Column(Storage = "_memberID", Name = "MemberId", DbType = "integer", AutoSync = AutoSync.Never, CanBeNull = false)]
         [DebuggerNonUserCode()]
         public int MemberID
