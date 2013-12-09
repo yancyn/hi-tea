@@ -317,6 +317,15 @@ namespace PosWPF
                     if (!String.IsNullOrEmpty(order.TableNo)) line += "    " + "Table: " + order.TableNo;
                     line += "\n" + item.Menu.Name; // TODO: Truncate long text
 
+                    string addon = string.Empty;
+                    foreach(OrderSubItem sub in item.OrderSubItems)
+                    {
+                        string eng = ExtractEnglishName(sub.Menu.Name);// extract English character only
+                        string other = (eng.Length == 0) ? sub.Menu.Name : sub.Menu.Name.Replace(eng, string.Empty);
+                        addon += other + " ";
+                    }
+                    if(addon.Length > 0) line += "\n" + addon;
+
                     FlowDocument flowDocument = new FlowDocument();
                     flowDocument.FontSize = 10;
                     Paragraph paragraph = new Paragraph(new Run(line));
