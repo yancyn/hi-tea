@@ -425,6 +425,31 @@
                     <TextBlock Text="Password" Style="{StaticResource LabelStyle}" />
                     <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Password}" />
                 </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Mobile" Style="{StaticResource LabelStyle}" />
+                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Mobile}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Address" Style="{StaticResource LabelStyle}" />
+                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Street1}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="" Style="{StaticResource LabelStyle}" />
+                    <TextBox Width="200" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Street2}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="" Style="{StaticResource LabelStyle}" />
+                    <StackPanel Orientation="Horizontal">
+                        <Grid Background="{StaticResource TransparentBrush}">
+                            <TextBlock Margin="15,5" Text="Postcode" Foreground="{StaticResource WatermarkForegroundBrush}" Visibility="{Binding ElementName=Postcode, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                            <TextBox x:Name="Postcode" Width="60" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.Postcode}" />
+                        </Grid>
+                        <Grid Background="{StaticResource TransparentBrush}">
+                            <TextBlock Margin="15,5" Text="State" Foreground="{StaticResource WatermarkForegroundBrush}" Visibility="{Binding ElementName=State, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                            <TextBox x:Name="State" Width="100" Style="{StaticResource RoundedTextBoxStyle}" Text="{Binding Path=SelectedItem.State}" />
+                        </Grid>
+                    </StackPanel>
+                </StackPanel>
             </StackPanel>
 
             <DockPanel x:Name="panel" LastChildFill="True" Margin="10">
