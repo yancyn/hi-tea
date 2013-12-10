@@ -69,6 +69,7 @@ namespace HiTea.Pos
         public void AddUser()
         {
             User user = new User();
+            user.RoleID = db.Roles.OrderByDescending(u => u.ID).First().ID;
             user.Active = true;
             this.Users.Add(user);
         }
