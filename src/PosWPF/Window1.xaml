@@ -100,6 +100,7 @@
                 <Button ToolTip="All" Click="AllButton_Click" Background="{StaticResource AllIcon}" Style="{StaticResource BorderlessButton}" />
                 <Button ToolTip="Group" Click="GroupButton_Click" Background="{StaticResource GroupIcon}" Style="{StaticResource BorderlessButton}" />
                 <Button ToolTip="Detail" Background="{StaticResource DetailIcon}" Style="{StaticResource BorderlessButton}" />
+                <Button ToolTip="Report" Background="{StaticResource ReportIcon}" Style="{StaticResource CircleButtonStyle}" Click="ReportButton_Click" />
                 <Button ToolTip="Setting" Background="{StaticResource SettingIcon}" Style="{StaticResource CircleButtonStyle}" Click="AdminButton_Click" />
             </StackPanel>
             <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right">
