@@ -10,14 +10,14 @@
     <DockPanel LastChildFill="True">
         <Grid DockPanel.Dock="Top" Margin="0 5 0 0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <WrapPanel Grid.Column="0">
                 <TextBlock Text="Table: "/>
                 <TextBlock Text="{Binding SelectedOrder.TableNo}" />
                 <TextBlock Text="Member: " Margin="20,0,0,0"/>
-                <TextBox Width="80" Text="{Binding SelectedOrder.Member.Username}" TextChanged="MemberName_TextChanged" />
+                <TextBox Width="160" Text="{Binding SelectedOrder.Member.Username}" TextChanged="MemberName_TextChanged" />
             </WrapPanel>
             <WrapPanel Grid.Column="1" HorizontalAlignment="Right">
                 <TextBlock Text="Created: "/>
