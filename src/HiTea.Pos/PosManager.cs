@@ -340,7 +340,8 @@ namespace HiTea.Pos
         {
             if (this.selectedOrder == null) return;
 
-            if (menu.CategoryID == 6)
+            // HACK: Always first category is Addon
+            if (menu.CategoryID == 1)
             {
                 OrderItem item = this.selectedOrder.Items[this.selectedOrder.Items.Count - 1];
 
