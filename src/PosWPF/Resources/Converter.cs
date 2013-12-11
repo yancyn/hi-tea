@@ -200,15 +200,15 @@ namespace PosWPF
         {
             switch (cat)
             {
-                case 1:
-                    return new SolidColorBrush(Color.FromRgb(0, 124, 204)); //#007ccc
                 case 2:
-                    return new SolidColorBrush(Color.FromRgb(0, 212, 110)); //#00d46e
+                    return new SolidColorBrush(Color.FromRgb(0, 124, 204)); //#007ccc
                 case 3:
-                    return new SolidColorBrush(Color.FromRgb(255, 151, 115)); //#ff9773
+                    return new SolidColorBrush(Color.FromRgb(0, 212, 110)); //#00d46e
                 case 4:
-                    return new SolidColorBrush(Color.FromRgb(103, 180, 230)); //#67b4e6
+                    return new SolidColorBrush(Color.FromRgb(255, 151, 115)); //#ff9773
                 case 5:
+                    return new SolidColorBrush(Color.FromRgb(103, 180, 230)); //#67b4e6
+                case 6:
                     return new SolidColorBrush(Color.FromRgb(255, 142, 0)); //#ff8e00
                 default:
                     // TODO: Handle undefine color code

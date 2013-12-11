@@ -59,9 +59,11 @@ namespace PosWPF
             this.DataContext = posManager;
             DineInGrid.DisplayIndexes = indexes.ToArray();
             DineInGrid.DataContext = posManager;
+            AddonControl.ItemsSource = posManager.Addon.MenuCollection;
 
             //MenusControl.ItemsPanel = GetItemsPanelTemplate(0);
             //MenusControl.ItemsSource = posManager.Menus;
+
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

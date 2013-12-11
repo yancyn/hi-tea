@@ -39,6 +39,7 @@ namespace HiTea.Pos
             }
         }
 
+        public Category Addon { get; set; }
         public ObservableCollection<Category> Categories { get; set; }
         public ObservableCollection<Menu> Menus { get; set; }
 
@@ -228,15 +229,27 @@ namespace HiTea.Pos
             this.Categories.Clear();
             this.Menus.Clear();
             // TODO: Refresh DbLinq object
+            int i = 0;
             foreach (var category in db.Categories)
             {
                 category.MenuCollection.Clear();
-                foreach (var menu in category.Menus.Where(m => m.Active == true).OrderBy(m => m.Code))
+                if (i == 0)
                 {
-                    category.MenuCollection.Add(menu);
-                    this.Menus.Add(menu);
+                    this.Addon = category;
+                    foreach (var menu in category.Menus.Where(m => m.Active == true).OrderBy(m => m.Code))
+                        this.Addon.MenuCollection.Add(menu);
                 }
-                this.Categories.Add(category);
+                else
+                {
+                    foreach (var menu in category.Menus.Where(m => m.Active == true).OrderBy(m => m.Code))
+                    {
+                        category.MenuCollection.Add(menu);
+                        this.Menus.Add(menu);
+                    }
+                    this.Categories.Add(category);
+                }
+
+                i++;
             }
 
             this.SendPropertyChanged("Categories");

@@ -35,7 +35,6 @@
             <RadioButton Style="{StaticResource CategoryButtonStyle}" Background="{Binding Name,Converter={StaticResource MenuBackgroundConverter}}"
                          Checked="Category_Checked">
                 <StackPanel>
-                    <!--<TextBlock Text="{Binding Path=.,Converter={StaticResource CategoryPrefixConverter}}" />-->
                     <TextBlock Text="{Binding Name}">
                         <TextBlock.LayoutTransform>
                             <RotateTransform CenterX="0" CenterY="0" Angle="90" />
@@ -112,7 +111,11 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="30" />
                 </Grid.ColumnDefinitions>
-                <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <ScrollViewer Grid.Row="0" Grid.Column="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                     <Border BorderThickness="1" BorderBrush="{StaticResource DefaultColor}" CornerRadius="10">
                         <ItemsControl x:Name="MenusControl" DataContext="{Binding Menus,UpdateSourceTrigger=PropertyChanged}">
                             <ItemsControl.ItemsPanel>
@@ -123,7 +126,7 @@
                         </ItemsControl>
                     </Border>
                 </ScrollViewer>
-                <StackPanel Grid.Column="1" Orientation="Vertical">
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical">
                     <ItemsControl ItemsSource="{Binding Categories}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
@@ -132,6 +135,20 @@
                         </ItemsControl.ItemsPanel>
                     </ItemsControl>
                 </StackPanel>
+                <Border Grid.Row="1" Grid.Column="0" BorderThickness="1" BorderBrush="{StaticResource DefaultColor}" CornerRadius="10">
+                    <ItemsControl x:Name="AddonControl" DataContext="{Binding Menus,UpdateSourceTrigger=PropertyChanged}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </Border>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Name}" DataContext="{Binding Addon}" Background="{Binding Name,Converter={StaticResource MenuBackgroundConverter}}">
+                    <TextBlock.LayoutTransform>
+                        <RotateTransform CenterX="0" CenterY="0" Angle="90" />
+                    </TextBlock.LayoutTransform>
+                </TextBlock>
             </Grid>
         </DockPanel>
     </Grid>
