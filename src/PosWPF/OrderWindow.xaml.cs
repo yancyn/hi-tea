@@ -193,6 +193,8 @@ namespace PosWPF
             graphics.DrawString(Settings.Default.Address, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
 
             offset += 20;
+            offset += 20;
+            offset += 20;
             string feed = string.Empty;
             feed += "#" + order.ID;
             feed += tab + "Table: " + order.TableNo;
@@ -228,7 +230,7 @@ namespace PosWPF
                 offset += 20;
                 graphics.DrawString(eng.Trim(), font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
 
-                // print additonal add on for drink & dessert
+                // print additonal addon for drink & dessert
                 foreach (OrderSubItem sub in item.OrderSubItems) //.SubItems)
                 {
                     offset += 20;
@@ -243,7 +245,7 @@ namespace PosWPF
                     code += other.Trim();
 
                     price = sub.Menu.Price.ToString(Settings.Default.MoneyFormat);
-                    graphics.DrawString(eng.Trim(), font, new SolidBrush(System.Drawing.Color.Black), startX+20, startY + offset);
+                    graphics.DrawString(eng.Trim(), font, new SolidBrush(System.Drawing.Color.Black), startX + 20, startY + offset);
                     graphics.DrawString(price, font, new SolidBrush(System.Drawing.Color.Black), startX + 200, startY + offset);
                 }
             }
@@ -254,7 +256,7 @@ namespace PosWPF
             string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
             Main db2 = new Main(connectionString);
             List<Charge> charges = db2.Charges.Where(c => c.Active == true).OrderBy(c => c.Value).ToList();
-            for(int c=0;c<charges.Count;c++)
+            for (int c = 0; c < charges.Count; c++)
             {
                 if (order.Charges[c] != 0)
                 {
@@ -296,8 +298,20 @@ namespace PosWPF
             graphics.DrawImage(System.Drawing.Image.FromFile("facebook.png"), startX, startY + offset);
             graphics.DrawString(Settings.Default.Facebook, font, new SolidBrush(System.Drawing.Color.Black), startX + 20, startY + offset);
 
+            // print business hour
             offset += 20;
-            graphics.DrawString("Thank you", font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+            graphics.DrawString("Business Hour", font, new SolidBrush(System.Drawing.Color.Black), startX + 50, startY + offset);
+            feed = string.Empty;
+            if (Settings.Default.Start.DayOfWeek - Settings.Default.End.DayOfWeek != 0)
+                feed = Settings.Default.Start.ToString("ddd") + " - " + Settings.Default.End.ToString("ddd");
+            else
+                feed = "Daily";
+            feed += "    " + Settings.Default.Start.ToString("hh:mm tt") + " - " + Settings.Default.End.ToString("hh:mm tt");
+            offset += 20;
+            graphics.DrawString(feed, font, new SolidBrush(System.Drawing.Color.Black), startX + 20, startY + offset);
+
+            offset += 20;
+            graphics.DrawString("Thank you", font, new SolidBrush(System.Drawing.Color.Black), startX + 50, startY + offset);
 
             offset += 20;
             graphics.DrawString(" ", font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset); // HACK: Add a footer margin

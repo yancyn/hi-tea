@@ -88,30 +88,6 @@ namespace PosWPF {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
-<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
-  <string>1</string>
-  <string>3</string>
-  <string>5</string>
-  <string>12</string>
-  <string>14</string>
-  <string>21</string>
-  <string>23</string>
-  <string>25</string>
-  <string>41</string>
-  <string>51</string>
-  <string>61</string>
-  <string>71</string>
-  <string>74</string>
-</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection TableIndexes {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["TableIndexes"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Cashier")]
         public string ReceiptPrinter {
             get {
@@ -134,6 +110,47 @@ namespace PosWPF {
         public string OrderPrinter {
             get {
                 return ((string)(this["OrderPrinter"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>1</string>
+  <string>3</string>
+  <string>11</string>
+  <string>13</string>
+  <string>21</string>
+  <string>23</string>
+  <string>41</string>
+  <string>51</string>
+  <string>61</string>
+  <string>71</string>
+  <string>81</string>
+  <string>83</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection TableIndexes {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["TableIndexes"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("12/11/2013 17:06:00")]
+        public global::System.DateTime Start {
+            get {
+                return ((global::System.DateTime)(this["Start"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2013-12-12")]
+        public global::System.DateTime End {
+            get {
+                return ((global::System.DateTime)(this["End"]));
             }
         }
     }

@@ -132,14 +132,14 @@ insert into Charge(Name,Value,Active) values('Member Discount',-0.1,1);
 -------------------------------------------
 -- Set Menu
 -------------------------------------------
-INSERT INTO "Menu" VALUES(1,2,'S01','套餐1 Set 1',NULL,'S01.jpg',8.9,1);
-INSERT INTO "Menu" VALUES(2,2,'S02','套餐2 Set 2',NULL,'S02.jpg',7.9,1);
-INSERT INTO "Menu" VALUES(3,2,'S03','套餐3 Set 3',NULL,'S03.jpg',6.9,1);
-INSERT INTO "Menu" VALUES(4,2,'S04','套餐4 Set 4',NULL,'S04.jpg',7.9,1);
-INSERT INTO "Menu" VALUES(5,2,'S05','套餐5 Set 5',NULL,'S05.jpg',8.9,1);
-INSERT INTO "Menu" VALUES(6,2,'S06','套餐6 Set 6',NULL,'S06.jpg',5.5,1);
-INSERT INTO "Menu" VALUES(7,2,'S07','套餐7 Set 7',NULL,'S07.jpg',7.9,1);
-INSERT INTO "Menu" VALUES(8,2,'S08','套餐8 Set 8',NULL,'S08.jpg',7.9,1);
+INSERT INTO "Menu" VALUES(1,2,'S01','套餐 Set 1',NULL,'S01.jpg',8.9,1);
+INSERT INTO "Menu" VALUES(2,2,'S02','套餐 Set 2',NULL,'S02.jpg',7.9,1);
+INSERT INTO "Menu" VALUES(3,2,'S03','套餐 Set 3',NULL,'S03.jpg',6.9,1);
+INSERT INTO "Menu" VALUES(4,2,'S04','套餐 Set 4',NULL,'S04.jpg',7.9,1);
+INSERT INTO "Menu" VALUES(5,2,'S05','套餐 Set 5',NULL,'S05.jpg',8.9,1);
+INSERT INTO "Menu" VALUES(6,2,'S06','套餐 Set 6',NULL,'S06.jpg',5.5,1);
+INSERT INTO "Menu" VALUES(7,2,'S07','套餐 Set 7',NULL,'S07.jpg',7.9,1);
+INSERT INTO "Menu" VALUES(8,2,'S08','套餐 Set 8',NULL,'S08.jpg',7.9,1);
 
 -------------------------------------------
 -- Food
