@@ -2046,9 +2046,9 @@ public partial class Main
 
         private bool _active;
 
-        private string _city;
+        private string _email;
 
-        private string _country;
+        private string _ic;
 
         private string _displayname;
 
@@ -2060,17 +2060,7 @@ public partial class Main
 
         private int _point;
 
-        private string _postcode;
-
         private int _roleID;
-
-        private string _state;
-
-        private string _street1;
-
-        private string _street2;
-
-        private string _telephone;
 
         private string _username;
 
@@ -2170,45 +2160,45 @@ public partial class Main
             }
         }
 
-        [Column(Storage = "_city", Name = "City", DbType = "text", AutoSync = AutoSync.Never)]
+        [Column(Storage = "_email", Name = "Email", DbType = "text", AutoSync = AutoSync.Never)]
         [DebuggerNonUserCode()]
-        public string City
+        public string Email
         {
             get
             {
-                return this._city;
+                return this._email;
             }
             set
             {
-                if (((_city == value)
+                if (((_email == value)
                             == false))
                 {
                     this.OnCityChanging(value);
                     this.SendPropertyChanging();
-                    this._city = value;
-                    this.SendPropertyChanged("City");
+                    this._email = value;
+                    this.SendPropertyChanged("Email");
                     this.OnCityChanged();
                 }
             }
         }
 
-        [Column(Storage = "_country", Name = "Country", DbType = "text", AutoSync = AutoSync.Never)]
+        [Column(Storage = "_ic", Name = "Ic", DbType = "text", AutoSync = AutoSync.Never)]
         [DebuggerNonUserCode()]
-        public string Country
+        public string Ic
         {
             get
             {
-                return this._country;
+                return this._ic;
             }
             set
             {
-                if (((_country == value)
+                if (((_ic == value)
                             == false))
                 {
                     this.OnCountryChanging(value);
                     this.SendPropertyChanging();
-                    this._country = value;
-                    this.SendPropertyChanged("Country");
+                    this._ic = value;
+                    this.SendPropertyChanged("Ic");
                     this.OnCountryChanged();
                 }
             }
@@ -2322,28 +2312,6 @@ public partial class Main
             }
         }
 
-        [Column(Storage = "_postcode", Name = "Postcode", DbType = "text", AutoSync = AutoSync.Never)]
-        [DebuggerNonUserCode()]
-        public string Postcode
-        {
-            get
-            {
-                return this._postcode;
-            }
-            set
-            {
-                if (((_postcode == value)
-                            == false))
-                {
-                    this.OnPostcodeChanging(value);
-                    this.SendPropertyChanging();
-                    this._postcode = value;
-                    this.SendPropertyChanged("Postcode");
-                    this.OnPostcodeChanged();
-                }
-            }
-        }
-
         [Column(Storage = "_roleID", Name = "RoleId", DbType = "integer", AutoSync = AutoSync.Never, CanBeNull = false)]
         [DebuggerNonUserCode()]
         public int RoleID
@@ -2361,94 +2329,6 @@ public partial class Main
                     this._roleID = value;
                     this.SendPropertyChanged("RoleID");
                     this.OnRoleIDChanged();
-                }
-            }
-        }
-
-        [Column(Storage = "_state", Name = "State", DbType = "text", AutoSync = AutoSync.Never)]
-        [DebuggerNonUserCode()]
-        public string State
-        {
-            get
-            {
-                return this._state;
-            }
-            set
-            {
-                if (((_state == value)
-                            == false))
-                {
-                    this.OnStateChanging(value);
-                    this.SendPropertyChanging();
-                    this._state = value;
-                    this.SendPropertyChanged("State");
-                    this.OnStateChanged();
-                }
-            }
-        }
-
-        [Column(Storage = "_street1", Name = "Street1", DbType = "text", AutoSync = AutoSync.Never)]
-        [DebuggerNonUserCode()]
-        public string Street1
-        {
-            get
-            {
-                return this._street1;
-            }
-            set
-            {
-                if (((_street1 == value)
-                            == false))
-                {
-                    this.OnStreet1Changing(value);
-                    this.SendPropertyChanging();
-                    this._street1 = value;
-                    this.SendPropertyChanged("Street1");
-                    this.OnStreet1Changed();
-                }
-            }
-        }
-
-        [Column(Storage = "_street2", Name = "Street2", DbType = "text", AutoSync = AutoSync.Never)]
-        [DebuggerNonUserCode()]
-        public string Street2
-        {
-            get
-            {
-                return this._street2;
-            }
-            set
-            {
-                if (((_street2 == value)
-                            == false))
-                {
-                    this.OnStreet2Changing(value);
-                    this.SendPropertyChanging();
-                    this._street2 = value;
-                    this.SendPropertyChanged("Street2");
-                    this.OnStreet2Changed();
-                }
-            }
-        }
-
-        [Column(Storage = "_telephone", Name = "Telephone", DbType = "text", AutoSync = AutoSync.Never)]
-        [DebuggerNonUserCode()]
-        public string Telephone
-        {
-            get
-            {
-                return this._telephone;
-            }
-            set
-            {
-                if (((_telephone == value)
-                            == false))
-                {
-                    this.OnTelephoneChanging(value);
-                    this.SendPropertyChanging();
-                    this._telephone = value;
-                    this.SendPropertyChanged("Telephone");
-                    this.OnTelephoneChanged();
                 }
             }
         }
