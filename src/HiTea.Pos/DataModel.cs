@@ -2075,13 +2075,13 @@ public partial class Main
 
         partial void OnActiveChanging(bool value);
 
-        partial void OnCityChanged();
+        partial void OnEmailChanged();
 
-        partial void OnCityChanging(string value);
+        partial void OnEmailChanging(string value);
 
-        partial void OnCountryChanged();
+        partial void OnIcChanged();
 
-        partial void OnCountryChanging(string value);
+        partial void OnIcChanging(string value);
 
         partial void OnDisplaynameChanged();
 
@@ -2173,11 +2173,11 @@ public partial class Main
                 if (((_email == value)
                             == false))
                 {
-                    this.OnCityChanging(value);
+                    this.OnEmailChanging(value);
                     this.SendPropertyChanging();
                     this._email = value;
                     this.SendPropertyChanged("Email");
-                    this.OnCityChanged();
+                    this.OnEmailChanged();
                 }
             }
         }
@@ -2195,11 +2195,11 @@ public partial class Main
                 if (((_ic == value)
                             == false))
                 {
-                    this.OnCountryChanging(value);
+                    this.OnIcChanging(value);
                     this.SendPropertyChanging();
                     this._ic = value;
                     this.SendPropertyChanged("Ic");
-                    this.OnCountryChanged();
+                    this.OnIcChanged();
                 }
             }
         }

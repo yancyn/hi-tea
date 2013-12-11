@@ -17,7 +17,7 @@
                 <TextBlock Text="Table: "/>
                 <TextBlock Text="{Binding SelectedOrder.TableNo}" />
                 <TextBlock Text="Member: " Margin="20,0,0,0"/>
-                <TextBox Width="160" Text="{Binding SelectedOrder.Member.Username}" TextChanged="MemberName_TextChanged" />
+                <TextBox Width="160" Text="{Binding SelectedOrder.Member.Ic,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" TextChanged="MemberName_TextChanged" />
             </WrapPanel>
             <WrapPanel Grid.Column="1" HorizontalAlignment="Right">
                 <TextBlock Text="Created: "/>
