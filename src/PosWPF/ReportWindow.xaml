@@ -1,0 +1,42 @@
+﻿<Window x:Class="PosWPF.ReportWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:w="http://schemas.microsoft.com/wpf/2008/toolkit"
+             Style="{StaticResource BorderlessModalStyle}"
+             WindowStartupLocation="CenterScreen"
+             Height="400" Width="600">
+    <DockPanel LastChildFill="True">
+        <StackPanel Margin="0 10 0 0" DockPanel.Dock="Top" Orientation="Horizontal">
+            <TextBlock Text="From" VerticalAlignment="Center" />
+            <w:DatePicker x:Name="From" Margin="10 0 0 0" VerticalAlignment="Center" />
+            <TextBlock Text="To" Margin="50 0 0 0" VerticalAlignment="Center" />
+            <w:DatePicker x:Name="To" Margin="10 0 0 0" VerticalAlignment="Center" />
+            <Button ToolTip="Confirm" Background="{StaticResource TickIcon}" Style="{StaticResource CircleButtonStyle}" Command="{Binding ConfirmOrderCommand}" Click="ConfirmButton_Click" VerticalAlignment="Center" />
+        </StackPanel>
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <WrapPanel Grid.Column="0">
+                <Button ToolTip="Print" Background="{StaticResource PrinterIcon}" Style="{StaticResource CircleButtonStyle}" Click="PrintButton_Click" />
+                <Button ToolTip="Export" Background="{StaticResource SaveIcon}" Style="{StaticResource CircleButtonStyle}" Click="SaveButton_Click" />
+            </WrapPanel>
+            <WrapPanel Grid.Column="1" HorizontalAlignment="Right">
+                <TextBlock Text="TOTAL" Style="{StaticResource DefaultBold}" />
+                <TextBlock x:Name="Total" Style="{StaticResource DefaultBold}" />
+            </WrapPanel>
+        </Grid>
+        <w:DataGrid x:Name="Grid"
+                    ItemsSource="{Binding ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"
+                    AutoGenerateColumns="False"
+                    CanUserAddRows="False"
+                    SelectionUnit="FullRow"
+                    GridLinesVisibility="Horizontal"
+                    VerticalGridLinesBrush="{StaticResource DefaultColor}">
+            
+        </w:DataGrid>
+    </DockPanel>
+</Window>

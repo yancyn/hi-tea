@@ -100,6 +100,9 @@ namespace PosWPF
         // TODO: Generate today sales
         private void ReportButton_Click(object sender, RoutedEventArgs e)
         {
+            ReportWindow window = new ReportWindow(db);
+            window.Owner = this;
+            window.ShowDialog();
         }
         private void AdminButton_Click(object sender, RoutedEventArgs e)
         {
