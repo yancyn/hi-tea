@@ -140,6 +140,9 @@ namespace HiTea.Pos
             var orders = db.Orders.Where(o => o.ReceiptDate.HasValue == false);
             foreach (Order order in orders)
             {
+                if (order.MemberID > 0)
+                    order.Member = db.Users.Where(u => u.ID == order.MemberID).First();
+
                 foreach (OrderItem item in order.OrderItems)
                     order.Items.Add(item);
                 //Order target = CloneOrder(order);
