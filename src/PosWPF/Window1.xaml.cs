@@ -97,7 +97,7 @@ namespace PosWPF
             MenusControl.ItemsSource = ((sender as FrameworkElement).DataContext as Category).MenuCollection;
         }
 
-        // TODO: Generate today sales
+        // Generate today sales
         private void ReportButton_Click(object sender, RoutedEventArgs e)
         {
             ReportWindow window = new ReportWindow(db);

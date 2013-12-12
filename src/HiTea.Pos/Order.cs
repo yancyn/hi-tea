@@ -111,7 +111,8 @@ namespace HiTea.Pos
         {
             get
             {
-                CalculateTotal();
+                if (this.Items.Count > 0)
+                    CalculateTotal();
                 return this._total;
             }
             set

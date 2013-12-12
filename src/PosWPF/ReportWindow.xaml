@@ -25,7 +25,7 @@
                 <Button ToolTip="Export" Background="{StaticResource SaveIcon}" Style="{StaticResource CircleButtonStyle}" Click="SaveButton_Click" />
             </WrapPanel>
             <WrapPanel Grid.Column="1" HorizontalAlignment="Right">
-                <TextBlock Text="TOTAL" Style="{StaticResource DefaultBold}" />
+                <TextBlock Text="TOTAL" Margin="0 0 20 0" Style="{StaticResource DefaultBold}" />
                 <TextBlock x:Name="Total" Style="{StaticResource DefaultBold}" />
             </WrapPanel>
         </Grid>
@@ -36,7 +36,12 @@
                     SelectionUnit="FullRow"
                     GridLinesVisibility="Horizontal"
                     VerticalGridLinesBrush="{StaticResource DefaultColor}">
-            
+            <w:DataGrid.Columns>
+                <w:DataGridTextColumn Header="Queue" IsReadOnly="True" Binding="{Binding QueueNo}" />
+                <w:DataGridTextColumn Header="Table" IsReadOnly="True" Binding="{Binding TableNo}" />
+                <w:DataGridTextColumn Header="Created" IsReadOnly="True" Binding="{Binding Created}" />
+                <w:DataGridTextColumn Header="Amount" IsReadOnly="True" Binding="{Binding Total, Converter={StaticResource MoneyRoundingConverter}}" />
+            </w:DataGrid.Columns>
         </w:DataGrid>
     </DockPanel>
 </Window>
