@@ -98,7 +98,7 @@
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
                         <Ellipse x:Name="body" Fill="{TemplateBinding Background}" Stroke="Gray" StrokeThickness="2" />
-                        <TextBlock Text="{TemplateBinding ToolTip}" Foreground="{StaticResource DefaultColor}" FontSize="16" FontWeight="Normal" Margin="10 10 0 0"/>
+                        <TextBlock Text="{TemplateBinding ToolTip}" Foreground="Blue" FontSize="16" FontWeight="Normal" Margin="10 10 0 0"/>
                         <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Grid>
                     <ControlTemplate.Triggers>
