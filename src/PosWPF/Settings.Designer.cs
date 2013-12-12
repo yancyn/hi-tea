@@ -153,5 +153,14 @@ namespace PosWPF {
                 return ((global::System.DateTime)(this["End"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int MaxQueue {
+            get {
+                return ((int)(this["MaxQueue"]));
+            }
+        }
     }
 }

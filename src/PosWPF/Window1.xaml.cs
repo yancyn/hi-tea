@@ -54,7 +54,7 @@ namespace PosWPF
             List<Int32> indexes = new List<int>();
             foreach (string i in Settings.Default.TableIndexes)
                 indexes.Add(Convert.ToInt32(i));
-            posManager = new PosManager(db,indexes.Count);
+            posManager = new PosManager(db, indexes.Count, Settings.Default.MaxQueue);
 
             this.DataContext = posManager;
             DineInGrid.DisplayIndexes = indexes.ToArray();

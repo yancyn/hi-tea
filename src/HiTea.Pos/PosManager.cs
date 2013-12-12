@@ -16,7 +16,8 @@ namespace HiTea.Pos
         /// <summary>
         /// Maximum queue no to use. Once exceed the value will reset from 1 again.
         /// </summary>
-        private const int MAX_QUEUE_NO = 100;
+        private int maxQueue;
+
         protected Main db;
 
         private static System.ComponentModel.PropertyChangingEventArgs emptyChangingEventArgs = new System.ComponentModel.PropertyChangingEventArgs("");
@@ -102,9 +103,11 @@ namespace HiTea.Pos
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public PosManager(Main db, int tableSize)
+        public PosManager(Main db, int tableSize, int maxQueue)
         {
             this.tableSize = tableSize;
+            this.maxQueue = maxQueue;
+
             this.loginCommand = new LoginCommand(this);
             this.dineInCommand = new DineInCommand(this);
             this.takeAwayCommand = new TakeAwayCommand(this);
@@ -287,7 +290,7 @@ namespace HiTea.Pos
                 Order lastHold = this.Basket.OrderByDescending(b => b.QueueNo).First();
                 lastQueueNo = Math.Max(lastQueueNo, Convert.ToInt32(lastHold.QueueNo));
             }
-            lastQueueNo = lastQueueNo % MAX_QUEUE_NO;
+            lastQueueNo = lastQueueNo % maxQueue;
 
             lastQueueNo++;
             return lastQueueNo.ToString();
