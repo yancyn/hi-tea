@@ -12,9 +12,9 @@
     <Window.Resources>
         <DataTemplate DataType="{x:Type p:Menu}">
             <Button Content="{Binding .,Converter={StaticResource MenuNameConverter},UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MenuButtonStyle}"
-                Command="{Binding DataContext.OrderMenuCommand, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Window}}}"
-                CommandParameter="{Binding .}"
-                Background="{Binding ., Converter={StaticResource MenuBackgroundConverter}}" />
+                    CommandParameter="{Binding .}"
+                    Command="{Binding DataContext.OrderMenuCommand, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Window}}}"
+                    Foreground="Black" Background="{Binding ., Converter={StaticResource MenuBackgroundConverter}}" />
         </DataTemplate>
         <!--
         <DataTemplate DataType="{x:Type p:Category}">
