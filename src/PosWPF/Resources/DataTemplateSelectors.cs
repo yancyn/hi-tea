@@ -31,6 +31,8 @@ namespace PosWPF
                     return element.FindResource("DessertMenuTemplate") as DataTemplate;
                 else if (viewModel.Name.ToLower().Contains("小食") || viewModel.Name.ToLower().Contains("snack"))
                     return element.FindResource("SnackMenuTemplate") as DataTemplate;
+                else if (viewModel.Name.ToLower().Contains("addon"))
+                    return element.FindResource("AddonMenuTemplate") as DataTemplate;
             }
 
             return base.SelectTemplate(item, container);
