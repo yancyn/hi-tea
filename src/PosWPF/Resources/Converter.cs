@@ -55,11 +55,14 @@ namespace PosWPF
 
                 // extract English character only
                 string eng = string.Empty;
-                Regex regex = new Regex("[a-zA-Z0-9 '()&-]");
-                foreach (Match match in regex.Matches(menu.Name))
-                    eng += match.Value;
-                string other = (eng.Length == 0) ? menu.Name: menu.Name.Replace(eng, string.Empty);
-                name += other.Trim() + "\n" + eng.Trim();
+                if (menu.Name != null)
+                {
+                    Regex regex = new Regex("[a-zA-Z0-9 '()&-]");
+                    foreach (Match match in regex.Matches(menu.Name))
+                        eng += match.Value;
+                    string other = (eng.Length == 0) ? menu.Name : menu.Name.Replace(eng, string.Empty);
+                    name += other.Trim() + "\n" + eng.Trim();
+                }
 
                 return name;
             }

@@ -34,6 +34,7 @@ namespace PosWPF
         {
             adminManager.Commit();
             (this.Owner.DataContext as PosManager).RefreshMenu();
+            (this.Owner.FindName("AddonControl") as ItemsControl).ItemsSource = (this.Owner.DataContext as PosManager).Addon.MenuCollection;
         }
     }
 }

@@ -232,23 +232,32 @@ namespace HiTea.Pos
         /// </summary>
         public void RefreshMenu()
         {
+            string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
+            Main db2 = new Main(connectionString);
+
             this.Categories.Clear();
             this.Menus.Clear();
             // TODO: Refresh DbLinq object
             int i = 0;
-            foreach (var category in db.Categories)
+            foreach (var category in db2.Categories)
             {
+                System.Diagnostics.Debug.WriteLine(category.Name);
                 category.MenuCollection.Clear();
                 if (i == 0)
                 {
                     this.Addon = category;
+                    this.Addon.MenuCollection.Clear();
                     foreach (var menu in category.Menus.Where(m => m.Active == true).OrderBy(m => m.Code))
+                    {
+                        System.Diagnostics.Debug.WriteLine("\t"+menu.Name);
                         this.Addon.MenuCollection.Add(menu);
+                    }
                 }
                 else
                 {
                     foreach (var menu in category.Menus.Where(m => m.Active == true).OrderBy(m => m.Code))
                     {
+                        System.Diagnostics.Debug.WriteLine("\t" + menu.Name);
                         category.MenuCollection.Add(menu);
                         this.Menus.Add(menu);
                     }
@@ -257,9 +266,11 @@ namespace HiTea.Pos
 
                 i++;
             }
+            db2.Dispose();
 
             this.SendPropertyChanged("Categories");
             this.SendPropertyChanged("Menus");
+            this.SendPropertyChanged("Addon");
         }
 
         public bool Login(string username, string password)
