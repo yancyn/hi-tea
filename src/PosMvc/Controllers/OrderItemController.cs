@@ -34,7 +34,7 @@ namespace PosMvc.Controllers
             //WHERE OrderItem.StatusId = 1 AND Menu.CategoryId IN(1,2,3)
             //ORDER BY OrderItem.Id, 'Order'.Id;
 
-            int[] categories = new int[]{1,2,3};
+            int[] categories = new int[] { 2, 3, 4 };
             var pending = db.OrderItems.Where(i => i.StatusID == 1 && categories.Contains(i.Menu.CategoryID) && i.ParentID > 0);
             return View(pending.ToList());
         }
@@ -44,7 +44,7 @@ namespace PosMvc.Controllers
         /// <returns></returns>
         public ActionResult PendingDrink()
         {
-            int[] categories = new int[] { 4, 5 };
+            int[] categories = new int[] { 5, 6 };
             var pending = db.OrderItems.Where(i => i.StatusID == 1 && categories.Contains(i.Menu.CategoryID) && i.ParentID > 0);
             return View(pending.ToList());
         }
