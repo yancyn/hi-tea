@@ -64,9 +64,9 @@ namespace PosWPF
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
             // TODO: Add time filtering
-            DateTime from = (To.SelectedDate.HasValue)
-                    ? new DateTime(From.SelectedDate.Value.Year, From.SelectedDate.Value.Month, From.SelectedDate.Value.Day) : DateTime.Now;
-            DateTime to = new DateTime(To.SelectedDate.Value.Year, To.SelectedDate.Value.Month, To.SelectedDate.Value.Day, 23, 59, 59);
+            DateTime from = new DateTime(From.SelectedDate.Value.Year, From.SelectedDate.Value.Month, From.SelectedDate.Value.Day);
+            DateTime to = (To.SelectedDate.HasValue)
+                ? new DateTime(To.SelectedDate.Value.Year, To.SelectedDate.Value.Month, To.SelectedDate.Value.Day, 23, 59, 59) : DateTime.Now;
             GenerateReport(from, to);
         }
         /// <summary>
@@ -84,13 +84,20 @@ namespace PosWPF
 
             return fix;
         }
+        /// <summary>
+        /// Add prefix to a string to a fixed length.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="digit"></param>
+        /// <param name="prefix"></param>
+        /// <returns></returns>
         private string AddPrefix(string text, int digit, string prefix)
         {
             string fix = text;
-            if(string.IsNullOrEmpty(text))
+            if (string.IsNullOrEmpty(text))
             {
                 fix = string.Empty;
-                for(int i=0;i<digit;i++)
+                for (int i = 0; i < digit; i++)
                     fix += prefix;
             }
             else if (text.Length < digit)
@@ -119,14 +126,14 @@ namespace PosWPF
             content += "# | Table | Created | Amount" + "\n";
             content += line + "\n";
             foreach (Order order in orders)
-                content += AddPrefix(order.QueueNo,Settings.Default.MaxQueue.ToString().Length,"0") + "  "+ FixTableNo(order.TableNo) + " " + order.Created.ToString("hh:mm tt") + "  " + order.Total.ToString(Settings.Default.MoneyFormat) + "\n";
+                content += AddPrefix(order.QueueNo, Settings.Default.MaxQueue.ToString().Length, "0") + "  " + FixTableNo(order.TableNo) + " " + order.Created.ToString("hh:mm tt") + "  " + order.Total.ToString(Settings.Default.MoneyFormat) + "\n";
             content += line + "\n";
             content += "         TOTAL: " + orders.Sum(o => o.Total).ToString(Settings.Default.MoneyFormat) + "\n";
             content += line + "\n";
             content += "\n\n\n\n\n\n\n\n";
 
             // always overriding if not exist create new
-            System.IO.File.WriteAllText("sales.txt", content);
+            System.IO.File.WriteAllText("sales.txt", content); //, Encoding.UTF8);
 
             string baseDirectory = System.IO.Path.GetDirectoryName(System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
             //System.Diagnostics.Process.Start("cmd", "Type \""+baseDirectory+System.IO.Path.DirectorySeparatorChar+"receipt.txt\" LPT1");
@@ -135,7 +142,31 @@ namespace PosWPF
         }
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            string content = string.Empty;
+            string delimiter = ",";
+            //Created|Queue|Table|Type|Code|Menu|Amountcashier   
+            content += "Created" + delimiter + "Queue" + delimiter + "Table" + delimiter + "Type" + delimiter + "Code" + delimiter + "Menu" + delimiter + "Amount";
+            foreach (Order order in orders)
+            {
+                string tableNo = String.IsNullOrEmpty(order.TableNo) ? "0" : order.TableNo;
+                string header = AddDoubleQuotes(order.Created.ToString("yyyy-MM-dd HH:mm:ss")) + delimiter + order.QueueNo + delimiter + tableNo;
+                foreach (OrderItem item in order.OrderItems)
+                {
+                    string dineType = (item.OrderTypeID == 1) ? "IN" : "OUT";
+                    content += "\n" + header + delimiter + dineType + delimiter + item.Menu.Code + delimiter + AddDoubleQuotes(item.Menu.Name) + delimiter + item.Menu.Price;
+                    foreach (OrderSubItem sub in item.OrderSubItems)
+                    {
+                        content += "\n" + header + delimiter + dineType + delimiter + sub.Menu.Code + delimiter + AddDoubleQuotes(sub.Menu.Name) + delimiter + sub.Menu.Price;
+                    }
+                }
+            }
 
+            // TOOD: Prompt to SaveFileDialog
+            System.IO.File.WriteAllText("sales.csv", content, Encoding.UTF8);
+        }
+        private string AddDoubleQuotes(string text)
+        {
+            return "\"" + text + "\"";
         }
     }
 }

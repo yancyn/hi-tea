@@ -140,7 +140,7 @@ namespace PosWPF
             content += "\n\n\n\n\n\n\n\n";
 
             // always overriding if not exist create new
-            System.IO.File.WriteAllText("order.txt", content);
+            System.IO.File.WriteAllText("order.txt", content);//, Encoding.UTF8);
 
             string baseDirectory = System.IO.Path.GetDirectoryName(System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
             //System.Diagnostics.Process.Start("cmd", "Type \""+baseDirectory+System.IO.Path.DirectorySeparatorChar+"receipt.txt\" LPT1");
