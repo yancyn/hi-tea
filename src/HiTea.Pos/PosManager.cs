@@ -144,7 +144,11 @@ namespace HiTea.Pos
                     order.Member = db.Users.Where(u => u.ID == order.MemberID).First();
 
                 foreach (OrderItem item in order.OrderItems)
+                {
+                    foreach (OrderSubItem sub in item.OrderSubItems)
+                        item.SubItems.Add(sub);
                     order.Items.Add(item);
+                }
                 //Order target = CloneOrder(order);
                 if (String.IsNullOrEmpty(order.TableNo))
                     this.CarryBasket.Add(order);

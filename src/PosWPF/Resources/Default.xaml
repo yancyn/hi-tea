@@ -5,6 +5,7 @@
 
     <w:DateTimeConverter x:Key="DateTimeConverter" />
     <w:MenuDisplayNameConverter x:Key="MenuNameConverter" />
+    <w:ChineseNameConverter x:Key="ChineseNameConverter" />
     <w:OneIsTrueConverter x:Key="OneIsTrueConverter" />
     <w:TwoIsTrueConverter x:Key="TwoIsTrueConverter" />
     <w:CategoryConverter x:Key="CategoryPrefixConverter" />

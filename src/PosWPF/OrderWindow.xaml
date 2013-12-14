@@ -99,7 +99,21 @@
                                             </MultiBinding>
                                         </TextBlock.Text>
                                     </TextBlock>
-                                    <TextBlock Grid.Column="1" Text="{Binding Menu, Converter={StaticResource MenuNameConverter}}" />
+                                    <WrapPanel Grid.Column="1">
+                                        <TextBlock Text="{Binding Menu, Converter={StaticResource MenuNameConverter}}" />
+                                        <ItemsControl ItemsSource="{Binding SubItems}">
+                                            <ItemsControl.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <WrapPanel />
+                                                </ItemsPanelTemplate>
+                                            </ItemsControl.ItemsPanel>
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Margin="10 0 0 0" Text="{Binding Menu, Converter={StaticResource ChineseNameConverter}}" />
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </WrapPanel>
                                     <CheckBox Grid.Column="2" IsChecked="{Binding OrderTypeID, Converter={StaticResource OneIsTrueConverter}}">
                                         <!-- TODO: Can we move to resource? -->
                                         <CheckBox.LayoutTransform>

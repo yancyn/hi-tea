@@ -76,6 +76,42 @@ namespace PosWPF
     }
 
     /// <summary>
+    /// Display full order menu with addon.
+    /// </summary>
+    public class ChineseNameConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (value is HiTea.Pos.Menu)
+            {
+                HiTea.Pos.Menu menu = (HiTea.Pos.Menu)value;
+                return ExtractChinese(menu.Name);
+            }
+
+            throw new ArgumentException("Not supported type of " + value.GetType());
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+
+        private string ExtractChinese(string text)
+        {
+            string chinese = string.Empty;
+
+            string eng = string.Empty;
+            Regex regex = new Regex("[a-zA-Z0-9 '()&-]");
+            foreach (Match match in regex.Matches(text))
+                eng += match.Value;
+            string other = (eng.Length == 0) ? text : text.Replace(eng, string.Empty);
+            chinese += other.Trim();
+
+            return chinese;
+        }
+    }
+
+    /// <summary>
     /// Convert date time to local format.
     /// </summary>
     public class DateTimeConverter : IValueConverter
