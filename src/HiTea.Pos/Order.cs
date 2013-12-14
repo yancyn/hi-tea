@@ -101,6 +101,8 @@ namespace HiTea.Pos
                 this.Charges.Add(tax);
                 this._total += tax;
             }
+
+            this._total = (float)Utils.Rounding(Convert.ToDecimal(this._total));
         }
 
         private Dictionary<string, float> chargesPercentage;
