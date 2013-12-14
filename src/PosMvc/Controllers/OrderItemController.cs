@@ -71,6 +71,7 @@ namespace PosMvc.Controllers
             {
                 OrderItem existing = db.OrderItems.Where(i => i.ID == item.ID).First();
                 existing.StatusID = item.StatusID;
+                System.Diagnostics.Debug.WriteLine("Updating " + existing.Menu.Name + " to " + item.StatusID);
                 db.SubmitChanges();
                 return RedirectToAction("Index");
             }

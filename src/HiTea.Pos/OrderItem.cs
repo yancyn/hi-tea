@@ -40,7 +40,8 @@ namespace HiTea.Pos
         private void CalculateAmount()
         {
             _amount = 0f;
-            _amount += this.Menu.Price;
+            if (this.Menu != null)
+                _amount += this.Menu.Price;
             foreach (OrderSubItem sub in this.OrderSubItems)
                 _amount += sub.Menu.Price;
         }
