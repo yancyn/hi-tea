@@ -30,7 +30,7 @@
       <Value Profile="(Default)">Bar</Value>
     </Setting>
     <Setting Name="OrderPrinter" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Kitchen</Value>
+      <Value Profile="(Default)">Cashier</Value>
     </Setting>
     <Setting Name="TableIndexes" Type="System.Collections.Specialized.StringCollection" Scope="Application">
       <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
@@ -49,14 +49,17 @@
   &lt;string&gt;83&lt;/string&gt;
 &lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="Start" Type="System.DateTime" Scope="Application">
-      <Value Profile="(Default)">12/11/2013 17:06:00</Value>
-    </Setting>
-    <Setting Name="End" Type="System.DateTime" Scope="Application">
-      <Value Profile="(Default)">2013-12-12</Value>
-    </Setting>
     <Setting Name="MaxQueue" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="Start" Type="System.DateTime" Scope="Application">
+      <Value Profile="(Default)">12/11/2013 11:00:00</Value>
+    </Setting>
+    <Setting Name="End" Type="System.DateTime" Scope="Application">
+      <Value Profile="(Default)">12/11/2013 17:30:00</Value>
+    </Setting>
+    <Setting Name="ReportPrinter" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Cashier</Value>
     </Setting>
   </Settings>
 </SettingsFile>

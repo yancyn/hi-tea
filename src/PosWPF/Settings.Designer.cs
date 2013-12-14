@@ -106,7 +106,7 @@ namespace PosWPF {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Kitchen")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Cashier")]
         public string OrderPrinter {
             get {
                 return ((string)(this["OrderPrinter"]));
@@ -138,7 +138,16 @@ namespace PosWPF {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("12/11/2013 17:06:00")]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int MaxQueue {
+            get {
+                return ((int)(this["MaxQueue"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("12/11/2013 11:00:00")]
         public global::System.DateTime Start {
             get {
                 return ((global::System.DateTime)(this["Start"]));
@@ -147,7 +156,7 @@ namespace PosWPF {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2013-12-12")]
+        [global::System.Configuration.DefaultSettingValueAttribute("12/11/2013 17:30:00")]
         public global::System.DateTime End {
             get {
                 return ((global::System.DateTime)(this["End"]));
@@ -156,10 +165,10 @@ namespace PosWPF {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("100")]
-        public int MaxQueue {
+        [global::System.Configuration.DefaultSettingValueAttribute("Cashier")]
+        public string ReportPrinter {
             get {
-                return ((int)(this["MaxQueue"]));
+                return ((string)(this["ReportPrinter"]));
             }
         }
     }
