@@ -145,7 +145,7 @@ namespace PosWPF
             string baseDirectory = System.IO.Path.GetDirectoryName(System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
             //System.Diagnostics.Process.Start("cmd", "Type \""+baseDirectory+System.IO.Path.DirectorySeparatorChar+"receipt.txt\" LPT1");
             //System.Diagnostics.Process.Start("cmd", "D: & Type receipt.txt > LPT1");
-            System.Diagnostics.Process.Start("cmd", "/C copy \""+baseDirectory+System.IO.Path.DirectorySeparatorChar+"order.txt\" lpt1");
+            System.Diagnostics.Process.Start("cmd", "/C copy \"" + baseDirectory + System.IO.Path.DirectorySeparatorChar + "order.txt\" " + Settings.Default.OrderPrinter);
         }
 
         private void PayButton_Click(object sender, RoutedEventArgs e)
