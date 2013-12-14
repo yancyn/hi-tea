@@ -971,4 +971,5 @@ ul.contact li a.icon-rss:before
     color: black;
 }
 
-table tr td { text-align: left; }
+table tr td { text-align: left; vertical-align: top; }
+table tr td ul { margin-left: 20px; list-style: disc; }

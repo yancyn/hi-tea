@@ -51,6 +51,17 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Menu.Name)
+            @{
+                if (item.OrderSubItems.Count > 0)
+                {
+                    <ul>
+                        @foreach (var sub in item.OrderSubItems)
+                        {
+                            <li>@sub.Menu.Name</li>
+                        }
+                    </ul>
+                }
+            }
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Order.TableNo)
