@@ -23,11 +23,14 @@ namespace PosWPF
     public partial class ReportWindow : Window
     {
         private Main db;
+        private ObservableCollection<Order> orders;
+
         public ReportWindow(Main db)
         {
             InitializeComponent();
 
             this.db = db;
+            this.orders = new ObservableCollection<Order>();
             From.Text = DateTime.Now.ToString();
             GenerateReport(new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day));
         }
@@ -40,9 +43,8 @@ namespace PosWPF
         {
             // DbLinq failed to filter by date
             //var orders = db.Orders.Where(o => o.ReceiptDate.HasValue == true && o.Created.CompareTo(from) >= 0 && o.Created.CompareTo(to) <= 0);
-
-            decimal total = 0m;
-            ObservableCollection<Order> orders = new ObservableCollection<Order>();
+            //decimal total = 0m;
+            orders = new ObservableCollection<Order>();
             var result = db.Orders.Where(o => o.ReceiptDate.HasValue == true);
             foreach (Order order in result)
             {
@@ -50,25 +52,86 @@ namespace PosWPF
                 {
                     System.Diagnostics.Debug.WriteLine(order.Total);
                     orders.Add(order);
-                    total += Utils.Rounding(System.Convert.ToDecimal(order.Total));
+                    //total += Utils.Rounding(System.Convert.ToDecimal(order.Total));
                 }
             }
 
             System.Diagnostics.Debug.WriteLine("Total count: " + orders.Count);
             Grid.DataContext = orders;
-            Total.Text = Utils.Rounding(System.Convert.ToDecimal(total)).ToString(Settings.Default.MoneyFormat);
+            Total.Text = orders.Sum(o => o.Total).ToString(Settings.Default.MoneyFormat);
         }
 
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
-            if (To.SelectedDate.HasValue)
-                GenerateReport(From.SelectedDate.Value, To.SelectedDate.Value);
-            else
-                GenerateReport(From.SelectedDate.Value, DateTime.Now);
+            // TODO: Add time filtering
+            DateTime from = (To.SelectedDate.HasValue)
+                    ? new DateTime(From.SelectedDate.Value.Year, From.SelectedDate.Value.Month, From.SelectedDate.Value.Day) : DateTime.Now;
+            DateTime to = new DateTime(To.SelectedDate.Value.Year, To.SelectedDate.Value.Month, To.SelectedDate.Value.Day, 23, 59, 59);
+            GenerateReport(from, to);
+        }
+        /// <summary>
+        /// Prefix table no with zero if less than 10.
+        /// </summary>
+        /// <param name="tableNo"></param>
+        /// <returns></returns>
+        private string FixTableNo(string tableNo)
+        {
+            string fix = tableNo;
+            if (String.IsNullOrEmpty(tableNo))
+                fix = "--";
+            else if (tableNo.Length < 2)
+                fix = "0" + tableNo;
+
+            return fix;
+        }
+        private string AddPrefix(string text, int digit, string prefix)
+        {
+            string fix = text;
+            if(string.IsNullOrEmpty(text))
+            {
+                fix = string.Empty;
+                for(int i=0;i<digit;i++)
+                    fix += prefix;
+            }
+            else if (text.Length < digit)
+            {
+                fix = string.Empty;
+                for (int i = digit - text.Length; i < digit; i++)
+                    fix += prefix;
+                fix += text;
+            }
+
+            return fix;
         }
         private void PrintButton_Click(object sender, RoutedEventArgs e)
         {
+            // 1. Generate a text file sales.txt
+            // 2. Execute a cmd
+            // 3. Type sales.txt > LPT1
+            // 4. Done.
 
+            string content = string.Empty;
+            string line = "------------------------";
+            content += line + "\n";
+            content += "TIME: " + DateTime.Now.ToString(Settings.Default.DateTimeFormat) + "\n";
+            content += orders.Count + " ORDER" + "\n";
+            content += line + "\n";
+            content += "# | Table | Created | Amount" + "\n";
+            content += line + "\n";
+            foreach (Order order in orders)
+                content += AddPrefix(order.QueueNo,Settings.Default.MaxQueue.ToString().Length,"0") + "  "+ FixTableNo(order.TableNo) + " " + order.Created.ToString("hh:mm tt") + "  " + order.Total.ToString(Settings.Default.MoneyFormat) + "\n";
+            content += line + "\n";
+            content += "         TOTAL: " + orders.Sum(o => o.Total).ToString(Settings.Default.MoneyFormat) + "\n";
+            content += line + "\n";
+            content += "\n\n\n\n\n\n\n\n";
+
+            // always overriding if not exist create new
+            System.IO.File.WriteAllText("sales.txt", content);
+
+            string baseDirectory = System.IO.Path.GetDirectoryName(System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
+            //System.Diagnostics.Process.Start("cmd", "Type \""+baseDirectory+System.IO.Path.DirectorySeparatorChar+"receipt.txt\" LPT1");
+            //System.Diagnostics.Process.Start("cmd", "D: & Type receipt.txt > LPT1");
+            System.Diagnostics.Process.Start("cmd", "/C copy \"" + baseDirectory + System.IO.Path.DirectorySeparatorChar + "sales.txt\" " + Settings.Default.ReportPrinter);
         }
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
