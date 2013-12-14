@@ -32,10 +32,13 @@ namespace PosWPF
         private void EnterButton_Click(object sender, RoutedEventArgs e)
         {
             Order order = (this.DataContext as PosManager).SelectedOrder;
-            order.ReceiptDate = DateTime.Now;
-            foreach (OrderItem item in order.Items)
-                item.StatusID = 2;
-            (this.DataContext as PosManager).UpdateOrder(ref order);
+            if (order.Cash > 0m)
+            {
+                order.ReceiptDate = DateTime.Now;
+                foreach (OrderItem item in order.Items)
+                    item.StatusID = 2;
+                (this.DataContext as PosManager).UpdateOrder(ref order);
+            }
             this.Close();
         }
 
