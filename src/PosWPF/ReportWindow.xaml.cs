@@ -144,25 +144,35 @@ namespace PosWPF
         {
             string content = string.Empty;
             string delimiter = ",";
-            //Created|Queue|Table|Type|Code|Menu|Amountcashier   
+            //Created|Queue|Table|Type|Code|Menu|Amount
             content += "Created" + delimiter + "Queue" + delimiter + "Table" + delimiter + "Type" + delimiter + "Code" + delimiter + "Menu" + delimiter + "Amount";
             foreach (Order order in orders)
             {
                 string tableNo = String.IsNullOrEmpty(order.TableNo) ? "0" : order.TableNo;
                 string header = AddDoubleQuotes(order.Created.ToString("yyyy-MM-dd HH:mm:ss")) + delimiter + order.QueueNo + delimiter + tableNo;
+                float realTotal = 0f;
                 foreach (OrderItem item in order.OrderItems)
                 {
                     string dineType = (item.OrderTypeID == 1) ? "IN" : "OUT";
                     content += "\n" + header + delimiter + dineType + delimiter + item.Menu.Code + delimiter + AddDoubleQuotes(item.Menu.Name) + delimiter + item.Menu.Price;
+                    realTotal += item.Menu.Price;
                     foreach (OrderSubItem sub in item.OrderSubItems)
                     {
                         content += "\n" + header + delimiter + dineType + delimiter + sub.Menu.Code + delimiter + AddDoubleQuotes(sub.Menu.Name) + delimiter + sub.Menu.Price;
+                        realTotal += sub.Menu.Price;
                     }
                 }
+
+                // add member discount for tally purpose
+                if (order.MemberID > 0)
+                    content += "\n" + header + delimiter + string.Empty + delimiter + string.Empty + delimiter + AddDoubleQuotes("Member Discount") + delimiter + (order.Total - realTotal);
             }
 
-            // TOOD: Prompt to SaveFileDialog
-            System.IO.File.WriteAllText("sales.csv", content, Encoding.UTF8);
+            // Prompt to SaveFileDialog
+            System.Windows.Forms.SaveFileDialog dialog = new System.Windows.Forms.SaveFileDialog();
+            dialog.Filter = "csv | *.csv";
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                System.IO.File.WriteAllText(dialog.FileName, content, Encoding.UTF8);
         }
         private string AddDoubleQuotes(string text)
         {
