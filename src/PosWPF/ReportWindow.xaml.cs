@@ -165,7 +165,10 @@ namespace PosWPF
 
                 // add member discount for tally purpose
                 if (order.MemberID > 0)
-                    content += "\n" + header + delimiter + string.Empty + delimiter + string.Empty + delimiter + AddDoubleQuotes("Member Discount") + delimiter + (order.Total - realTotal);
+                {
+                    User member = db.Users.Where(u => u.ID == order.MemberID).First();
+                    content += "\n" + header + delimiter + string.Empty + delimiter + string.Empty + delimiter + AddDoubleQuotes("Member: "+member.Ic) + delimiter + (order.Total - realTotal);
+                }
             }
 
             // Prompt to SaveFileDialog
