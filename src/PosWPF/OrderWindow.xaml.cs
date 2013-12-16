@@ -372,6 +372,17 @@ namespace PosWPF
             return eng;
         }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            // pop up at center of left panel in parent window
+            // TODO: Failed, owner always null
+            if (this.Owner != null)
+            {
+                this.Left = Owner.Width / 2 - this.Width / 2;
+                this.Height = Owner.Height / 2 - this.Height / 2;
+            }
+        }
+
         #region Failed
         // add content to first page
         /*Canvas canvas = new Canvas();
