@@ -167,7 +167,7 @@ namespace PosWPF
                 if (order.MemberID > 0)
                 {
                     User member = db.Users.Where(u => u.ID == order.MemberID).First();
-                    content += "\n" + header + delimiter + string.Empty + delimiter + string.Empty + delimiter + AddDoubleQuotes("Member: "+member.Ic) + delimiter + (order.Total - realTotal);
+                    content += "\n" + header + delimiter + string.Empty + delimiter + AddDoubleQuotes(member.Username) + delimiter + AddDoubleQuotes("Member: "+member.Ic) + delimiter + (order.Total - realTotal);
                 }
             }
 

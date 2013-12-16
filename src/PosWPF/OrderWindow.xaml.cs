@@ -176,17 +176,18 @@ namespace PosWPF
             // TODO: Receipt print format
             Order order = (this.DataContext as PosManager).SelectedOrder;
 
+            int startX = 10;
+            int startY = 10;
+            int offset = 10;
             Graphics graphics = e.Graphics;
             Font font = new Font("SimSun Regular", 10);
             Font bold = new Font("SimHei Bold", 10);
             float fontHeight = font.GetHeight();
-            int startX = 10;
-            int startY = 10;
-            int offset = 10;
-            graphics.DrawString("Welcome to " + Settings.Default.CompanyName, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+            //graphics.DrawString("Welcome to " + Settings.Default.CompanyName, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
+            graphics.DrawImage(System.Drawing.Image.FromFile("logo.png"), startX+20, startY + offset);
 
             // Print address
-            offset += 20;
+            offset += 80;
             graphics.DrawString("Tel: " + Settings.Default.Telephone, font, new SolidBrush(System.Drawing.Color.Black), startX, startY + offset);
 
             offset += 20;

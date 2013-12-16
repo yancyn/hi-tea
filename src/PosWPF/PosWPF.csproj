@@ -222,6 +222,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="pos.ico" />
     <Content Include="facebook.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
