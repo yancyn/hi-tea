@@ -26,6 +26,7 @@ namespace HiTea.Pos
             this.addMenuCommand = new AddMenuCommand(this);
             this.addUserCommand = new AddUserCommand(this);
             this.addChargesCommand = new AddChargesCommand(this);
+            this.searchUserCommand = new SearchUserCommand(this);
 
             // clone from database
             this.Users = new ObservableCollection<User>();
@@ -72,6 +73,30 @@ namespace HiTea.Pos
             user.RoleID = db.Roles.OrderByDescending(u => u.ID).First().ID;
             user.Active = true;
             this.Users.Add(user);
+        }
+
+        private SearchUserCommand searchUserCommand;
+        public SearchUserCommand SearchUserCommand { get { return this.searchUserCommand; } }
+        /// <summary>
+        /// Search user based on mobile, username or ic.
+        /// </summary>
+        /// <param name="keyword"></param>
+        public void SearchUser(string keyword)
+        {
+            this.Users.Clear();
+            keyword = keyword.ToLower();
+            if (String.IsNullOrEmpty(keyword))
+            {
+                foreach (var user in db.Users)
+                    this.Users.Add(user);
+            }
+            else
+            {
+                foreach (var user in db.Users.Where(u => u.Ic.ToLower().Contains(keyword)
+                    || u.Username.ToLower().Contains(keyword)
+                    || u.Mobile.ToLower().Contains(keyword)))
+                    this.Users.Add(user);
+            }
         }
 
         private AddChargesCommand addChargesCommand;
@@ -158,6 +183,24 @@ namespace HiTea.Pos
 
         private AdminManager manager;
         public AddUserCommand(AdminManager manager)
+        {
+            this.manager = manager;
+        }
+    }
+    public class SearchUserCommand : ICommand
+    {
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public event EventHandler CanExecuteChanged;
+        public void Execute(object parameter)
+        {
+            this.manager.SearchUser(parameter.ToString());
+        }
+        private AdminManager manager;
+        public SearchUserCommand(AdminManager manager)
         {
             this.manager = manager;
         }

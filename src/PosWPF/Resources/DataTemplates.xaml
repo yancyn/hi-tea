@@ -478,9 +478,11 @@
             </DockPanel.Background>
             <DockPanel DockPanel.Dock="Top" LastChildFill="True" Margin="10">
                 <Button DockPanel.Dock="Left" Background="{StaticResource PlusIcon}" Style="{StaticResource BorderlessButton}"
-                        Command="{Binding Path=DataContext.AddUserCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" CommandParameter="{Binding Path=DataContext, ElementName=panel}"/>
-                <Button DockPanel.Dock="Right" Background="{StaticResource SearchIcon}" Style="{StaticResource BorderlessButton}"/>
-                <TextBox Style="{StaticResource RoundedTextBoxStyle}" />
+                        Command="{Binding Path=DataContext.AddUserCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+                <Button DockPanel.Dock="Right" Background="{StaticResource SearchIcon}" Style="{StaticResource BorderlessButton}"
+                        CommandParameter="{Binding Text, ElementName=searchBox}"
+                        Command="{Binding Path=DataContext.SearchUserCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+                <TextBox x:Name="searchBox" Style="{StaticResource RoundedTextBoxStyle}" />
             </DockPanel>
 
             <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" DataContext="{Binding ElementName=listView}">
