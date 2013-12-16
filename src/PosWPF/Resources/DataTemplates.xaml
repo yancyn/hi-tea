@@ -560,15 +560,15 @@
 
             <DockPanel x:Name="panel" LastChildFill="True" Margin="10">
                 <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
-                    <TextBlock Text="Username" Width="200" FontWeight="Bold" />
-                    <TextBlock Text="Password" Width="200" FontWeight="Bold"/>
+                    <TextBlock Text="Username" Width="100" FontWeight="Bold" />
+                    <TextBlock Text="IC" Width="200" FontWeight="Bold"/>
                 </StackPanel>
                 <ListView x:Name="listView" Margin="10" ItemsSource="{Binding Value,UpdateSourceTrigger=PropertyChanged}" Background="Transparent">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding Username}" Width="200" />
-                                <TextBlock Text="{Binding Password}" Width="200" />
+                                <TextBlock Text="{Binding Username}" Width="100" />
+                                <TextBlock Text="{Binding Ic}" Width="200" />
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
