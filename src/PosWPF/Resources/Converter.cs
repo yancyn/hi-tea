@@ -254,6 +254,35 @@ namespace PosWPF
                     return new SolidColorBrush(Color.FromRgb(255, 151, 115));
             }
         }
+        private SolidColorBrush GetColorCode(Category cat, Menu menu)
+        {
+            switch (cat.ID)
+            {
+                case 2:
+                    return new SolidColorBrush(Color.FromRgb(0, 124, 204)); //#007ccc
+                case 3:
+                    return new SolidColorBrush(Color.FromRgb(0, 212, 110)); //#00d46e
+                case 4:
+                    return new SolidColorBrush(Color.FromRgb(255, 151, 115)); //#ff9773
+                case 5:
+                    {
+                        // TODO: Return lighter color by reducing max RGB value as 50
+                        // TODO: How to determine?
+                        //int position = cat.MenuCollection.IndexOf(menu);
+                        //Menu previousMenu = cat.MenuCollection[Math.Max(position-1,0)];
+                        //if (menu.Code != previousMenu.Code)
+                        //{
+
+                        //}
+                        return new SolidColorBrush(Color.FromRgb(103, 180, 230)); //#67b4e6
+                    }
+                case 6:
+                    return new SolidColorBrush(Color.FromRgb(255, 142, 0)); //#ff8e00
+                default:
+                    // TODO: Handle undefine color code
+                    return new SolidColorBrush(Color.FromRgb(255, 151, 115));
+            }
+        }
 
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
