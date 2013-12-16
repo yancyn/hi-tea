@@ -24,10 +24,20 @@
                 </LinearGradientBrush>
             </DockPanel.Background>
             <DockPanel DockPanel.Dock="Top" LastChildFill="True" Margin="10">
-                <Button DockPanel.Dock="Left" Command="{Binding Path=DataContext.AddMenuCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" CommandParameter="{Binding Path=DataContext, ElementName=panel}"
+                <Button DockPanel.Dock="Left"
+                        CommandParameter="{Binding Path=DataContext, ElementName=panel}"
+                        Command="{Binding Path=DataContext.AddMenuCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
                         Background="{StaticResource PlusIcon}" Style="{StaticResource BorderlessButton}"/>
-                <Button DockPanel.Dock="Right" Background="{StaticResource SearchIcon}" Style="{StaticResource BorderlessButton}"/>
-                <TextBox Style="{StaticResource RoundedTextBoxStyle}" />
+                <Button DockPanel.Dock="Right" Background="{StaticResource SearchIcon}" Style="{StaticResource BorderlessButton}"
+                        Command="{Binding Path=DataContext.SearchMenuCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
+                    <Button.CommandParameter>
+                        <MultiBinding Converter="{StaticResource SearchMenuConverter}">
+                            <Binding Path="DataContext" ElementName="panel" />
+                            <Binding Path="Text" ElementName="searchBox" />
+                        </MultiBinding>
+                    </Button.CommandParameter>
+                </Button>
+                <TextBox x:Name="searchBox"  Style="{StaticResource RoundedTextBoxStyle}" />
             </DockPanel>
 
             <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" DataContext="{Binding ElementName=listView}">
@@ -93,8 +103,16 @@
             <DockPanel DockPanel.Dock="Top" LastChildFill="True" Margin="10">
                 <Button DockPanel.Dock="Left" Command="{Binding Path=DataContext.AddMenuCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" CommandParameter="{Binding Path=DataContext, ElementName=panel}"
                         Background="{StaticResource PlusIcon}" Style="{StaticResource BorderlessButton}"/>
-                <Button DockPanel.Dock="Right" Background="{StaticResource SearchIcon}" Style="{StaticResource BorderlessButton}"/>
-                <TextBox Style="{StaticResource RoundedTextBoxStyle}" />
+                <Button DockPanel.Dock="Right" Background="{StaticResource SearchIcon}" Style="{StaticResource BorderlessButton}"
+                        Command="{Binding Path=DataContext.SearchMenuCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
+                    <Button.CommandParameter>
+                        <MultiBinding Converter="{StaticResource SearchMenuConverter}">
+                            <Binding Path="DataContext" ElementName="panel" />
+                            <Binding Path="Text" ElementName="searchBox" />
+                        </MultiBinding>
+                    </Button.CommandParameter>
+                </Button>
+                <TextBox x:Name="searchBox" Style="{StaticResource RoundedTextBoxStyle}" />
             </DockPanel>
 
             <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" DataContext="{Binding ElementName=listView}">
@@ -160,8 +178,16 @@
             <DockPanel DockPanel.Dock="Top" LastChildFill="True" Margin="10">
                 <Button DockPanel.Dock="Left" Command="{Binding Path=DataContext.AddMenuCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" CommandParameter="{Binding Path=DataContext, ElementName=panel}"
                         Background="{StaticResource PlusIcon}" Style="{StaticResource BorderlessButton}"/>
-                <Button DockPanel.Dock="Right" Background="{StaticResource SearchIcon}" Style="{StaticResource BorderlessButton}"/>
-                <TextBox Style="{StaticResource RoundedTextBoxStyle}" />
+                <Button DockPanel.Dock="Right" Background="{StaticResource SearchIcon}" Style="{StaticResource BorderlessButton}"
+                        Command="{Binding Path=DataContext.SearchMenuCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
+                    <Button.CommandParameter>
+                        <MultiBinding Converter="{StaticResource SearchMenuConverter}">
+                            <Binding Path="DataContext" ElementName="panel" />
+                            <Binding Path="Text" ElementName="searchBox" />
+                        </MultiBinding>
+                    </Button.CommandParameter>
+                </Button>
+                <TextBox x:Name="searchBox" Style="{StaticResource RoundedTextBoxStyle}" />
             </DockPanel>
 
             <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" DataContext="{Binding ElementName=listView}">
@@ -227,8 +253,16 @@
             <DockPanel DockPanel.Dock="Top" LastChildFill="True" Margin="10">
                 <Button DockPanel.Dock="Left" Command="{Binding Path=DataContext.AddMenuCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" CommandParameter="{Binding Path=DataContext, ElementName=panel}"
                         Background="{StaticResource PlusIcon}" Style="{StaticResource BorderlessButton}"/>
-                <Button DockPanel.Dock="Right" Background="{StaticResource SearchIcon}" Style="{StaticResource BorderlessButton}"/>
-                <TextBox Style="{StaticResource RoundedTextBoxStyle}" />
+                <Button DockPanel.Dock="Right" Background="{StaticResource SearchIcon}" Style="{StaticResource BorderlessButton}"
+                        Command="{Binding Path=DataContext.SearchMenuCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
+                    <Button.CommandParameter>
+                        <MultiBinding Converter="{StaticResource SearchMenuConverter}">
+                            <Binding Path="DataContext" ElementName="panel" />
+                            <Binding Path="Text" ElementName="searchBox" />
+                        </MultiBinding>
+                    </Button.CommandParameter>
+                </Button>
+                <TextBox x:Name="searchBox" Style="{StaticResource RoundedTextBoxStyle}" />
             </DockPanel>
 
             <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" DataContext="{Binding ElementName=listView}">
@@ -294,8 +328,16 @@
             <DockPanel DockPanel.Dock="Top" LastChildFill="True" Margin="10">
                 <Button DockPanel.Dock="Left" Command="{Binding Path=DataContext.AddMenuCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" CommandParameter="{Binding Path=DataContext, ElementName=panel}"
                         Background="{StaticResource PlusIcon}" Style="{StaticResource BorderlessButton}"/>
-                <Button DockPanel.Dock="Right" Background="{StaticResource SearchIcon}" Style="{StaticResource BorderlessButton}"/>
-                <TextBox Style="{StaticResource RoundedTextBoxStyle}" />
+                <Button DockPanel.Dock="Right" Background="{StaticResource SearchIcon}" Style="{StaticResource BorderlessButton}"
+                        Command="{Binding Path=DataContext.SearchMenuCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
+                    <Button.CommandParameter>
+                        <MultiBinding Converter="{StaticResource SearchMenuConverter}">
+                            <Binding Path="DataContext" ElementName="panel" />
+                            <Binding Path="Text" ElementName="searchBox" />
+                        </MultiBinding>
+                    </Button.CommandParameter>
+                </Button>
+                <TextBox x:Name="searchBox" Style="{StaticResource RoundedTextBoxStyle}" />
             </DockPanel>
 
             <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" DataContext="{Binding ElementName=listView}">
@@ -361,8 +403,16 @@
             <DockPanel DockPanel.Dock="Top" LastChildFill="True" Margin="10">
                 <Button DockPanel.Dock="Left" Command="{Binding Path=DataContext.AddMenuCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" CommandParameter="{Binding Path=DataContext, ElementName=panel}"
                         Background="{StaticResource PlusIcon}" Style="{StaticResource BorderlessButton}"/>
-                <Button DockPanel.Dock="Right" Background="{StaticResource SearchIcon}" Style="{StaticResource BorderlessButton}"/>
-                <TextBox Style="{StaticResource RoundedTextBoxStyle}" />
+                <Button DockPanel.Dock="Right" Background="{StaticResource SearchIcon}" Style="{StaticResource BorderlessButton}"
+                        Command="{Binding Path=DataContext.SearchMenuCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
+                    <Button.CommandParameter>
+                        <MultiBinding Converter="{StaticResource SearchMenuConverter}">
+                            <Binding Path="DataContext" ElementName="panel" />
+                            <Binding Path="Text" ElementName="searchBox" />
+                        </MultiBinding>
+                    </Button.CommandParameter>
+                </Button>
+                <TextBox x:Name="searchBox" Style="{StaticResource RoundedTextBoxStyle}" />
             </DockPanel>
 
             <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" DataContext="{Binding ElementName=listView}">

@@ -26,6 +26,7 @@ namespace HiTea.Pos
             this.addMenuCommand = new AddMenuCommand(this);
             this.addUserCommand = new AddUserCommand(this);
             this.addChargesCommand = new AddChargesCommand(this);
+            this.searchMenuCommand = new SearchMenuCommand(this);
             this.searchUserCommand = new SearchUserCommand(this);
 
             // clone from database
@@ -54,6 +55,28 @@ namespace HiTea.Pos
             this.Options.Add(new AdminViewModel("User", this.Users));
         }
 
+        public void Refresh()
+        {
+            // clone from database
+            this.Users.Clear();
+            foreach (var user in db.Users)
+                this.Users.Add(user);
+
+            this.Charges.Clear();
+            foreach (var charge in db.Charges)
+                this.Charges.Add(charge);
+
+            // retrieve categoris and food menu
+            this.Categories.Clear();
+            foreach (var category in db.Categories)
+            {
+                category.MenuCollection.Clear();
+                foreach (var menu in category.Menus.OrderBy(m => m.Code))
+                    category.MenuCollection.Add(menu);
+                this.Categories.Add(category);
+            }
+        }
+
         private AddMenuCommand addMenuCommand;
         public AddMenuCommand AddMenuCommand { get { return this.addMenuCommand; } }
         public void AddMenu(int categoryId)
@@ -63,6 +86,31 @@ namespace HiTea.Pos
             menu.Active = true;
             menu.CategoryID = categoryId;
             category.MenuCollection.Add(menu);
+        }
+
+        private SearchMenuCommand searchMenuCommand;
+        public SearchMenuCommand SearchMenuCommand { get { return this.searchMenuCommand; } }
+        public void SearchMenu(int categoryId, string keyword)
+        {
+            Category category = this.Categories.Where(c => c.ID == categoryId).First();
+            category.MenuCollection.Clear();
+            if (String.IsNullOrEmpty(keyword))
+            {
+                Category cat = db.Categories.Where(c => c.ID == categoryId).First();
+                foreach (Menu menu in cat.Menus.OrderBy(m => m.Code))
+                    category.MenuCollection.Add(menu);
+            }
+            else
+            {
+                keyword = keyword.ToLower();
+                Category cat = db.Categories.Where(c => c.ID == categoryId).First();
+                foreach (Menu menu in cat.Menus
+                    .Where(m => m.Code.ToLower().Contains(keyword) || m.Name.ToLower().Contains(keyword))
+                    .OrderBy(m => m.Code))
+                {
+                    category.MenuCollection.Add(menu);
+                }
+            }
         }
 
         private AddUserCommand addUserCommand;
@@ -95,7 +143,9 @@ namespace HiTea.Pos
                 foreach (var user in db.Users.Where(u => u.Ic.ToLower().Contains(keyword)
                     || u.Username.ToLower().Contains(keyword)
                     || u.Mobile.ToLower().Contains(keyword)))
+                {
                     this.Users.Add(user);
+                }
             }
         }
 
@@ -163,6 +213,26 @@ namespace HiTea.Pos
         }
         private AdminManager manager;
         public AddMenuCommand(AdminManager manager)
+        {
+            this.manager = manager;
+        }
+    }
+
+    public class SearchMenuCommand : ICommand
+    {
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public event EventHandler CanExecuteChanged;
+        public void Execute(object parameter)
+        {
+            Dictionary<Category, string> pair = (Dictionary<Category, string>)parameter;
+            this.manager.SearchMenu(pair.First().Key.ID, pair.First().Value);
+        }
+        private AdminManager manager;
+        public SearchMenuCommand(AdminManager manager)
         {
             this.manager = manager;
         }

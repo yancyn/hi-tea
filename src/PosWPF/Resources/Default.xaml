@@ -18,6 +18,7 @@
     <w:MoneyConverter x:Key="MoneyConverter" />
     <w:MoneyRoundingConverter x:Key="MoneyRoundingConverter" />
     <w:VisibilityConverter x:Key="VisibilityConverter" />
+    <w:SearchMenuConverter x:Key="SearchMenuConverter" />
     
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
 

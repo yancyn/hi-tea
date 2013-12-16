@@ -529,6 +529,20 @@ namespace PosWPF
             return Visibility.Visible;
         }
 
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class SearchMenuConverter : IMultiValueConverter
+    {
+        public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            Dictionary<Category, string> pair = new Dictionary<Category, string>();
+            pair.Add((Category)values[0], values[1].ToString());
+            return (object)pair;
+        }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, System.Globalization.CultureInfo culture)
         {
