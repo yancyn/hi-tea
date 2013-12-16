@@ -286,7 +286,12 @@ namespace HiTea.Pos
         public void SetUser(string username)
         {
             User user = db.Users.Where(u => u.Username == username || u.Email == username || u.Ic == username || u.Mobile == username).FirstOrDefault();
-            if (user != null)
+            if (user == null)
+            {
+                this.SelectedOrder.MemberID = 0;
+                this.SelectedOrder.Member = null;
+            }
+            else
             {
                 this.SelectedOrder.MemberID = user.ID;
                 this.SelectedOrder.Member = user;
