@@ -45,7 +45,7 @@ namespace PosWPF
             //var orders = db.Orders.Where(o => o.ReceiptDate.HasValue == true && o.Created.CompareTo(from) >= 0 && o.Created.CompareTo(to) <= 0);
             //decimal total = 0m;
             orders = new ObservableCollection<Order>();
-            var result = db.Orders.Where(o => o.ReceiptDate.HasValue == true);
+            var result = db.Orders.Where(o => o.ReceiptDate.HasValue == true).OrderBy(o => o.ID);
             foreach (Order order in result)
             {
                 if (order.Created.CompareTo(from) >= 0 && order.Created.CompareTo(to) <= 0)
@@ -120,8 +120,9 @@ namespace PosWPF
             string content = string.Empty;
             string line = "------------------------";
             content += line + "\n";
-            content += "TIME: " + DateTime.Now.ToString(Settings.Default.DateTimeFormat) + "\n";
-            content += orders.Count + " ORDER" + "\n";
+            content += Settings.Default.CompanyName + " Sales" + "\n";
+            content += "Time: " + DateTime.Now.ToString(Settings.Default.DateTimeFormat) + "\n";
+            content += orders.Count + " Orders" + "\n";
             content += line + "\n";
             content += "# | Table | Created | Amount" + "\n";
             content += line + "\n";
