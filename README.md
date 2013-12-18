@@ -52,6 +52,9 @@ Hardwares
 2. Label printer as 'Bar'.
 3. Tablet size landscape 448x1067px, portrait 915x640px.
 
+Adb Commands
+===========
+    adb push pos.db3 /sdcard/pos.db3
 
 References
 =======

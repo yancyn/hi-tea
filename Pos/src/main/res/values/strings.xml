@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Pos Sales</string>
+    <string name="title_section1">Sales</string>
+    <string name="title_section2">Months</string>
+    <string name="title_section3">Top</string>
+    <string name="action_settings">Settings</string>
+
+</resources>

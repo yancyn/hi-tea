@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Pos/Pos.iml" filepath="$PROJECT_DIR$/Pos/Pos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PosSales.iml" filepath="$PROJECT_DIR$/PosSales.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hi-tea.iml" filepath="$PROJECT_DIR$/hi-tea.iml" />
+    </modules>
+  </component>
+</project>
+
