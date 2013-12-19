@@ -22,12 +22,16 @@ namespace HiTea.Pos
         {
             checkLogin = true;
             string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
-            Main db = new Main(connectionString);
-            User user = db.Users.Where(u => u.Username == this.Username).FirstOrDefault();
-            if (user == null) return this.isValid;
+            Main db2 = new Main(connectionString);
+            try
+            {
+                User user = db2.Users.Where(u => u.Username == this.Username).FirstOrDefault();
+                if (user == null) return this.isValid;
 
-            isValid = (user.Password == password) ? true : false;
-            db.Dispose();
+                isValid = (user.Password == password) ? true : false;
+            }
+            finally { db2.Dispose(); }
+
             return this.isValid;
         }
 

@@ -63,9 +63,13 @@ namespace HiTea.Pos
 
             this.chargesPercentage = new Dictionary<string, float>();
             string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
-            Main db = new Main(connectionString);
-            foreach (Charge charge in db.Charges.Where(c => c.Active == true))
-                this.chargesPercentage.Add(charge.Name, charge.Value);
+            Main db2 = new Main(connectionString);
+            try
+            {
+                foreach (Charge charge in db2.Charges.Where(c => c.Active == true))
+                    this.chargesPercentage.Add(charge.Name, charge.Value);
+            }
+            finally { db2.Dispose(); }
 
             this.Items = new ObservableCollection<OrderItem>();
             this.Items.CollectionChanged += Items_CollectionChanged;

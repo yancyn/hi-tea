@@ -42,9 +42,15 @@ Default page is index.html
 
 	iisexpress /path:d:\HiTea\ /port:9090
 
-Backup SQLite
-==========
-    sqlite3 pos.db3 .dump > pos.bak
+Useful SQLite Commands
+=================
+1. Backup database
+
+        sqlite3 pos.db3 .dump > pos.bak
+    
+2. Daily sales
+
+        SELECT strftime('%Y-%m-%d',Created) AS Date, SUM(Total) AS Sales FROM 'Order' GROUP BY strftime('%Y-%m-%d',Created);
 
 Hardwares
 =========

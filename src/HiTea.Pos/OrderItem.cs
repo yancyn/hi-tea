@@ -62,11 +62,15 @@ namespace HiTea.Pos
         public void MarkDone()
         {
             string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
-            Main db = new Main(connectionString);
-            OrderItem orderItem = db.OrderItems.Where(i => i.ID == this.ID).First();
-            orderItem.StatusID = this.StatusID;
-            db.SubmitChanges();
-            db.Dispose();
+            Main db2 = new Main(connectionString);
+            try
+            {
+                OrderItem orderItem = db2.OrderItems.Where(i => i.ID == this.ID).First();
+                orderItem.StatusID = this.StatusID;
+                db2.SubmitChanges();
+                db2.Dispose();
+            }
+            finally { db2.Dispose(); }
         }
     }
 

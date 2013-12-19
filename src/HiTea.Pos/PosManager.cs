@@ -173,23 +173,29 @@ namespace HiTea.Pos
             // prevent updating a same database at a same time
             string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
             Main db2 = new Main(connectionString);
-            foreach (Order order in this.Basket)
+
+            try
             {
-                for (int i = 0; i < order.Items.Count; i++)
+                foreach (Order order in this.Basket)
                 {
-                    Order latestOrder = db2.Orders.Where(o => o.ID == order.ID).First();
-                    foreach (OrderItem item in latestOrder.OrderItems)
+                    for (int i = 0; i < order.Items.Count; i++)
                     {
-                        if (order.Items[i].ID == item.ID)
+                        Order latestOrder = db2.Orders.Where(o => o.ID == order.ID).First();
+                        foreach (OrderItem item in latestOrder.OrderItems)
                         {
-                            System.Diagnostics.Debug.WriteLine("Updating order status for " + order.Items[i].ID + ": " + item.StatusID);
-                            order.Items[i].StatusID = item.StatusID;
-                            break;
+                            if (order.Items[i].ID == item.ID)
+                            {
+                                System.Diagnostics.Debug.WriteLine("Updating order status for " + order.Items[i].ID + ": " + item.StatusID);
+                                order.Items[i].StatusID = item.StatusID;
+                                break;
+                            }
                         }
                     }
                 }
+
+                // TODO: Clone new order from Guest module
             }
-            db2.Dispose();
+            finally { db2.Dispose(); }
         }
 
         void TableBasket_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
@@ -242,35 +248,39 @@ namespace HiTea.Pos
             this.Categories.Clear();
             this.Menus.Clear();
             // TODO: Refresh DbLinq object
-            int i = 0;
-            foreach (var category in db2.Categories)
-            {
-                System.Diagnostics.Debug.WriteLine(category.Name);
-                category.MenuCollection.Clear();
-                if (i == 0)
-                {
-                    this.Addon = category;
-                    this.Addon.MenuCollection.Clear();
-                    foreach (var menu in category.Menus.Where(m => m.Active == true).OrderBy(m => m.Code))
-                    {
-                        System.Diagnostics.Debug.WriteLine("\t"+menu.Name);
-                        this.Addon.MenuCollection.Add(menu);
-                    }
-                }
-                else
-                {
-                    foreach (var menu in category.Menus.Where(m => m.Active == true).OrderBy(m => m.Code))
-                    {
-                        System.Diagnostics.Debug.WriteLine("\t" + menu.Name);
-                        category.MenuCollection.Add(menu);
-                        this.Menus.Add(menu);
-                    }
-                    this.Categories.Add(category);
-                }
 
-                i++;
+            try
+            {
+                int i = 0;
+                foreach (var category in db2.Categories)
+                {
+                    System.Diagnostics.Debug.WriteLine(category.Name);
+                    category.MenuCollection.Clear();
+                    if (i == 0)
+                    {
+                        this.Addon = category;
+                        this.Addon.MenuCollection.Clear();
+                        foreach (var menu in category.Menus.Where(m => m.Active == true).OrderBy(m => m.Code))
+                        {
+                            System.Diagnostics.Debug.WriteLine("\t" + menu.Name);
+                            this.Addon.MenuCollection.Add(menu);
+                        }
+                    }
+                    else
+                    {
+                        foreach (var menu in category.Menus.Where(m => m.Active == true).OrderBy(m => m.Code))
+                        {
+                            System.Diagnostics.Debug.WriteLine("\t" + menu.Name);
+                            category.MenuCollection.Add(menu);
+                            this.Menus.Add(menu);
+                        }
+                        this.Categories.Add(category);
+                    }
+
+                    i++;
+                }
             }
-            db2.Dispose();
+            finally { db2.Dispose(); }
 
             this.SendPropertyChanged("Categories");
             this.SendPropertyChanged("Menus");
