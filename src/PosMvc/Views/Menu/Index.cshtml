@@ -2,17 +2,31 @@
     ViewBag.Title = "Menu";
 }
 <style>
-    #grid .menuBox {
-        clear: left;
+    /*.odd {
     }
-
-    #grid tr {
-        padding: 50px;
+    #grid .alt td {
+        background: #ff6a00;
+        float: right;
+        clear: right;
+    } */
+    tr {
+        float: left;
+        display:block;
+        padding: 10px;
+        padding-bottom: 50px;
     }
-
-    #grid tr td {
+    tr td {
         clear: left;
         float: left;
+    }
+    .add {
+        display: block;
+        padding: 10px;
+        background: #2C383B;
+    }
+    .add a {
+        color: white;
+        text-decoration: none;
     }
 </style>
 
@@ -26,8 +40,10 @@
     @grid.GetHtml(
         displayHeader: false,
         tableStyle: "grid",
+        rowStyle: "odd",
+        alternatingRowStyle: "alt",
         columns: grid.Columns(
-            grid.Column("Code","Code", style:"menuBox", format: @<text>@item.Code @item.Name</text>),
+            grid.Column("Code","Code", format: @<text>@item.Code @item.Name</text>),
             grid.Column("Image","Image", format:@<text><img src="~/Images/@item.Image" height="300" /></text>),
             grid.Column("Price","Price", style: "money",  format: @<text>@String.Format("{0:C}", @item.Price)</text>),
             grid.Column("", "", style: "add", format: @<text>@Html.ActionLink("ADD" , "Add", new {id=item.Id })</text>)
