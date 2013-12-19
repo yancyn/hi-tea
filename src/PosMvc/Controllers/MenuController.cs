@@ -17,7 +17,7 @@ namespace PosMvc.Controllers
 
         public ActionResult Index()
         {
-            var menus = db.Menus;
+            var menus = db.Menus.Where(m => m.Active == true);
             return View(menus.ToList());
         }
 

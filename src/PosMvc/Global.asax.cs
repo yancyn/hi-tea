@@ -24,5 +24,13 @@ namespace PosMvc
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
         }
+
+        protected void Application_BeginRequest(object sender, EventArgs e)
+        {
+            System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo(System.Threading.Thread.CurrentThread.CurrentCulture.ToString());
+            culture.NumberFormat.CurrencyDecimalDigits = 2;
+
+            System.Threading.Thread.CurrentThread.CurrentCulture = culture;
+        }
     }
 }
