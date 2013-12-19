@@ -1,23 +1,36 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Menu";
 }
+<style>
+    #grid .menuBox {
+        clear: left;
+    }
 
-<h2>Index</h2>
+    #grid tr {
+        padding: 50px;
+    }
+
+    #grid tr td {
+        clear: left;
+        float: left;
+    }
+</style>
+
+<h2>Menu</h2>
 
 @{
-    var grid = new WebGrid(source: Model, rowsPerPage: 15);
+    var grid = new WebGrid(source: Model, rowsPerPage: 2);
 }
 
 <div id="grid">
     @grid.GetHtml(
+        displayHeader: false,
         tableStyle: "grid",
-        headerStyle: "head",
-        alternatingRowStyle: "alt",
         columns: grid.Columns(
-            grid.Column("Code","Code"),
-            grid.Column("Name","Name"),
+            grid.Column("Code","Code", style:"menuBox", format: @<text>@item.Code @item.Name</text>),
+            grid.Column("Image","Image", format:@<text><img src="~/Images/@item.Image" height="300" /></text>),
             grid.Column("Price","Price", style: "money",  format: @<text>@String.Format("{0:C}", @item.Price)</text>),
-            grid.Column("Active","Active")
+            grid.Column("", "", style: "add", format: @<text>@Html.ActionLink("ADD" , "Add", new {id=item.Id })</text>)
         )
     )
 </div>
