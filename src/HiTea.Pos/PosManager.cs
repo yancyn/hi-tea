@@ -19,6 +19,7 @@ namespace HiTea.Pos
         private int maxQueue;
 
         protected Main db;
+        private bool isLocked;
 
         private static System.ComponentModel.PropertyChangingEventArgs emptyChangingEventArgs = new System.ComponentModel.PropertyChangingEventArgs("");
         public event System.ComponentModel.PropertyChangingEventHandler PropertyChanging;
@@ -141,7 +142,7 @@ namespace HiTea.Pos
             foreach (Order order in orders)
             {
                 if (order.MemberID > 0)
-                    order.Member = db.Users.Where(u => u.ID == order.MemberID).First();
+                    order.Member = db.Users.Where(u => u.ID == order.MemberID).FirstOrDefault();
 
                 foreach (OrderItem item in order.OrderItems)
                 {
@@ -178,14 +179,21 @@ namespace HiTea.Pos
             {
                 foreach (Order order in this.Basket)
                 {
+                    if (this.isLocked)
+                    {
+                        timer.Stop();
+                        return;
+                    }
+
                     for (int i = 0; i < order.Items.Count; i++)
                     {
-                        Order latestOrder = db2.Orders.Where(o => o.ID == order.ID).First();
+                        Order latestOrder = db2.Orders.Where(o => o.ID == order.ID).FirstOrDefault();
+                        if (latestOrder == null) continue;
                         foreach (OrderItem item in latestOrder.OrderItems)
                         {
                             if (order.Items[i].ID == item.ID)
                             {
-                                System.Diagnostics.Debug.WriteLine("Updating order status for " + order.Items[i].ID + ": " + item.StatusID);
+                                //System.Diagnostics.Debug.WriteLine("Updating order status for " + order.Items[i].ID + ": " + item.StatusID);
                                 order.Items[i].StatusID = item.StatusID;
                                 break;
                             }
@@ -194,6 +202,11 @@ namespace HiTea.Pos
                 }
 
                 // TODO: Clone new order from Guest module
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex);
+                return;
             }
             finally { db2.Dispose(); }
         }
@@ -214,8 +227,8 @@ namespace HiTea.Pos
             {
                 this.SendPropertyChanged("TableBasket");
             }
-            System.Diagnostics.Debug.WriteLine("Basket: " + this.Basket.Count);
-            System.Diagnostics.Debug.WriteLine("Table: " + this.TableBasket.Count);
+            //System.Diagnostics.Debug.WriteLine("Basket: " + this.Basket.Count);
+            //System.Diagnostics.Debug.WriteLine("Table: " + this.TableBasket.Count);
         }
         void CarryBasket_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
@@ -233,8 +246,8 @@ namespace HiTea.Pos
             {
                 this.SendPropertyChanged("CarryBasket");
             }
-            System.Diagnostics.Debug.WriteLine("Basket: " + this.Basket.Count);
-            System.Diagnostics.Debug.WriteLine("Carry: " + this.CarryBasket.Count);
+            //System.Diagnostics.Debug.WriteLine("Basket: " + this.Basket.Count);
+            //System.Diagnostics.Debug.WriteLine("Carry: " + this.CarryBasket.Count);
         }
 
         /// <summary>
@@ -254,7 +267,7 @@ namespace HiTea.Pos
                 int i = 0;
                 foreach (var category in db2.Categories)
                 {
-                    System.Diagnostics.Debug.WriteLine(category.Name);
+                    //System.Diagnostics.Debug.WriteLine(category.Name);
                     category.MenuCollection.Clear();
                     if (i == 0)
                     {
@@ -262,7 +275,7 @@ namespace HiTea.Pos
                         this.Addon.MenuCollection.Clear();
                         foreach (var menu in category.Menus.Where(m => m.Active == true).OrderBy(m => m.Code))
                         {
-                            System.Diagnostics.Debug.WriteLine("\t" + menu.Name);
+                            //System.Diagnostics.Debug.WriteLine("\t" + menu.Name);
                             this.Addon.MenuCollection.Add(menu);
                         }
                     }
@@ -270,7 +283,7 @@ namespace HiTea.Pos
                     {
                         foreach (var menu in category.Menus.Where(m => m.Active == true).OrderBy(m => m.Code))
                         {
-                            System.Diagnostics.Debug.WriteLine("\t" + menu.Name);
+                            //System.Diagnostics.Debug.WriteLine("\t" + menu.Name);
                             category.MenuCollection.Add(menu);
                             this.Menus.Add(menu);
                         }
@@ -387,34 +400,45 @@ namespace HiTea.Pos
         /// <param name="menu"></param>
         public void OrderMenu(Menu menu)
         {
-            if (this.selectedOrder == null) return;
-
-            // HACK: Always first category is Addon
-            if (menu.CategoryID == 1)
+            this.isLocked = true;
+            try
             {
-                OrderItem item = this.selectedOrder.Items[this.selectedOrder.Items.Count - 1];
+                if (this.selectedOrder == null) return;
 
-                OrderSubItem sub = new OrderSubItem();
-                sub.ParentID = item.ID;
-                sub.MenuID = menu.ID;
-                sub.Menu = menu;
-                item.OrderSubItems.Add(sub);
-                item.SubItems.Add(sub);
-            }
-            else
-            {
-                OrderItem item = new OrderItem();
-                item.Menu = menu;
-                item.MenuID = menu.ID;
-                item.ParentID = this.selectedOrder.ID;
-                item.StatusID = 1;
+                // HACK: Always first category is Addon
+                if (menu.CategoryID == 1)
+                {
+                    OrderItem item = this.selectedOrder.Items[this.selectedOrder.Items.Count - 1];
 
-                if (this.selectedOrder.Items.Count == 0)
-                    item.OrderTypeID = (String.IsNullOrEmpty(this.selectedOrder.TableNo)) ? 2 : 1;
+                    OrderSubItem sub = new OrderSubItem();
+                    sub.ParentID = item.ID;
+                    sub.MenuID = menu.ID;
+                    sub.Menu = menu;
+                    item.OrderSubItems.Add(sub);
+                    item.SubItems.Add(sub);
+                }
                 else
-                    item.OrderTypeID = this.selectedOrder.Items.Last().OrderTypeID;
-                this.selectedOrder.Items.Add(item);
+                {
+                    OrderItem item = new OrderItem();
+                    item.Menu = menu;
+                    item.MenuID = menu.ID;
+                    item.ParentID = this.selectedOrder.ID;
+                    item.StatusID = 1;
+
+                    if (this.selectedOrder.Items.Count == 0)
+                        item.OrderTypeID = (String.IsNullOrEmpty(this.selectedOrder.TableNo)) ? 2 : 1;
+                    else
+                        item.OrderTypeID = this.selectedOrder.Items.Last().OrderTypeID;
+                    this.selectedOrder.Items.Add(item);
+                }
             }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex);
+                return;
+            }
+
+            this.isLocked = false;
         }
 
         private ConfirmOrderCommand confirmOrderCommand;
@@ -425,7 +449,7 @@ namespace HiTea.Pos
         public void ConfirmOrder()
         {
             if (this.selectedOrder == null) return;
-            System.Diagnostics.Debug.WriteLine("Updating order into database...");
+            //System.Diagnostics.Debug.WriteLine("Updating order into database...");
             Order order = db.Orders.Where(o => o.ID == this.selectedOrder.ID).FirstOrDefault();
             if (order == null)
             {
@@ -441,7 +465,7 @@ namespace HiTea.Pos
                 order.MemberID = this.selectedOrder.MemberID;
                 order.Total = this.selectedOrder.Total;
                 db.Orders.InsertOnSubmit(order);
-                System.Diagnostics.Debug.WriteLine("New ID: " + order.ID);
+                //System.Diagnostics.Debug.WriteLine("New ID: " + order.ID);
 
                 order.OrderItems.Clear();
                 foreach (OrderItem item in this.selectedOrder.Items)

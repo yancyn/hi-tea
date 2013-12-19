@@ -326,7 +326,7 @@ namespace PosWPF
                 if (item.ID > 0) continue; // not going to print before. We only care about new drink
                 if (item.Menu.Category.Name.ToLower() == "drink")
                 {
-                    System.Diagnostics.Debug.WriteLine("Printing label for " + item.Menu.Name);
+                    //System.Diagnostics.Debug.WriteLine("Printing label for " + item.Menu.Name);
                     System.Windows.Controls.PrintDialog pd = new System.Windows.Controls.PrintDialog();
                     pd.PrintQueue = new PrintQueue(new PrintServer(), Settings.Default.LabelPrinter);
 

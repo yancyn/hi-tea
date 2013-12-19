@@ -81,18 +81,21 @@ namespace HiTea.Pos
         public AddMenuCommand AddMenuCommand { get { return this.addMenuCommand; } }
         public void AddMenu(int categoryId)
         {
-            Category category = this.Categories.Where(c => c.ID == categoryId).First();
             Menu menu = new Menu();
             menu.Active = true;
             menu.CategoryID = categoryId;
-            category.MenuCollection.Add(menu);
+
+            Category category = this.Categories.Where(c => c.ID == categoryId).FirstOrDefault();
+            if (category != null) category.MenuCollection.Add(menu);
         }
 
         private SearchMenuCommand searchMenuCommand;
         public SearchMenuCommand SearchMenuCommand { get { return this.searchMenuCommand; } }
         public void SearchMenu(int categoryId, string keyword)
         {
-            Category category = this.Categories.Where(c => c.ID == categoryId).First();
+            Category category = this.Categories.Where(c => c.ID == categoryId).FirstOrDefault();
+            if (category == null) return;
+
             category.MenuCollection.Clear();
             if (String.IsNullOrEmpty(keyword))
             {
@@ -184,7 +187,7 @@ namespace HiTea.Pos
             }
 
             db.SubmitChanges();
-            System.Diagnostics.Debug.WriteLine("Updating admin database...");
+            //System.Diagnostics.Debug.WriteLine("Updating admin database...");
         }
     }
 

@@ -50,13 +50,13 @@ namespace PosWPF
             {
                 if (order.Created.CompareTo(from) >= 0 && order.Created.CompareTo(to) <= 0)
                 {
-                    System.Diagnostics.Debug.WriteLine(order.Total);
+                    //System.Diagnostics.Debug.WriteLine(order.Total);
                     orders.Add(order);
                     //total += Utils.Rounding(System.Convert.ToDecimal(order.Total));
                 }
             }
 
-            System.Diagnostics.Debug.WriteLine("Total count: " + orders.Count);
+            //System.Diagnostics.Debug.WriteLine("Total count: " + orders.Count);
             Grid.DataContext = orders;
             Total.Text = orders.Sum(o => o.Total).ToString(Settings.Default.MoneyFormat);
         }
@@ -167,8 +167,9 @@ namespace PosWPF
                 // add member discount for tally purpose
                 if (order.MemberID > 0)
                 {
-                    User member = db.Users.Where(u => u.ID == order.MemberID).First();
-                    content += "\n" + header + delimiter + string.Empty + delimiter + AddDoubleQuotes(member.Username) + delimiter + AddDoubleQuotes("Member: "+member.Ic) + delimiter + (order.Total - realTotal);
+                    User member = db.Users.Where(u => u.ID == order.MemberID).FirstOrDefault();
+                    if (member != null)
+                        content += "\n" + header + delimiter + string.Empty + delimiter + AddDoubleQuotes(member.Username) + delimiter + AddDoubleQuotes("Member: " + member.Ic) + delimiter + (order.Total - realTotal);
                 }
             }
 
