@@ -111,3 +111,6 @@ UpgradeLog*.XML
 
 # local database
 App_Data
+
+# Ignore uploaded image files
+src/PosMvc/Images/*
