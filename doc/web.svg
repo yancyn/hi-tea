@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1052.3622"
+   height="744.09448"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="web.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="TriangleOutL"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="TriangleOutL"
+       style="overflow:visible">
+      <path
+         id="path3987"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
+         transform="scale(0.8)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.54156363"
+     inkscape:cx="982.181"
+     inkscape:cy="-161.49683"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer2"
+     showgrid="false"
+     showborder="false"
+     inkscape:window-width="1600"
+     inkscape:window-height="796"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-308.2677)"
+     sodipodi:insensitive="true"
+     style="display:inline">
+    <image
+       sodipodi:absref="E:\projects\hi-tea\doc\menu.PNG"
+       xlink:href="menu.PNG"
+       width="1276"
+       height="682"
+       id="image2993"
+       x="0"
+       y="308.2677" />
+    <image
+       width="1276"
+       height="682"
+       xlink:href="file:///E:/projects/hi-tea/doc/menu.PNG"
+       id="image4315"
+       x="0"
+       y="1255.2297" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Design">
+    <g
+       id="g3798"
+       transform="matrix(0,1,-1,0,1462.2989,-940.85589)">
+      <rect
+         transform="matrix(0,-1,1,0,0,-308.2677)"
+         y="1080.5842"
+         x="-533.04474"
+         height="76.425804"
+         width="38.212902"
+         id="rect2996"
+         style="color:#000000;fill:#007ccc;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text2998"
+         y="210.72528"
+         x="1087.7229"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+         xml:space="preserve"><tspan
+           y="210.72528"
+           x="1087.7229"
+           id="tspan3000"
+           sodipodi:role="line">Set Menu</tspan></text>
+    </g>
+    <g
+       id="g3803"
+       transform="matrix(0,1,-1,0,1504.2205,-847.55341)">
+      <rect
+         style="color:#000000;fill:#00d46e;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         id="rect3006"
+         width="38.212902"
+         height="76.425804"
+         x="-266.69867"
+         y="1080.5842"
+         transform="matrix(0,-1,1,0,0,0)" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+         x="1102.4065"
+         y="252.64691"
+         id="text3008"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3010"
+           x="1102.4065"
+           y="252.64691">Food</tspan></text>
+    </g>
+    <g
+       id="g3808"
+       transform="matrix(0,1,-1,0,1548.3105,-749.63585)">
+      <rect
+         transform="matrix(0,-1,1,0,0,0)"
+         y="1080.5842"
+         x="-310.78867"
+         height="76.425804"
+         width="38.212902"
+         id="rect3012"
+         style="color:#000000;fill:#ff9773;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3014"
+         y="296.73691"
+         x="1099.9417"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+         xml:space="preserve"><tspan
+           y="296.73691"
+           x="1099.9417"
+           id="tspan3016"
+           sodipodi:role="line">Snack</tspan></text>
+    </g>
+    <g
+       id="g3813"
+       transform="matrix(0,1,-1,0,1593.1233,-657.52007)">
+      <rect
+         style="color:#000000;fill:#67b4e6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         id="rect3018"
+         width="38.212902"
+         height="76.425804"
+         x="-355.60144"
+         y="1080.5842"
+         transform="matrix(0,-1,1,0,0,0)" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+         x="1100.8752"
+         y="341.54968"
+         id="text3020"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3022"
+           x="1100.8752"
+           y="341.54968">Drink</tspan></text>
+    </g>
+    <g
+       id="g3818"
+       transform="matrix(0,1,-1,0,1640.8272,-563.32871)">
+      <rect
+         transform="matrix(0,-1,1,0,0,0)"
+         y="1080.5842"
+         x="-403.30536"
+         height="76.425804"
+         width="38.212902"
+         id="rect3024"
+         style="color:#000000;fill:#ff8e00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3026"
+         y="389.2536"
+         x="1093.762"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+         xml:space="preserve"><tspan
+           y="389.2536"
+           x="1093.762"
+           id="tspan3028"
+           sodipodi:role="line">Dessert</tspan></text>
+    </g>
+    <g
+       transform="matrix(0,1,-1,0,227.23507,-940.85589)"
+       id="g3823">
+      <rect
+         style="color:#000000;fill:#007ccc;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         id="rect3825"
+         width="38.212902"
+         height="76.425804"
+         x="-533.04474"
+         y="1080.5842"
+         transform="matrix(0,-1,1,0,0,-308.2677)" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+         x="1087.7229"
+         y="210.72528"
+         id="text3827"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3829"
+           x="1087.7229"
+           y="210.72528">My Order</tspan></text>
+    </g>
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#TriangleOutL)"
+       d="m 1342.4855,310.22719 c 0,0 45.0275,-88.38724 -33.3537,-123.40859"
+       id="path3839"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+       x="1311.0106"
+       y="343.01572"
+       id="text4285"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4287"
+         x="1311.0106"
+         y="343.01572"
+         style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;font-family:Microsoft JhengHei;-inkscape-font-specification:Microsoft JhengHei">快速跳页</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path4289"
+       d="m -80.880002,310.22719 c 0,0 -45.027498,-88.38724 33.3537,-123.40859"
+       style="fill:none;stroke:#ff0000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#TriangleOutL)" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4291"
+       y="343.01572"
+       x="-141.47676"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+       xml:space="preserve"><tspan
+         style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;font-family:Microsoft JhengHei;-inkscape-font-specification:Microsoft JhengHei"
+         y="343.01572"
+         x="-141.47676"
+         id="tspan4293"
+         sodipodi:role="line">我的订单</tspan></text>
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#TriangleOutL)"
+       d="M -35.807687,560.51747 232.39642,364.17843"
+       id="path4295"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+       x="-161.37384"
+       y="591.72931"
+       id="text4297"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4299"
+         x="-161.37384"
+         y="591.72931"
+         style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;font-family:Microsoft JhengHei;-inkscape-font-specification:Microsoft JhengHei">click或滑</tspan><tspan
+         sodipodi:role="line"
+         x="-161.37384"
+         y="621.72931"
+         style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;font-family:Microsoft JhengHei;-inkscape-font-specification:Microsoft JhengHei"
+         id="tspan4303">下一个食物</tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path4301"
+       d="m -26.184799,643.73107 324.502499,0"
+       style="fill:none;stroke:#ff0000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#TriangleOutL)" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path4305"
+       d="m 653.28005,706.3263 0,-109.99391"
+       style="fill:none;stroke:#ff0000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#TriangleOutL)" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4307"
+       y="739.11487"
+       x="608.30603"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+       xml:space="preserve"><tspan
+         id="tspan4311"
+         style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;font-family:Microsoft JhengHei;-inkscape-font-specification:Microsoft JhengHei"
+         y="739.11487"
+         x="608.30603"
+         sodipodi:role="line">加入食物</tspan></text>
+    <g
+       transform="matrix(0,1,-1,0,1462.2989,6.1061999)"
+       id="g4317">
+      <rect
+         style="color:#000000;fill:#007ccc;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         id="rect4319"
+         width="38.212902"
+         height="76.425804"
+         x="-533.04474"
+         y="1080.5842"
+         transform="matrix(0,-1,1,0,0,-308.2677)" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+         x="1087.7229"
+         y="210.72528"
+         id="text4321"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4323"
+           x="1087.7229"
+           y="210.72528">Set Menu</tspan></text>
+    </g>
+    <g
+       transform="matrix(0,1,-1,0,1504.2205,99.40868)"
+       id="g4325">
+      <rect
+         transform="matrix(0,-1,1,0,0,0)"
+         y="1080.5842"
+         x="-266.69867"
+         height="76.425804"
+         width="38.212902"
+         id="rect4327"
+         style="color:#000000;fill:#00d46e;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4329"
+         y="252.64691"
+         x="1102.4065"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+         xml:space="preserve"><tspan
+           y="252.64691"
+           x="1102.4065"
+           id="tspan4331"
+           sodipodi:role="line">Food</tspan></text>
+    </g>
+    <g
+       transform="matrix(0,1,-1,0,1548.3105,197.32624)"
+       id="g4333">
+      <rect
+         style="color:#000000;fill:#ff9773;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         id="rect4335"
+         width="38.212902"
+         height="76.425804"
+         x="-310.78867"
+         y="1080.5842"
+         transform="matrix(0,-1,1,0,0,0)" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+         x="1099.9417"
+         y="296.73691"
+         id="text4337"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4339"
+           x="1099.9417"
+           y="296.73691">Snack</tspan></text>
+    </g>
+    <g
+       transform="matrix(0,1,-1,0,1593.1233,289.44202)"
+       id="g4341">
+      <rect
+         transform="matrix(0,-1,1,0,0,0)"
+         y="1080.5842"
+         x="-355.60144"
+         height="76.425804"
+         width="38.212902"
+         id="rect4343"
+         style="color:#000000;fill:#67b4e6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4345"
+         y="341.54968"
+         x="1100.8752"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+         xml:space="preserve"><tspan
+           y="341.54968"
+           x="1100.8752"
+           id="tspan4347"
+           sodipodi:role="line">Drink</tspan></text>
+    </g>
+    <g
+       transform="matrix(0,1,-1,0,1640.8272,383.63338)"
+       id="g4349">
+      <rect
+         style="color:#000000;fill:#ff8e00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         id="rect4351"
+         width="38.212902"
+         height="76.425804"
+         x="-403.30536"
+         y="1080.5842"
+         transform="matrix(0,-1,1,0,0,0)" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+         x="1093.762"
+         y="389.2536"
+         id="text4353"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4355"
+           x="1093.762"
+           y="389.2536">Dessert</tspan></text>
+    </g>
+    <g
+       id="g4357"
+       transform="matrix(0,1,-1,0,227.23507,6.1061999)">
+      <rect
+         transform="matrix(0,-1,1,0,0,-308.2677)"
+         y="1080.5842"
+         x="-533.04474"
+         height="76.425804"
+         width="38.212902"
+         id="rect4359"
+         style="color:#000000;fill:#007ccc;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4361"
+         y="210.72528"
+         x="1087.7229"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+         xml:space="preserve"><tspan
+           y="210.72528"
+           x="1087.7229"
+           id="tspan4363"
+           sodipodi:role="line">My Order</tspan></text>
+    </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4365"
+       y="1296.2006"
+       x="262.36523"
+       style="font-size:36px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+       xml:space="preserve"><tspan
+         y="1296.2006"
+         x="262.36523"
+         id="tspan4367"
+         sodipodi:role="line">&lt;</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:36px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+       x="1028.8149"
+       y="1296.2006"
+       id="text4369"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4371"
+         x="1028.8149"
+         y="1296.2006">&gt;</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:36px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+       x="262.36523"
+       y="358.37213"
+       id="text3065"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3067"
+         x="262.36523"
+         y="358.37213">&lt;</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3069"
+       y="358.37213"
+       x="1028.8149"
+       style="font-size:36px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+       xml:space="preserve"><tspan
+         y="358.37213"
+         x="1028.8149"
+         id="tspan3071"
+         sodipodi:role="line">&gt;</tspan></text>
+    <rect
+       y="2.271719"
+       x="-1466.4614"
+       height="236.94199"
+       width="302.6998"
+       id="rect3075"
+       style="color:#000000;fill:#007ccc;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       transform="matrix(0,-1,1,0,0,0)" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3096"
+       y="1189.7312"
+       x="15.401302"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+       xml:space="preserve"><tspan
+         y="1189.7312"
+         x="15.401302"
+         id="tspan3098"
+         sodipodi:role="line">TABLE#5</tspan><tspan
+         y="1209.7312"
+         x="15.401302"
+         sodipodi:role="line"
+         id="tspan3103">Dine in 19/12/2013 5:03PM</tspan><tspan
+         y="1229.7312"
+         x="15.401302"
+         sodipodi:role="line"
+         id="tspan3105">1. A01                        RM5.90</tspan><tspan
+         y="1249.7312"
+         x="15.401302"
+         sodipodi:role="line"
+         id="tspan3107">2. B02                        RM6.80</tspan><tspan
+         y="1269.7312"
+         x="15.401302"
+         sodipodi:role="line"
+         id="tspan3109" /><tspan
+         y="1289.7312"
+         x="15.401302"
+         sodipodi:role="line"
+         id="tspan3111" /><tspan
+         y="1309.7312"
+         x="15.401302"
+         sodipodi:role="line"
+         id="tspan3113" /><tspan
+         y="1329.7312"
+         x="15.401302"
+         sodipodi:role="line"
+         id="tspan3115" /><tspan
+         y="1349.7312"
+         x="15.401302"
+         sodipodi:role="line"
+         id="tspan3117" /><tspan
+         y="1369.7312"
+         x="15.401302"
+         sodipodi:role="line"
+         id="tspan3119" /><tspan
+         y="1389.7312"
+         x="15.401302"
+         sodipodi:role="line"
+         id="tspan3121" /><tspan
+         y="1409.7312"
+         x="15.401302"
+         sodipodi:role="line"
+         id="tspan3123" /><tspan
+         y="1429.7312"
+         x="15.401302"
+         sodipodi:role="line"
+         id="tspan3125" /><tspan
+         y="1449.7312"
+         x="15.401302"
+         sodipodi:role="line"
+         id="tspan3127">TOTAL                      RM12.70</tspan></text>
+  </g>
+</svg>
