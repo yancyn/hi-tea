@@ -130,7 +130,7 @@ namespace HiTea.Pos
             RefreshMenu();
 
             // bind all blank table first
-            for (int i = TableSize-1; i >= 0; i--)
+            for (int i = TableSize - 1; i >= 0; i--)
             {
                 Order order = new Order();
                 order.TableNo = (i + 1).ToString();
@@ -156,13 +156,13 @@ namespace HiTea.Pos
                 else
                 {
                     int i = Convert.ToInt32(order.TableNo);
-                    this.TableBasket[TableSize-i] = order;
+                    this.TableBasket[TableSize - i] = order;
                 }
             }
 
             timer = new System.Windows.Threading.DispatcherTimer();
             timer.Tick += timer_Tick;
-            timer.Interval = new TimeSpan(0, 0, 10);
+            timer.Interval = new TimeSpan(0, 5, 0);
         }
         public void StartTimer()
         {
@@ -206,6 +206,7 @@ namespace HiTea.Pos
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine(ex);
+                this.isLocked = false;
                 return;
             }
             finally { db2.Dispose(); }
