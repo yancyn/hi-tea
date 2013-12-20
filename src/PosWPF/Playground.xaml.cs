@@ -25,12 +25,12 @@ namespace PosWPF
         {
             InitializeComponent();
 
-            string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
-            Main db = new Main(connectionString);
-            db.QueryCacheEnabled = false;
+            //string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
+            //Main db = new Main(connectionString);
+            //db.QueryCacheEnabled = false;
 
-            PosManager posManager = new PosManager(db,13,100);
-            OrderButton.DataContext = posManager.TableBasket[9];
+            //PosManager posManager = new PosManager(db,13,100);
+            //OrderButton.DataContext = posManager.TableBasket[9];
         }
     }
 }

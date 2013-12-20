@@ -65,7 +65,7 @@ namespace HiTea.Pos
             get { return this.selectedOrder; }
             set
             {
-                this.timer.Stop();
+                StopTimer();
                 if (((selectedOrder == value) == false))
                 {
                     //this.OnSelectedOrderChanging(value);
@@ -123,7 +123,7 @@ namespace HiTea.Pos
             this.TableBasket = new ObservableCollection<Order>();
             this.TableBasket.CollectionChanged += TableBasket_CollectionChanged;
 
-            // retrieve categoris and food menu
+            // retrieve categories and food menu
             this.db = db;
             this.Categories = new ObservableCollection<Category>();
             this.Menus = new ObservableCollection<Menu>();
@@ -162,16 +162,28 @@ namespace HiTea.Pos
 
             timer = new System.Windows.Threading.DispatcherTimer();
             timer.Tick += timer_Tick;
-            timer.Interval = new TimeSpan(0, 5, 0);
+            timer.Interval = new TimeSpan(0, 5, 0); // TODO: Can be configurable
         }
         public void StartTimer()
         {
+            this.isLocked = false;
             this.timer.Start();
+        }
+        public void StopTimer()
+        {
+            this.isLocked = true;
+            this.timer.Stop();
         }
 
         void timer_Tick(object sender, EventArgs e)
         {
-            // prevent updating a same database at a same time
+            if (this.isLocked)
+            {
+                StopTimer();
+                return;
+            }
+
+            // new connection to get latest changes
             string connectionString = ConfigurationManager.ConnectionStrings["PosConnectionString"].ConnectionString;
             Main db2 = new Main(connectionString);
 
@@ -181,7 +193,7 @@ namespace HiTea.Pos
                 {
                     if (this.isLocked)
                     {
-                        timer.Stop();
+                        StopTimer();
                         return;
                     }
 
@@ -193,7 +205,7 @@ namespace HiTea.Pos
                         {
                             if (order.Items[i].ID == item.ID)
                             {
-                                //System.Diagnostics.Debug.WriteLine("Updating order status for " + order.Items[i].ID + ": " + item.StatusID);
+                                System.Diagnostics.Debug.WriteLine("Updating order status for " + order.Items[i].ID + ": " + item.StatusID);
                                 order.Items[i].StatusID = item.StatusID;
                                 break;
                             }
@@ -206,7 +218,6 @@ namespace HiTea.Pos
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine(ex);
-                this.isLocked = false;
                 return;
             }
             finally { db2.Dispose(); }
@@ -349,6 +360,8 @@ namespace HiTea.Pos
         /// <param name="tableNo"></param>
         private void AddOrder(string tableNo)
         {
+            StopTimer();
+
             Order order = new Order();
             order.TableNo = tableNo;
             order.QueueNo = GetLatestQueueNo();
@@ -358,7 +371,7 @@ namespace HiTea.Pos
                 this.CarryBasket.Add(order);
             else
             {
-                for(int i=0;i<this.TableBasket.Count;i++)
+                for (int i = 0; i < this.TableBasket.Count; i++)
                 {
                     if (this.TableBasket[i].TableNo == tableNo)
                     {
@@ -380,7 +393,7 @@ namespace HiTea.Pos
         public void DineIn(string tableNo)
         {
             AddOrder(tableNo);
-        }       
+        }
 
         private TakeAwayCommand takeAwayCommand;
         public TakeAwayCommand TakeAwayCommand { get { return this.takeAwayCommand; } }
@@ -401,7 +414,6 @@ namespace HiTea.Pos
         /// <param name="menu"></param>
         public void OrderMenu(Menu menu)
         {
-            this.isLocked = true;
             try
             {
                 if (this.selectedOrder == null) return;
@@ -438,8 +450,6 @@ namespace HiTea.Pos
                 System.Diagnostics.Debug.WriteLine(ex);
                 return;
             }
-
-            this.isLocked = false;
         }
 
         private ConfirmOrderCommand confirmOrderCommand;
@@ -450,6 +460,7 @@ namespace HiTea.Pos
         public void ConfirmOrder()
         {
             if (this.selectedOrder == null) return;
+
             //System.Diagnostics.Debug.WriteLine("Updating order into database...");
             Order order = db.Orders.Where(o => o.ID == this.selectedOrder.ID).FirstOrDefault();
             if (order == null)
@@ -480,7 +491,7 @@ namespace HiTea.Pos
             }
 
             this.selectedOrder = null;
-            this.timer.Start();
+            StartTimer();
         }
         public void UpdateOrder(ref Order order)
         {
