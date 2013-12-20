@@ -53,6 +53,7 @@
 
         <DockPanel x:Name="Playground" Grid.Column="0" LastChildFill="True">
             <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                <Button DockPanel.Dock="Right" ToolTip="Clear All" Background="{StaticResource BinIcon}" Style="{StaticResource CircleButtonStyle}" Click="BinButton_Click" />
                 <TextBlock DockPanel.Dock="Right" TextAlignment="Right" Text="{Binding CurrentTime.Now,Converter={StaticResource DateTimeConverter}}" />
                 <WrapPanel>
                     <StackPanel>
@@ -71,8 +72,9 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" Width="60" Height="60"  Content="+" FontSize="36" FontWeight="ExtraBold" Background="WhiteSmoke" Style="{StaticResource CircleButtonStyle}" Click="TakeAway_Click" />
+                        <Button Grid.Column="0" Height="60" Width="60" FontSize="36" Content="+" FontWeight="ExtraBold" Background="Transparent" Style="{StaticResource CircleButtonStyle}" Click="TakeAway_Click" />
                         <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Disabled"  HorizontalScrollBarVisibility="Auto">
                             <ItemsControl ItemsSource="{Binding CarryBasket}">
                                 <ItemsControl.ItemTemplate>
@@ -87,6 +89,7 @@
                                 </ItemsControl.ItemsPanel>
                             </ItemsControl>
                         </ScrollViewer>
+                        <!--<Button Grid.Column="2" ToolTip="Refresh" Background="{StaticResource RefreshIcon}" Style="{StaticResource CircleButtonStyle}" />-->
                     </Grid>
                 </DockPanel>
             </StackPanel>

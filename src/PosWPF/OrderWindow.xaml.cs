@@ -79,6 +79,7 @@ namespace PosWPF
                             posManager.TableBasket[i] = newOrder;
                             posManager.SelectedOrder = posManager.TableBasket[i];
 
+                            // HACK: Need to rebind tablecontrol everytime
                             if (this.Tag is TableControl)
                                 (this.Tag as TableControl).Binding(posManager);
                             break;

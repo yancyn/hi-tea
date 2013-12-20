@@ -114,6 +114,7 @@ namespace HiTea.Pos
             this.takeAwayCommand = new TakeAwayCommand(this);
             this.orderMenuCommand = new OrderMenuCommand(this);
             this.confirmOrderCommand = new ConfirmOrderCommand(this);
+            this.clearAllCommand = new ClearAllCommand(this);
 
             this.CurrentUser = new User();
             this.CurrentTime = new UpdatingTime();
@@ -164,6 +165,7 @@ namespace HiTea.Pos
             timer.Tick += timer_Tick;
             timer.Interval = new TimeSpan(0, 5, 0); // TODO: Can be configurable
         }
+
         public void StartTimer()
         {
             this.isLocked = false;
@@ -561,6 +563,33 @@ namespace HiTea.Pos
             item.StatusID = source.StatusID;
             return item;
         }
+
+        private ClearAllCommand clearAllCommand;
+        public ClearAllCommand ClearAllCommand { get { return this.clearAllCommand; } }
+        /// <summary>
+        /// Clear all order in basket including dine in and take away.
+        /// This is to overcome a defect where suddenly hang failed to update ReceiptDate value at last save session.
+        /// </summary>
+        public void ClearAll()
+        {
+            // clear from ObservableCollection
+            this.CarryBasket.Clear();
+            for (int i = 0; i < this.TableBasket.Count; i++)
+            {
+                String tableNo = this.TableBasket[i].TableNo;
+                this.TableBasket[i] = new Order();
+                this.TableBasket[i].TableNo = tableNo;
+                // HACK: Need to rebind tablecontrol everytime
+                //(this.Tag as TableControl).Binding(posManager);
+            }
+            this.Basket.Clear();
+
+            // manually update database
+            var orders = db.Orders.Where(o => o.ReceiptDate.HasValue == false);
+            foreach (Order order in orders)
+                order.ReceiptDate = DateTime.Now;
+            db.SubmitChanges();
+        }
     }
 
     public class LoginCommand : ICommand
@@ -661,6 +690,24 @@ namespace HiTea.Pos
         public void Execute(object parameter)
         {
             manager.ConfirmOrder();
+        }
+    }
+
+    public class ClearAllCommand : ICommand
+    {
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+        public event EventHandler CanExecuteChanged;
+        public void Execute(object parameter)
+        {
+            this.manager.ClearAll();
+        }
+        private PosManager manager;
+        public ClearAllCommand(PosManager manager)
+        {
+            this.manager = manager;
         }
     }
 }

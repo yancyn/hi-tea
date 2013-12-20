@@ -91,6 +91,11 @@ namespace PosWPF
             // TODO: db.SubmitChanges()?
             this.Close();
         }
+        private void BinButton_Click(object sender, RoutedEventArgs e)
+        {
+            posManager.ClearAll();
+            DineInGrid.Binding(posManager);
+        }
 
         private void Category_Checked(object sender, RoutedEventArgs e)
         {

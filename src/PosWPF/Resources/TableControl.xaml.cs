@@ -56,7 +56,7 @@ namespace PosWPF
         }
 
         /// <summary>
-        /// HACK: Always redraw table layout. Not really databinding.
+        /// Always redraw table layout. Not really databinding.
         /// </summary>
         /// <param name="posManager"></param>
         public void Binding(PosManager posManager)
