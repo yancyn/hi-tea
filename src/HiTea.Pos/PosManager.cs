@@ -495,6 +495,43 @@ namespace HiTea.Pos
             this.selectedOrder = null;
             StartTimer();
         }
+        public void Pay(int id)
+        {
+            Order order = db.Orders.Where(o => o.ID == id).FirstOrDefault();
+            if (order == null) return;
+
+            order.ReceiptDate = DateTime.Now;
+            foreach (OrderItem item in order.Items)
+                item.StatusID = 2;
+            order.Total = this.selectedOrder.Total;
+
+            List<OrderItem> oldItems = new List<OrderItem>();
+            foreach (OrderItem item in order.OrderItems)
+                oldItems.Add(item);
+
+            order.OrderItems.Clear();
+            foreach (OrderItem item in this.selectedOrder.Items)
+                order.OrderItems.Add(item);
+
+            db.SubmitChanges();
+
+            // HACK: Manually DeleteOnSubmit since the code above fail in DbLinq
+            foreach (OrderItem old in oldItems)
+            {
+                bool contains = false;
+                foreach (OrderItem item in order.OrderItems)
+                {
+                    if (old.ID == item.ID)
+                    {
+                        contains = true;
+                        break;
+                    }
+                }
+                if (!contains) db.OrderItems.DeleteOnSubmit(old);
+            }
+
+            StartTimer();
+        }
         public void UpdateOrder(ref Order order)
         {
             order.ID = this.selectedOrder.ID;

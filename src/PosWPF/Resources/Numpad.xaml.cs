@@ -28,20 +28,22 @@ namespace PosWPF
 		{
 			InitializeComponent();
 		}
-
         private void EnterButton_Click(object sender, RoutedEventArgs e)
         {
             Order order = (this.DataContext as PosManager).SelectedOrder;
+            //if (order.Cash > 0m)
+            //{
+            //    order.ReceiptDate = DateTime.Now;
+            //    foreach (OrderItem item in order.Items)
+            //        item.StatusID = 2;
+            //    (this.DataContext as PosManager).UpdateOrder(ref order);
+            //}
+            (this.DataContext as PosManager).SelectedOrder.ReceiptDate = DateTime.Now;
             if (order.Cash > 0m)
-            {
-                order.ReceiptDate = DateTime.Now;
-                foreach (OrderItem item in order.Items)
-                    item.StatusID = 2;
-                (this.DataContext as PosManager).UpdateOrder(ref order);
-            }
+                (this.DataContext as PosManager).Pay(order.ID);
+            //(this.DataContext as PosManager).SelectedOrder = null;
             this.Close();
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Order order = (this.DataContext as PosManager).SelectedOrder;
