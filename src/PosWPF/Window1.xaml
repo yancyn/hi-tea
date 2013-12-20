@@ -89,7 +89,7 @@
                                 </ItemsControl.ItemsPanel>
                             </ItemsControl>
                         </ScrollViewer>
-                        <!--<Button Grid.Column="2" ToolTip="Refresh" Background="{StaticResource RefreshIcon}" Style="{StaticResource CircleButtonStyle}" />-->
+                        <Button Grid.Column="2" ToolTip="Refresh" Background="{StaticResource RefreshIcon}" Style="{StaticResource CircleButtonStyle}" />
                     </Grid>
                 </DockPanel>
             </StackPanel>
