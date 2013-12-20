@@ -93,8 +93,13 @@ namespace PosWPF
         }
         private void BinButton_Click(object sender, RoutedEventArgs e)
         {
-            posManager.ClearAll();
-            DineInGrid.Binding(posManager);
+            if (System.Windows.MessageBox.Show("Are you sure want to clear all orders?",
+                "Confirm",
+                MessageBoxButton.YesNoCancel) == MessageBoxResult.Yes)
+            {
+                posManager.ClearAll();
+                DineInGrid.Binding(posManager);
+            }
         }
 
         private void Category_Checked(object sender, RoutedEventArgs e)
