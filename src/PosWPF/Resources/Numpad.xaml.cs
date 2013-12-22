@@ -39,8 +39,7 @@ namespace PosWPF
             //    (this.DataContext as PosManager).UpdateOrder(ref order);
             //}
             (this.DataContext as PosManager).SelectedOrder.ReceiptDate = DateTime.Now;
-            if (order.Cash > 0m)
-                (this.DataContext as PosManager).Pay(order.ID);
+            if (order.Cash > 0m) (this.DataContext as PosManager).Pay(order.ID);
             //(this.DataContext as PosManager).SelectedOrder = null;
             this.Close();
         }

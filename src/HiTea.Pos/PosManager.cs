@@ -501,8 +501,8 @@ namespace HiTea.Pos
             if (order == null) return;
 
             order.ReceiptDate = DateTime.Now;
-            foreach (OrderItem item in order.Items)
-                item.StatusID = 2;
+            //foreach (OrderItem item in order.Items)
+            //    item.StatusID = 2;
             order.Total = this.selectedOrder.Total;
 
             List<OrderItem> oldItems = new List<OrderItem>();
