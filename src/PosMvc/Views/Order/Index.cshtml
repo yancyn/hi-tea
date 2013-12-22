@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Order";
+}
+
+<h2>Order</h2>
+
+@{
+    var grid = new WebGrid(source: Model, rowsPerPage: 15);
+}
+
+<div id="grid">
+    @grid.GetHtml(
+        displayHeader: true,
+        tableStyle: "grid",
+        alternatingRowStyle: "alt",
+        columns: grid.Columns(
+            grid.Column("Created", "Created"),
+            grid.Column("QueueNo","Queue"),
+            grid.Column("TableNo","Table"),
+            grid.Column("Total","Total", style: "money",  format: @<text>@String.Format("{0:C}", @item.Total)</text>)
+        )
+    )
+</div>
