@@ -143,7 +143,7 @@ namespace PosWPF
                 Button button = sender as Button;
 
                 // find the data behind the listviewItem
-                Order order = (button.DataContext as TableBallViewModel).Order;
+                Order order = Clone((button.DataContext as TableBallViewModel).Order);
 
                 // initialize the drag and drop operation
                 if (order != null && order.Items.Count > 0)
@@ -167,43 +167,59 @@ namespace PosWPF
             if (e.Data.GetDataPresent("Order"))
             {
                 PosManager posManager = this.DataContext as PosManager;
-                Order order = e.Data.GetData("Order") as Order;
-                if (order == null) return;
-                if (order.Items.Count == 0) return;
+                Order original = e.Data.GetData("Order") as Order;
+                if (original == null) return;
+                if (original.Items.Count == 0) return;
+                //System.Diagnostics.Debug.WriteLine("From Table: " + original.TableNo);
+
+                // skip if drag to itself
                 TableBallViewModel viewModel = (sender as Button).DataContext as TableBallViewModel;
-                if (viewModel.Order.ID == order.ID) return; // skip if drag to itself
+                Order destination = Clone(viewModel.Order);
+                //System.Diagnostics.Debug.WriteLine("To Table: " + destination.TableNo);
+                if (destination.ID == original.ID) return;
 
                 //System.Diagnostics.Debug.WriteLine("button_Drop");
-                string originalTableNo = order.TableNo;
-                string destinationTableNo = ((sender as Button).DataContext as TableBallViewModel).Order.TableNo;
                 for (int i = 0; i < posManager.TableBasket.Count; i++)
                 {
                     // drag to destination table
-                    if (posManager.TableBasket[i].TableNo == destinationTableNo)
+                    if (posManager.TableBasket[i].TableNo == destination.TableNo)
                     {
-                        posManager.TableBasket[i].Created = order.Created;
-                        posManager.TableBasket[i].CreatedByID = order.CreatedByID;
-                        posManager.TableBasket[i].DodAte = order.DodAte;
-                        posManager.TableBasket[i].ID = order.ID;
-                        posManager.TableBasket[i].Member = order.Member;
-                        posManager.TableBasket[i].MemberID = order.MemberID;
-                        posManager.TableBasket[i].OrderItems = order.OrderItems;
-                        posManager.TableBasket[i].QueueNo = order.QueueNo;
+                        posManager.TableBasket[i].TableNo = destination.TableNo;
+                        posManager.TableBasket[i].Created = original.Created;
+                        posManager.TableBasket[i].CreatedByID = original.CreatedByID;
+                        posManager.TableBasket[i].DodAte = original.DodAte;
+                        posManager.TableBasket[i].ID = original.ID;
+                        posManager.TableBasket[i].Member = original.Member;
+                        posManager.TableBasket[i].MemberID = original.MemberID;
+                        posManager.TableBasket[i].OrderItems = original.OrderItems;
+                        posManager.TableBasket[i].QueueNo = original.QueueNo;
                         posManager.TableBasket[i].Items.Clear();
-                        foreach (OrderItem item in order.Items)
+                        foreach (OrderItem item in original.Items)
                             posManager.TableBasket[i].Items.Add(item);
-                        posManager.TableBasket[i].ReceiptDate = order.ReceiptDate;
-                        posManager.TableBasket[i].TableNo = destinationTableNo;
-                        posManager.TableBasket[i].Total = order.Total;
+                        posManager.TableBasket[i].ReceiptDate = original.ReceiptDate;
+                        posManager.TableBasket[i].Total = original.Total;
                         //posManager.SelectedOrder = posManager.TableBasket[i];
                         //posManager.ConfirmOrder();
                     }
 
-                    // empty original table
-                    if (posManager.TableBasket[i].TableNo == originalTableNo)
+                    // swap with original table or empty
+                    if (posManager.TableBasket[i].TableNo == original.TableNo)
                     {
-                        posManager.TableBasket[i] = new Order();
-                        posManager.TableBasket[i].TableNo = originalTableNo;
+                        //posManager.TableBasket[i] = new Order();
+                        posManager.TableBasket[i].TableNo = original.TableNo;
+                        posManager.TableBasket[i].Created = destination.Created;
+                        posManager.TableBasket[i].CreatedByID = destination.CreatedByID;
+                        posManager.TableBasket[i].DodAte = destination.DodAte;
+                        posManager.TableBasket[i].ID = destination.ID;
+                        posManager.TableBasket[i].Member = destination.Member;
+                        posManager.TableBasket[i].MemberID = destination.MemberID;
+                        posManager.TableBasket[i].OrderItems = destination.OrderItems;
+                        posManager.TableBasket[i].QueueNo = destination.QueueNo;
+                        posManager.TableBasket[i].Items.Clear();
+                        foreach (OrderItem item in destination.Items)
+                            posManager.TableBasket[i].Items.Add(item);
+                        posManager.TableBasket[i].ReceiptDate = destination.ReceiptDate;
+                        posManager.TableBasket[i].Total = destination.Total;
                     }
                 }
 
@@ -212,6 +228,26 @@ namespace PosWPF
             }
 
             ResetDragDrop();
+        }
+        private Order Clone(Order original)
+        {
+            Order destination = new Order();
+            destination.TableNo = original.TableNo;
+            destination.Created = original.Created;
+            destination.CreatedByID = original.CreatedByID;
+            destination.DodAte = original.DodAte;
+            destination.ID = original.ID;
+            destination.Member = original.Member;
+            destination.MemberID = original.MemberID;
+            destination.OrderItems = original.OrderItems;
+            destination.QueueNo = original.QueueNo;
+            destination.Items.Clear();
+            foreach (OrderItem item in original.Items)
+                destination.Items.Add(item);
+            destination.ReceiptDate = original.ReceiptDate;
+            destination.Total = original.Total;
+
+            return destination;
         }
         #endregion
     }
