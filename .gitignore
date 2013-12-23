@@ -114,3 +114,6 @@ App_Data
 
 # Ignore uploaded image files
 src/PosMvc/Images/*
+
+# Ignore backup driver files
+lib/drivers/*

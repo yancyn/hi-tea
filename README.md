@@ -73,3 +73,4 @@ References
 - [Borderless Window](https://wpfborderless.codeplex.com/)
 - [Escalier Theme](http://www.freecsstemplates.org/preview/escalier/)
 - [WPF MessageBox](https://msgbox.codeplex.com/)
+- [Check Browser Size](http://resizemybrowser.com/)
