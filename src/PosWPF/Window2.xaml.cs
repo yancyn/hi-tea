@@ -84,6 +84,9 @@ namespace PosWPF
                 Order order = e.Data.GetData("Order") as Order;
                 (sender as Button).DataContext = order;
                 if (startButton != null) startButton.DataContext = null;
+
+                startPoint = new Point(0, 0);
+                startButton = null;
             }
         }
     }

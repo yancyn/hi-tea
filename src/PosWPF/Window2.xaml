@@ -6,10 +6,11 @@
     <WrapPanel>
         <Button x:Name="button1" Margin="10"
                 Content="{Binding QueueNo}" Style="{StaticResource TableBallStyle}"
-                PreviewMouseLeftButtonDown="button_PreviewMouseLeftButtonDown"
-                PreviewMouseMove="button_PreviewMouseMove" />
+                PreviewMouseLeftButtonDown="button_PreviewMouseLeftButtonDown" PreviewMouseMove="button_PreviewMouseMove"
+                AllowDrop="True" DragEnter="button_DragEnter" Drop="button_Drop" />
         <Button x:Name="button2" Margin="10"
                 Content="{Binding QueueNo}" Style="{StaticResource TableBallStyle}"
+                PreviewMouseLeftButtonDown="button_PreviewMouseLeftButtonDown" PreviewMouseMove="button_PreviewMouseMove"
                 AllowDrop="True" DragEnter="button_DragEnter" Drop="button_Drop" />
     </WrapPanel>
 </Window>
