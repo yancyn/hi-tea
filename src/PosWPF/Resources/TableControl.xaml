@@ -8,7 +8,11 @@
              d:DesignHeight="500" d:DesignWidth="500">
     <UserControl.Resources>
         <DataTemplate DataType="{x:Type w:TableBallViewModel}">
-            <Button Style="{StaticResource TableBallStyle}" Content="{Binding Order.QueueNo,UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding Order.TableNo}" Visibility="{Binding Visibility}" Click="OpenOrder_Click" />
+            <Button Style="{StaticResource TableBallStyle}" Visibility="{Binding Visibility}"
+                    Content="{Binding Order.QueueNo,UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding Order.TableNo}"
+                    PreviewMouseLeftButtonDown="button_PreviewMouseLeftButtonDown" PreviewMouseMove="button_PreviewMouseMove"
+                    AllowDrop="True" DragEnter="button_DragEnter" Drop="button_Drop"
+                    Click="OpenOrder_Click" />
         </DataTemplate>
     </UserControl.Resources>
     <Grid x:Name="Grid">

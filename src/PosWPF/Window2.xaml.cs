@@ -40,11 +40,6 @@ namespace PosWPF
             System.Diagnostics.Debug.WriteLine("button_PreviewMouseLeftButtonDown");
             startPoint = e.GetPosition(null);
         }
-        private void button_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            System.Diagnostics.Debug.WriteLine("button_MouseLeftButtonDown");
-            startPoint = e.GetPosition(null);
-        }
         private void button_PreviewMouseMove(object sender, MouseEventArgs e)
         {
             if (startPoint == new Point(0, 0)) return;

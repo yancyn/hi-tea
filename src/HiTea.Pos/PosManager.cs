@@ -500,9 +500,14 @@ namespace HiTea.Pos
             Order order = db.Orders.Where(o => o.ID == id).FirstOrDefault();
             if (order == null) return;
 
+            order.Created = this.selectedOrder.Created;
+            order.CreatedByID = this.selectedOrder.CreatedByID;
+            order.DodAte = this.selectedOrder.DodAte;
+            order.ID = this.selectedOrder.ID;
+            order.MemberID = this.selectedOrder.MemberID;
+            order.QueueNo = this.selectedOrder.QueueNo;
             order.ReceiptDate = DateTime.Now;
-            //foreach (OrderItem item in order.Items)
-            //    item.StatusID = 2;
+            order.TableNo = this.selectedOrder.TableNo;
             order.Total = this.selectedOrder.Total;
 
             List<OrderItem> oldItems = new List<OrderItem>();
