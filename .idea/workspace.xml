@@ -14,16 +14,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59e76af8-ea53-4b05-9e2c-9b9c59a97958" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MonthFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/src/main/res/layout/fragment_month.xml" />
-      <change type="DELETED" beforePath="E:\projects\hi-tea\App\src\main\java\com\muje\pos\DayActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="E:\projects\hi-tea\App\src\main\res\layout\fragment_main.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/App/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java" afterPath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/App/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="E:\projects\hi-tea\App\src\main\res\layout\activity_day.xml" afterPath="$PROJECT_DIR$/App/src/main/res/layout/fragment_day.xml" />
     </list>
     <ignored path="App.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1005,6 +996,11 @@
       <created>1387862618433</created>
       <updated>1387862618433</updated>
     </task>
+    <task id="LOCAL-00001" summary="Draft 3 blank tabs as fragment in sales viewer.">
+      <created>1387875070457</created>
+      <updated>1387875070457</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1066,6 +1062,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="Draft 3 blank tabs as fragment in sales viewer." />
+    <option name="LAST_COMMIT_MESSAGE" value="Draft 3 blank tabs as fragment in sales viewer." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
