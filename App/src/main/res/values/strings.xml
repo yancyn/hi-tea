@@ -4,9 +4,8 @@
     <string name="app_name">Pos Sales</string>
     <string name="title_section1">Day</string>
     <string name="title_section2">Month</string>
-    <string name="title_section3">Menu</string>
+    <string name="title_section3">Top</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_day">Day</string>
     <string name="hello_world">Hello world!</string>
 
 </resources>

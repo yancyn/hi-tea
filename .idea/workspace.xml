@@ -14,40 +14,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59e76af8-ea53-4b05-9e2c-9b9c59a97958" name="Default" comment="">
-      <change type="DELETED" beforePath="E:\projects\hi-tea\.idea\dictionaries\yeang_shing_then.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\projects\hi-tea\.idea\libraries\support_v13_18_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\projects\hi-tea\.idea\libraries\support_v4_18_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\projects\hi-tea\LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\Pos.iml" afterPath="" />
-      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\build.gradle" afterPath="" />
-      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\proguard-rules.txt" afterPath="" />
-      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\ic_launcher-web.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\java\com\muje\pos\MainActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\res\drawable-hdpi\ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\res\drawable-mdpi\ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\res\drawable-xhdpi\ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\res\drawable-xxhdpi\ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\res\layout\activity_main.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\res\layout\fragment_main.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\res\menu\main.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\res\values-w820dp\dimens.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\res\values\dimens.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\res\values\strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\res\values\styles.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\projects\hi-tea\gradle.properties" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PosSales.iml" afterPath="$PROJECT_DIR$/PosSales.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayFragment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MonthFragment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/src/main/res/layout/fragment_month.xml" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\App\src\main\java\com\muje\pos\DayActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\App\src\main\res\layout\fragment_main.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/App/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java" afterPath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/App/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="E:\projects\hi-tea\App\src\main\res\layout\activity_day.xml" afterPath="$PROJECT_DIR$/App/src/main/res/layout/fragment_day.xml" />
     </list>
     <ignored path="App.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -111,48 +87,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="58" selection-start="1812" selection-end="1812" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="2839">
+            <state line="130" column="35" selection-start="4691" selection-end="4691" vertical-scroll-proportion="0.5741379" vertical-offset="1078" max-vertical-offset="2159">
               <folding>
-                <element signature="docComment;field#mSectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
                 <element signature="docComment;field#mViewPager#0;class#MainActivity#0" expanded="false" />
+                <element signature="e#1557#1628#0" expanded="false" />
+                <element signature="e#1936#2004#0" expanded="false" />
+                <element signature="e#2160#2368#0" expanded="true" />
+                <element signature="e#2357#2358#0" expanded="true" />
+                <element signature="e#2530#2598#0" expanded="false" />
+                <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
+                <element signature="e#3472#3530#0" expanded="false" />
+                <element signature="method#onTabSelected#0;class#MainActivity#0" expanded="false" />
+                <element signature="e#3954#4024#0" expanded="false" />
+                <element signature="method#onTabUnselected#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#onTabReselected#0;class#MainActivity#0" expanded="false" />
+                <element signature="docComment;class#SectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#getPageTitle#0;class#SectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DayActivity.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="5" selection-start="524" selection-end="524" vertical-scroll-proportion="0.27331188" vertical-offset="0" max-vertical-offset="680">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_day.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/activity_day.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="13" selection-start="627" selection-end="627" vertical-scroll-proportion="-10.2" vertical-offset="0" max-vertical-offset="476">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fragment_main.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/fragment_main.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="647" selection-end="647" vertical-scroll-proportion="-9.52" vertical-offset="0" max-vertical-offset="374">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
           </provider>
         </entry>
       </file>
@@ -566,9 +522,12 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/App/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/App/src/main/res/layout/activity_day.xml" />
         <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayActivity.java" />
+        <option value="$PROJECT_DIR$/App/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/App/src/main/res/layout/fragment_menu.java" />
+        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MenuFragment.java" />
+        <option value="$PROJECT_DIR$/App/src/main/res/layout/fragment_menu.xml" />
         <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java" />
       </list>
     </option>
@@ -604,8 +563,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -712,6 +671,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hi-tea" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -766,6 +755,12 @@
     <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.muje.pos" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\projects\hi-tea\App\src\main\res\layout" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.muje.pos" />
     </key>
@@ -855,6 +850,19 @@
       </ExternalSystemSettings>
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -880,19 +888,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1042,13 +1037,14 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28318584" sideWeight="0.6039063" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28318584" sideWeight="0.39609376" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32853982" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28318584" sideWeight="0.6039063" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32964602" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32964602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929516" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32853982" sideWeight="0.64765626" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.178125" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929516" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1060,7 +1056,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929516" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1078,45 +1073,47 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="58" selection-start="1812" selection-end="1812" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="2839">
+        <state line="51" column="58" selection-start="1812" selection-end="1812" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3264">
           <folding>
-            <element signature="docComment;field#mSectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
             <element signature="docComment;field#mViewPager#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#1557#1628#0" expanded="false" />
+            <element signature="e#1936#2004#0" expanded="false" />
+            <element signature="e#2160#2368#0" expanded="true" />
+            <element signature="e#2357#2358#0" expanded="true" />
+            <element signature="e#2530#2598#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#3472#3530#0" expanded="false" />
+            <element signature="method#onTabSelected#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#3954#4024#0" expanded="false" />
+            <element signature="method#onTabUnselected#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onTabReselected#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;class#SectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#getPageTitle#0;class#SectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayActivity.java">
+    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="43" selection-start="471" selection-end="471" vertical-scroll-proportion="0.0" vertical-offset="8" max-vertical-offset="833">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/activity_day.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="627" selection-end="627" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="476">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/fragment_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="39" selection-start="554" selection-end="554" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="374">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="414" selection-end="414" vertical-scroll-proportion="0.39306358" vertical-offset="0" max-vertical-offset="519">
-          <folding />
+        <state line="51" column="58" selection-start="1812" selection-end="1812" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="2839">
+          <folding>
+            <element signature="docComment;field#mViewPager#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#1557#1628#0" expanded="false" />
+            <element signature="e#1936#2004#0" expanded="false" />
+            <element signature="e#2160#2368#0" expanded="true" />
+            <element signature="e#2357#2358#0" expanded="true" />
+            <element signature="e#2530#2598#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#3472#3530#0" expanded="false" />
+            <element signature="method#onTabSelected#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#3954#4024#0" expanded="false" />
+            <element signature="method#onTabUnselected#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onTabReselected#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;class#SectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#getPageTitle#0;class#SectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1135,40 +1132,66 @@
         <state line="16" column="30" selection-start="273" selection-end="273" vertical-scroll-proportion="0.5240848" vertical-offset="0" max-vertical-offset="561" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MenuFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="58" selection-start="1812" selection-end="1812" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="2839">
+        <state line="11" column="3" selection-start="248" selection-end="248" vertical-scroll-proportion="0.30706075" vertical-offset="0" max-vertical-offset="609">
           <folding>
-            <element signature="docComment;field#mSectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;field#mViewPager#0;class#MainActivity#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/activity_day.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="627" selection-end="627" vertical-scroll-proportion="-10.2" vertical-offset="0" max-vertical-offset="476">
-          <folding />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/fragment_menu.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/fragment_main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="647" selection-end="647" vertical-scroll-proportion="-9.52" vertical-offset="0" max-vertical-offset="374">
+        <state line="13" column="31" selection-start="594" selection-end="594" vertical-scroll-proportion="-8.84" vertical-offset="0" max-vertical-offset="510">
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MonthFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="45" selection-start="294" selection-end="294" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayActivity.java">
+    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="5" selection-start="524" selection-end="524" vertical-scroll-proportion="0.27331188" vertical-offset="0" max-vertical-offset="680">
+        <state line="18" column="1" selection-start="538" selection-end="538" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="46" selection-start="241" selection-end="241" vertical-scroll-proportion="0.16398714" vertical-offset="0" max-vertical-offset="622">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="130" column="35" selection-start="4691" selection-end="4691" vertical-scroll-proportion="0.5741379" vertical-offset="1078" max-vertical-offset="2159">
+          <folding>
+            <element signature="docComment;field#mViewPager#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#1557#1628#0" expanded="false" />
+            <element signature="e#1936#2004#0" expanded="false" />
+            <element signature="e#2160#2368#0" expanded="true" />
+            <element signature="e#2357#2358#0" expanded="true" />
+            <element signature="e#2530#2598#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#3472#3530#0" expanded="false" />
+            <element signature="method#onTabSelected#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#3954#4024#0" expanded="false" />
+            <element signature="method#onTabUnselected#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onTabReselected#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;class#SectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#getPageTitle#0;class#SectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
