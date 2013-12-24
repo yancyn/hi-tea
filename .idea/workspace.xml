@@ -14,10 +14,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59e76af8-ea53-4b05-9e2c-9b9c59a97958" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayFragment.java" afterPath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/PosReader.java" afterPath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/PosReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/res/layout/fragment_day.xml" afterPath="$PROJECT_DIR$/App/src/main/res/layout/fragment_day.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/SalesAdapter.java" afterPath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/SalesAdapter.java" />
     </list>
     <ignored path="App.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -81,10 +78,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DayFragment.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DayFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="53" selection-start="732" selection-end="732" vertical-scroll-proportion="0.37721893" vertical-offset="0" max-vertical-offset="676">
+            <state line="28" column="42" selection-start="838" selection-end="838" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
               <folding />
             </state>
           </provider>
@@ -102,10 +99,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SalesAdapter.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="SalesAdapter.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/SalesAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="76" selection-start="1991" selection-end="1991" vertical-scroll-proportion="0.0" vertical-offset="599" max-vertical-offset="1275">
+            <state line="78" column="36" selection-start="2711" selection-end="2711" vertical-scroll-proportion="0.72337276" vertical-offset="837" max-vertical-offset="1513">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -549,8 +546,8 @@
         <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/PosReader.java" />
         <option value="$PROJECT_DIR$/App/src/main/res/layout/fragment_day.xml" />
         <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayFragment.java" />
-        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/SalesAdapter.java" />
         <option value="$PROJECT_DIR$/App/src/main/res/layout/layout_sales.xml" />
+        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/SalesAdapter.java" />
       </list>
     </option>
   </component>
@@ -1191,15 +1188,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/SalesAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="76" selection-start="1991" selection-end="1991" vertical-scroll-proportion="0.0" vertical-offset="599" max-vertical-offset="1275">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/layout_sales.xml">
       <provider editor-type-id="android-designer">
         <state />
@@ -1222,8 +1210,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="53" selection-start="732" selection-end="732" vertical-scroll-proportion="0.37721893" vertical-offset="0" max-vertical-offset="676">
+        <state line="28" column="42" selection-start="838" selection-end="838" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/SalesAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="36" selection-start="2711" selection-end="2711" vertical-scroll-proportion="0.72337276" vertical-offset="837" max-vertical-offset="1513">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

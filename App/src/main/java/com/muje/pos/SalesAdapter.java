@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
@@ -45,6 +46,19 @@ public class SalesAdapter extends ArrayAdapter<Sales> {
 
         return "";
     }
+    /**
+     * Round up value to desired decimal places.
+     * See http://stackoverflow.com/questions/2808535/round-a-double-to-2-significant-figures-after-decimal-point
+     * @param value
+     * @param places
+     * @return
+     */
+    public static double round(double value, int places) {
+        if(places < 0) throw new IllegalArgumentException();
+        BigDecimal bd = new BigDecimal(value);
+        bd = bd.setScale(places, BigDecimal.ROUND_HALF_UP);
+        return bd.doubleValue();
+    }
     public View getView(int position, View contentView, ViewGroup parent) {
 
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -62,7 +76,7 @@ public class SalesAdapter extends ArrayAdapter<Sales> {
         countView.setText(Integer.toString(sales.getCount()) + " orders");
 
         TextView totalView = (TextView)rowView.findViewById(R.id.textView4);
-        totalView.setText(Double.toString(sales.getAmount())); // TODO: Add local currency
+        totalView.setText(Double.toString(round(sales.getAmount(),2))); // TODO: Add local currency
 
         return rowView;
     }
