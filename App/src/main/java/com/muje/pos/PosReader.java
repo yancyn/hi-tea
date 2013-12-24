@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,8 +18,8 @@ public class PosReader {
     private Context context;
     public static final String DATABASE_NAME = "/sdcard/Download/pos.db3"; // TODO: Put in config
     private final String GROUP_BY_DAY_QUERY = "SELECT strftime('%Y-%m-%d',Created) AS Date, COUNT(Id) AS Orders, SUM(Total) AS Sales FROM 'Order' GROUP BY strftime('%Y-%m-%d',Created) ORDER BY strftime('%Y-%m-%d',Created) DESC;";
-    private Map<Date, Sales> sales;
-    public Map<Date, Sales> getSales() {
+    private ArrayList<Sales> sales;
+    public ArrayList<Sales> getSales() {
         return this.sales;
     }
 
@@ -30,7 +31,7 @@ public class PosReader {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         SQLiteDatabase database = SQLiteDatabase.openDatabase(DATABASE_NAME, null, SQLiteDatabase.OPEN_READONLY);// helper.getReadableDatabase();
 
-        this.sales = new HashMap<Date, Sales>();
+        this.sales = new ArrayList<Sales>();// HashMap<Date, Sales>();
         Cursor cursor = database.rawQuery(GROUP_BY_DAY_QUERY, null);
         cursor.moveToFirst();
         while(!cursor.isAfterLast()) {
@@ -41,7 +42,8 @@ public class PosReader {
                 e.printStackTrace();
             }
 
-            this.sales.put(date, new Sales(date, cursor.getInt(1), cursor.getDouble(2)));
+            //this.sales.put(date, new Sales(date, cursor.getInt(1), cursor.getDouble(2)));
+            this.sales.add(new Sales(date, cursor.getInt(1), cursor.getDouble(2)));
             cursor.moveToNext();
         }
         cursor.close();
