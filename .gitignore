@@ -117,3 +117,9 @@ src/PosMvc/Images/*
 
 # Ignore backup driver files
 lib/drivers/*
+
+# Android Studio ignore pattern
+.gradle
+/local.properties
+/.idea/workspace.xml
+.DS_Store
