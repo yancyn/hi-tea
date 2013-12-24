@@ -12,8 +12,8 @@
     tr {
         float: left;
         display:block;
-        padding: 10px;
-        padding-bottom: 50px;
+        /*padding: 10px;*/
+        padding-bottom: 10px;
     }
     tr td {
         clear: left;
@@ -44,7 +44,7 @@
         alternatingRowStyle: "alt",
         columns: grid.Columns(
             grid.Column("Code","Code", format: @<text>@item.Code @item.Name</text>),
-            grid.Column("Image","Image", format:@<text><img src="~/Images/@item.Image" height="300" /></text>),
+            grid.Column("Image","Image", format:@<text><img src="~/Images/@item.Image" height="240" /></text>),
             grid.Column("Price","Price", style: "money",  format: @<text>@String.Format("{0:C}", @item.Price)</text>),
             grid.Column("", "", style: "add", format: @<text>@Html.ActionLink("ADD" , "Add", new {id=item.Id })</text>)
         )
