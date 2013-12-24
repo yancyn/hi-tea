@@ -76,7 +76,8 @@ public class SalesAdapter extends ArrayAdapter<Sales> {
         countView.setText(Integer.toString(sales.getCount()) + " orders");
 
         TextView totalView = (TextView)rowView.findViewById(R.id.textView4);
-        totalView.setText(Double.toString(round(sales.getAmount(),2))); // TODO: Add local currency
+        //totalView.setText(Double.toString(round(sales.getAmount(),2))); // TODO: Add local currency
+        totalView.setText("Total " + String.format("%.2f%n", sales.getAmount()));
 
         return rowView;
     }
