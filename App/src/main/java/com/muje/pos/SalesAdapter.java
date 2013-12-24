@@ -1,6 +1,7 @@
 package com.muje.pos;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Currency;
+import java.util.Locale;
 
 /**
  * Created by yeang-shing.then on 12/24/13.
@@ -76,8 +79,8 @@ public class SalesAdapter extends ArrayAdapter<Sales> {
         countView.setText(Integer.toString(sales.getCount()) + " orders");
 
         TextView totalView = (TextView)rowView.findViewById(R.id.textView4);
-        //totalView.setText(Double.toString(round(sales.getAmount(),2))); // TODO: Add local currency
-        totalView.setText("Total " + String.format("%.2f%n", sales.getAmount()));
+        totalView.setText("Total " + Currency.getInstance(Locale.getDefault()).getSymbol() + String.format("%.2f%n", sales.getAmount()));
+        // TODO: Get Malaysia currency Log.d("DEBUG", "Currency: " + Currency.getInstance("MYR").getSymbol());
 
         return rowView;
     }
