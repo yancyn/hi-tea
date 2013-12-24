@@ -2,7 +2,9 @@
 <project version="4">
   <component name="AndroidLayoutPreviewToolWindow">
     <option name="state">
-      <GlobalState />
+      <GlobalState>
+        <option name="visible" value="false" />
+      </GlobalState>
     </option>
   </component>
   <component name="AndroidLayouts">
@@ -11,8 +13,43 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="895e1833-c873-410b-b1ee-e68e30d2839c" name="Default" comment="" />
-    <ignored path="Pos Sales.iws" />
+    <list default="true" id="59e76af8-ea53-4b05-9e2c-9b9c59a97958" name="Default" comment="">
+      <change type="DELETED" beforePath="E:\projects\hi-tea\.idea\dictionaries\yeang_shing_then.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\.idea\libraries\support_v13_18_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\.idea\libraries\support_v4_18_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\Pos.iml" afterPath="" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\build.gradle" afterPath="" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\proguard-rules.txt" afterPath="" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\ic_launcher-web.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\java\com\muje\pos\MainActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\res\drawable-hdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\res\drawable-mdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\res\drawable-xhdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\res\drawable-xxhdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\res\layout\activity_main.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\res\layout\fragment_main.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\res\menu\main.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\res\values-w820dp\dimens.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\res\values\dimens.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\res\values\strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\Pos\src\main\res\values\styles.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\gradle.properties" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PosSales.iml" afterPath="$PROJECT_DIR$/PosSales.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
+    <ignored path="App.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,49 +107,52 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
-    <favorites_list name="Pos Sales" />
+    <favorites_list name="App" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Pos/src/main/java/com/muje/pos/MainActivity.java">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="74" selection-start="902" selection-end="936" vertical-scroll-proportion="0.2541106" vertical-offset="0" max-vertical-offset="2958">
+            <state line="51" column="58" selection-start="1812" selection-end="1812" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="2839">
+              <folding>
+                <element signature="docComment;field#mSectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
+                <element signature="docComment;field#mViewPager#0;class#MainActivity#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DayActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="5" selection-start="524" selection-end="524" vertical-scroll-proportion="0.27331188" vertical-offset="0" max-vertical-offset="680">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pos/src/main/res/values/strings.xml">
+      <file leaf-file-name="activity_day.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/activity_day.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="272">
+            <state line="15" column="13" selection-start="627" selection-end="627" vertical-scroll-proportion="-10.2" vertical-offset="0" max-vertical-offset="476">
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="fragment_main.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pos/src/main/res/layout/fragment_main.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
+        <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/fragment_main.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="36" selection-start="603" selection-end="603" vertical-scroll-proportion="-8.16" vertical-offset="0" max-vertical-offset="374">
+            <state line="14" column="0" selection-start="647" selection-end="647" vertical-scroll-proportion="-9.52" vertical-offset="0" max-vertical-offset="374">
               <folding />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_main.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pos/src/main/res/layout/activity_main.xml">
           <provider editor-type-id="android-designer">
             <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="303" selection-end="303" vertical-scroll-proportion="-4.08" vertical-offset="0" max-vertical-offset="204">
-              <folding />
-            </state>
           </provider>
         </entry>
       </file>
@@ -123,11 +163,19 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
   <component name="GradleLocalSettings">
     <option name="tasksExpandState">
       <map>
         <entry key="" value="true" />
-        <entry key="Pos/PosSales/" value="true" />
+        <entry key="App/PosSales/" value="true" />
         <entry key="PosSales/" value="true" />
       </map>
     </option>
@@ -137,7 +185,21 @@
           <option name="executorId" value="Run" />
           <option name="settings">
             <ExternalSystemSettings>
-              <option name="externalProjectPath" value="$PROJECT_DIR$/Pos" />
+              <option name="externalProjectPath" value="$PROJECT_DIR$/App" />
+              <option name="externalSystemIdString" value="GRADLE" />
+              <option name="taskNames">
+                <list>
+                  <option value="clean" />
+                </list>
+              </option>
+            </ExternalSystemSettings>
+          </option>
+        </ExternalTaskExecutionInfo>
+        <ExternalTaskExecutionInfo>
+          <option name="executorId" value="Debug" />
+          <option name="settings">
+            <ExternalSystemSettings>
+              <option name="externalProjectPath" value="$PROJECT_DIR$/App" />
               <option name="externalSystemIdString" value="GRADLE" />
               <option name="taskNames">
                 <list>
@@ -151,11 +213,11 @@
           <option name="executorId" value="Run" />
           <option name="settings">
             <ExternalSystemSettings>
-              <option name="externalProjectPath" value="$PROJECT_DIR$/Pos" />
+              <option name="externalProjectPath" value="$PROJECT_DIR$/App" />
               <option name="externalSystemIdString" value="GRADLE" />
               <option name="taskNames">
                 <list>
-                  <option value="clean" />
+                  <option value="build" />
                 </list>
               </option>
             </ExternalSystemSettings>
@@ -175,8 +237,8 @@
           <value>
             <list>
               <ExternalProjectPojo>
-                <option name="name" value="Pos" />
-                <option name="path" value="$PROJECT_DIR$/Pos" />
+                <option name="name" value="App" />
+                <option name="path" value="$PROJECT_DIR$/App" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
                 <option name="name" value="hi-tea" />
@@ -189,334 +251,304 @@
     </option>
     <option name="availableTasks">
       <map>
-        <entry key="$PROJECT_DIR$/Pos">
+        <entry key="$PROJECT_DIR$/App">
           <value>
             <list>
               <ExternalTaskPojo>
                 <option name="description" value="Displays the Android dependencies of the project" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
                 <option name="name" value="androidDependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles all variants of all applications and secondary packages." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
                 <option name="name" value="assemble" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles all Debug builds" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
                 <option name="name" value="assembleDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Assembles all builds for flavor DefaultFlavor" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="assembleDefaultFlavor" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles the Debug build for flavor DefaultFlavor" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="assembleDefaultFlavorDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles the Release build for flavor DefaultFlavor" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="assembleDefaultFlavorRelease" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles the Test build for the DefaultFlavorDebug build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="assembleDefaultFlavorTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
                 <option name="description" value="Assembles all Release builds" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
                 <option name="name" value="assembleRelease" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Assembles all the Test applications" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
+                <option name="description" value="Assembles the Test build for the Debug build" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
                 <option name="name" value="assembleTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles and tests this project." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
                 <option name="name" value="build" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles and tests this project and all projects that depend on it." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
                 <option name="name" value="buildDependents" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles and tests this project and all projects it depends on." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
                 <option name="name" value="buildNeeded" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Runs all checks." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
                 <option name="name" value="check" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Deletes the build directory." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
                 <option name="name" value="clean" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="compileDefaultFlavorDebug" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="compileDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="compileDefaultFlavorDebugAidl" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="compileDebugAidl" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="compileDefaultFlavorDebugRenderscript" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="compileDebugRenderscript" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="compileDefaultFlavorRelease" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="compileDefaultFlavorReleaseAidl" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="compileDefaultFlavorReleaseRenderscript" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="compileDefaultFlavorTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="compileDefaultFlavorTestAidl" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="compileDefaultFlavorTestRenderscript" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
                 <option name="name" value="compileLint" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="compileRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="compileReleaseAidl" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="compileReleaseRenderscript" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="compileTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="compileTestAidl" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="compileTestRenderscript" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Runs all device checks on currently connected devices." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
                 <option name="name" value="connectedCheck" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Installs and runs instrumentation tests for all flavors on connected devices." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
+                <option name="description" value="Installs and runs the tests for Build 'Debug' on connected devices." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
                 <option name="name" value="connectedInstrumentTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Installs and runs the tests for Build 'DefaultFlavorDebug' on connected devices." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="connectedInstrumentTestDefaultFlavorDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
                 <option name="description" value="Runs all device checks using Device Providers and Test Servers." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
                 <option name="name" value="deviceCheck" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Installs and runs instrumentation tests using all Device Providers." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="deviceInstrumentTest" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="dexDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="dexDefaultFlavorDebug" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="dexRelease" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="dexDefaultFlavorRelease" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="dexTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="dexDefaultFlavorTest" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="generateDebugBuildConfig" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="generateDefaultFlavorDebugBuildConfig" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="generateDebugSources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="generateDefaultFlavorDebugSources" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="generateReleaseBuildConfig" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="generateDefaultFlavorReleaseBuildConfig" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="generateReleaseSources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="generateDefaultFlavorReleaseSources" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="generateTestBuildConfig" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="generateDefaultFlavorTestBuildConfig" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="generateTestSources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="generateDefaultFlavorTestSources" />
+                <option name="description" value="Installs the Debug build" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="installDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Installs the Debug build for flavor DefaultFlavor" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="installDefaultFlavorDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Installs the Test build for the DefaultFlavorDebug build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="installDefaultFlavorTest" />
+                <option name="description" value="Installs the Test build for the Debug build" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="installTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Runs lint on all variants." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
                 <option name="name" value="lint" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="lintDefaultFlavorDebug" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="lintDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="lintDefaultFlavorRelease" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="lintRelease" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="lintDefaultFlavorTest" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="lintTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="mergeDefaultFlavorDebugAssets" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="mergeDebugAssets" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="mergeDefaultFlavorDebugResources" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="mergeDebugResources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="mergeDefaultFlavorReleaseAssets" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="mergeReleaseAssets" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="mergeDefaultFlavorReleaseResources" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="mergeReleaseResources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="mergeDefaultFlavorTestAssets" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="mergeTestAssets" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="mergeDefaultFlavorTestResources" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="mergeTestResources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="packageDefaultFlavorDebug" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="packageDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="packageDefaultFlavorRelease" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="packageRelease" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="packageDefaultFlavorTest" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="packageTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
                 <option name="name" value="preBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="preDefaultFlavorDebugBuild" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="preDebugBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="preDefaultFlavorReleaseBuild" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="preReleaseBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="preDefaultFlavorTestBuild" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="preTestBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="prepareDefaultFlavorDebugDependencies" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="prepareDebugDependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="prepareDefaultFlavorReleaseDependencies" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="prepareReleaseDependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="prepareDefaultFlavorTestDependencies" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="prepareTestDependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="processDefaultFlavorDebugJavaRes" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="processDebugJavaRes" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="processDefaultFlavorDebugManifest" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="processDebugManifest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="processDefaultFlavorDebugResources" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="processDebugResources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="processDefaultFlavorReleaseJavaRes" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="processReleaseJavaRes" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="processDefaultFlavorReleaseManifest" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="processReleaseManifest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="processDefaultFlavorReleaseResources" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="processReleaseResources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="processDefaultFlavorTestJavaRes" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="processTestJavaRes" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="processDefaultFlavorTestResources" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="processTestResources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="processDefaultFlavorTestTestManifest" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="processTestTestManifest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Displays the signing info for each variant" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
                 <option name="name" value="signingReport" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Uninstall all applications." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
                 <option name="name" value="uninstallAll" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Uninstalls the Debug build for flavor DefaultFlavor" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="uninstallDefaultFlavorDebug" />
+                <option name="description" value="Uninstalls the Debug build" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="uninstallDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Uninstalls the Release build for flavor DefaultFlavor" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="uninstallDefaultFlavorRelease" />
+                <option name="description" value="Uninstalls the Release build" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="uninstallRelease" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Uninstalls the Test build for the DefaultFlavorDebug build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
-                <option name="name" value="uninstallDefaultFlavorTest" />
+                <option name="description" value="Uninstalls the Test build for the Debug build" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
+                <option name="name" value="uninstallTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Pos" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/App" />
                 <option name="name" value="validateDebugSigning" />
               </ExternalTaskPojo>
             </list>
@@ -526,26 +558,27 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="C:\Users\yeang-shing.then\AndroidStudioProjects\PosSales" value="1387354508418" />
-        <entry key="E:\projects\hi-tea" value="1387354510000" />
+        <entry key="C:\Users\yeang-shing.then\AndroidStudioProjects\PosSales" value="1387862614541" />
+        <entry key="E:\projects\hi-tea" value="1387862616000" />
       </map>
     </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Pos/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/Pos/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/App/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/App/src/main/res/layout/activity_day.xml" />
+        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayActivity.java" />
+        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1592" />
-    <option name="y" value="-8" />
     <option name="width" value="1296" />
-    <option name="height" value="1040" />
+    <option name="height" value="1036" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -571,17 +604,19 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Pos Sales" />
+              <option name="myItemId" value="App" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Pos Sales" />
+              <option name="myItemId" value="App" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -591,7 +626,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Pos Sales" />
+              <option name="myItemId" value="App" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -599,13 +634,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Pos" />
+              <option name="myItemId" value="App" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Pos Sales" />
+              <option name="myItemId" value="App" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -613,7 +648,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Pos" />
+              <option name="myItemId" value="App" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -627,7 +662,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Pos Sales" />
+              <option name="myItemId" value="App" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -635,7 +670,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Pos" />
+              <option name="myItemId" value="App" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -653,7 +688,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Pos Sales" />
+              <option name="myItemId" value="App" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -661,7 +696,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Pos" />
+              <option name="myItemId" value="App" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -681,31 +716,64 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hi-tea" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="GoToClass.includeLibraries" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="reference.settings.ide.settings.web.browsers" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
-    <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
-    <property name="FullScreen" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
-  <component name="RunManager" selected="Android Application.Pos">
-    <configuration default="false" name="PosSales:Pos [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.muje.pos" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android Application.App">
+    <configuration default="false" name="PosSales:App [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/Pos" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/App" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="taskDescriptions">
           <list />
@@ -717,13 +785,19 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <RunnerSettings RunnerId="ExternalSystemTaskDebugRunner">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="ExternalSystemTaskRunner" />
+      <ConfigurationWrapper RunnerId="ExternalSystemTaskDebugRunner" />
       <ConfigurationWrapper RunnerId="ExternalSystemTaskRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="PosSales:Pos [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration default="false" name="PosSales:App [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/Pos" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/App" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="taskDescriptions">
           <list />
@@ -781,19 +855,6 @@
       </ExternalSystemSettings>
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -819,6 +880,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -860,7 +934,6 @@
       <option name="ACTIVITY_CLASS" value="" />
       <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
@@ -874,12 +947,11 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <configuration default="false" name="Pos" type="AndroidRunConfigurationType" factoryName="Android Application">
-      <module name="Pos" />
+    <configuration default="false" name="App" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="App" />
       <option name="ACTIVITY_CLASS" value="" />
       <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="USE_LAST_SELECTED_DEVICE" value="true" />
       <option name="PREFERRED_AVD" value="" />
@@ -896,14 +968,14 @@
       <method />
     </configuration>
     <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="Android Application.Pos" />
-      <item index="1" class="java.lang.String" itemvalue="Gradle.PosSales:Pos [build]" />
-      <item index="2" class="java.lang.String" itemvalue="Gradle.PosSales:Pos [clean]" />
+      <item index="0" class="java.lang.String" itemvalue="Android Application.App" />
+      <item index="1" class="java.lang.String" itemvalue="Gradle.PosSales:App [build]" />
+      <item index="2" class="java.lang.String" itemvalue="Gradle.PosSales:App [clean]" />
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Gradle.PosSales:Pos [clean]" />
-        <item index="1" class="java.lang.String" itemvalue="Gradle.PosSales:Pos [build]" />
+        <item index="0" class="java.lang.String" itemvalue="Gradle.PosSales:App [clean]" />
+        <item index="1" class="java.lang.String" itemvalue="Gradle.PosSales:App [build]" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
@@ -915,52 +987,82 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="895e1833-c873-410b-b1ee-e68e30d2839c" name="Default" comment="" />
-      <created>1387354509464</created>
-      <updated>1387354509464</updated>
+      <changelist id="59e76af8-ea53-4b05-9e2c-9b9c59a97958" name="Default" comment="" />
+      <created>1387862618433</created>
+      <updated>1387862618433</updated>
     </task>
     <servers />
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="1592" y="-8" width="1296" height="1040" extended-state="6" />
-    <editor active="false" />
+    <frame x="1592" y="0" width="1296" height="1036" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35714287" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34011298" sideWeight="0.6944895" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28318584" sideWeight="0.6039063" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28318584" sideWeight="0.39609376" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21468927" sideWeight="0.30551052" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25479144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18314424" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929516" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.178125" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929516" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21636952" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32881355" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21484375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23672566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929516" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
-  </component>
-  <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USERS">
-      <collection />
-    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -974,96 +1076,98 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Pos/src/main/java/com/muje/pos/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="25" selection-start="1167" selection-end="1167" vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="3009">
+        <state line="51" column="58" selection-start="1812" selection-end="1812" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="2839">
+          <folding>
+            <element signature="docComment;field#mSectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;field#mViewPager#0;class#MainActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="43" selection-start="471" selection-end="471" vertical-scroll-proportion="0.0" vertical-offset="8" max-vertical-offset="833">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pos/src/main/res/values/strings.xml">
+    <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/activity_day.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="272">
+        <state line="15" column="13" selection-start="627" selection-end="627" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="476">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pos/src/main/res/layout/fragment_main.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/fragment_main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="659" selection-end="659" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="374">
+        <state line="11" column="39" selection-start="554" selection-end="554" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="374">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pos/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="303" selection-end="303" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="204">
+        <state line="12" column="0" selection-start="414" selection-end="414" vertical-scroll-proportion="0.39306358" vertical-offset="0" max-vertical-offset="519">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/app/ActionBar.class">
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="600" selection-end="600" vertical-scroll-proportion="0.36503068" vertical-offset="0" max-vertical-offset="3349" />
+        <state line="1" column="0" selection-start="15" selection-end="15" vertical-scroll-proportion="0.0327553" vertical-offset="0" max-vertical-offset="519" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pos/src/main/res/values/dimens.xml">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="216" selection-end="216" vertical-scroll-proportion="0.15338346" vertical-offset="0" max-vertical-offset="665">
-          <folding />
+        <state line="1" column="0" selection-start="100" selection-end="100" vertical-scroll-proportion="0.0327553" vertical-offset="0" max-vertical-offset="519" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="30" selection-start="273" selection-end="273" vertical-scroll-proportion="0.5240848" vertical-offset="0" max-vertical-offset="561" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="58" selection-start="1812" selection-end="1812" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="2839">
+          <folding>
+            <element signature="docComment;field#mSectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;field#mViewPager#0;class#MainActivity#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pos/src/main/res/values/strings.xml">
+    <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/activity_day.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
+        <state line="15" column="13" selection-start="627" selection-end="627" vertical-scroll-proportion="-10.2" vertical-offset="0" max-vertical-offset="476">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pos/Pos.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="65" selection-start="2840" selection-end="2840" vertical-scroll-proportion="0.5302752" vertical-offset="357" max-vertical-offset="1649">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pos/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="195" selection-end="195" vertical-scroll-proportion="0.15232974" vertical-offset="0" max-vertical-offset="561">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pos/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/fragment_main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="303" selection-end="303" vertical-scroll-proportion="-4.08" vertical-offset="0" max-vertical-offset="204">
+        <state line="14" column="0" selection-start="647" selection-end="647" vertical-scroll-proportion="-9.52" vertical-offset="0" max-vertical-offset="374">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pos/src/main/res/layout/fragment_main.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="36" selection-start="603" selection-end="603" vertical-scroll-proportion="-8.16" vertical-offset="0" max-vertical-offset="374">
-          <folding />
-        </state>
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pos/src/main/java/com/muje/pos/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="74" selection-start="902" selection-end="936" vertical-scroll-proportion="0.2541106" vertical-offset="0" max-vertical-offset="2958">
+        <state line="19" column="5" selection-start="524" selection-end="524" vertical-scroll-proportion="0.27331188" vertical-offset="0" max-vertical-offset="680">
           <folding />
         </state>
       </provider>
