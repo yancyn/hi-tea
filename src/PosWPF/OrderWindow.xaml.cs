@@ -327,7 +327,8 @@ namespace PosWPF
             foreach (OrderItem item in order.Items)
             {
                 if (item.ID > 0) continue; // not going to print before. We only care about new drink
-                if (item.Menu.Category.Name.ToLower() == "drink" || item.Menu.Category.Name.ToLower() == "dessert")
+                if (item.Menu.Category.Name.ToLower() == "drink" || item.Menu.Category.Name.ToLower() == "dessert"
+                    || item.Menu.Category.Name.ToLower().Contains("set "))
                 {
                     //System.Diagnostics.Debug.WriteLine("Printing label for " + item.Menu.Name);
                     System.Windows.Controls.PrintDialog pd = new System.Windows.Controls.PrintDialog();
