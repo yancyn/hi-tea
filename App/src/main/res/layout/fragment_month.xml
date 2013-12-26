@@ -9,12 +9,6 @@
     tools:context=".MonthFragment"
     android:id="@+id/fragment2">
 
-    <TextView
-        android:id="@+id/textView"
-        android:text="Month"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

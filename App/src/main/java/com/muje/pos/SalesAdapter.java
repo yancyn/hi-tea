@@ -1,7 +1,6 @@
 package com.muje.pos;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -82,7 +81,8 @@ public class SalesAdapter extends ArrayAdapter<Sales> {
         countView.setText(Integer.toString(sales.getCount()) + " orders");
 
         TextView totalView = (TextView)rowView.findViewById(R.id.textView4);
-        totalView.setText("Total " + Currency.getInstance(Locale.getDefault()).getSymbol() + String.format("%.2f%n", sales.getAmount()));
+        // TODO: Convert decimal format to global
+        totalView.setText("Total " + Currency.getInstance(Locale.getDefault()).getSymbol() + String.format("%,.2f", sales.getAmount()));
         // TODO: Get Malaysia currency Log.d("DEBUG", "Currency: " + Currency.getInstance("MYR").getSymbol());
 
         return rowView;

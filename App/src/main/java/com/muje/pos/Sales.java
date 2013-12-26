@@ -44,4 +44,10 @@ public class Sales {
             this.amount += order.getTotal();
         }
     }
+    public void addAmount(double amount) {
+        this.amount += amount;
+    }
+    public void addCount(int count) {
+        this.count += count;
+    }
 }

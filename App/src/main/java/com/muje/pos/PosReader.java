@@ -6,7 +6,10 @@ import android.database.sqlite.SQLiteDatabase;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * TODO: Convert to singleton.
@@ -26,6 +29,11 @@ public class PosReader {
         return this.sales;
     }
 
+    private ArrayList<Sales> monthlySales;
+    public ArrayList<Sales> getMonthlySales() {
+        return this.monthlySales;
+    }
+
     private int maxCounter;
     public int getMaxCounter() {
         return this.maxCounter;
@@ -43,9 +51,11 @@ public class PosReader {
     public void retrieve() {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat monthFormat = new SimpleDateFormat("yyyy-MM");
         SQLiteDatabase database = SQLiteDatabase.openDatabase(DATABASE_NAME, null, SQLiteDatabase.OPEN_READONLY);// helper.getReadableDatabase();
 
         // get sales
+        Map<String, Sales> map = new HashMap<String, Sales>();
         this.sales = new ArrayList<Sales>();
         Cursor cursor = database.rawQuery(GROUP_BY_DAY_QUERY, null);
         cursor.moveToFirst();
@@ -57,12 +67,32 @@ public class PosReader {
                 e.printStackTrace();
             }
 
+            int count = cursor.getInt(1);
             double sale = cursor.getDouble(2);
             if(sale > maxSales) maxSales = sale;
-            this.sales.add(new Sales(date, cursor.getInt(1), sale));
+            this.sales.add(new Sales(date, count, sale));
+
+            // accumulate in monthly sales collection
+            String key = monthFormat.format(date);
+            if(!map.containsKey(key)) {
+                Calendar calendar = Calendar.getInstance();
+                calendar.set(date.getYear()+1900, date.getMonth(), 1);
+                map.put(key, new Sales(calendar.getTime(), count, sale));
+            } else {
+                Sales sales = map.get(key);
+                sales.addCount(count);
+                sales.addAmount(sale);
+            }
+
             cursor.moveToNext();
         }
         cursor.close();
+
+        // dump to monthly sales collection
+        this.monthlySales = new ArrayList<Sales>();
+        for(Map.Entry<String, Sales> s: map.entrySet()) {
+            this.monthlySales.add(s.getValue());
+        }
 
         // get top selling menu
         this.counters = new ArrayList<Counter>();

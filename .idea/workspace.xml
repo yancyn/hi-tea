@@ -14,8 +14,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59e76af8-ea53-4b05-9e2c-9b9c59a97958" name="Default" comment="Draft 3 blank tabs as fragment in sales viewer.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/res/drawable/logo.png" afterPath="$PROJECT_DIR$/App/src/main/res/drawable/logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/logo.svg" afterPath="$PROJECT_DIR$/doc/logo.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/App/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MenuAdapter.java" afterPath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MenuAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MonthFragment.java" afterPath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MonthFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/PosReader.java" afterPath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/PosReader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/Sales.java" afterPath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/Sales.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/SalesAdapter.java" afterPath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/SalesAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/res/layout/fragment_month.xml" afterPath="$PROJECT_DIR$/App/src/main/res/layout/fragment_month.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="App.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,7 +84,28 @@
     <favorites_list name="App" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="MonthAdapter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MonthAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="0" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="765">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenuAdapter.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MenuAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="18" selection-start="628" selection-end="628" vertical-scroll-proportion="0.5112782" vertical-offset="119" max-vertical-offset="1649">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -113,6 +140,20 @@
               <option name="externalSystemIdString" value="GRADLE" />
               <option name="taskNames">
                 <list>
+                  <option value="clean" />
+                </list>
+              </option>
+            </ExternalSystemSettings>
+          </option>
+        </ExternalTaskExecutionInfo>
+        <ExternalTaskExecutionInfo>
+          <option name="executorId" value="Run" />
+          <option name="settings">
+            <ExternalSystemSettings>
+              <option name="externalProjectPath" value="$PROJECT_DIR$/App" />
+              <option name="externalSystemIdString" value="GRADLE" />
+              <option name="taskNames">
+                <list>
                   <option value="build" />
                 </list>
               </option>
@@ -128,20 +169,6 @@
               <option name="taskNames">
                 <list>
                   <option value="build" />
-                </list>
-              </option>
-            </ExternalSystemSettings>
-          </option>
-        </ExternalTaskExecutionInfo>
-        <ExternalTaskExecutionInfo>
-          <option name="executorId" value="Run" />
-          <option name="settings">
-            <ExternalSystemSettings>
-              <option name="externalProjectPath" value="$PROJECT_DIR$/App" />
-              <option name="externalSystemIdString" value="GRADLE" />
-              <option name="taskNames">
-                <list>
-                  <option value="clean" />
                 </list>
               </option>
             </ExternalSystemSettings>
@@ -518,22 +545,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/App/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayFragment.java" />
-        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java" />
-        <option value="$PROJECT_DIR$/App/src/main/res/layout/layout_sales.xml" />
-        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/SalesAdapter.java" />
-        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/Category.java" />
-        <option value="$PROJECT_DIR$/App/src/main/res/layout/fragment_menu.xml" />
         <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/Menu.java" />
-        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/PosReader.java" />
         <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/Counter.java" />
         <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MenuFragment.java" />
         <option value="$PROJECT_DIR$/src/PosWPF/Resources/Converter.cs" />
         <option value="$PROJECT_DIR$/App/src/main/res/layout/layout_menu.xml" />
         <option value="$PROJECT_DIR$/App/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MenuAdapter.java" />
         <option value="$PROJECT_DIR$/App/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/Sales.java" />
+        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MonthFragment.java" />
+        <option value="$PROJECT_DIR$/App/src/main/res/layout/fragment_month.xml" />
+        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/PosReader.java" />
+        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MonthAdapter.java" />
+        <option value="$PROJECT_DIR$/App/src/main/res/layout/layout_month.xml" />
+        <option value="$PROJECT_DIR$/App/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/SalesAdapter.java" />
+        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MenuAdapter.java" />
       </list>
     </option>
   </component>
@@ -746,36 +773,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hi-tea" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -833,7 +830,8 @@
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="FullScreen" value="false" />
     <property name="LayoutCode.rearrangeEntriesXML" value="false" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.WIDTH" value="368" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.WIDTH" value="343" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteToolWindowManager.SHOW" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -1075,8 +1073,8 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Gradle.PosSales:App [build]" />
-        <item index="1" class="java.lang.String" itemvalue="Gradle.PosSales:App [clean]" />
+        <item index="0" class="java.lang.String" itemvalue="Gradle.PosSales:App [clean]" />
+        <item index="1" class="java.lang.String" itemvalue="Gradle.PosSales:App [build]" />
         <item index="2" class="java.lang.String" itemvalue="Gradle.[check]" />
       </list>
     </recent_temporary>
@@ -1089,6 +1087,11 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SliceManager">
+    <option name="analysisUIOptions">
+      <AnalysisUIOptions />
+    </option>
+  </component>
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
@@ -1141,7 +1144,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1296" height="1040" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1150,19 +1153,19 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32763532" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2797282" sideWeight="0.60375" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3533409" sideWeight="0.60375" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37891737" sideWeight="0.39625" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295583" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38844848" sideWeight="0.62" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16693678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16693678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18686296" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24473257" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24473257" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2355606" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1170,6 +1173,34 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37891737" sideWeight="0.39625" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16693678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18686296" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24473257" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2355606" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32763532" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2797282" sideWeight="0.60375" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295583" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38844848" sideWeight="0.62" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -1189,96 +1220,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="5" selection-start="445" selection-end="445" vertical-scroll-proportion="0.61077845" vertical-offset="0" max-vertical-offset="765">
-          <folding>
-            <element signature="e#138#139#0" expanded="true" />
-            <element signature="e#168#169#0" expanded="true" />
-            <element signature="e#230#231#0" expanded="true" />
-            <element signature="e#268#269#0" expanded="true" />
-            <element signature="e#324#325#0" expanded="true" />
-            <element signature="e#356#357#0" expanded="true" />
-            <element signature="e#412#413#0" expanded="true" />
-            <element signature="e#444#445#0" expanded="true" />
-            <element signature="e#502#503#0" expanded="true" />
-            <element signature="e#535#536#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-19/android.jar!/android/widget/ArrayAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="157" selection-end="157" vertical-scroll-proportion="0.13934426" vertical-offset="0" max-vertical-offset="1037">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/Counter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="26" selection-start="294" selection-end="294" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/SalesAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="137" selection-start="2805" selection-end="2905" vertical-scroll-proportion="0.76324505" vertical-offset="729" max-vertical-offset="1394">
-          <folding>
-            <element signature="docComment;class#SalesAdapter#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MenuFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="766" selection-end="766" vertical-scroll-proportion="0.3570595" vertical-offset="0" max-vertical-offset="857">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/res/menu/main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="498" selection-end="498" vertical-scroll-proportion="0.2578763" vertical-offset="0" max-vertical-offset="857">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/res/menu/day.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="347" selection-end="347" vertical-scroll-proportion="0.17852975" vertical-offset="0" max-vertical-offset="857">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="4" selection-start="203" selection-end="203" vertical-scroll-proportion="0.099183194" vertical-offset="0" max-vertical-offset="857">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="857">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PosWPF/Resources/Converter.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="228" column="13" selection-start="8441" selection-end="8441" vertical-scroll-proportion="0.24170616" vertical-offset="3672" max-vertical-offset="9979">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/PosReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="28" selection-start="1540" selection-end="1540" vertical-scroll-proportion="0.5159129" vertical-offset="168" max-vertical-offset="1309">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/layout_menu.xml">
       <provider selected="true" editor-type-id="android-designer">
         <state />
@@ -1289,25 +1230,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MenuAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="45" selection-start="1224" selection-end="1224" vertical-scroll-proportion="0.37018424" vertical-offset="425" max-vertical-offset="1649">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="69" selection-start="119" selection-end="119" vertical-scroll-proportion="0.083606556" vertical-offset="0" max-vertical-offset="610">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="68" selection-start="811" selection-end="811" vertical-scroll-proportion="0.6131148" vertical-offset="0" max-vertical-offset="612">
           <folding />
         </state>
       </provider>
@@ -1316,6 +1241,147 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="45" selection-start="236" selection-end="236" vertical-scroll-proportion="0.13934426" vertical-offset="0" max-vertical-offset="610">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/fragment_day.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/layout_sales.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/Sales.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="54" selection-start="809" selection-end="809" vertical-scroll-proportion="0.57227486" vertical-offset="95" max-vertical-offset="952">
+          <folding>
+            <element signature="e#319#320#0" expanded="true" />
+            <element signature="e#352#353#0" expanded="true" />
+            <element signature="e#412#413#0" expanded="true" />
+            <element signature="e#446#447#0" expanded="true" />
+            <element signature="e#526#527#0" expanded="true" />
+            <element signature="e#560#561#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="0" selection-start="720" selection-end="877" vertical-scroll-proportion="0.31738624" vertical-offset="0" max-vertical-offset="857">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="159" column="55" selection-start="6029" selection-end="6029" vertical-scroll-proportion="0.4445741" vertical-offset="401" max-vertical-offset="1292">
+          <folding>
+            <element signature="docComment;field#mSectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;field#mViewPager#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#1614#1685#0" expanded="false" />
+            <element signature="e#1993#2061#0" expanded="false" />
+            <element signature="e#2587#2655#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#3529#3587#0" expanded="false" />
+            <element signature="method#onTabSelected#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#4962#5032#0" expanded="false" />
+            <element signature="method#onTabUnselected#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onTabReselected#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;class#SectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#SectionsPagerAdapter#0;class#SectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#getCount#0;class#SectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#getPageTitle#0;class#SectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onSaveInstanceState#0;class#MainActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/fragment_month.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="17" selection-start="728" selection-end="728" vertical-scroll-proportion="0.5557692" vertical-offset="0" max-vertical-offset="520">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/SalesAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="61" selection-start="2511" selection-end="2511" vertical-scroll-proportion="0.5112782" vertical-offset="459" max-vertical-offset="1054">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#SalesAdapter#0;class#SalesAdapter#0" expanded="false" />
+            <element signature="method#getWeekDay#0;class#SalesAdapter#0" expanded="false" />
+            <element signature="docComment;method#round#0;class#SalesAdapter#0" expanded="false" />
+            <element signature="method#round#0;class#SalesAdapter#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="292" selection-end="292" vertical-scroll-proportion="0.28073394" vertical-offset="0" max-vertical-offset="612">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/PosReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="51" selection-start="3380" selection-end="3380" vertical-scroll-proportion="0.59683794" vertical-offset="956" max-vertical-offset="1768">
+          <folding>
+            <element signature="e#1035#1036#0" expanded="true" />
+            <element signature="e#1075#1076#0" expanded="true" />
+            <element signature="e#2107#2122#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/layout_month.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="25" column="30" selection-start="1007" selection-end="1007" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="561">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MonthFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="37" selection-start="850" selection-end="850" vertical-scroll-proportion="0.5614679" vertical-offset="0" max-vertical-offset="545">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MonthAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="0" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="765">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MenuAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="18" selection-start="628" selection-end="628" vertical-scroll-proportion="0.5112782" vertical-offset="119" max-vertical-offset="1649">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

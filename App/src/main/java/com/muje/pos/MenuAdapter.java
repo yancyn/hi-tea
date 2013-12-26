@@ -65,7 +65,7 @@ public class MenuAdapter extends ArrayAdapter<Counter> {
         counterView.setText(Integer.toString(counter.getCount()));
 
         TextView priceView = (TextView)rowView.findViewById(R.id.textView4);
-        priceView.setText(Currency.getInstance(Locale.getDefault()).getSymbol() + String.format("%.2f%n", counter.getTotal()));
+        priceView.setText(Currency.getInstance(Locale.getDefault()).getSymbol() + String.format("%,.2f", counter.getTotal()));
         // handle position for not overlap counter
         double percentage = counter.getCount() * 100 / reader.getMaxCounter();
         if(percentage > 90) {
