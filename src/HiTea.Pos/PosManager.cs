@@ -348,7 +348,8 @@ namespace HiTea.Pos
             if (this.Basket.Count > 0)
             {
                 Order lastHold = this.Basket.OrderByDescending(b => b.QueueNo).First();
-                lastQueueNo = Math.Max(lastQueueNo, Convert.ToInt32(lastHold.QueueNo));
+                if(!String.IsNullOrEmpty(lastHold.QueueNo))
+                	lastQueueNo = Math.Max(lastQueueNo, Convert.ToInt32(lastHold.QueueNo));
             }
             lastQueueNo = lastQueueNo % maxQueue;
 
