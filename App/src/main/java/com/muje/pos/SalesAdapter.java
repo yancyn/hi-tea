@@ -49,6 +49,7 @@ public class SalesAdapter extends ArrayAdapter<Sales> {
 
         return "";
     }
+
     /**
      * Round up value to desired decimal places.
      * See http://stackoverflow.com/questions/2808535/round-a-double-to-2-significant-figures-after-decimal-point
@@ -62,6 +63,8 @@ public class SalesAdapter extends ArrayAdapter<Sales> {
         bd = bd.setScale(places, BigDecimal.ROUND_HALF_UP);
         return bd.doubleValue();
     }
+
+    @Override
     public View getView(int position, View contentView, ViewGroup parent) {
 
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
