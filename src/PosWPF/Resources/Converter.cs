@@ -250,7 +250,7 @@ namespace PosWPF
                 case 6:
                     return new SolidColorBrush(Color.FromRgb(255, 142, 0)); //#ff8e00
                 default:
-                    // TODO: Handle undefine color code
+                    // TODO: Handle undefined color code
                     return new SolidColorBrush(Color.FromRgb(255, 151, 115));
             }
         }
