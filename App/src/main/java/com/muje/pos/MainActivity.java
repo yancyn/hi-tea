@@ -10,12 +10,14 @@ import android.app.FragmentTransaction;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class MainActivity extends Activity implements ActionBar.TabListener {
@@ -96,6 +98,26 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
+            case R.id.action_refresh:
+                Log.d("DEBUG", "Current Tab: " + Integer.toString(mViewPager.getCurrentItem()));
+                View view = mViewPager.getChildAt(mViewPager.getCurrentItem());
+                PosReader reader = new PosReader();
+                reader.retrieve();
+
+                // reset and bind again
+                switch(mViewPager.getCurrentItem()) {
+                    case 0:
+                        // reset
+                        ListView listView0 = (ListView)view.findViewById(R.id.listView);
+                        SalesAdapter adapter = (SalesAdapter)listView0.getAdapter();
+                        if(adapter != null) adapter.clear();
+
+                        // rebind
+                        adapter = new SalesAdapter(view.getContext(), reader.getSales());
+                        listView0.setAdapter(adapter);
+                        break;
+                }
+                return true;
             case R.id.action_settings:
                 return true;
         }

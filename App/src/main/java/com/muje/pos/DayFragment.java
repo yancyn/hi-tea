@@ -21,7 +21,7 @@ public class DayFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.d("DEBUG", "Launch DayFragment");
 
-        PosReader reader = new PosReader(getActivity());
+        PosReader reader = new PosReader();
         reader.retrieve();
 
 //        Map<Date, Sales> sales = reader.getSales();
