@@ -32,6 +32,16 @@ public class MenuAdapter extends ArrayAdapter<Counter> {
         this.reader = reader;
     }
 
+    private int getColor(int categoryId) {
+        switch(categoryId) {
+            case 2: return R.color.color_set_menu;
+            case 3: return R.color.color_food;
+            case 4: return R.color.color_snack;
+            case 5: return R.color.color_drink;
+            case 6: return R.color.color_dessert;
+            default: return R.color.color_addon;
+        }
+    }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
@@ -46,7 +56,7 @@ public class MenuAdapter extends ArrayAdapter<Counter> {
         int screenWidth = parent.getWidth();
         int width = counter.getCount() * screenWidth / reader.getMaxCounter();
         colorView.setWidth(width);
-        //colorView.setBackgroundColor();
+        colorView.setBackgroundResource(getColor(menu.getCategoryId()));
 
         TextView codeView = (TextView)rowView.findViewById(R.id.textView2);
         codeView.setText(menu.getCode());
@@ -56,12 +66,12 @@ public class MenuAdapter extends ArrayAdapter<Counter> {
 
         TextView priceView = (TextView)rowView.findViewById(R.id.textView4);
         priceView.setText(Currency.getInstance(Locale.getDefault()).getSymbol() + String.format("%.2f%n", counter.getTotal()));
+        // handle position for not overlap counter
         double percentage = counter.getCount() * 100 / reader.getMaxCounter();
         if(percentage > 90) {
             RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
                     RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
             params.setMargins(0,0,100,0);
-            //params.setMarginStart(10);
             params.addRule(RelativeLayout.ALIGN_PARENT_TOP);
             params.addRule(RelativeLayout.ALIGN_RIGHT, R.id.textView);
             priceView.setLayoutParams(params);

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_addon">#ff9773</color>
+    <color name="color_set_menu">#007ccc</color>
+    <color name="color_food">#00d46e</color>
+    <color name="color_snack">#ff9773</color>
+    <color name="color_drink">#67b4e6</color>
+    <color name="color_dessert">#ff8e00</color>
+</resources>
