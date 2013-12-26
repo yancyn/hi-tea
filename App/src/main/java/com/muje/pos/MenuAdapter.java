@@ -1,11 +1,13 @@
 package com.muje.pos;
 
+import android.app.ActionBar;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -35,14 +37,15 @@ public class MenuAdapter extends ArrayAdapter<Counter> {
 
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.layout_menu, parent, false);
-        Log.d("DEBUG", "Total Width: " + Integer.toString(rowView.getWidth()));
 
-        // Define layout
         Counter counter = values.get(position);
         Menu menu = counter.getMenu();
 
+        // Define layout
         TextView colorView = (TextView)rowView.findViewById(R.id.textView);
-        //int screenWidth = parent.getWidth();
+        int screenWidth = parent.getWidth();
+        int width = counter.getCount() * screenWidth / reader.getMaxCounter();
+        colorView.setWidth(width);
         //colorView.setBackgroundColor();
 
         TextView codeView = (TextView)rowView.findViewById(R.id.textView2);
@@ -53,6 +56,24 @@ public class MenuAdapter extends ArrayAdapter<Counter> {
 
         TextView priceView = (TextView)rowView.findViewById(R.id.textView4);
         priceView.setText(Currency.getInstance(Locale.getDefault()).getSymbol() + String.format("%.2f%n", counter.getTotal()));
+        double percentage = counter.getCount() * 100 / reader.getMaxCounter();
+        if(percentage > 90) {
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+            params.setMargins(0,0,100,0);
+            //params.setMarginStart(10);
+            params.addRule(RelativeLayout.ALIGN_PARENT_TOP);
+            params.addRule(RelativeLayout.ALIGN_RIGHT, R.id.textView);
+            priceView.setLayoutParams(params);
+        }
+        if(percentage < 40) {
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+            params.setMargins(0,0,-200,0);
+            params.addRule(RelativeLayout.ALIGN_PARENT_TOP);
+            params.addRule(RelativeLayout.ALIGN_RIGHT, R.id.textView);
+            priceView.setLayoutParams(params);
+        }
 
         TextView nameView = (TextView)rowView.findViewById(R.id.textView5);
         nameView.setText(menu.getName());
