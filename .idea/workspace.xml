@@ -14,9 +14,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59e76af8-ea53-4b05-9e2c-9b9c59a97958" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayFragment.java" afterPath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java" afterPath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/PosReader.java" afterPath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/PosReader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/res/layout/layout_sales.xml" afterPath="$PROJECT_DIR$/App/src/main/res/layout/layout_sales.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="App.iws" />
@@ -87,7 +85,19 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="32" selection-start="477" selection-end="477" vertical-scroll-proportion="-5.44" vertical-offset="0" max-vertical-offset="391">
+            <state line="13" column="43" selection-start="612" selection-end="612" vertical-scroll-proportion="-8.84" vertical-offset="0" max-vertical-offset="391">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout_sales.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/layout_sales.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="35" selection-start="639" selection-end="639" vertical-scroll-proportion="-10.2" vertical-offset="0" max-vertical-offset="1003">
               <folding />
             </state>
           </provider>
@@ -96,7 +106,7 @@
       <file leaf-file-name="DayFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="74" selection-start="857" selection-end="857" vertical-scroll-proportion="0.0" vertical-offset="97" max-vertical-offset="544">
+            <state line="25" column="0" selection-start="665" selection-end="665" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
               <folding />
             </state>
           </provider>
@@ -105,7 +115,7 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="122" column="9" selection-start="4790" selection-end="4790" vertical-scroll-proportion="0.35664335" vertical-offset="1173" max-vertical-offset="2737">
+            <state line="48" column="56" selection-start="1592" selection-end="1592" vertical-scroll-proportion="0.26748252" vertical-offset="204" max-vertical-offset="2737">
               <folding>
                 <element signature="docComment;field#mSectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
                 <element signature="docComment;field#mViewPager#0;class#MainActivity#0" expanded="false" />
@@ -126,7 +136,7 @@
       <file leaf-file-name="Sales.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/Sales.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="5" selection-start="561" selection-end="561" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="748">
+            <state line="26" column="36" selection-start="485" selection-end="485" vertical-scroll-proportion="0.0" vertical-offset="176" max-vertical-offset="748">
               <folding />
             </state>
           </provider>
@@ -591,7 +601,6 @@
         <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/PosReaderDbHelper.java" />
         <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/Sales.java" />
         <option value="$PROJECT_DIR$/App/src/main/res/layout/fragment_day.xml" />
-        <option value="$PROJECT_DIR$/App/src/main/res/layout/layout_sales.xml" />
         <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/SalesAdapter.java" />
         <option value="$PROJECT_DIR$/App/src/main/res/menu/main.xml" />
         <option value="$PROJECT_DIR$/App/src/main/res/values/strings.xml" />
@@ -599,6 +608,7 @@
         <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/PosReader.java" />
         <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayFragment.java" />
         <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java" />
+        <option value="$PROJECT_DIR$/App/src/main/res/layout/layout_sales.xml" />
       </list>
     </option>
   </component>
@@ -1322,14 +1332,14 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34140968" sideWeight="0.60375" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34140968" sideWeight="0.60375" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37891737" sideWeight="0.39625" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38876653" sideWeight="0.62" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1671875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1671875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1405,16 +1415,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/layout_sales.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="44" column="39" selection-start="1664" selection-end="1664" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="952">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/src/main/res/menu/main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="43" selection-start="363" selection-end="363" vertical-scroll-proportion="0.15419501" vertical-offset="0" max-vertical-offset="882">
@@ -1449,16 +1449,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/fragment_day.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="32" selection-start="477" selection-end="477" vertical-scroll-proportion="-5.44" vertical-offset="0" max-vertical-offset="391">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/PosReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="0" selection-start="22" selection-end="22" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="850">
@@ -1468,23 +1458,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/fragment_day.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="43" selection-start="612" selection-end="612" vertical-scroll-proportion="-8.84" vertical-offset="0" max-vertical-offset="391">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/Sales.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="5" selection-start="561" selection-end="561" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="748">
+        <state line="26" column="36" selection-start="485" selection-end="485" vertical-scroll-proportion="0.0" vertical-offset="176" max-vertical-offset="748">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="74" selection-start="857" selection-end="857" vertical-scroll-proportion="0.0" vertical-offset="97" max-vertical-offset="544">
+        <state line="25" column="0" selection-start="665" selection-end="665" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/layout_sales.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="35" selection-start="639" selection-end="639" vertical-scroll-proportion="-10.2" vertical-offset="0" max-vertical-offset="1003">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="9" selection-start="4790" selection-end="4790" vertical-scroll-proportion="0.35664335" vertical-offset="1173" max-vertical-offset="2737">
+        <state line="48" column="56" selection-start="1592" selection-end="1592" vertical-scroll-proportion="0.26748252" vertical-offset="204" max-vertical-offset="2737">
           <folding>
             <element signature="docComment;field#mSectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
             <element signature="docComment;field#mViewPager#0;class#MainActivity#0" expanded="false" />
