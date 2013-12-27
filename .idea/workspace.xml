@@ -14,8 +14,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59e76af8-ea53-4b05-9e2c-9b9c59a97958" name="Default" comment="Draft 3 blank tabs as fragment in sales viewer.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayFragment.java" afterPath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java" afterPath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MenuAdapter.java" afterPath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MenuAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MenuFragment.java" afterPath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MenuFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MonthFragment.java" afterPath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MonthFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/PosReader.java" afterPath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/PosReader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -81,21 +84,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MenuAdapter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MenuAdapter.java">
+      <file leaf-file-name="MenuFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MenuFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="9" selection-start="1126" selection-end="1126" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1836">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FusionManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../WarehouseBarcode/WarehouseScanner/src/main/java/com/hlgranite/warehousescanner/FusionManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="23" selection-start="3620" selection-end="3620" vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="11713">
+            <state line="22" column="34" selection-start="817" selection-end="817" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
               <folding />
             </state>
           </provider>
@@ -104,7 +96,52 @@
       <file leaf-file-name="PosReader.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/PosReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="57" selection-start="3510" selection-end="3510" vertical-scroll-proportion="0.583612" vertical-offset="943" max-vertical-offset="1666">
+            <state line="60" column="0" selection-start="1977" selection-end="1977" vertical-scroll-proportion="0.4264214" vertical-offset="459" max-vertical-offset="1887">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="105" column="0" selection-start="4079" selection-end="4079" vertical-scroll-proportion="0.0" vertical-offset="292" max-vertical-offset="1751">
+              <folding>
+                <element signature="docComment;field#mSectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
+                <element signature="docComment;field#mViewPager#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
+                <element signature="e#1614#1685#0" expanded="false" />
+                <element signature="e#1993#2061#0" expanded="false" />
+                <element signature="e#2587#2655#0" expanded="false" />
+                <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
+                <element signature="e#3529#3587#0" expanded="false" />
+                <element signature="method#onTabSelected#0;class#MainActivity#0" expanded="false" />
+                <element signature="e#4977#5047#0" expanded="false" />
+                <element signature="method#onTabUnselected#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#onTabReselected#0;class#MainActivity#0" expanded="false" />
+                <element signature="docComment;class#SectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#SectionsPagerAdapter#0;class#SectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#getCount#0;class#SectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#getPageTitle#0;class#SectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#onSaveInstanceState#0;class#MainActivity#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MonthFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MonthFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="37" selection-start="830" selection-end="830" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DayFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="27" selection-start="973" selection-end="973" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
               <folding />
             </state>
           </provider>
@@ -550,13 +587,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/Counter.java" />
-        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MenuFragment.java" />
-        <option value="$PROJECT_DIR$/src/PosWPF/Resources/Converter.cs" />
         <option value="$PROJECT_DIR$/App/src/main/res/layout/layout_menu.xml" />
         <option value="$PROJECT_DIR$/App/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/Sales.java" />
-        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MonthFragment.java" />
         <option value="$PROJECT_DIR$/App/src/main/res/layout/fragment_month.xml" />
         <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/SalesAdapter.java" />
         <option value="$PROJECT_DIR$/App/src/main/res/values/colors.xml" />
@@ -564,8 +597,12 @@
         <option value="$PROJECT_DIR$/App/src/main/res/layout/layout_month.xml" />
         <option value="$PROJECT_DIR$/App/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/App/src/main/res/layout/layout_sales.xml" />
-        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/PosReader.java" />
         <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MenuAdapter.java" />
+        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MenuFragment.java" />
+        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MonthFragment.java" />
+        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayFragment.java" />
+        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java" />
+        <option value="$PROJECT_DIR$/App/src/main/java/com/muje/pos/PosReader.java" />
       </list>
     </option>
   </component>
@@ -1176,7 +1213,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25121555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23389831" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3322034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1184,34 +1221,6 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32763532" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37891737" sideWeight="0.39625" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18686296" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16693678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24473257" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2355606" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32763532" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2797282" sideWeight="0.60375" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295583" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38844848" sideWeight="0.62" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -1231,52 +1240,12 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="720" selection-end="877" vertical-scroll-proportion="0.31738624" vertical-offset="0" max-vertical-offset="857">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="159" column="55" selection-start="6029" selection-end="6029" vertical-scroll-proportion="0.4445741" vertical-offset="401" max-vertical-offset="1292">
-          <folding>
-            <element signature="docComment;field#mSectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;field#mViewPager#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#1614#1685#0" expanded="false" />
-            <element signature="e#1993#2061#0" expanded="false" />
-            <element signature="e#2587#2655#0" expanded="false" />
-            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#3529#3587#0" expanded="false" />
-            <element signature="method#onTabSelected#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#4962#5032#0" expanded="false" />
-            <element signature="method#onTabUnselected#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onTabReselected#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;class#SectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#SectionsPagerAdapter#0;class#SectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#getCount#0;class#SectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#getPageTitle#0;class#SectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onSaveInstanceState#0;class#MainActivity#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/fragment_month.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="17" selection-start="728" selection-end="728" vertical-scroll-proportion="0.5557692" vertical-offset="0" max-vertical-offset="520">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MonthFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="37" selection-start="850" selection-end="850" vertical-scroll-proportion="0.5614679" vertical-offset="0" max-vertical-offset="545">
           <folding />
         </state>
       </provider>
@@ -1289,13 +1258,6 @@
     <entry file="file://$PROJECT_DIR$/App/src/main/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="12" selection-start="391" selection-end="391" vertical-scroll-proportion="0.23502304" vertical-offset="0" max-vertical-offset="651">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MenuFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="563" selection-end="563" vertical-scroll-proportion="0.39209226" vertical-offset="0" max-vertical-offset="607">
           <folding />
         </state>
       </provider>
@@ -1353,23 +1315,107 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../WarehouseBarcode/WarehouseScanner/src/main/java/com/hlgranite/warehousescanner/FusionManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="23" selection-start="3620" selection-end="3620" vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="11713">
-          <folding />
+        <state line="73" column="37" selection-start="2718" selection-end="2718" vertical-scroll-proportion="0.5402098" vertical-offset="762" max-vertical-offset="2958">
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="docComment;class#FusionManager#0" expanded="false" />
+            <element signature="docComment;field#auth#0;class#FusionManager#0" expanded="false" />
+            <element signature="docComment;method#getStockImage#0;class#FusionManager#0" expanded="false" />
+            <element signature="docComment;method#reset#0;class#FusionManager#0" expanded="false" />
+            <element signature="method#reset#0;class#FusionManager#0" expanded="false" />
+            <element signature="method#resetWorkOrder#0;class#FusionManager#0" expanded="false" />
+            <element signature="docComment;method#getInstance#0;class#FusionManager#0" expanded="false" />
+            <element signature="docComment;method#setApi#0;class#FusionManager#0" expanded="false" />
+            <element signature="docComment;method#authenticate#0;class#FusionManager#0" expanded="false" />
+            <element signature="method#authenticate#0;class#FusionManager#0" expanded="false" />
+            <element signature="docComment;method#getCustomers#0;class#FusionManager#0" expanded="false" />
+            <element signature="method#getWarehouses#0;class#FusionManager#0" expanded="false" />
+            <element signature="method#getWarehouse#0;class#FusionManager#0" expanded="false" />
+            <element signature="method#getShipCodes#0;class#FusionManager#0" expanded="false" />
+            <element signature="method#getShipDate#0;class#FusionManager#0" expanded="false" />
+            <element signature="docComment;method#getStocks#0;class#FusionManager#0" expanded="false" />
+            <element signature="method#getStocks#0;class#FusionManager#0" expanded="false" />
+            <element signature="method#getStock#0;class#FusionManager#0" expanded="false" />
+            <element signature="method#addStockImage#0;class#FusionManager#0" expanded="false" />
+            <element signature="docComment;method#checkout#0;class#FusionManager#0" expanded="false" />
+            <element signature="method#checkout#0;class#FusionManager#0" expanded="false" />
+            <element signature="docComment;method#removeWorkOrder#0;class#FusionManager#0" expanded="false" />
+            <element signature="method#removeWorkOrder#0;class#FusionManager#0" expanded="false" />
+            <element signature="docComment;method#addStock#0;class#FusionManager#0" expanded="false" />
+            <element signature="method#addStock#0;class#FusionManager#0" expanded="false" />
+            <element signature="method#getShipments#0;class#FusionManager#0" expanded="false" />
+            <element signature="docComment;method#getWorkOrders#0;class#FusionManager#0" expanded="false" />
+            <element signature="method#getWorkOrders#0;class#FusionManager#0" expanded="false" />
+            <element signature="class#PostWeb#0;class#FusionManager#0" expanded="false" />
+            <element signature="method#PostWeb#0;class#PostWeb#0;class#FusionManager#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#PostWeb#0;class#FusionManager#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#PostWeb#0;class#FusionManager#0" expanded="false" />
+            <element signature="docComment;method#validateUrl#0;class#FusionManager#0" expanded="false" />
+            <element signature="method#validateUrl#0;class#FusionManager#0" expanded="false" />
+            <element signature="docComment;method#parseDate#0;class#FusionManager#0" expanded="false" />
+            <element signature="method#parseDate#0;class#FusionManager#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MenuAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="9" selection-start="1126" selection-end="1126" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1836">
+        <state line="46" column="25" selection-start="1336" selection-end="1336" vertical-scroll-proportion="0.53010035" vertical-offset="465" max-vertical-offset="1768">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/DayFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="27" selection-start="973" selection-end="973" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MonthFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="37" selection-start="830" selection-end="830" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MenuFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="34" selection-start="817" selection-end="817" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="105" column="0" selection-start="4079" selection-end="4079" vertical-scroll-proportion="0.0" vertical-offset="292" max-vertical-offset="1751">
+          <folding>
+            <element signature="docComment;field#mSectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;field#mViewPager#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#1614#1685#0" expanded="false" />
+            <element signature="e#1993#2061#0" expanded="false" />
+            <element signature="e#2587#2655#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#3529#3587#0" expanded="false" />
+            <element signature="method#onTabSelected#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#4977#5047#0" expanded="false" />
+            <element signature="method#onTabUnselected#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onTabReselected#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;class#SectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#SectionsPagerAdapter#0;class#SectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#getCount#0;class#SectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#getPageTitle#0;class#SectionsPagerAdapter#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onSaveInstanceState#0;class#MainActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/PosReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="57" selection-start="3510" selection-end="3510" vertical-scroll-proportion="0.583612" vertical-offset="943" max-vertical-offset="1666">
+        <state line="60" column="0" selection-start="1977" selection-end="1977" vertical-scroll-proportion="0.4264214" vertical-offset="459" max-vertical-offset="1887">
           <folding />
         </state>
       </provider>

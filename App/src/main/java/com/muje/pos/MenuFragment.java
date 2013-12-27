@@ -16,13 +16,9 @@ public class MenuFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.d("DEBUG", "Launch MenuFragment");
 
-        PosReader reader = new PosReader();
-        reader.retrieve();
-
+        PosReader reader = PosReader.getInstance();
         View view = inflater.inflate(R.layout.fragment_menu, container, false);
         MenuAdapter adapter = new MenuAdapter(view.getContext(), reader.getCounter());
-        adapter.setReader(reader);
-
         ListView listView = (ListView)view.findViewById(R.id.listView);
         listView.setAdapter(adapter);
 

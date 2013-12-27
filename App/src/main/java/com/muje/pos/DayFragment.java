@@ -21,14 +21,12 @@ public class DayFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.d("DEBUG", "Launch DayFragment");
 
-        PosReader reader = new PosReader();
-        reader.retrieve();
-
-//        Map<Date, Sales> sales = reader.getSales();
+        //        Map<Date, Sales> sales = reader.getSales();
 //        for(Map.Entry<Date, Sales> sale: sales.entrySet()) {
 //            Log.d("DEBUG", sale.getKey() + ": " + sale.getValue().getAmount() );
 //        }
 
+        PosReader reader = PosReader.getInstance();
         View view = inflater.inflate(R.layout.fragment_day, container, false);
         SalesAdapter adapter = new SalesAdapter(view.getContext(), reader.getSales());
         ListView listView = (ListView)view.findViewById(R.id.listView);

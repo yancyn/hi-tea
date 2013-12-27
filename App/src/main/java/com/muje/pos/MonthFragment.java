@@ -16,9 +16,7 @@ public class MonthFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.d("DEBUG", "Launch MonthFragment");
 
-        PosReader reader = new PosReader();
-        reader.retrieve();
-
+        PosReader reader = PosReader.getInstance();
         View view = inflater.inflate(R.layout.fragment_month, container, false);
         MonthAdapter adapter = new MonthAdapter(view.getContext(), reader.getMonthlySales());
         ListView listView = (ListView)view.findViewById(R.id.listView);

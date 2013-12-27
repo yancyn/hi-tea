@@ -101,8 +101,8 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
             case R.id.action_refresh:
                 Log.d("DEBUG", "Current Tab: " + Integer.toString(mViewPager.getCurrentItem()));
                 View view = mViewPager.getChildAt(mViewPager.getCurrentItem());
-                PosReader reader = new PosReader();
-                reader.retrieve();
+                PosReader reader = PosReader.getInstance();
+                // TODO: Refresh database
 
                 // reset and bind again
                 switch(mViewPager.getCurrentItem()) {

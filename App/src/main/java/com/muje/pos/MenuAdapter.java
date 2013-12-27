@@ -21,18 +21,14 @@ public class MenuAdapter extends ArrayAdapter<Counter> {
 
     private final Context context;
     private final ArrayList<Counter> values;
-    private PosReader reader;
     private int maxCounter;
 
     public MenuAdapter(Context context, ArrayList<Counter> values) {
         super(context, R.layout.layout_menu, values);
+
         this.context = context;
         this.values = values;
-        this.reader = null;
-    }
 
-    public void setReader(PosReader reader) {
-        this.reader = reader;
         this.maxCounter = 0;
         for(Counter counter: values) {
             if(counter.getCount() > maxCounter) {

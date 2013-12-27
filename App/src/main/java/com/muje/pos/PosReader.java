@@ -2,6 +2,7 @@ package com.muje.pos;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -12,11 +13,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * TODO: Convert to singleton.
+ * Pos business logic singleton class.
  * Created by yeang-shing.then on 12/24/13.
  */
 public class PosReader {
 
+    private static PosReader instance;
     public static final String DATABASE_NAME = "/sdcard/Download/pos.db3"; // TODO: Put in config
 
     private double maxSales;
@@ -42,8 +44,20 @@ public class PosReader {
 
     public PosReader() {
         this.maxSales = 0;
+        // TODO: Handle database file exist
+        retrieve();
     }
-    public void retrieve() {
+
+    public static synchronized PosReader getInstance() {
+        if(instance == null) {
+            instance = new PosReader();
+        }
+        return instance;
+    }
+
+    private void retrieve() {
+
+        Log.d("DEBUG", "PosReader.retrieve()");
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         SimpleDateFormat monthFormat = new SimpleDateFormat("yyyy-MM");
