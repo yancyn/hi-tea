@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Wed"
-        android:id="@+id/textView"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:width="50dp" />
-    <TableLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:stretchColumns="*">
+    android:layout_height="match_parent">
 
-        <TableRow
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="50dp"
+                android:text="Wed"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="25-Dec-2013"
-                android:id="@+id/textView2"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_column="0" />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="23 Orders"
-                android:id="@+id/textView3"
-                android:layout_column="1"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_gravity="right" />
-        </TableRow>
-        <TableRow
+        <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
             <TextView
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="RM 913.00"
-                android:id="@+id/textView4"
-                android:layout_column="0"
-                android:layout_span="2"
-                android:layout_gravity="right" />
-        </TableRow>
+                android:layout_marginLeft="15dp"
+                android:text="23 Orders"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    </TableLayout>
-</LinearLayout>
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="RM 913.00"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
