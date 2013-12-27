@@ -14,10 +14,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59e76af8-ea53-4b05-9e2c-9b9c59a97958" name="Default" comment="Draft 3 blank tabs as fragment in sales viewer.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/App/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MonthAdapter.java" afterPath="$PROJECT_DIR$/App/src/main/java/com/muje/pos/MonthAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/res/layout/layout_month.xml" afterPath="$PROJECT_DIR$/App/src/main/res/layout/layout_month.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/src/main/res/layout/layout_sales.xml" afterPath="$PROJECT_DIR$/App/src/main/res/layout/layout_sales.xml" />
+      <change type="DELETED" beforePath="E:\projects\hi-tea\PosSales.iml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="App.iws" />
@@ -85,7 +82,7 @@
       <file leaf-file-name="MonthAdapter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/MonthAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="13" selection-start="837" selection-end="837" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
+            <state line="30" column="13" selection-start="837" selection-end="837" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="952">
               <folding />
             </state>
           </provider>
@@ -94,7 +91,7 @@
       <file leaf-file-name="layout_month.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/layout_month.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="44" selection-start="858" selection-end="858" vertical-scroll-proportion="-14.28" vertical-offset="0" max-vertical-offset="544">
+            <state line="21" column="44" selection-start="858" selection-end="858" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="544">
               <folding />
             </state>
           </provider>
@@ -106,26 +103,20 @@
       <file leaf-file-name="SalesAdapter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/SalesAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="7" selection-start="1585" selection-end="1585" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1054">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#SalesAdapter#0;class#SalesAdapter#0" expanded="false" />
-                <element signature="method#getWeekDay#0;class#SalesAdapter#0" expanded="false" />
-                <element signature="docComment;method#round#0;class#SalesAdapter#0" expanded="false" />
-                <element signature="method#round#0;class#SalesAdapter#0" expanded="false" />
-              </folding>
+            <state line="57" column="7" selection-start="1585" selection-end="1585" vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="1632">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="layout_sales.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/layout_sales.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="0" selection-start="1311" selection-end="1311" vertical-scroll-proportion="0.9125214" vertical-offset="63" max-vertical-offset="1003">
+          <provider editor-type-id="text-editor">
+            <state line="31" column="21" selection-start="1168" selection-end="1168" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="android-designer">
+          <provider selected="true" editor-type-id="android-designer">
             <state />
           </provider>
         </entry>
@@ -637,7 +628,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -841,6 +831,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -984,19 +975,6 @@
       </ExternalSystemSettings>
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1022,6 +1000,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1195,7 +1186,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24473257" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24473257" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2344281" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1209,13 +1200,13 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37891737" sideWeight="0.39625" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18686296" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16693678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18686296" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24473257" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2355606" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1228,8 +1219,8 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295583" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38844848" sideWeight="0.62" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -1381,19 +1372,13 @@
     <entry file="file://$PROJECT_DIR$/App/src/main/java/com/muje/pos/SalesAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="57" column="7" selection-start="1585" selection-end="1585" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1054">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#SalesAdapter#0;class#SalesAdapter#0" expanded="false" />
-            <element signature="method#getWeekDay#0;class#SalesAdapter#0" expanded="false" />
-            <element signature="docComment;method#round#0;class#SalesAdapter#0" expanded="false" />
-            <element signature="method#round#0;class#SalesAdapter#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/layout_month.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="44" selection-start="858" selection-end="858" vertical-scroll-proportion="-14.28" vertical-offset="0" max-vertical-offset="544">
+        <state line="21" column="44" selection-start="858" selection-end="858" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="544">
           <folding />
         </state>
       </provider>
@@ -1402,12 +1387,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App/src/main/res/layout/layout_sales.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="1311" selection-end="1311" vertical-scroll-proportion="0.9125214" vertical-offset="63" max-vertical-offset="1003">
+      <provider editor-type-id="text-editor">
+        <state line="31" column="21" selection-start="1168" selection-end="1168" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer">
+      <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
     </entry>
