@@ -18,9 +18,12 @@ import java.util.Locale;
  * Created by yeang-shing.then on 12/26/13.
  */
 public class MenuAdapter extends ArrayAdapter<Counter> {
+
     private final Context context;
     private final ArrayList<Counter> values;
     private PosReader reader;
+    private int maxCounter;
+
     public MenuAdapter(Context context, ArrayList<Counter> values) {
         super(context, R.layout.layout_menu, values);
         this.context = context;
@@ -30,6 +33,12 @@ public class MenuAdapter extends ArrayAdapter<Counter> {
 
     public void setReader(PosReader reader) {
         this.reader = reader;
+        this.maxCounter = 0;
+        for(Counter counter: values) {
+            if(counter.getCount() > maxCounter) {
+                maxCounter = counter.getCount();
+            }
+        }
     }
 
     private int getColor(int categoryId) {
@@ -54,7 +63,7 @@ public class MenuAdapter extends ArrayAdapter<Counter> {
         // Define layout
         TextView colorView = (TextView)rowView.findViewById(R.id.textView);
         int screenWidth = parent.getWidth();
-        int width = counter.getCount() * screenWidth / reader.getMaxCounter();
+        int width = counter.getCount() * screenWidth / maxCounter;
         colorView.setWidth(width);
         colorView.setBackgroundResource(getColor(menu.getCategoryId()));
 
@@ -67,7 +76,7 @@ public class MenuAdapter extends ArrayAdapter<Counter> {
         TextView priceView = (TextView)rowView.findViewById(R.id.textView4);
         priceView.setText(Currency.getInstance(Locale.getDefault()).getSymbol() + String.format("%,.2f", counter.getTotal()));
         // handle position for not overlap counter
-        double percentage = counter.getCount() * 100 / reader.getMaxCounter();
+        double percentage = counter.getCount() * 100 / maxCounter;
         if(percentage > 90) {
             RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
                     RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);

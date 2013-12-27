@@ -34,10 +34,6 @@ public class PosReader {
         return this.monthlySales;
     }
 
-    private int maxCounter;
-    public int getMaxCounter() {
-        return this.maxCounter;
-    }
     private final String GROUP_BY_MENU_QUERY = "SELECT OrderItem.MenuId, Category.Id AS CategoryId, Menu.Code, Menu.Name, Menu.Price, Count(OrderItem.MenuId) AS Count FROM OrderItem JOIN Menu ON OrderItem.MenuId=Menu.Id JOIN Category ON Menu.CategoryId=Category.Id GROUP BY OrderItem.MenuId ORDER BY Count(OrderItem.MenuId) DESC;";
     private ArrayList<Counter> counters;
     public ArrayList<Counter> getCounter() {
@@ -45,7 +41,6 @@ public class PosReader {
     }
 
     public PosReader() {
-        this.maxCounter = 0;
         this.maxSales = 0;
     }
     public void retrieve() {
@@ -102,7 +97,6 @@ public class PosReader {
 
             int count = cursor.getInt(5);
             double price = cursor.getDouble(4);
-            if(count > maxCounter) maxCounter = count;
             if(count*price > maxSales) maxSales = count*price;
 
             Menu menu = new Menu(cursor.getInt(0), cursor.getInt(1), cursor.getString(2), cursor.getString(3), price);
