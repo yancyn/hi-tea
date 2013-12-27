@@ -76,10 +76,10 @@ public class MenuAdapter extends ArrayAdapter<Counter> {
             params.addRule(RelativeLayout.ALIGN_RIGHT, R.id.textView);
             priceView.setLayoutParams(params);
         }
-        if(percentage < 40) {
+        if(percentage < 50) {
             RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
                     RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-            params.setMargins(0,0,-200,0);
+            params.setMargins(0,0,-230,0);
             params.addRule(RelativeLayout.ALIGN_PARENT_TOP);
             params.addRule(RelativeLayout.ALIGN_RIGHT, R.id.textView);
             priceView.setLayoutParams(params);
