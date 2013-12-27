@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Configuration;
@@ -344,12 +344,16 @@ namespace HiTea.Pos
             int lastQueueNo = 0;
 
             Order lastOrder = db.Orders.OrderByDescending(o => o.ID).FirstOrDefault();
-            if (lastOrder != null) lastQueueNo = Convert.ToInt32(lastOrder.QueueNo);
+            if (lastOrder != null)
+            {
+                if (!String.IsNullOrEmpty(lastOrder.QueueNo))
+                    lastQueueNo = Convert.ToInt32(lastOrder.QueueNo);
+            }
             if (this.Basket.Count > 0)
             {
                 Order lastHold = this.Basket.OrderByDescending(b => b.QueueNo).First();
-                if(!String.IsNullOrEmpty(lastHold.QueueNo))
-                	lastQueueNo = Math.Max(lastQueueNo, Convert.ToInt32(lastHold.QueueNo));
+                if (!String.IsNullOrEmpty(lastHold.QueueNo))
+                    lastQueueNo = Math.Max(lastQueueNo, Convert.ToInt32(lastHold.QueueNo));
             }
             lastQueueNo = lastQueueNo % maxQueue;
 
@@ -493,13 +497,18 @@ namespace HiTea.Pos
                 UpdateOrder(ref order);
             }
 
-            //this.selectedOrder = null;
+            this.selectedOrder = null;
             StartTimer();
         }
         public void Pay(int id)
         {
+            bool isNew = false;
             Order order = db.Orders.Where(o => o.ID == id).FirstOrDefault();
-            if (order == null) return;
+            if (order == null)
+            {
+                isNew = true;
+                order = new Order();
+            }
 
             order.Created = this.selectedOrder.Created;
             order.CreatedByID = this.selectedOrder.CreatedByID;
@@ -510,6 +519,7 @@ namespace HiTea.Pos
             order.ReceiptDate = DateTime.Now;
             order.TableNo = this.selectedOrder.TableNo;
             order.Total = this.selectedOrder.Total;
+            if(isNew) db.Orders.InsertOnSubmit(order);
 
             List<OrderItem> oldItems = new List<OrderItem>();
             foreach (OrderItem item in order.OrderItems)
