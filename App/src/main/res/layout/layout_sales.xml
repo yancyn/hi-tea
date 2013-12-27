@@ -12,7 +12,7 @@
         android:height="55dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:background="@color/color_default" />
+        android:background="@color/color_counter" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
         android:height="55dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:background="@color/color_default" />
+        android:background="@color/color_sales" />
 
     <LinearLayout
         android:layout_width="fill_parent"

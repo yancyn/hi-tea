@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- source http://colorschemedesigner.com/#5021TmFpew0w0 -->
     <color name="color_default">#902a7c</color>
+    <color name="color_sales">#c85eb3</color>
+    <color name="color_counter">#a2c038</color>
     <color name="color_addon">#ff9773</color>
     <color name="color_set_menu">#007ccc</color>
     <color name="color_food">#00d46e</color>
