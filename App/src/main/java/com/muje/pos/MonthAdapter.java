@@ -20,7 +20,7 @@ public class MonthAdapter extends ArrayAdapter<Sales> {
 
     private final Context context;
     private final ArrayList<Sales> values;
-    private final SimpleDateFormat dateFormat = new SimpleDateFormat("MMM yyyy");
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy MMM");
 
     public MonthAdapter(Context context, ArrayList<Sales> values) {
         super(context, R.layout.layout_sales, values);
