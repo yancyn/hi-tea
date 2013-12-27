@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Configuration;
@@ -31,8 +31,6 @@ namespace PosWPF
         {
             InitializeComponent();
         }
-        
-        // TODO: Move to PosManager.ConfirmOrder()
         private void Window_Closed(object sender, EventArgs e)
         {
             PosManager posManager = (this.DataContext as PosManager);
@@ -60,9 +58,10 @@ namespace PosWPF
                         }
                     }
                 }
+
+                posManager.SelectedOrder.QueueNo = string.Empty;
             }
 
-            posManager.ConfirmOrder();
             // remove from cache once paid
             if (posManager.SelectedOrder.ReceiptDate.HasValue)
             {
@@ -89,7 +88,7 @@ namespace PosWPF
                 }
             }
 
-            posManager.SelectedOrder = null;
+            posManager.StartTimer();
         }
 
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)

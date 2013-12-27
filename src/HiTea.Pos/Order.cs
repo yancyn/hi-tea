@@ -185,6 +185,7 @@ namespace HiTea.Pos
 
             return served;
         }
+
     }
 
     public class RemoveItemCommand : ICommand
