@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Configuration;
@@ -31,7 +31,7 @@ namespace PosWPF
         {
             InitializeComponent();
         }
-
+        
         // TODO: Move to PosManager.ConfirmOrder()
         private void Window_Closed(object sender, EventArgs e)
         {
@@ -88,10 +88,10 @@ namespace PosWPF
                     }
                 }
             }
+
             posManager.SelectedOrder = null;
         }
 
-        // Obsolete
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
             PosManager posManager = (PosManager)this.DataContext;

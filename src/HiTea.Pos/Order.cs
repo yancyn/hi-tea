@@ -152,7 +152,7 @@ namespace HiTea.Pos
                     this._memberID = value;
                     this.SendPropertyChanged("MemberID");
                     this.OnMemberIDChanged();
-                    
+
                     CalculateTotal();
                     this.SendPropertyChanged("Total");
                 }
