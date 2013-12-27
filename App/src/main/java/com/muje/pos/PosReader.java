@@ -21,10 +21,6 @@ public class PosReader {
     private static PosReader instance;
     public static final String DATABASE_NAME = "/sdcard/Download/pos.db3"; // TODO: Put in config
 
-    private double maxSales;
-    public double getMaxSales() {
-        return this.maxSales;
-    }
     private final String GROUP_BY_DAY_QUERY = "SELECT strftime('%Y-%m-%d',Created) AS Date, COUNT(Id) AS Orders, SUM(Total) AS Sales FROM 'Order' GROUP BY strftime('%Y-%m-%d',Created) ORDER BY strftime('%Y-%m-%d',Created) DESC;";
     private ArrayList<Sales> sales;
     public ArrayList<Sales> getSales() {
@@ -43,7 +39,6 @@ public class PosReader {
     }
 
     public PosReader() {
-        this.maxSales = 0;
         // TODO: Handle database file exist
         retrieve();
     }
@@ -78,7 +73,6 @@ public class PosReader {
 
             int count = cursor.getInt(1);
             double sale = cursor.getDouble(2);
-            if(sale > maxSales) maxSales = sale;
             this.sales.add(new Sales(date, count, sale));
 
             // accumulate in monthly sales collection
@@ -111,8 +105,6 @@ public class PosReader {
 
             int count = cursor.getInt(5);
             double price = cursor.getDouble(4);
-            if(count*price > maxSales) maxSales = count*price;
-
             Menu menu = new Menu(cursor.getInt(0), cursor.getInt(1), cursor.getString(2), cursor.getString(3), price);
             this.counters.add(new Counter(menu, count));
             cursor.moveToNext();

@@ -20,6 +20,8 @@ public class SalesAdapter extends ArrayAdapter<Sales> {
 
     private final Context context;
     private final ArrayList<Sales> values;
+    private int maxCounter;
+    private double maxAmount;
     private final SimpleDateFormat weekFormat = new SimpleDateFormat("c");
     private final SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
 
@@ -27,6 +29,13 @@ public class SalesAdapter extends ArrayAdapter<Sales> {
         super(context, R.layout.layout_sales, values);
         this.context = context;
         this.values = values;
+
+        maxCounter = 0;
+        maxAmount = 0;
+        for(Sales sales: values) {
+            if(sales.getCount() > maxCounter) maxCounter = sales.getCount();
+            if(sales.getAmount() > maxAmount) maxAmount = sales.getAmount();
+        }
     }
     private String getWeekDay(int day) {
         switch(day) {
@@ -66,11 +75,21 @@ public class SalesAdapter extends ArrayAdapter<Sales> {
     @Override
     public View getView(int position, View contentView, ViewGroup parent) {
 
+        Sales sales = values.get(position);
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.layout_sales, parent, false);
 
-        // Define all components
-        Sales sales = values.get(position);
+        // paint graph for counter
+        int maxWidth = parent.getWidth() / 2;
+        TextView counterBar = (TextView)rowView.findViewById(R.id.textView5);
+        counterBar.setWidth(sales.getCount() * maxWidth / maxCounter);
+
+        // paint graph for amount
+        TextView amountBar = (TextView)rowView.findViewById(R.id.textView6);
+        int width = (int)(sales.getAmount() * maxWidth / maxAmount);
+        amountBar.setWidth(width);
+
+        // Define layout
         TextView dayView = (TextView)rowView.findViewById(R.id.textView);
         dayView.setText(weekFormat.format(sales.getDate())); // sales.getDate().getDay()
 
