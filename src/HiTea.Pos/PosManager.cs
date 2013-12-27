@@ -343,20 +343,22 @@ namespace HiTea.Pos
         {
             int lastQueueNo = 0;
 
-            Order lastOrder = db.Orders.OrderByDescending(o => o.ID).FirstOrDefault();
-            if (lastOrder != null)
-            {
-                if (!String.IsNullOrEmpty(lastOrder.QueueNo))
-                    lastQueueNo = Convert.ToInt32(lastOrder.QueueNo);
-            }
+            Order lastOrder = db.Orders.OrderByDescending(o => o.Created).FirstOrDefault();
+            if (lastOrder != null && !String.IsNullOrEmpty(lastOrder.QueueNo))
+                lastQueueNo = Convert.ToInt32(lastOrder.QueueNo);
+
+            Order lastBasket = null;
             if (this.Basket.Count > 0)
             {
-                Order lastHold = this.Basket.OrderByDescending(b => b.QueueNo).First();
-                if (!String.IsNullOrEmpty(lastHold.QueueNo))
-                    lastQueueNo = Math.Max(lastQueueNo, Convert.ToInt32(lastHold.QueueNo));
+                lastBasket = this.Basket.Where(b => b.OrderItems.Count() > 0 || b.Items.Count() > 0).OrderByDescending(b => b.Created).FirstOrDefault();
+                if (lastBasket != null && !String.IsNullOrEmpty(lastBasket.QueueNo))
+                {
+                    if (lastBasket.Created > lastOrder.Created)
+                        lastQueueNo = Convert.ToInt32(lastBasket.QueueNo);
+                }
             }
-            lastQueueNo = lastQueueNo % maxQueue;
 
+            lastQueueNo = lastQueueNo % maxQueue;
             lastQueueNo++;
             return lastQueueNo.ToString();
         }
