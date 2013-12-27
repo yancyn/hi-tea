@@ -493,7 +493,7 @@ namespace HiTea.Pos
                 UpdateOrder(ref order);
             }
 
-            this.selectedOrder = null;
+            //this.selectedOrder = null;
             StartTimer();
         }
         public void Pay(int id)

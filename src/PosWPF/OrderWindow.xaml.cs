@@ -31,6 +31,8 @@ namespace PosWPF
         {
             InitializeComponent();
         }
+
+        // TODO: Move to PosManager.ConfirmOrder()
         private void Window_Closed(object sender, EventArgs e)
         {
             PosManager posManager = (this.DataContext as PosManager);
@@ -58,10 +60,9 @@ namespace PosWPF
                         }
                     }
                 }
-
-                posManager.SelectedOrder.QueueNo = string.Empty;
             }
 
+            posManager.ConfirmOrder();
             // remove from cache once paid
             if (posManager.SelectedOrder.ReceiptDate.HasValue)
             {
@@ -87,10 +88,10 @@ namespace PosWPF
                     }
                 }
             }
-
-            posManager.StartTimer();
+            posManager.SelectedOrder = null;
         }
 
+        // Obsolete
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
             PosManager posManager = (PosManager)this.DataContext;

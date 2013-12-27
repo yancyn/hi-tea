@@ -168,6 +168,23 @@ namespace HiTea.Pos
         {
             this.Items.Remove(item);
         }
+
+        // Not use at this moment
+        /// <summary>
+        /// True if all food has been served. Not include drink and dessert.
+        /// </summary>
+        /// <returns></returns>
+        public bool IsServed()
+        {
+            bool served = true;
+            foreach (OrderItem item in this.Items)
+            {
+                if (item.StatusID != 2)
+                    return false;
+            }
+
+            return served;
+        }
     }
 
     public class RemoveItemCommand : ICommand
