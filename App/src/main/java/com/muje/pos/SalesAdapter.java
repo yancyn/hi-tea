@@ -30,8 +30,8 @@ public class SalesAdapter extends ArrayAdapter<Sales> {
         this.context = context;
         this.values = values;
 
-        maxCounter = 0;
-        maxAmount = 0;
+        this.maxCounter = 0;
+        this.maxAmount = 0;
         for(Sales sales: values) {
             if(sales.getCount() > maxCounter) maxCounter = sales.getCount();
             if(sales.getAmount() > maxAmount) maxAmount = sales.getAmount();

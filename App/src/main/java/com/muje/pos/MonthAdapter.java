@@ -20,22 +20,41 @@ public class MonthAdapter extends ArrayAdapter<Sales> {
 
     private final Context context;
     private final ArrayList<Sales> values;
+    private int maxCounter;
+    private double maxAmount;
     private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy MMM");
 
     public MonthAdapter(Context context, ArrayList<Sales> values) {
         super(context, R.layout.layout_sales, values);
         this.context = context;
         this.values = values;
+
+        this.maxCounter = 0;
+        this.maxAmount = 0;
+        for(Sales sales: values) {
+            if(sales.getCount() > maxCounter) maxCounter = sales.getCount();
+            if(sales.getAmount() > maxAmount) maxAmount = sales.getAmount();
+        }
     }
 
     @Override
     public View getView(int position, View contentView, ViewGroup parent) {
 
+        Sales sales = values.get(position);
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.layout_month, parent, false);
 
+        // paint graph for counter
+        int maxWidth = parent.getWidth() / 2;
+        TextView counterBar = (TextView)rowView.findViewById(R.id.textView4);
+        counterBar.setWidth(sales.getCount() * maxWidth / maxCounter);
+
+        // paint graph for amount
+        TextView amountBar = (TextView)rowView.findViewById(R.id.textView5);
+        int width = (int)(sales.getAmount() * maxWidth / maxAmount);
+        amountBar.setWidth(width);
+
         // Define layout
-        Sales sales = values.get(position);
         TextView monthView = (TextView)rowView.findViewById(R.id.textView);
         monthView.setText(dateFormat.format(sales.getDate()));
 
