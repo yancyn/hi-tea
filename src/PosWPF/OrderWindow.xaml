@@ -46,12 +46,18 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0"  Orientation="Horizontal">
                     <Button ToolTip="Print Receipt" Background="{StaticResource PrinterIcon}" Style="{StaticResource CircleButtonStyle}" Click="ReceiptButton_Click" />
-                    <Button ToolTip="Print Cup Label" Background="{StaticResource CupIcon}" Style="{StaticResource CircleButtonStyle}" Click="LabelButton_Click" />
+                	<Button ToolTip="Pay" Style="{StaticResource PayButton}" Click="PayButton_Click" />
                 </StackPanel>
                 <StackPanel Grid.Column="1"  HorizontalAlignment="Right" Orientation="Horizontal">
+<<<<<<< HEAD
                     <Button ToolTip="Pay" Style="{StaticResource PayButton}" Click="PayButton_Click" />
                     <Button ToolTip="Print Order" Background="{StaticResource OrderListIcon}" Style="{StaticResource CircleButtonStyle}" Click="OrderListButton_Click" />
                     <Button ToolTip="Confirm" Background="{StaticResource TickIcon}" Style="{StaticResource CircleButtonStyle}" Click="ConfirmButton_Click" />
+=======
+                    <Button ToolTip="Confirm" Background="{StaticResource TickIcon}" Style="{StaticResource CircleButtonStyle}" Command="{Binding ConfirmOrderCommand}" Click="ConfirmButton_Click" />
+                	<Button ToolTip="Print Order" Background="{StaticResource OrderListIcon}" Style="{StaticResource CircleButtonStyle}" Click="OrderListButton_Click" />
+            		<Button ToolTip="Print Cup Label" Background="{StaticResource CupIcon}" Style="{StaticResource CircleButtonStyle}" Click="LabelButton_Click" />
+>>>>>>> e43ee49c9a10fa4f4bf20bda9f656b49b7452a81
                 </StackPanel>
             </Grid>
         </Grid>
