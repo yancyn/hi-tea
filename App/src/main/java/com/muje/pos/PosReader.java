@@ -4,6 +4,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ import java.util.Map;
 public class PosReader {
 
     private static PosReader instance;
-    public static final String DATABASE_NAME = "/sdcard/Download/pos.db3"; // TODO: Put in config
+    public static String DATABASE_NAME;
 
     private final String GROUP_BY_DAY_QUERY = "SELECT strftime('%Y-%m-%d',Created) AS Date, COUNT(Id) AS Orders, SUM(Total) AS Sales FROM 'Order' GROUP BY strftime('%Y-%m-%d',Created) ORDER BY strftime('%Y-%m-%d',Created) DESC;";
     private ArrayList<Sales> sales;
@@ -39,8 +40,13 @@ public class PosReader {
     }
 
     public PosReader() {
-        // TODO: Handle database file exist
-        retrieve();
+        this.sales = new ArrayList<Sales>();
+        this.monthlySales = new ArrayList<Sales>();
+        this.counters = new ArrayList<Counter>();
+    }
+    public void setDatabasePath(String path) {
+        DATABASE_NAME = path;
+        refresh();
     }
 
     public static synchronized PosReader getInstance() {
@@ -50,10 +56,13 @@ public class PosReader {
         return instance;
     }
 
-    private void retrieve() {
+    public void refresh() {
 
-        Log.d("DEBUG", "PosReader.retrieve()");
+        // check exist only continue
+        File file = new File(DATABASE_NAME);
+        if(!file.exists()) return;
 
+        Log.d("DEBUG", "PosReader.refresh()");
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         SimpleDateFormat monthFormat = new SimpleDateFormat("yyyy-MM");
         SQLiteDatabase database = SQLiteDatabase.openDatabase(DATABASE_NAME, null, SQLiteDatabase.OPEN_READONLY);// helper.getReadableDatabase();

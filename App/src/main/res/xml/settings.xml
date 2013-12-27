@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory
+        android:title="@string/pref_general">
+        <EditTextPreference
+            android:title="@string/pref_database"
+            android:summary="@string/pref_database_summary"
+            android:key="prefDatabase"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:icon="@android:drawable/ic_menu_help"
+        android:title="@string/title_activity_about">
+        <Preference
+            android:icon="@android:drawable/ic_menu_help"
+            android:title="@string/help"
+            android:summary="How to" />
+        <!-- TODO: Make it an email link -->
+        <Preference
+            android:key="prefEmail"
+            android:icon="@android:drawable/ic_dialog_email"
+            android:title="@string/contact"
+            android:summary="@string/contact_email" />
+        <Preference
+            android:key="prefVersion"
+            android:title="@string/version" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

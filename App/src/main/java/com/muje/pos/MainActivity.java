@@ -7,6 +7,9 @@ import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -23,6 +26,7 @@ import android.widget.TextView;
 public class MainActivity extends Activity implements ActionBar.TabListener {
 
     private static final String TAB_KEY_INDEX = "tab_key";
+    public static final int RESULT_SETTINGS = 100;
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -43,6 +47,14 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String path = sharedPreferences.getString("prefDatabase", getResources().getString(R.string.database_path));
+        Log.d("DEBUG", "Database path: " + path);
+
+        // Set up PosReader with database path
+        PosReader reader = PosReader.getInstance();
+        reader.setDatabasePath(path);
 
         // Set up the action bar.
         final ActionBar actionBar = getActionBar();
@@ -101,24 +113,43 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
             case R.id.action_refresh:
                 Log.d("DEBUG", "Current Tab: " + Integer.toString(mViewPager.getCurrentItem()));
                 View view = mViewPager.getChildAt(mViewPager.getCurrentItem());
+
+                // Refresh database
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+                String path = sharedPreferences.getString("prefDatabase", getResources().getString(R.string.database_path));
                 PosReader reader = PosReader.getInstance();
-                // TODO: Refresh database
+                reader.setDatabasePath(path);
 
                 // reset and bind again
-                switch(mViewPager.getCurrentItem()) {
-                    case 0:
-                        // reset
-                        ListView listView0 = (ListView)view.findViewById(R.id.listView);
-                        SalesAdapter adapter = (SalesAdapter)listView0.getAdapter();
-                        if(adapter != null) adapter.clear();
+                ListView listView0 = (ListView)view.findViewById(R.id.listView);
+                if(listView0.getAdapter().getClass() == SalesAdapter.class) {
+                    SalesAdapter adapter = (SalesAdapter)listView0.getAdapter();
+                    if(adapter != null) adapter.clear();
 
-                        // rebind
-                        adapter = new SalesAdapter(view.getContext(), reader.getSales());
-                        listView0.setAdapter(adapter);
-                        break;
+                    // rebind
+                    adapter = new SalesAdapter(view.getContext(), reader.getSales());
+                    listView0.setAdapter(adapter);
+                } else if(listView0.getAdapter().getClass() == MonthAdapter.class) {
+                    MonthAdapter adapter = (MonthAdapter)listView0.getAdapter();
+                    if(adapter != null) adapter.clear();
+
+                    // rebind
+                    adapter = new MonthAdapter(view.getContext(), reader.getMonthlySales());
+                    listView0.setAdapter(adapter);
+                } else if(listView0.getAdapter().getClass() == MenuAdapter.class) {
+                    MenuAdapter adapter = (MenuAdapter)listView0.getAdapter();
+                    if(adapter != null) adapter.clear();
+
+                    // rebind
+                    adapter = new MenuAdapter(view.getContext(), reader.getCounter());
+                    listView0.setAdapter(adapter);
                 }
+
                 return true;
             case R.id.action_settings:
+                Log.i("INFO", "MainActivity.setting");
+                Intent i = new Intent(this, SettingsActivity.class);
+                startActivityForResult(i, RESULT_SETTINGS);
                 return true;
         }
         return super.onOptionsItemSelected(item);
