@@ -9,7 +9,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:id="@+id/textView5"
         android:width="150dp"
-        android:height="55dp"
+        android:height="@dimen/bar_height"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:background="@color/color_counter" />
@@ -19,7 +19,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:id="@+id/textView6"
         android:width="150dp"
-        android:height="55dp"
+        android:height="@dimen/bar_height"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:background="@color/color_sales" />

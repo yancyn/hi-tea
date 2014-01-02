@@ -9,7 +9,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:id="@+id/textView4"
         android:width="150dp"
-        android:height="25dp"
+        android:height="@dimen/bar_height"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:background="@color/color_counter" />
@@ -19,37 +19,50 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:id="@+id/textView5"
         android:width="150dp"
-        android:height="25dp"
+        android:height="@dimen/bar_height"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:background="@color/color_sales" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TableLayout
+        android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:stretchColumns="*">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <TableRow
             android:layout_height="wrap_content"
-            android:text="2013 Dec"
-            android:id="@+id/textView"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:layout_width="fill_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="500 orders"
-            android:id="@+id/textView2"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_marginLeft="10dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dec 2013"
+                android:id="@+id/textView"
+                android:layout_column="0"
+                android:layout_span="2"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        </TableRow>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <TableRow
             android:layout_height="wrap_content"
-            android:text="RM 99,022,500.00"
-            android:id="@+id/textView3"
-            android:gravity="right"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-    </LinearLayout>
+            android:layout_width="fill_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="500 orders"
+                android:id="@+id/textView2"
+                android:layout_column="0"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_marginLeft="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RM 99,022,500.00"
+                android:id="@+id/textView3"
+                android:gravity="right"
+                android:layout_column="1"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        </TableRow>
+    </TableLayout>
 </RelativeLayout>
