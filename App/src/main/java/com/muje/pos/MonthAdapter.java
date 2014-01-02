@@ -56,7 +56,7 @@ public class MonthAdapter extends ArrayAdapter<Sales> {
 
         // Define layout
         TextView monthView = (TextView)rowView.findViewById(R.id.textView);
-        monthView.setText(dateFormat.format(sales.getDate()));
+        monthView.setText(dateFormat.format(sales.getDate()) + "    " + Integer.toString(sales.getDays()) + " days");
 
         TextView countView = (TextView)rowView.findViewById(R.id.textView2);
         countView.setText(Integer.toString(sales.getCount()) + " orders");

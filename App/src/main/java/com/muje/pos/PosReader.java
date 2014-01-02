@@ -12,6 +12,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Pos business logic singleton class.
@@ -100,9 +101,10 @@ public class PosReader {
         }
         cursor.close();
 
-        // dump to monthly sales collection
+        // dump to monthly sales collection descending
         this.monthlySales = new ArrayList<Sales>();
-        for(Map.Entry<String, Sales> s: map.entrySet()) {
+        TreeMap<String, Sales> sorted = new TreeMap<String, Sales>(map);
+        for(Map.Entry<String, Sales> s: sorted.descendingMap().entrySet()) {
             this.monthlySales.add(s.getValue());
         }
 
