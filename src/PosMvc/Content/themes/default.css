@@ -8,7 +8,7 @@ body
 {
 	margin: 0px;
 	padding: 0px;
-	background: #2C383B;
+	background: #902a7c; /* #2C383B */
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 11pt;
 	font-weight: 300;
@@ -45,7 +45,7 @@ strong
 
 a
 {
-	color: #2C383B;
+	color: #902a7c; /* #2C383B */
 }
 
 a:hover
@@ -306,7 +306,7 @@ ul.contact li a.icon-rss:before
 {
 	display: inline-block;
 	padding: 0.5em;
-	background: #2C383B;
+	background: #902a7c; /* #2C383B */
 	-moz-transition: opacity 0.25s ease-in-out;
 	-webkit-transition: opacity 0.25s ease-in-out;
 	-o-transition: opacity 0.25s ease-in-out;
@@ -392,7 +392,7 @@ ul.contact li a.icon-rss:before
 	font-size: 2.5em;
 	text-transform: uppercase;
 	font-weight: 700;
-	color: #2C383B;
+	color: #902a7c; /* #2C383B */
 	padding-right: 0.50em;
 	border-right: 1px solid rgba(0,0,0,.3);
 }
@@ -411,7 +411,7 @@ ul.contact li a.icon-rss:before
 #logo a
 {
 	text-decoration: none;
-	color: #2C383B;
+	color: #902a7c; /* #2C383B */
 }
 
 /*********************************************************************************/
@@ -458,7 +458,7 @@ ul.contact li a.icon-rss:before
 
 #menu .current_page_item a
 {
-	background: #2C383B;
+	background: #902a7c; /* #2C383B */
 	color: #FFF;
 }
 
@@ -474,7 +474,7 @@ ul.contact li a.icon-rss:before
 {
 	overflow: hidden;
 	padding: 3em 0em;
-	background: #2C383B;
+	background: #902a7c; /* #2C383B */
 }
 
 #banner
@@ -672,7 +672,7 @@ ul.contact li a.icon-rss:before
 	display: inline-block;
 	width: 150px;
 	height: 150px;
-	background: #2C383B;
+	background: #902a7c; /* #2C383B */
 	margin: 0px auto 20px auto;
 	line-height:  150px;
 	font-size: 5em;
