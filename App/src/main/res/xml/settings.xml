@@ -11,11 +11,16 @@
 
     <PreferenceCategory
         android:icon="@android:drawable/ic_menu_help"
-        android:title="@string/title_activity_about">
+        android:title="@string/help">
         <Preference
-            android:icon="@android:drawable/ic_menu_help"
+            android:layout="@layout/layout_legend"
             android:title="@string/help"
-            android:summary="How to" />
+            android:summary="Legend" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:icon="@android:drawable/ic_menu_help"
+        android:title="@string/title_activity_about">
         <!-- TODO: Make it an email link -->
         <Preference
             android:key="prefEmail"
