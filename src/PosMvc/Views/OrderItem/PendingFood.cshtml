@@ -83,3 +83,13 @@
     </tr>
 }
 </table>
+
+<!-- Ring when there is pending item appear -->
+@{
+    if(counter>0) {
+        <script>
+            var ring = new Audio("../Images/notify.wav");
+            ring.play();
+        </script>
+    }
+}
