@@ -353,7 +353,9 @@ namespace HiTea.Pos
                 lastBasket = this.Basket.Where(b => b.OrderItems.Count() > 0 || b.Items.Count() > 0).OrderByDescending(b => b.Created).FirstOrDefault();
                 if (lastBasket != null && !String.IsNullOrEmpty(lastBasket.QueueNo))
                 {
-                    if (lastBasket.Created > lastOrder.Created)
+                    if (lastOrder == null)
+                        lastQueueNo = Convert.ToInt32(lastBasket.QueueNo);
+                    else if (lastBasket.Created > lastOrder.Created)
                         lastQueueNo = Convert.ToInt32(lastBasket.QueueNo);
                 }
             }
