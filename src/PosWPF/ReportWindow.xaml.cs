@@ -32,7 +32,7 @@ namespace PosWPF
             this.db = db;
             this.orders = new ObservableCollection<Order>();
             From.Text = DateTime.Now.ToString();
-            GenerateReport(new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day));
+            //GenerateReport(new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day));
         }
 
         private void GenerateReport(DateTime from)
@@ -41,22 +41,12 @@ namespace PosWPF
         }
         private void GenerateReport(DateTime from, DateTime to)
         {
-            // DbLinq failed to filter by date
-            //var orders = db.Orders.Where(o => o.ReceiptDate.HasValue == true && o.Created.CompareTo(from) >= 0 && o.Created.CompareTo(to) <= 0);
-            //decimal total = 0m;
             orders = new ObservableCollection<Order>();
-            var result = db.Orders.Where(o => o.ReceiptDate.HasValue == true).OrderBy(o => o.ID);
-            foreach (Order order in result)
-            {
-                if (order.Created.CompareTo(from) >= 0 && order.Created.CompareTo(to) <= 0)
-                {
-                    //System.Diagnostics.Debug.WriteLine(order.Total);
+            var result = db.Orders.Where(o => o.ReceiptDate.HasValue == true && o.Created >= from && o.Created <= to);
+            
+			foreach (Order order in result)
                     orders.Add(order);
-                    //total += Utils.Rounding(System.Convert.ToDecimal(order.Total));
-                }
-            }
 
-            //System.Diagnostics.Debug.WriteLine("Total count: " + orders.Count);
             Grid.DataContext = orders;
             Total.Text = orders.Sum(o => o.Total).ToString(Settings.Default.MoneyFormat);
         }
