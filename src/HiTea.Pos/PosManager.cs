@@ -342,27 +342,35 @@ namespace HiTea.Pos
         public string GetLatestQueueNo()
         {
             int lastQueueNo = 0;
-
-            Order lastOrder = db.Orders.OrderByDescending(o => o.Created).FirstOrDefault();
-            if (lastOrder != null && !String.IsNullOrEmpty(lastOrder.QueueNo))
-                lastQueueNo = Convert.ToInt32(lastOrder.QueueNo);
-
-            Order lastBasket = null;
-            if (this.Basket.Count > 0)
+            
+            try
             {
-                lastBasket = this.Basket.Where(b => b.OrderItems.Count() > 0 || b.Items.Count() > 0).OrderByDescending(b => b.Created).FirstOrDefault();
-                if (lastBasket != null && !String.IsNullOrEmpty(lastBasket.QueueNo))
-                {
-                    if (lastOrder == null)
-                        lastQueueNo = Convert.ToInt32(lastBasket.QueueNo);
-                    else if (lastBasket.Created > lastOrder.Created)
-                        lastQueueNo = Convert.ToInt32(lastBasket.QueueNo);
-                }
+	            Order lastOrder = db.Orders.OrderByDescending(o => o.Created).FirstOrDefault();
+	            if (lastOrder != null && !String.IsNullOrEmpty(lastOrder.QueueNo))
+	                lastQueueNo = Convert.ToInt32(lastOrder.QueueNo);
+	
+	            Order lastBasket = null;
+	            if (this.Basket.Count > 0)
+	            {
+	                lastBasket = this.Basket.Where(b => b.OrderItems.Count() > 0 || b.Items.Count() > 0).OrderByDescending(b => b.Created).FirstOrDefault();
+	                if (lastBasket != null && !String.IsNullOrEmpty(lastBasket.QueueNo))
+	                {
+	                    if (lastOrder == null)
+	                        lastQueueNo = Convert.ToInt32(lastBasket.QueueNo);
+	                    else if (lastBasket.Created > lastOrder.Created)
+	                        lastQueueNo = Convert.ToInt32(lastBasket.QueueNo);
+	                }
+	            }
+	
+	            lastQueueNo = lastQueueNo % maxQueue;
+	            lastQueueNo++;
+	            return lastQueueNo.ToString();
             }
-
-            lastQueueNo = lastQueueNo % maxQueue;
-            lastQueueNo++;
-            return lastQueueNo.ToString();
+            catch(Exception ex)
+            {
+            	lastQueueNo = new Random().Next(maxQueue);
+            	return lastQueueNo.ToString();
+            }
         }
 
         /// <summary>
